@@ -1,0 +1,81 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+
+}
+
+/* Main Menu Options */
+.mainMenu {
+  display: grid;
+  grid-template-columns: 50% auto 50%;
+}
+
+.playButton {
+  grid-column-start: 2;
+}
+
+#playButton {
+  font-size: 24px;
+  padding: 8px 14px;
+  border-radius: 5px;
+}
+
+/* In-game Widgets */
+.widgets {
+  display: grid;
+  grid-template-columns: 18px 50px auto 50px 18px;
+  grid-template-rows: 12px auto 12px;
+  position: fixed;
+}
+
+/* Mute / Unmute Widget */
+input#sound {
+  display: none;
+}
+.on img {
+  display: none;
+  opacity: 0.65;
+}
+.on img:hover {
+  opacity: 1;
+}
+.off img {
+  opacity: 0.65;
+}
+.off img:hover{
+  opacity: 1;
+}
+input#sound:checked ~ .on img {
+  display: initial;
+}
+input#sound:checked ~ .off img {
+  display: none;
+}
+
+.sound {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.topMessage {
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  margin-left: -210px;
+  color: white;
+  font-family: "Silkscreen";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16;
+  transition: 1s opacity;
+}
