@@ -88,7 +88,7 @@ function setup() {
 
   // Environment
   // Petals
-  let numOfPetals = window.innerWidth/200;
+  let numOfPetals = window.innerWidth/150;
   console.log(numOfPetals);
   petalsGroup = new Group();
   for (i = 0; i < numOfPetals; ++i) {
