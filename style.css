@@ -17,11 +17,32 @@ body {
 /* Main Menu Options */
 
 .menu-buttons button {
-  position: fixed;
-  top: 40px;
-  left: 50%;
+  background-color: white;
+  border: none;
+  border-radius: 8px;
+  color: black;
+  padding: 20px 44px;
+  cursor: pointer;
   display: block;
-  padding: 10px 25px;
+  margin-bottom: 30px;
+  margin-left: 50%;
+  transform: translate(-50%, 0);
+  font-family: "Silkscreen";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.menu-buttons button:first-child {
+  margin-top: 50vh;
+}
+
+.menu-buttons button:not(:last-child) {
+  border-bottom: none;
+}
+
+.menu-buttons button:hover {
+  background-color: pink;
 }
 
 /* In-game Widgets */
@@ -30,6 +51,7 @@ body {
   grid-template-columns: 18px 50px auto 50px 18px;
   grid-template-rows: 12px auto 12px;
   position: fixed;
+  cursor: pointer;
 }
 
 /* Mute / Unmute Widget */
@@ -71,5 +93,5 @@ input#sound:checked ~ .off img {
   font-family: "Silkscreen";
   font-weight: normal;
   font-style: normal;
-  font-size: 16;
+  font-size: 16px;
 }
