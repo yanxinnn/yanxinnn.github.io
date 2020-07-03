@@ -20,9 +20,7 @@ body {
   position: fixed;
   top: 40px;
   left: 50%;
-}
-
-#playButton {
+  display: block; 
 }
 
 /* In-game Widgets */
