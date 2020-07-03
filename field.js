@@ -88,7 +88,8 @@ function setup() {
 
   // Environment
   // Petals
-  let numOfPetals = 50;
+  let numOfPetals = window.innerWidth/200;
+  console.log(numOfPetals);
   petalsGroup = new Group();
   for (i = 0; i < numOfPetals; ++i) {
     let randomX = random(0, window.innerWidth * 1.2);
@@ -105,6 +106,7 @@ function setup() {
     petal.scale = scaleX;
     petalsGroup.add(petal);
   }
+
   // Grassblades
   grassBlade.frameDelay = 11;
   let numOfGrassblades = 10;
@@ -181,7 +183,6 @@ function draw() {
   }
 
   drawSprites();
-
 } // function draw
 
 function windowResized() {
