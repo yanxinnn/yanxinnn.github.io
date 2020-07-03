@@ -27,7 +27,3 @@ function windowResized() {
 function play() {
   window.location = "field.html";
 }
-
-function fadeout() {
-  document.getElementById('fadeout').style.opacity = '0';
-}
