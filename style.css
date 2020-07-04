@@ -15,12 +15,11 @@ body {
 }
 
 /* Main Menu Options */
-
 .menu-buttons button {
-  background-color: white;
+  background-color: pink;
   border: none;
   border-radius: 8px;
-  color: black;
+  color: white;
   padding: 20px 44px;
   cursor: pointer;
   display: block;
@@ -95,6 +94,11 @@ input#sound:checked ~ .off img {
   font-weight: normal;
   font-style: normal;
   font-size: 16px;
+}
+
+#moveDesktop {
+  opacity: 1;
+  transition: 1s opacity;
 }
 
 @font-face {

@@ -15,6 +15,7 @@ var playerRun3 = "images/player/playerRun3.png";
 var playerRun4 = "images/player/playerRun4.png";
 var playerRun;
 var jump = false;
+var moved = false;
 
 // Sounds
 var snd_windyPetals;
@@ -127,29 +128,48 @@ function draw() {
   player.velocity.y += 0.85;
   player.changeAnimation("idle");
   if (lastKey == "right") {
-
+    if (moved == false) {
+      moved = true;
+    }
     player.mirrorX(1);
   }
   else if (lastKey == "left") {
+    if (moved == false) {
+      moved = true;
+    }
     player.mirrorX(-1);
   }
   if (keyIsDown(RIGHT_ARROW) || keyIsDown(68)) {
+    if (moved == false) {
+      moved = true;
+    }
     lastKey = "right";
     player.changeAnimation("run");
     player.velocity.x = 6.5;
   }
   else if (keyIsDown(LEFT_ARROW) || keyIsDown(65)) {
+    if (moved == false) {
+      moved = true;
+    }
     lastKey = "left";
     player.changeAnimation("run");
     player.velocity.x = -6.5;
   }
   if (keyIsDown(UP_ARROW) || keyIsDown(87)) {
+    if (moved == false) {
+      moved = true;
+    }
     if (!jump) {
       player.changeAnimation("idle");
       player.velocity.y = -16;
       jump = true;
     }
   }
+  if (moved == true) {
+    window.setTimeout(moveDesktop, 1000);
+  }
+
+  // Platforms
   for (var i = 0; i < platformsGroup.length; i++) {
     if (platformsGroup[i].overlapPixel(player.position.x, player.position.y+50)) {
       player.position.y -= 1;
@@ -180,7 +200,6 @@ function draw() {
       petalsGroup.add(petal);
     }
   }
-
   drawSprites();
 } // function draw
 
@@ -197,4 +216,8 @@ function toggleSound() {
   else {
     snd_windyPetals.pause();
   }
+}
+
+function moveDesktop() {
+  document.getElementById("moveDesktop").style.opacity = "0";
 }
