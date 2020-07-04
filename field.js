@@ -88,7 +88,7 @@ function setup() {
 
   // Environment
   // Petals
-  let numOfPetals = window.innerWidth/50;
+  let numOfPetals = window.innerWidth/80;
   petalsGroup = new Group();
   for (i = 0; i < numOfPetals; ++i) {
     let randomX = random(0, window.innerWidth * 1.2);
