@@ -64,12 +64,14 @@ input#sound {
 }
 .on img:hover {
   opacity: 1;
+  cursor: pointer;
 }
 .off img {
   opacity: 0.65;
 }
 .off img:hover{
   opacity: 1;
+  cursor: pointer;
 }
 input#sound:checked ~ .on img {
   display: initial;
