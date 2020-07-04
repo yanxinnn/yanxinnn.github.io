@@ -51,7 +51,6 @@ body {
   grid-template-columns: 18px 50px auto 50px 18px;
   grid-template-rows: 12px auto 12px;
   position: fixed;
-  cursor: pointer;
 }
 
 /* Mute / Unmute Widget */
