@@ -166,7 +166,7 @@ function draw() {
     }
   }
   if (moved == true) {
-    window.setTimeout(moveDesktop, 1000);
+    window.setTimeout(moveDesktop, 5000);
   }
 
   // Platforms
