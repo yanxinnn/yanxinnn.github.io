@@ -127,6 +127,7 @@ function draw() {
   player.velocity.x = 0;
   player.velocity.y += 0.85;
   player.changeAnimation("idle");
+  console.log(moved);
   if (lastKey == "right") {
     if (moved == false) {
       moved = true;
