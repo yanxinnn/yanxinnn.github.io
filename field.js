@@ -4,7 +4,7 @@
 var sky = "images/blueSky.png";
 
 // Player Animation
-var lastKey = "right";
+var lastKey = "";
 var playerIdle1 = "images/player/playerIdle1.png";
 var playerIdle2 = "images/player/playerIdle2.png";
 var playerIdle3 = "images/player/playerIdle3.png";
@@ -169,8 +169,6 @@ function draw() {
   if (moved == true) {
     window.setTimeout(moveDesktop, 5000);
   }
-  console.log(lastKey);
-
   // Platforms
   for (var i = 0; i < platformsGroup.length; i++) {
     if (platformsGroup[i].overlapPixel(player.position.x, player.position.y+50)) {
