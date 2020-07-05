@@ -168,6 +168,7 @@ function draw() {
   if (moved == true) {
     window.setTimeout(moveDesktop, 5000);
   }
+  console.log(lastKey);
 
   // Platforms
   for (var i = 0; i < platformsGroup.length; i++) {
