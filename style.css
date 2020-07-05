@@ -41,7 +41,7 @@ body {
 }
 
 .menu-buttons button:hover {
-  background-color: black;
+  background-color: gray;
 }
 
 /* In-game Widgets */
@@ -99,7 +99,6 @@ input#sound:checked ~ .off img {
 #moveDesktop {
   opacity: 1;
   transition: 2s opacity;
-}
 
 @font-face {
     font-family: 'silkscreennormal';
