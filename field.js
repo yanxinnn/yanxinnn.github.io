@@ -127,7 +127,6 @@ function draw() {
   player.velocity.x = 0;
   player.velocity.y += 0.85;
   player.changeAnimation("idle");
-  console.log(moved);
   if (lastKey == "right") {
     if (moved == false) {
       moved = true;
@@ -167,7 +166,7 @@ function draw() {
     }
   }
   if (moved == true) {
-    moveDesktop();
+    movementDesktopMessageFade();
   }
   // Platforms
   for (var i = 0; i < platformsGroup.length; i++) {
@@ -218,6 +217,6 @@ function toggleSound() {
   }
 }
 
-function moveDesktop() {
-  document.getElementById("moveDesktop").style.opacity = "0";
+function movementDesktopMessageFade() {
+  document.getElementById("movementDesktopMessage").style.opacity = "0";
 }

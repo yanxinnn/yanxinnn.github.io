@@ -96,9 +96,109 @@ input#sound:checked ~ .off img {
   font-size: 16px;
 }
 
-#moveDesktop {
+#movementDesktopMessage {
   opacity: 1;
-  transition: 1s opacity;
+  transition: 2s opacity;
+}
+
+a:link, a:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+  font-family: "silkscreennormal";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+a:hover, a:active {
+  color: #b8b8b8;
+  background-color: transparent;
+  text-decoration: none;
+  font-family: "silkscreennormal";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  transition: 0.4s;
+}
+
+#mainMenuLink {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+}
+
+.creditsContainer {
+  position: relative;
+  text-align: center;
+  top: 100px;
+}
+
+.creditsContainer h1 {
+  font-family: "silkscreennormal";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 40px;
+  color: white;
+}
+
+.creditsContainer p {
+  position: block;
+  margin: auto;
+  font-family: "silkscreennormal";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  color: white;
+  width: 45%;
+  line-height: 24px;
+  padding-bottom: 50px;
+}
+
+.linkedInIcon {
+  padding-bottom: 50px;
+}
+
+.linkedInIcon:hover {
+  width: 60px;
+  height: 60px;
+}
+
+/* reference: https://www.w3schools.com/howto/howto_js_alert.asp */
+.alert {
+  font-family: "silkscreennormal";
+  font-weight: normal;
+  font-style: normal;
+  position: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  font-size: 20px;
+  padding: 20px;
+  background-color: pink;
+  color: white;
+  width: 200px;
+  border-radius: 4px;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 28px;
+  line-height: 15px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.closebtn:hover {
+  color: black;
 }
 
 @font-face {

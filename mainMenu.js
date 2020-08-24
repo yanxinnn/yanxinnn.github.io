@@ -27,3 +27,22 @@ function windowResized() {
 function play() {
   window.location = "field.html";
 }
+
+function credits() {
+  window.location = "credits.html";
+}
+
+function menu() {
+  window.location = "index.html";
+}
+
+// reference: https://codepen.io/shaikmaqsood/pen/XmydxJ
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  var message = document.getElementById("emailCopiedMessage");
+  message.style.display = "block";
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
