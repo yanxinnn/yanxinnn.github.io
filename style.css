@@ -116,7 +116,7 @@ a:hover {
 }
 
 a:hover, a:active {
-  color: #b8b8b8;
+  color: #8a8a8a;
   background-color: transparent;
   text-decoration: none;
   font-family: "silkscreennormal";
@@ -159,13 +159,21 @@ a:hover, a:active {
   padding-bottom: 50px;
 }
 
-.linkedInIcon {
-  padding-bottom: 50px;
+.contactInfo {
+  position: block;
+  margin: auto;
+  /* border: 5px solid blue; */
+  display: flex;
+  flex-direction: row;
+  width: 140px;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.linkedInIcon:hover {
+.contactInfoItem:hover {
   width: 60px;
   height: 60px;
+  cursor: pointer;
 }
 
 /* reference: https://www.w3schools.com/howto/howto_js_alert.asp */
@@ -176,7 +184,7 @@ a:hover, a:active {
   position: block;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   font-size: 20px;
   padding: 20px;
   background-color: pink;
@@ -198,7 +206,7 @@ a:hover, a:active {
 }
 
 .closebtn:hover {
-  color: black;
+  color: #8a8a8a;
 }
 
 @font-face {

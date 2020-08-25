@@ -16,15 +16,17 @@
 
   <div class="creditsContainer">
     <h1>Credits</h1>
-    <p>Created by: Yanxin Jiang</p>
+    <p>Code and Art by: Yanxin Jiang</p>
     <p>Hey there! Thanks for visiting my website! If you have any comments, questions, suggestions, or just want to say hi, feel free to contact me!</p>
     <div hidden class="alert" id="emailCopiedMessage">
       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
       Email Copied to Clipboard!
     </div>
-    <a href="https://www.linkedin.com/in/yanxinn/" target="_blank"><img src="images/widgets/linkedIn.png" class="linkedInIcon" height="50" width="50"></a>
-    <p hidden id="email">yj1347@nyu.edu</p>
-    <button onclick="copyToClipboard('#email')">Email</button>
+    <div class="contactInfo">
+      <a href="https://www.linkedin.com/in/yanxinn/" target="_blank"><img src="images/widgets/linkedIn.png" alt="LinkedIn" class="contactInfoItem"></a>
+      <p hidden id="email">yj1347@nyu.edu</p>
+      <img src="images/widgets/mail.png" class="contactInfoItem" alt="Email" onclick="copyToClipboard('#email')">
+    </div>
   </div>
 
   <a href="index.html" id="mainMenuLink">Main Menu</a>
