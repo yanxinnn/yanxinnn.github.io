@@ -28,6 +28,7 @@ var snd_windyPetals;
 
 // Environment
 var platformsGroup;
+var middlePlatform; // where camera snaps to following player
 var groundTop;
 var groundBot;
 var grass;
@@ -73,24 +74,9 @@ function setup() {
   canvas.parent("field-div");
   canvas.position(0, 0);
   canvas.style("z-index", "-1");
-  var staticWindowWidth = window.innerWidth;
-
-  // Player Animations
-  playerIdle.frameDelay = 18;
-  playerRun.frameDelay = 13;
-
-  player = createSprite(staticWindowWidth/8, window.innerHeight-200, 100, 100);
-  player.addAnimation("idle", playerIdle);
-  player.addAnimation("run", playerRun);
-
-  // Characters
-  yanxinIdle.frameDelay = 18;
-
-  yanxin = createSprite(staticWindowWidth/8 + 50, window.innerHeight-200, 100, 100);
-  yanxin.addAnimation("idle", yanxinIdle);
 
   // Platforms
-  var platformsAcross = Math.floor((staticWindowWidth / 100)) + 2;
+  var platformsAcross = 40;
   platformsGroup = new Group();
   for (i = 0; i < platformsAcross; ++i) {
     groundTop = createSprite(i * 100, window.innerHeight-100, 100, 100);
@@ -101,6 +87,21 @@ function setup() {
     groundBot = createSprite(i * 100, window.innerHeight, 100, 100);
     groundBot.addImage(dirt);
   }
+  middlePlatform = floor((window.innerWidth/2)/100);
+
+  // Characters
+  yanxinIdle.frameDelay = 18;
+
+  yanxin = createSprite(platformsGroup[12].position.x, window.innerHeight-200, 100, 100);
+  yanxin.addAnimation("idle", yanxinIdle);
+
+  // Player Animations
+  playerIdle.frameDelay = 18;
+  playerRun.frameDelay = 13;
+
+  player = createSprite(platformsGroup[2].position.x, window.innerHeight-200, 100, 100);
+  player.addAnimation("idle", playerIdle);
+  player.addAnimation("run", playerRun);
 
   // Environment
   // Petals
@@ -124,9 +125,9 @@ function setup() {
 
   // Grassblades
   grassBlade.frameDelay = 11;
-  let numOfGrassblades = 10;
+  let numOfGrassblades = floor(platformsAcross/1.85);
   for (i = 0; i < numOfGrassblades; ++i) {
-    let randomX = random(0, window.innerWidth);
+    let randomX = random(0, platformsAcross*100);
     grassblade = createSprite(randomX, window.innerHeight-162);
     grassblade.addAnimation("grassBlade", grassBlade);
   }
@@ -184,8 +185,24 @@ function draw() {
     movementDesktopMessageFade();
   }
 
+  // Camera
+  if (player.position.x > platformsGroup[middlePlatform].position.x) {
+    camera.position.x = player.position.x;
+  }
+
   // Characters
   yanxin.changeAnimation("idle");
+  yanxin.mirrorX(-1);
+
+  if (player.position.x > yanxin.position.x) { // Faces player at all times)
+    yanxin.mirrorX(1);
+    if (player.position.x - yanxin.position.x < 130) { // chat range
+    }
+  } else {
+    if (yanxin.position.x - player.position.x < 130) {
+    }
+  }
+
 
   // Platforms
   for (var i = 0; i < platformsGroup.length; i++) {
@@ -195,15 +212,15 @@ function draw() {
       jump = false;
     }
   }
-  if (player.position.x < 24) {
-    player.position.x = 24;
+  if (player.position.x < platformsGroup[0].position.x + 24) {
+    player.position.x = platformsGroup[0].position.x + 24;
   }
 
   // Petals
   for (i = 0; i < petalsGroup.length; ++i) {
-    if (petalsGroup[i].position.x < 0 || petalsGroup[i].position.y > window.innerHeight) {
+    if (petalsGroup[i].position.x < (player.position.x - window.innerWidth/2) || petalsGroup[i].position.y > window.innerHeight) {
       petalsGroup[i].remove();
-      let randomX = random(0, window.innerWidth * 1.2);
+      let randomX = random(player.position.x - window.innerWidth/2, player.position.x + window.innerWidth/2 + 100);
       let randomY = random(-100, 0);
       let petalX = random(-0.75, -1.8);
       let petalY = random(1.5, 3.5);
