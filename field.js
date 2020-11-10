@@ -18,9 +18,9 @@ var jump = false;
 var moved = false;
 
 // Characters
-var yanxinIdle1 = "images/player/yanxinIdle1";
-var yanxinIdle2 = "images/player/yanxinIdle2";
-var yanxinIdle3 = "images/player/yanxinIdle3";
+var yanxinIdle1 = "images/player/yanxinIdle1.png";
+var yanxinIdle2 = "images/player/yanxinIdle2.png";
+var yanxinIdle3 = "images/player/yanxinIdle3.png";
 var yanxinIdle;
 
 // Sounds
