@@ -17,6 +17,12 @@ var playerRun;
 var jump = false;
 var moved = false;
 
+// Characters
+var yanxinIdle1 = "images/player/yanxinIdle1";
+var yanxinIdle2 = "images/player/yanxinIdle2";
+var yanxinIdle3 = "images/player/yanxinIdle3";
+var yanxinIdle;
+
 // Sounds
 var snd_windyPetals;
 
@@ -73,6 +79,12 @@ function setup() {
   player = createSprite(staticWindowWidth/8, window.innerHeight-200, 100, 100);
   player.addAnimation("idle", playerIdle);
   player.addAnimation("run", playerRun);
+
+  // Characters
+  yanxinIdle.frameDelay = 18;
+
+  yanxin = createSprite(staticWindowWidth/8 + 50, window.innerHeight-200, 100, 100);
+  yanxin.addAnimation("idle", yanxinIdle);
 
   // Platforms
   var platformsAcross = Math.floor((staticWindowWidth / 100)) + 2;
@@ -168,6 +180,10 @@ function draw() {
   if (moved == true) {
     movementDesktopMessageFade();
   }
+
+  // Characters
+  yanxin.changeAnimation("idle");
+
   // Platforms
   for (var i = 0; i < platformsGroup.length; i++) {
     if (platformsGroup[i].overlapPixel(player.position.x, player.position.y+50)) {
