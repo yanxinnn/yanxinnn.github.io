@@ -25,6 +25,10 @@ var yanxinIdle;
 
 // Text
 var yanxinText1 = "Hi! Welcome to my portfolio! Feel free to take a look around!";
+var yanxinText2 = "Use the teleporters to my right to travel to different areas faster!";
+var yanxinText3 = ""
+var chatCounter = 0;
+var chatTimer = 0;
 
 // Sounds
 var snd_windyPetals;
@@ -205,22 +209,20 @@ function draw() {
 
   if (player.position.x > yanxin.position.x) { // Faces player at all times)
     yanxin.mirrorX(1);
-    if (player.position.x - yanxin.position.x < 130) { // chat range
-      if (keyPressed() == "E") {
-        displayText(yanxinText1, yanxin, 150, 400);
-      }
-      else {
-        interactText(yanxin);
-      }
+  }
+  if (abs(yanxin.position.x - player.position.x) <= 130) {
+    if (keyPressed() == "E") {
+      typeWriter(yanxinText1, yanxin, 150, 400, chatCounter, chatTimer);
+      // if (keyPressed() == "E") {
+      //   chatCounter = 0;
+      //   chatTimer = 0;
+      //   typeWriter(yanxinText2, yanxin, 150, 400, chatCounter, chatTimer);
+      // }
     }
-  } else {
-    if (yanxin.position.x - player.position.x < 130) {
-      if (keyPressed() == "E") {
-        displayText(yanxinText1, yanxin, 150, 400);
-      }
-      else {
-        interactText(yanxin);
-      }
+    else {
+      interactText(yanxin);
+      chatCounter = 0;
+      chatTimer = 0;
     }
   }
 
@@ -291,4 +293,16 @@ function keyPressed() {
 
 function displayText(line, target, hover, length) {
   text(line, target.position.x-(length/2), target.position.y-hover, length);
+}
+
+function typeWriter(script, target, hover, length, counter, timer) {
+  if (counter < script.length){
+    chatTimer++;
+    text(script.substring(0, counter), target.position.x-(length/2), target.position.y-hover, length);
+    if (timer % 2 == 0) {
+      chatCounter++;
+    }
+  } else {
+    text(script, target.position.x-(length/2), target.position.y-hover, length);
+  }
 }
