@@ -93,7 +93,7 @@ input#sound:checked ~ .off img {
   font-family: "silkscreennormal";
   font-weight: normal;
   font-style: normal;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 #movementDesktopMessage {

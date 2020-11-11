@@ -23,6 +23,9 @@ var yanxinIdle2 = "images/player/yanxinIdle2.png";
 var yanxinIdle3 = "images/player/yanxinIdle3.png";
 var yanxinIdle;
 
+// Text
+var yanxinText1 = "Hi! Welcome to my portfolio! Feel free to take a look around!";
+
 // Sounds
 var snd_windyPetals;
 
@@ -94,6 +97,12 @@ function setup() {
 
   yanxin = createSprite(platformsGroup[12].position.x, window.innerHeight-200, 100, 100);
   yanxin.addAnimation("idle", yanxinIdle);
+
+  // Text
+  textSize(18);
+  fill(255);
+  textAlign(CENTER);
+  textFont("silkscreennormal");
 
   // Player Animations
   playerIdle.frameDelay = 18;
@@ -197,12 +206,23 @@ function draw() {
   if (player.position.x > yanxin.position.x) { // Faces player at all times)
     yanxin.mirrorX(1);
     if (player.position.x - yanxin.position.x < 130) { // chat range
+      if (keyPressed() == "E") {
+        displayText(yanxinText1, yanxin, 150, 400);
+      }
+      else {
+        interactText(yanxin);
+      }
     }
   } else {
     if (yanxin.position.x - player.position.x < 130) {
+      if (keyPressed() == "E") {
+        displayText(yanxinText1, yanxin, 150, 400);
+      }
+      else {
+        interactText(yanxin);
+      }
     }
   }
-
 
   // Platforms
   for (var i = 0; i < platformsGroup.length; i++) {
@@ -255,4 +275,20 @@ function toggleSound() {
 
 function movementDesktopMessageFade() {
   document.getElementById("movementDesktopMessage").style.opacity = "0";
+}
+
+// Text
+function interactText(target) {
+  let hint = text("Press \"E\" to interact", target.position.x, target.position.y-50);
+}
+
+function keyPressed() {
+  if (keyCode === 69) {
+    return "E";
+  }
+  return false;
+}
+
+function displayText(line, target, hover, length) {
+  text(line, target.position.x-(length/2), target.position.y-hover, length);
 }
