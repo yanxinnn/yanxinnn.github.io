@@ -26,7 +26,16 @@ var yanxinIdle;
 // Text
 var yanxinText1 = "Hi! Welcome to my portfolio! Feel free to take a look around!";
 var yanxinText2 = "Use the teleporters to my right to travel to different areas faster!";
-var yanxinText3 = ""
+var yanxinText3 = "Glad to have you here!";
+var yanxinText4 = "Where are these petals coming from?";
+var yanxinText5 = "Mouths don't exist in this world";
+var yanxinText6 = "I'm always adding new things to this world. Check again soon!";
+var yanxinText7 = "*bounce bounce bounce*";
+var yanxinTexts = [yanxinText1, yanxinText2, yanxinText3, yanxinText4, yanxinText5, yanxinText6, yanxinText7];
+var firstGreeting = false;
+var firstGreetingFinished = false;
+var greetingUsed = true;
+var randomText = "";
 var chatCounter = 0;
 var chatTimer = 0;
 
@@ -105,7 +114,7 @@ function setup() {
   // Text
   textSize(18);
   fill(255);
-  textAlign(CENTER);
+  textAlign(LEFT);
   textFont("silkscreennormal");
 
   // Player Animations
@@ -211,18 +220,27 @@ function draw() {
     yanxin.mirrorX(1);
   }
   if (abs(yanxin.position.x - player.position.x) <= 130) {
-    if (keyPressed() == "E") {
-      typeWriter(yanxinText1, yanxin, 150, 400, chatCounter, chatTimer);
-      // if (keyPressed() == "E") {
-      //   chatCounter = 0;
-      //   chatTimer = 0;
-      //   typeWriter(yanxinText2, yanxin, 150, 400, chatCounter, chatTimer);
-      // }
-    }
-    else {
-      interactText(yanxin);
+    if (keyPressed() == "E" && firstGreeting == false) {
+      chatBox(yanxin, 200, 450, 140);
+      displayText("Yanxin", yanxin, 170, 400, 10, color("#FFBEBE"));
+      typeWriter(yanxinText1, yanxin, 140, 400, chatCounter, chatTimer, 10, 255);
+      firstGreetingFinished = true;
+    } else if (keyPressed() == "E") {
+      if (greetingUsed == true) {
+        randomText = random(yanxinTexts);
+        greetingUsed = false;
+      }
+      chatBox(yanxin, 200, 450, 140);
+      displayText("Yanxin", yanxin, 170, 400, 10, color("#FFBEBE"));
+      typeWriter(randomText, yanxin, 140, 400, chatCounter, chatTimer, 10, 255);
+    } else {
+      interactText(yanxin, -110);
       chatCounter = 0;
       chatTimer = 0;
+      if (firstGreetingFinished == true) {
+        firstGreeting = true;
+      }
+      greetingUsed = true;
     }
   }
 
@@ -280,8 +298,8 @@ function movementDesktopMessageFade() {
 }
 
 // Text
-function interactText(target) {
-  let hint = text("Press \"E\" to interact", target.position.x, target.position.y-50);
+function interactText(target, custom) {
+  let hint = text("Press \"E\" to interact", target.position.x+custom, target.position.y-50);
 }
 
 function keyPressed() {
@@ -291,18 +309,28 @@ function keyPressed() {
   return false;
 }
 
-function displayText(line, target, hover, length) {
-  text(line, target.position.x-(length/2), target.position.y-hover, length);
+function displayText(line, target, hover, length, custom, color) {
+  fill(color);
+  text(line, target.position.x-(length/2)+custom, target.position.y-hover, length);
 }
 
-function typeWriter(script, target, hover, length, counter, timer) {
+function typeWriter(script, target, hover, length, counter, timer, customX, color) {
+  fill(color);
   if (counter < script.length){
     chatTimer++;
-    text(script.substring(0, counter), target.position.x-(length/2), target.position.y-hover, length);
+    text(script.substring(0, counter), target.position.x-(length/2)+customX, target.position.y-hover, length);
     if (timer % 2 == 0) {
       chatCounter++;
     }
   } else {
-    text(script, target.position.x-(length/2), target.position.y-hover, length);
+    text(script, target.position.x-(length/2)+customX, target.position.y-hover, length);
   }
+}
+
+function chatBox(target, hover, length, height) {
+  let boxColor = color(50);
+  boxColor.setAlpha(50);
+  fill(boxColor);
+  noStroke();
+  rect(target.position.x-(length/2), target.position.y-hover, length, height, 5);
 }
