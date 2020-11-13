@@ -29,7 +29,7 @@ var yanxinText2 = "Use the teleporters to my right to travel to different areas 
 var yanxinText3 = "Glad to have you here!";
 var yanxinText4 = "Where are these petals coming from?";
 var yanxinText5 = "Mouths don't exist in this world";
-var yanxinText6 = "I'm always adding new things to this world. Check again soon!";
+var yanxinText6 = "I'm always adding new things to this world. Come by again soon!";
 var yanxinText7 = "*bounce bounce bounce*";
 var yanxinTexts = [yanxinText1, yanxinText2, yanxinText3, yanxinText4, yanxinText5, yanxinText6, yanxinText7];
 var firstGreeting = false;
@@ -94,14 +94,22 @@ function setup() {
   // Platforms
   var platformsAcross = 40;
   platformsGroup = new Group();
-  for (i = 0; i < platformsAcross; ++i) {
+  for (i = 0; i < platformsAcross; ++i) { // top layer
     groundTop = createSprite(i * 100, window.innerHeight-100, 100, 100);
     groundTop.addImage(grass);
     platformsGroup.add(groundTop);
   }
-  for (i = 0; i < platformsAcross; ++i) {
+  for (i = 0; i < 2; ++i) { // top layer left
+    let groundTopLeft = createSprite(i * -100, window.innerHeight-100, 100, 100);
+    groundTopLeft.addImage(grass);
+  }
+  for (i = 0; i < platformsAcross; ++i) { // bottom layer
     groundBot = createSprite(i * 100, window.innerHeight, 100, 100);
     groundBot.addImage(dirt);
+  }
+  for (i = 0; i < 2; ++i) { // top layer left
+    let groundBottomLeft = createSprite(i * -100, window.innerHeight, 100, 100);
+    groundBottomLeft.addImage(dirt);
   }
   middlePlatform = floor((window.innerWidth/2)/100);
 
@@ -208,7 +216,7 @@ function draw() {
   }
 
   // Camera
-  if (player.position.x > platformsGroup[middlePlatform].position.x) {
+  if (player.position.x >= platformsGroup[middlePlatform].position.x) {
     camera.position.x = player.position.x;
   }
 
@@ -252,8 +260,9 @@ function draw() {
       jump = false;
     }
   }
-  if (player.position.x < platformsGroup[0].position.x + 24) {
-    player.position.x = platformsGroup[0].position.x + 24;
+
+  if (player.position.x < 24) {
+    player.position.x = 24;
   }
 
   // Petals
