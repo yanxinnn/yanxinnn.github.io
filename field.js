@@ -65,6 +65,18 @@ var blueTp1 = "images/environment/blueTp1.png";
 var blueTp2 = "images/environment/blueTp2.png";
 var blueTp3 = "images/environment/blueTp3.png";
 var threeDSection;
+var greenTp;
+var graphicWebTp;
+var greenTp1 = "images/environment/greenTp1.png";
+var greenTp2 = "images/environment/greenTp2.png";
+var greenTp3 = "images/environment/greenTp3.png";
+var graphicWebSection;
+var redTp;
+var gameTp;
+var redTp1 = "images/environment/redTp1.png";
+var redTp2 = "images/environment/redTp2.png";
+var redTp3 = "images/environment/redTp3.png";
+var gameSection;
 
 //** Preload *************
 function preload() {
@@ -87,6 +99,8 @@ function preload() {
   pinkPetal = loadImage("images/environment/petal.png");
   grassBlade = loadAnimation(grassBlade1, grassBlade2, grassBlade3, grassBlade4, grassBlade5, grassBlade4, grassBlade3, grassBlade2);
   blueTp = loadAnimation(blueTp1, blueTp2, blueTp3);
+  greenTp = loadAnimation(greenTp1, greenTp2, greenTp3);
+  redTp = loadAnimation(redTp1, redTp2, redTp3);
 
 }
 
@@ -134,11 +148,19 @@ function setup() {
 
   // Teleporters
   blueTp.frameDelay = 12;
-
-  threeDTp = createSprite(platformsGroup[16].position.x, window.innerHeight-200, 100, 100);
+  threeDTp = createSprite(platformsGroup[15].position.x, window.innerHeight-200, 100, 100);
   threeDTp.addAnimation("static", blueTp);
-
   threeDSection = platformsGroup[22].position.x;
+
+  greenTp.frameDelay = 12;
+  graphicWebTp = createSprite(platformsGroup[17].position.x, window.innerHeight-200, 100, 100);
+  graphicWebTp.addAnimation("static", greenTp);
+  graphicWebSection = platformsGroup[26].position.x;
+
+  redTp.frameDelay = 12;
+  gameTp = createSprite(platformsGroup[19].position.x, window.innerHeight-200, 100, 100);
+  gameTp.addAnimation("static", redTp);
+  gameSection = platformsGroup[30].position.x;
 
   // Player Animations
   playerIdle.frameDelay = 18;
@@ -245,7 +267,7 @@ function draw() {
   if (abs(yanxin.position.x - player.position.x) <= 130) {
     if (keyPressed() == "E" && firstGreeting == false) {
       chatBox(yanxin, 200, 450, 135);
-      displayText("Yanxin", yanxin, 170, 400, 10, color("#FFBEBE"));
+      displayText("Yanxin", yanxin, 170, 400, 10, color("#FFBEBE"), LEFT);
       typeWriter(yanxinText1, yanxin, 140, 400, chatCounter, chatTimer, 10, 255);
       firstGreetingFinished = true;
     } else if (keyPressed() == "E") {
@@ -254,7 +276,7 @@ function draw() {
         greetingUsed = false;
       }
       chatBox(yanxin, 200, 450, 135);
-      displayText("Yanxin", yanxin, 170, 400, 10, color("#FFBEBE"));
+      displayText("Yanxin", yanxin, 170, 400, 10, color("#FFBEBE"), LEFT);
       typeWriter(randomText, yanxin, 140, 400, chatCounter, chatTimer, 10, 255);
     } else {
       interactText("Press \"E\" to interact", yanxin, -50);
@@ -268,8 +290,10 @@ function draw() {
   }
 
   // Teleporters
-  interactText("3D Modeling + Animation", threeDTp, 0);
-  if (abs(threeDTp.position.x - player.position.x) <= 130) {
+
+  // 3D Modeling + Animation
+  displayText("3D Modeling + Animation", threeDTp, 20, 200, 0, 255, CENTER);
+  if (abs(threeDTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       player.position.x = threeDSection;
     }
@@ -278,6 +302,27 @@ function draw() {
     }
   }
 
+  // Graphic + Web Design
+  displayText("Graphic + Web Design", graphicWebTp, 20, 200, 0, 255, CENTER);
+  if (abs(graphicWebTp.position.x - player.position.x) <= 100) {
+    if (keyPressed() == "E") {
+      player.position.x = graphicWebSection;
+    }
+    else {
+      interactText("Press \"E\" to teleport", graphicWebTp, -50);
+    }
+  }
+
+  // Game
+  displayText("Game Design", gameTp, 20, 200, 0, 255, CENTER);
+  if (abs(gameTp.position.x - player.position.x) <= 100) {
+    if (keyPressed() == "E") {
+      player.position.x = gameSection;
+    }
+    else {
+      interactText("Press \"E\" to teleport", gameTp, -50);
+    }
+  }
 
   // Platforms
   for (var i = 0; i < platformsGroup.length; i++) {
@@ -346,8 +391,8 @@ function keyPressed() {
   return false;
 }
 
-function displayText(line, target, hover, length, custom, color) {
-  textAlign(LEFT);
+function displayText(line, target, hover, length, custom, color, align) {
+  textAlign(align);
   fill(color);
   text(line, target.position.x-(length/2)+custom, target.position.y-hover, length);
 }
