@@ -5,22 +5,22 @@ var sky = "images/blueSky.png";
 
 // Player Animation
 var lastKey = "";
-var playerIdle1 = "images/player/playerIdle1.png";
-var playerIdle2 = "images/player/playerIdle2.png";
-var playerIdle3 = "images/player/playerIdle3.png";
+var playerIdle1 = "images/characters/playerIdle1.png";
+var playerIdle2 = "images/characters/playerIdle2.png";
+var playerIdle3 = "images/characters/playerIdle3.png";
 var playerIdle;
-var playerRun1 = "images/player/playerRun1.png";
-var playerRun2 = "images/player/playerRun2.png";
-var playerRun3 = "images/player/playerRun3.png";
-var playerRun4 = "images/player/playerRun4.png";
+var playerRun1 = "images/characters/playerRun1.png";
+var playerRun2 = "images/characters/playerRun2.png";
+var playerRun3 = "images/characters/playerRun3.png";
+var playerRun4 = "images/characters/playerRun4.png";
 var playerRun;
 var jump = false;
 var moved = false;
 
 // Characters
-var yanxinIdle1 = "images/player/yanxinIdle1.png";
-var yanxinIdle2 = "images/player/yanxinIdle2.png";
-var yanxinIdle3 = "images/player/yanxinIdle3.png";
+var yanxinIdle1 = "images/characters/yanxinIdle1.png";
+var yanxinIdle2 = "images/characters/yanxinIdle2.png";
+var yanxinIdle3 = "images/characters/yanxinIdle3.png";
 var yanxinIdle;
 
 // Text
@@ -59,6 +59,12 @@ var grassBlade2 = "images/environment/grassblade2.png";
 var grassBlade3 = "images/environment/grassblade3.png";
 var grassBlade4 = "images/environment/grassblade4.png";
 var grassBlade5 = "images/environment/grassblade5.png";
+var threeDTp;
+var blueTp;
+var blueTp1 = "images/environment/blueTp1.png";
+var blueTp2 = "images/environment/blueTp2.png";
+var blueTp3 = "images/environment/blueTp3.png";
+var threeDSection;
 
 //** Preload *************
 function preload() {
@@ -80,6 +86,7 @@ function preload() {
   dirt = loadImage("images/environment/dirt.png");
   pinkPetal = loadImage("images/environment/petal.png");
   grassBlade = loadAnimation(grassBlade1, grassBlade2, grassBlade3, grassBlade4, grassBlade5, grassBlade4, grassBlade3, grassBlade2);
+  blueTp = loadAnimation(blueTp1, blueTp2, blueTp3);
 
 }
 
@@ -124,6 +131,14 @@ function setup() {
   fill(255);
   textAlign(LEFT);
   textFont("silkscreennormal");
+
+  // Teleporters
+  blueTp.frameDelay = 12;
+
+  threeDTp = createSprite(platformsGroup[16].position.x, window.innerHeight-200, 100, 100);
+  threeDTp.addAnimation("static", blueTp);
+
+  threeDSection = platformsGroup[22].position.x;
 
   // Player Animations
   playerIdle.frameDelay = 18;
@@ -229,7 +244,7 @@ function draw() {
   }
   if (abs(yanxin.position.x - player.position.x) <= 130) {
     if (keyPressed() == "E" && firstGreeting == false) {
-      chatBox(yanxin, 200, 450, 140);
+      chatBox(yanxin, 200, 450, 135);
       displayText("Yanxin", yanxin, 170, 400, 10, color("#FFBEBE"));
       typeWriter(yanxinText1, yanxin, 140, 400, chatCounter, chatTimer, 10, 255);
       firstGreetingFinished = true;
@@ -238,11 +253,11 @@ function draw() {
         randomText = random(yanxinTexts);
         greetingUsed = false;
       }
-      chatBox(yanxin, 200, 450, 140);
+      chatBox(yanxin, 200, 450, 135);
       displayText("Yanxin", yanxin, 170, 400, 10, color("#FFBEBE"));
       typeWriter(randomText, yanxin, 140, 400, chatCounter, chatTimer, 10, 255);
     } else {
-      interactText(yanxin, -110);
+      interactText("Press \"E\" to interact", yanxin, -50);
       chatCounter = 0;
       chatTimer = 0;
       if (firstGreetingFinished == true) {
@@ -251,6 +266,18 @@ function draw() {
       greetingUsed = true;
     }
   }
+
+  // Teleporters
+  interactText("3D Modeling + Animation", threeDTp, 0);
+  if (abs(threeDTp.position.x - player.position.x) <= 130) {
+    if (keyPressed() == "E") {
+      player.position.x = threeDSection;
+    }
+    else {
+      interactText("Press \"E\" to teleport", threeDTp, -50);
+    }
+  }
+
 
   // Platforms
   for (var i = 0; i < platformsGroup.length; i++) {
@@ -307,8 +334,9 @@ function movementDesktopMessageFade() {
 }
 
 // Text
-function interactText(target, custom) {
-  let hint = text("Press \"E\" to interact", target.position.x+custom, target.position.y-50);
+function interactText(txt, target, hover) {
+  textAlign(CENTER);
+  text(txt, target.position.x, target.position.y+hover);
 }
 
 function keyPressed() {
@@ -319,12 +347,14 @@ function keyPressed() {
 }
 
 function displayText(line, target, hover, length, custom, color) {
+  textAlign(LEFT);
   fill(color);
   text(line, target.position.x-(length/2)+custom, target.position.y-hover, length);
 }
 
 function typeWriter(script, target, hover, length, counter, timer, customX, color) {
   fill(color);
+  textAlign(LEFT);
   if (counter < script.length){
     chatTimer++;
     text(script.substring(0, counter), target.position.x-(length/2)+customX, target.position.y-hover, length);
