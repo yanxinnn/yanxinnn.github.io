@@ -43,6 +43,8 @@ var chatTimer = 0;
 var snd_windyPetals;
 
 // Environment
+var testSprite;
+var testObject;
 var platformsGroup;
 var middlePlatform; // where camera snaps to following player
 var groundTop;
@@ -77,11 +79,25 @@ var redTp1 = "images/environment/redTp1.png";
 var redTp2 = "images/environment/redTp2.png";
 var redTp3 = "images/environment/redTp3.png";
 var gameSection;
+var purpleTp;
+var videoTp;
+var purpleTp1 = "images/environment/purpleTp1.png";
+var purpleTp2 = "images/environment/purpleTp2.png";
+var purpleTp3 = "images/environment/purpleTp3.png";
+var videoSection;
+
+// Graphic + Web
+var acornLogo;
+var acornlogo;
+var acornSection;
 
 //** Preload *************
 function preload() {
 
   skyBackground = loadImage(sky);
+
+  // Test Object
+  //testSprite = loadAnimation("images/environment/test.png");
 
   // Player Animations
   playerIdle = loadAnimation(playerIdle1, playerIdle2, playerIdle1, playerIdle3, playerIdle1, playerIdle3);
@@ -101,6 +117,10 @@ function preload() {
   blueTp = loadAnimation(blueTp1, blueTp2, blueTp3);
   greenTp = loadAnimation(greenTp1, greenTp2, greenTp3);
   redTp = loadAnimation(redTp1, redTp2, redTp3);
+  purpleTp = loadAnimation(purpleTp1, purpleTp2, purpleTp3);
+
+  // Graphic + Web
+  acornLogo = loadImage("images/environment/acornLogo.png");
 
 }
 
@@ -140,6 +160,10 @@ function setup() {
   yanxin = createSprite(platformsGroup[12].position.x, window.innerHeight-200, 100, 100);
   yanxin.addAnimation("idle", yanxinIdle);
 
+  // Test Object
+  //testObject = createSprite(platformsGroup[20].position.x, window.innerHeight-225, 150, 150);
+  //testObject.addAnimation("static", testSprite);
+
   // Text
   textSize(18);
   fill(255);
@@ -147,6 +171,7 @@ function setup() {
   textFont("silkscreennormal");
 
   // Teleporters
+  // 3D Modeling + Animation
   blueTp.frameDelay = 12;
   threeDTp = createSprite(platformsGroup[15].position.x, window.innerHeight-200, 100, 100);
   threeDTp.addAnimation("static", blueTp);
@@ -161,6 +186,16 @@ function setup() {
   gameTp = createSprite(platformsGroup[19].position.x, window.innerHeight-200, 100, 100);
   gameTp.addAnimation("static", redTp);
   gameSection = platformsGroup[30].position.x;
+
+  purpleTp.frameDelay = 12;
+  videoTp = createSprite(platformsGroup[21].position.x, window.innerHeight-200, 100, 100);
+  videoTp.addAnimation("static", purpleTp);
+  videoSection = platformsGroup[34].position.x;
+
+  // Graphic + Web (back)
+  acornSection = graphicWebSection + 350;
+  acornlogo = createSprite(acornSection, window.innerHeight-225, 300, 150);
+  acornlogo.addImage(acornLogo);
 
   // Player Animations
   playerIdle.frameDelay = 18;
@@ -267,7 +302,7 @@ function draw() {
   if (abs(yanxin.position.x - player.position.x) <= 130) {
     if (keyPressed() == "E" && firstGreeting == false) {
       chatBox(yanxin, 200, 450, 135);
-      displayText("Yanxin", yanxin, 170, 400, 10, color("#FFBEBE"), LEFT);
+      displayText("Yanxin", yanxin, 170, 400, 10, color("#FFBEBE"), LEFT, 18);
       typeWriter(yanxinText1, yanxin, 140, 400, chatCounter, chatTimer, 10, 255);
       firstGreetingFinished = true;
     } else if (keyPressed() == "E") {
@@ -276,7 +311,7 @@ function draw() {
         greetingUsed = false;
       }
       chatBox(yanxin, 200, 450, 135);
-      displayText("Yanxin", yanxin, 170, 400, 10, color("#FFBEBE"), LEFT);
+      displayText("Yanxin", yanxin, 170, 400, 10, color("#FFBEBE"), LEFT, 18);
       typeWriter(randomText, yanxin, 140, 400, chatCounter, chatTimer, 10, 255);
     } else {
       interactText("Press \"E\" to interact", yanxin, -50);
@@ -292,7 +327,7 @@ function draw() {
   // Teleporters
 
   // 3D Modeling + Animation
-  displayText("3D Modeling + Animation", threeDTp, 20, 200, 0, 255, CENTER);
+  displayText("3D Modeling + Animation", threeDTp, 30, 180, 0, 255, CENTER, 20);
   if (abs(threeDTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       player.position.x = threeDSection;
@@ -303,7 +338,7 @@ function draw() {
   }
 
   // Graphic + Web Design
-  displayText("Graphic + Web Design", graphicWebTp, 20, 200, 0, 255, CENTER);
+  displayText("Graphic + Web Design", graphicWebTp, 30, 200, 0, 255, CENTER, 20);
   if (abs(graphicWebTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       player.position.x = graphicWebSection;
@@ -312,15 +347,35 @@ function draw() {
       interactText("Press \"E\" to teleport", graphicWebTp, -50);
     }
   }
+  // Acorn Logo
+  if (abs(acornlogo.position.x - player.position.x) <= 180) {
+    if (keyPressed() == "E") {
+      // open
+    }
+    else {
+      interactText("Press \"E\" to view", acornlogo, -90);
+    }
+  }
 
   // Game
-  displayText("Game Design", gameTp, 20, 200, 0, 255, CENTER);
+  displayText("Game Design", gameTp, 30, 150, 0, 255, CENTER, 20);
   if (abs(gameTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       player.position.x = gameSection;
     }
     else {
       interactText("Press \"E\" to teleport", gameTp, -50);
+    }
+  }
+
+  // Video
+  displayText("Video Creation", videoTp, 30, 150, 0, 255, CENTER, 20);
+  if (abs(videoTp.position.x - player.position.x) <= 100) {
+    if (keyPressed() == "E") {
+      player.position.x = videoSection;
+    }
+    else {
+      interactText("Press \"E\" to teleport", videoTp, -50);
     }
   }
 
@@ -380,6 +435,7 @@ function movementDesktopMessageFade() {
 
 // Text
 function interactText(txt, target, hover) {
+  textSize(18);
   textAlign(CENTER);
   text(txt, target.position.x, target.position.y+hover);
 }
@@ -391,13 +447,15 @@ function keyPressed() {
   return false;
 }
 
-function displayText(line, target, hover, length, custom, color, align) {
+function displayText(line, target, hover, length, custom, color, align, size) {
+  textSize(size);
   textAlign(align);
   fill(color);
   text(line, target.position.x-(length/2)+custom, target.position.y-hover, length);
 }
 
 function typeWriter(script, target, hover, length, counter, timer, customX, color) {
+  textSize(18);
   fill(color);
   textAlign(LEFT);
   if (counter < script.length){
