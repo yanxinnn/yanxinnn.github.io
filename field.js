@@ -90,6 +90,30 @@ var videoSection;
 var acornLogo;
 var acornlogo;
 var acornSection;
+var timeInterface1 = "images/environment/timeInterface1.png";
+var timeInterface2 = "images/environment/timeInterface2.png";
+var timeInterface3 = "images/environment/timeInterface3.png";
+var timeInterface4 = "images/environment/timeInterface4.png";
+var timeInterface5 = "images/environment/timeInterface5.png";
+var timeInterface;
+var timeinterface;
+var timeInterfaceSection;
+
+// Game
+var missileCommand1 = "images/environment/missileCommand1.png";
+var missileCommand2 = "images/environment/missileCommand2.png";
+var missileCommand3 = "images/environment/missileCommand3.png";
+var missileCommand;
+var missilecommand;
+var missileCommandSection;
+var wizardsJourney1 = "images/environment/wizardsJourney1.png";
+var wizardsJourney2 = "images/environment/wizardsJourney2.png";
+var wizardsJourney3 = "images/environment/wizardsJourney3.png";
+var wizardsJourney4 = "images/environment/wizardsJourney4.png";
+var wizardsJourney;
+var wizardsjourney;
+var wizardsJourneySection;
+
 
 //** Preload *************
 function preload() {
@@ -97,7 +121,7 @@ function preload() {
   skyBackground = loadImage(sky);
 
   // Test Object
-  //testSprite = loadAnimation("images/environment/test.png");
+  testSprite = loadAnimation("images/environment/test.png");
 
   // Player Animations
   playerIdle = loadAnimation(playerIdle1, playerIdle2, playerIdle1, playerIdle3, playerIdle1, playerIdle3);
@@ -121,6 +145,11 @@ function preload() {
 
   // Graphic + Web
   acornLogo = loadImage("images/environment/acornLogo.png");
+  timeInterface = loadAnimation(timeInterface1, timeInterface2, timeInterface3, timeInterface4, timeInterface5);
+
+  // Game
+  missileCommand = loadAnimation(missileCommand1, missileCommand2, missileCommand3);
+  wizardsJourney = loadAnimation(wizardsJourney1, wizardsJourney2, wizardsJourney3, wizardsJourney4);
 
 }
 
@@ -133,7 +162,7 @@ function setup() {
   canvas.style("z-index", "-1");
 
   // Platforms
-  var platformsAcross = 40;
+  var platformsAcross = 70;
   platformsGroup = new Group();
   for (i = 0; i < platformsAcross; ++i) { // top layer
     groundTop = createSprite(i * 100, window.innerHeight-100, 100, 100);
@@ -160,10 +189,6 @@ function setup() {
   yanxin = createSprite(platformsGroup[12].position.x, window.innerHeight-200, 100, 100);
   yanxin.addAnimation("idle", yanxinIdle);
 
-  // Test Object
-  //testObject = createSprite(platformsGroup[20].position.x, window.innerHeight-225, 150, 150);
-  //testObject.addAnimation("static", testSprite);
-
   // Text
   textSize(18);
   fill(255);
@@ -175,27 +200,47 @@ function setup() {
   blueTp.frameDelay = 12;
   threeDTp = createSprite(platformsGroup[15].position.x, window.innerHeight-200, 100, 100);
   threeDTp.addAnimation("static", blueTp);
-  threeDSection = platformsGroup[22].position.x;
+  threeDSection = platformsGroup[30].position.x;
 
   greenTp.frameDelay = 12;
   graphicWebTp = createSprite(platformsGroup[17].position.x, window.innerHeight-200, 100, 100);
   graphicWebTp.addAnimation("static", greenTp);
-  graphicWebSection = platformsGroup[26].position.x;
+  graphicWebSection = platformsGroup[40].position.x;
 
   redTp.frameDelay = 12;
   gameTp = createSprite(platformsGroup[19].position.x, window.innerHeight-200, 100, 100);
   gameTp.addAnimation("static", redTp);
-  gameSection = platformsGroup[30].position.x;
+  gameSection = platformsGroup[50].position.x;
 
   purpleTp.frameDelay = 12;
   videoTp = createSprite(platformsGroup[21].position.x, window.innerHeight-200, 100, 100);
   videoTp.addAnimation("static", purpleTp);
-  videoSection = platformsGroup[34].position.x;
+  videoSection = platformsGroup[60].position.x;
+
+  // Test Object
+  testObject = createSprite(threeDSection, window.innerHeight-225, 100, 100);
+  testObject.addAnimation("static", testSprite);
 
   // Graphic + Web (back)
   acornSection = graphicWebSection + 350;
   acornlogo = createSprite(acornSection, window.innerHeight-225, 300, 150);
   acornlogo.addImage(acornLogo);
+
+  timeInterface.frameDelay = 100;
+  timeInterfaceSection = graphicWebSection + 650;
+  timeinterface = createSprite(timeInterfaceSection, window.innerHeight-225, 100, 150);
+  timeinterface.addAnimation("static", timeInterface);
+
+  // Game (back)
+  missileCommand.frameDelay = 8;
+  missileCommandSection = gameSection + 350;
+  missilecommand = createSprite(missileCommandSection, window.innerHeight-210, 100, 120);
+  missilecommand.addAnimation("static", missileCommand);
+
+  wizardsJourney.frameDelay = 10;
+  wizardsJourneySection = gameSection + 560;
+  wizardsjourney = createSprite(wizardsJourneySection, window.innerHeight-210, 150, 120);
+  wizardsjourney.addAnimation("static", wizardsJourney);
 
   // Player Animations
   playerIdle.frameDelay = 18;
@@ -238,6 +283,9 @@ function setup() {
 
 //** Draw ****************
 function draw() {
+
+  // Debugging
+  //console.log("position:", floor(player.position.x/100));
 
   background(skyBackground);
 
@@ -356,6 +404,15 @@ function draw() {
       interactText("Press \"E\" to view", acornlogo, -90);
     }
   }
+  // Time Interface
+  if (abs(timeinterface.position.x - player.position.x) <= 100) {
+    if (keyPressed() == "E") {
+      // open
+    }
+    else {
+      interactText("Press \"E\" to view", timeinterface, -90);
+    }
+  }
 
   // Game
   displayText("Game Design", gameTp, 30, 150, 0, 255, CENTER, 20);
@@ -365,6 +422,24 @@ function draw() {
     }
     else {
       interactText("Press \"E\" to teleport", gameTp, -50);
+    }
+  }
+  // Missile Command
+  if (abs(missilecommand.position.x - player.position.x) <= 100) {
+    if (keyPressed() == "E") {
+      // open
+    }
+    else {
+      interactText("Press \"E\" to view", missilecommand, -80);
+    }
+  }
+  // Wizard's Journey
+  if (abs(wizardsjourney.position.x - player.position.x) <= 100) {
+    if (keyPressed() == "E") {
+      // open
+    }
+    else {
+      interactText("Press \"E\" to view", wizardsjourney, -80);
     }
   }
 
