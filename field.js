@@ -61,6 +61,12 @@ var grassBlade2 = "images/environment/grassblade2.png";
 var grassBlade3 = "images/environment/grassblade3.png";
 var grassBlade4 = "images/environment/grassblade4.png";
 var grassBlade5 = "images/environment/grassblade5.png";
+var whiteTp;
+var whiteTp1 = "images/environment/whiteTp1.png";
+var whiteTp2 = "images/environment/whiteTp2.png";
+var whiteTp3 = "images/environment/whiteTp3.png";
+var beginningTp;
+var beginningSection;
 var threeDTp;
 var blueTp;
 var blueTp1 = "images/environment/blueTp1.png";
@@ -196,24 +202,29 @@ function setup() {
   textFont("silkscreennormal");
 
   // Teleporters
+  whiteTp.frameDelay = 12;
+  beginningTp = createSprite(platformsGroup[15].position.x, window.innerHeight-200, 100, 100);
+  beginningTp.addAnimation("static", whiteTp);
+  beginningSection = platformsGroup[12].position.x;
+
   // 3D Modeling + Animation
   blueTp.frameDelay = 12;
-  threeDTp = createSprite(platformsGroup[15].position.x, window.innerHeight-200, 100, 100);
+  threeDTp = createSprite(platformsGroup[17].position.x, window.innerHeight-200, 100, 100);
   threeDTp.addAnimation("static", blueTp);
   threeDSection = platformsGroup[30].position.x;
 
   greenTp.frameDelay = 12;
-  graphicWebTp = createSprite(platformsGroup[17].position.x, window.innerHeight-200, 100, 100);
+  graphicWebTp = createSprite(platformsGroup[19].position.x, window.innerHeight-200, 100, 100);
   graphicWebTp.addAnimation("static", greenTp);
   graphicWebSection = platformsGroup[40].position.x;
 
   redTp.frameDelay = 12;
-  gameTp = createSprite(platformsGroup[19].position.x, window.innerHeight-200, 100, 100);
+  gameTp = createSprite(platformsGroup[21].position.x, window.innerHeight-200, 100, 100);
   gameTp.addAnimation("static", redTp);
   gameSection = platformsGroup[50].position.x;
 
   purpleTp.frameDelay = 12;
-  videoTp = createSprite(platformsGroup[21].position.x, window.innerHeight-200, 100, 100);
+  videoTp = createSprite(platformsGroup[23].position.x, window.innerHeight-200, 100, 100);
   videoTp.addAnimation("static", purpleTp);
   videoSection = platformsGroup[60].position.x;
 
@@ -285,7 +296,7 @@ function setup() {
 function draw() {
 
   // Debugging
-  //console.log("position:", floor(player.position.x/100));
+  console.log("position:", floor(player.position.x/100));
 
   background(skyBackground);
 
@@ -373,6 +384,15 @@ function draw() {
   }
 
   // Teleporters
+  displayText("Back to Start", beginningTp, 30, 120, 0, 255, CENTER, 20);
+  if (abs(beginningTp.position.x - player.position.x) <= 100) {
+    if (keyPressed() == "E") {
+      player.position.x = beginningSection;
+    }
+    else {
+      interactText("Press \"E\" to teleport", beginningTp, -50);
+    }
+  }
 
   // 3D Modeling + Animation
   displayText("3D Modeling + Animation", threeDTp, 30, 180, 0, 255, CENTER, 20);
