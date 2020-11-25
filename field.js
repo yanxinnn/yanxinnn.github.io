@@ -144,6 +144,7 @@ function preload() {
   dirt = loadImage("images/environment/dirt.png");
   pinkPetal = loadImage("images/environment/petal.png");
   grassBlade = loadAnimation(grassBlade1, grassBlade2, grassBlade3, grassBlade4, grassBlade5, grassBlade4, grassBlade3, grassBlade2);
+  whiteTp = loadAnimation(whiteTp1, whiteTp2, whiteTp3);
   blueTp = loadAnimation(blueTp1, blueTp2, blueTp3);
   greenTp = loadAnimation(greenTp1, greenTp2, greenTp3);
   redTp = loadAnimation(redTp1, redTp2, redTp3);
@@ -203,28 +204,28 @@ function setup() {
 
   // Teleporters
   whiteTp.frameDelay = 12;
-  beginningTp = createSprite(platformsGroup[15].position.x, window.innerHeight-200, 100, 100);
+  beginningTp = createSprite(platformsGroup[65].position.x, window.innerHeight-200, 100, 100);
   beginningTp.addAnimation("static", whiteTp);
-  beginningSection = platformsGroup[12].position.x;
+  beginningSection = platformsGroup[13].position.x;
 
   // 3D Modeling + Animation
   blueTp.frameDelay = 12;
-  threeDTp = createSprite(platformsGroup[17].position.x, window.innerHeight-200, 100, 100);
+  threeDTp = createSprite(platformsGroup[15].position.x, window.innerHeight-200, 100, 100);
   threeDTp.addAnimation("static", blueTp);
   threeDSection = platformsGroup[30].position.x;
 
   greenTp.frameDelay = 12;
-  graphicWebTp = createSprite(platformsGroup[19].position.x, window.innerHeight-200, 100, 100);
+  graphicWebTp = createSprite(platformsGroup[17].position.x, window.innerHeight-200, 100, 100);
   graphicWebTp.addAnimation("static", greenTp);
   graphicWebSection = platformsGroup[40].position.x;
 
   redTp.frameDelay = 12;
-  gameTp = createSprite(platformsGroup[21].position.x, window.innerHeight-200, 100, 100);
+  gameTp = createSprite(platformsGroup[19].position.x, window.innerHeight-200, 100, 100);
   gameTp.addAnimation("static", redTp);
   gameSection = platformsGroup[50].position.x;
 
   purpleTp.frameDelay = 12;
-  videoTp = createSprite(platformsGroup[23].position.x, window.innerHeight-200, 100, 100);
+  videoTp = createSprite(platformsGroup[21].position.x, window.innerHeight-200, 100, 100);
   videoTp.addAnimation("static", purpleTp);
   videoSection = platformsGroup[60].position.x;
 
@@ -296,7 +297,7 @@ function setup() {
 function draw() {
 
   // Debugging
-  console.log("position:", floor(player.position.x/100));
+  //console.log("position:", floor(player.position.x/100));
 
   background(skyBackground);
 
