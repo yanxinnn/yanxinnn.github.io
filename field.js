@@ -14,6 +14,7 @@ var playerRun2 = "images/characters/playerRun2.png";
 var playerRun3 = "images/characters/playerRun3.png";
 var playerRun4 = "images/characters/playerRun4.png";
 var playerRun;
+var moveSpeed = 6.5;
 var jump = false;
 var moved = false;
 
@@ -41,6 +42,7 @@ var chatTimer = 0;
 
 // Sounds
 var snd_windyPetals;
+var continueSound = false;
 
 // Environment
 var testSprite;
@@ -119,7 +121,6 @@ var wizardsJourney4 = "images/environment/wizardsJourney4.png";
 var wizardsJourney;
 var wizardsjourney;
 var wizardsJourneySection;
-
 
 //** Preload *************
 function preload() {
@@ -323,7 +324,7 @@ function draw() {
     }
     lastKey = "right";
     player.changeAnimation("run");
-    player.velocity.x = 6.5;
+    player.velocity.x = moveSpeed;
   }
   else if (keyIsDown(LEFT_ARROW) || keyIsDown(65)) {
     if (moved == false) {
@@ -331,7 +332,7 @@ function draw() {
     }
     lastKey = "left";
     player.changeAnimation("run");
-    player.velocity.x = -6.5;
+    player.velocity.x = -(moveSpeed);
   }
   if (keyIsDown(UP_ARROW) || keyIsDown(87)) {
     if (moved == false) {
@@ -395,6 +396,9 @@ function draw() {
     }
   }
 
+  // Sound
+  var sound = document.getElementById("sound");
+
   // 3D Modeling + Animation
   displayText("3D Modeling + Animation", threeDTp, 30, 180, 0, 255, CENTER, 20);
   if (abs(threeDTp.position.x - player.position.x) <= 100) {
@@ -419,19 +423,27 @@ function draw() {
   // Acorn Logo
   if (abs(acornlogo.position.x - player.position.x) <= 180) {
     if (keyPressed() == "E") {
-      // open
+      slideShow("acorn");
+      if (sound.checked) { continueSound = true; }
+      else { continueSound = false; }
     }
     else {
       interactText("Press \"E\" to view", acornlogo, -90);
+      noSlideShow();
+      if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
   }
   // Time Interface
   if (abs(timeinterface.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
-      // open
+      slideShow("Time Interface for LinkNYC");
+      if (sound.checked) { continueSound = true; }
+      else { continueSound = false; }
     }
     else {
       interactText("Press \"E\" to view", timeinterface, -90);
+      noSlideShow();
+      if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
   }
 
@@ -448,19 +460,27 @@ function draw() {
   // Missile Command
   if (abs(missilecommand.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
-      // open
+      slideShow("Missile Command Clone");
+      if (sound.checked) { continueSound = true; }
+      else { continueSound = false; }
     }
     else {
       interactText("Press \"E\" to view", missilecommand, -80);
+      noSlideShow();
+      if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
   }
   // Wizard's Journey
   if (abs(wizardsjourney.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
-      // open
+      slideShow("Wizard's Journey");
+      if (sound.checked) { continueSound = true; }
+      else { continueSound = false; }
     }
     else {
       interactText("Press \"E\" to view", wizardsjourney, -80);
+      noSlideShow();
+      if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
   }
 
@@ -483,7 +503,6 @@ function draw() {
       jump = false;
     }
   }
-
   if (player.position.x < 24) {
     player.position.x = 24;
   }
@@ -516,7 +535,7 @@ function windowResized() {
 
 // Widgets
 function toggleSound() {
-  var sound = document.getElementById("sound");
+  let sound = document.getElementById("sound");
   if (sound.checked) {
     snd_windyPetals.loop();
   }
@@ -571,4 +590,17 @@ function chatBox(target, hover, length, height) {
   fill(boxColor);
   noStroke();
   rect(target.position.x-(length/2), target.position.y-hover, length, height, 5);
+}
+
+function slideShow(title) {
+  snd_windyPetals.pause();
+  document.getElementById("widgets").style.display = "none";
+  document.getElementById("slideshow").style.opacity = "0.8";
+  document.getElementById("slideshow").style.display = "block";
+  document.getElementById("title").innerHTML = title;
+}
+
+function noSlideShow() {
+  document.getElementById("widgets").style.display = "grid";
+  document.getElementById("slideshow").style.display = "none";
 }

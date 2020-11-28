@@ -16,12 +16,17 @@
 
 <body>
 
+  <div id="slideshow">
+    <div id="backgroundScreen"></div>
+    <div id="title"></div>
+  </div>
+
   <div class="loader-wrapper">
     <img src="images/loading.gif"></img>
   </div>
 
-  <div class="widgets">
-    <div class="sound">
+  <div id="widgets">
+    <div id="soundIcon">
       <!-- Mute / Unmute Widget -->
       <!-- reference : https://stackoverflow.com/questions/22918220/how-to-create-a-only-mute-unmute-button-like-youtube-in-html -->
       <input type="checkbox" id="sound" onClick="toggleSound()">
@@ -33,6 +38,8 @@
       </label>
     </div>
   </div>
+
+  <canvas id="myCanvas"></canvas>
 
   <div class="topMessage" id="movementDesktopMessage">Use "WASD" or arrow keys to move around</div>
 
