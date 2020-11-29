@@ -109,6 +109,19 @@ input#sound:checked ~ .off img {
   font-size: 18px;
 }
 
+.bottomMessage {
+  position: fixed;
+  bottom: 40px;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: white;
+  font-family: "silkscreennormal";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;
+}
+
 #movementDesktopMessage {
   opacity: 1;
   transition: 2s opacity;
