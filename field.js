@@ -14,7 +14,8 @@ var playerRun2 = "images/characters/playerRun2.png";
 var playerRun3 = "images/characters/playerRun3.png";
 var playerRun4 = "images/characters/playerRun4.png";
 var playerRun;
-var moveSpeed = 6.5;
+var staticMoveSpeed = 6.5;
+var moveSpeed = staticMoveSpeed;
 var jump = false;
 var moved = false;
 
@@ -121,6 +122,9 @@ var wizardsJourney4 = "images/environment/wizardsJourney4.png";
 var wizardsJourney;
 var wizardsjourney;
 var wizardsJourneySection;
+
+// Slideshow
+var slideShowing = false;
 
 //** Preload *************
 function preload() {
@@ -426,6 +430,10 @@ function draw() {
       slideShow("acorn");
       if (sound.checked) { continueSound = true; }
       else { continueSound = false; }
+      slideShowing = true;
+    }
+    else if (slideShowing == true) {
+      leaveSlidesCheck();
     }
     else {
       interactText("Press \"E\" to view", acornlogo, -90);
@@ -439,6 +447,10 @@ function draw() {
       slideShow("Time Interface for LinkNYC");
       if (sound.checked) { continueSound = true; }
       else { continueSound = false; }
+      slideShowing = true;
+    }
+    else if (slideShowing == true) {
+      leaveSlidesCheck();
     }
     else {
       interactText("Press \"E\" to view", timeinterface, -90);
@@ -463,6 +475,10 @@ function draw() {
       slideShow("Missile Command Clone");
       if (sound.checked) { continueSound = true; }
       else { continueSound = false; }
+      slideShowing = true;
+    }
+    else if (slideShowing == true) {
+      leaveSlidesCheck();
     }
     else {
       interactText("Press \"E\" to view", missilecommand, -80);
@@ -476,6 +492,10 @@ function draw() {
       slideShow("Wizard's Journey");
       if (sound.checked) { continueSound = true; }
       else { continueSound = false; }
+      slideShowing = true;
+    }
+    else if (slideShowing == true) {
+      leaveSlidesCheck();
     }
     else {
       interactText("Press \"E\" to view", wizardsjourney, -80);
@@ -556,8 +576,11 @@ function interactText(txt, target, hover) {
 }
 
 function keyPressed() {
-  if (keyCode === 69) {
+  if (keyCode == 69) {
     return "E";
+  }
+  if (keyCode == 27) {
+    return "ESCAPE";
   }
   return false;
 }
@@ -594,8 +617,9 @@ function chatBox(target, hover, length, height) {
 
 function slideShow(title) {
   snd_windyPetals.pause();
+  moveSpeed = 0;
+  player.changeAnimation("idle");
   document.getElementById("widgets").style.display = "none";
-  document.getElementById("slideshow").style.opacity = "0.8";
   document.getElementById("slideshow").style.display = "block";
   document.getElementById("title").innerHTML = title;
 }
@@ -603,4 +627,18 @@ function slideShow(title) {
 function noSlideShow() {
   document.getElementById("widgets").style.display = "grid";
   document.getElementById("slideshow").style.display = "none";
+  moveSpeed = staticMoveSpeed;
+}
+
+function noMoving() {
+  moveSpeed = 0;
+  player.changeAnimation("idle");
+  player.velocity.y = 0;
+}
+
+function leaveSlidesCheck() {
+  if (keyPressed() == "ESCAPE") {
+    slideShowing = false;
+  }
+  noMoving();
 }
