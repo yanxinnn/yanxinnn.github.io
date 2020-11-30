@@ -16,16 +16,6 @@
 
 <body>
 
-  <div id="slideshow">
-    <div id="backgroundScreen"></div>
-    <div id="title"></div>
-    <div class="bottomMessage">Press "Escape" to Exit</div>
-  </div>
-
-  <div class="loader-wrapper">
-    <img src="images/loading.gif"></img>
-  </div>
-
   <div id="widgets">
     <div id="soundIcon">
       <!-- Mute / Unmute Widget -->
@@ -40,9 +30,19 @@
     </div>
   </div>
 
-  <canvas id="myCanvas"></canvas>
-
   <div class="topMessage" id="movementDesktopMessage">Use "WASD" or arrow keys to move around</div>
+
+  <div id="slideshow">
+    <div id="backgroundScreen"></div>
+    <div id="title"></div>
+    <div class="bottomMessage" id="escapeSlidesMessage">Press "Escape" to Exit</div>
+  </div>
+
+  <div class="loader-wrapper">
+    <img src="images/loading.gif"></img>
+  </div>
+
+  <canvas id="myCanvas"></canvas>
 
   <!-- Javascript Sketch -->
   <div id="field-div"></div>

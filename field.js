@@ -620,13 +620,15 @@ function slideShow(title) {
   moveSpeed = 0;
   player.changeAnimation("idle");
   document.getElementById("widgets").style.display = "none";
-  document.getElementById("slideshow").style.display = "block";
+  document.getElementById("slideshow").style.visibility = "visible";
+  document.getElementById("slideshow").style.opacity = "1";
   document.getElementById("title").innerHTML = title;
 }
 
 function noSlideShow() {
   document.getElementById("widgets").style.display = "grid";
-  document.getElementById("slideshow").style.display = "none";
+  document.getElementById("slideshow").style.visibility = "hidden";
+  document.getElementById("slideshow").style.opacity = "0";
   moveSpeed = staticMoveSpeed;
 }
 
