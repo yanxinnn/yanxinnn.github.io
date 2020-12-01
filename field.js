@@ -50,6 +50,8 @@ var testSprite;
 var testObject;
 var platformsGroup;
 var middlePlatform; // where camera snaps to following player
+var groundTopLeft;
+var groundBottomLeft;
 var groundTop;
 var groundBot;
 var grass;
@@ -142,7 +144,7 @@ function preload() {
   yanxinIdle = loadAnimation(yanxinIdle1, yanxinIdle2, yanxinIdle1, yanxinIdle3, yanxinIdle1, yanxinIdle3);
 
   // Widgets
-  snd_windyPetals = loadSound("sounds/windyPetals.mp3");
+  snd_windyPetals = new sound("sounds/windyPetals.mp3");
 
   // Environment
   grass = loadImage("images/environment/grass.png");
@@ -182,7 +184,7 @@ function setup() {
     platformsGroup.add(groundTop);
   }
   for (i = 0; i < 2; ++i) { // top layer left
-    let groundTopLeft = createSprite(i * -100, window.innerHeight-100, 100, 100);
+    groundTopLeft = createSprite(i * -100, window.innerHeight-100, 100, 100);
     groundTopLeft.addImage(grass);
   }
   for (i = 0; i < platformsAcross; ++i) { // bottom layer
@@ -190,7 +192,7 @@ function setup() {
     groundBot.addImage(dirt);
   }
   for (i = 0; i < 2; ++i) { // top layer left
-    let groundBottomLeft = createSprite(i * -100, window.innerHeight, 100, 100);
+    groundBottomLeft = createSprite(i * -100, window.innerHeight, 100, 100);
     groundBottomLeft.addImage(dirt);
   }
   middlePlatform = floor((window.innerWidth/2)/100);
@@ -269,7 +271,7 @@ function setup() {
 
   // Environment
   // Petals
-  let numOfPetals = window.innerWidth/80;
+  var numOfPetals = window.innerWidth/80;
   petalsGroup = new Group();
   for (i = 0; i < numOfPetals; ++i) {
     let randomX = random(0, window.innerWidth * 1.2);
@@ -289,7 +291,7 @@ function setup() {
 
   // Grassblades
   grassBlade.frameDelay = 11;
-  let numOfGrassblades = floor(platformsAcross/1.85);
+  var numOfGrassblades = floor(platformsAcross/1.85);
   for (i = 0; i < numOfGrassblades; ++i) {
     let randomX = random(0, platformsAcross*100);
     grassblade = createSprite(randomX, window.innerHeight-162);
@@ -555,12 +557,12 @@ function windowResized() {
 
 // Widgets
 function toggleSound() {
-  let sound = document.getElementById("sound");
+  var sound = document.getElementById("sound");
   if (sound.checked) {
-    snd_windyPetals.loop();
+    snd_windyPetals.play();
   }
   else {
-    snd_windyPetals.pause();
+    snd_windyPetals.stop();
   }
 }
 
@@ -608,7 +610,7 @@ function typeWriter(script, target, hover, length, counter, timer, customX, colo
 }
 
 function chatBox(target, hover, length, height) {
-  let boxColor = color(50);
+  var boxColor = color(50);
   boxColor.setAlpha(50);
   fill(boxColor);
   noStroke();
@@ -616,7 +618,7 @@ function chatBox(target, hover, length, height) {
 }
 
 function slideShow(title) {
-  snd_windyPetals.pause();
+  snd_windyPetals.stop();
   moveSpeed = 0;
   player.changeAnimation("idle");
   document.getElementById("widgets").style.display = "none";
@@ -643,4 +645,19 @@ function leaveSlidesCheck() {
     slideShowing = false;
   }
   noMoving();
+}
+
+function sound(src) { // reference: https://www.w3schools.com/graphics/game_sound.asp
+  this.sound = document.createElement("audio");
+  this.sound.src = src;
+  this.sound.setAttribute("preload", "auto");
+  this.sound.setAttribute("controls", "none");
+  this.sound.style.display = "none";
+  document.body.appendChild(this.sound);
+  this.play = function(){
+    this.sound.play();
+  }
+  this.stop = function(){
+    this.sound.pause();
+  }
 }
