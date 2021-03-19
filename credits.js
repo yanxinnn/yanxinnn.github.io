@@ -13,7 +13,7 @@ function setup() {
   canvas.parent("mainMenu-div");
   canvas.position(0, 0);
   canvas.style("z-index", "-1");
-} // function setup
+} // function setups
 
 //** Draw ****************
 function draw() {

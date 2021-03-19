@@ -98,8 +98,8 @@ var purpleTp3 = "images/environment/purpleTp3.png";
 var videoSection;
 
 // Graphic + Web
-var acornLogo;
-var acornlogo;
+var acornStation;
+var acornstation;
 var acornSection;
 var timeInterface1 = "images/environment/timeInterface1.png";
 var timeInterface2 = "images/environment/timeInterface2.png";
@@ -158,7 +158,7 @@ function preload() {
   purpleTp = loadAnimation(purpleTp1, purpleTp2, purpleTp3);
 
   // Graphic + Web
-  acornLogo = loadImage("images/environment/acornLogo.png");
+  acornStation = loadImage("images/environment/acornStation.png");
   timeInterface = loadAnimation(timeInterface1, timeInterface2, timeInterface3, timeInterface4, timeInterface5);
 
   // Game
@@ -242,8 +242,8 @@ function setup() {
 
   // Graphic + Web (back)
   acornSection = graphicWebSection + 350;
-  acornlogo = createSprite(acornSection, window.innerHeight-225, 300, 150);
-  acornlogo.addImage(acornLogo);
+  acornstation = createSprite(acornSection, window.innerHeight-225, 300, 150);
+  acornstation.addImage(acornStation);
 
   timeInterface.frameDelay = 100;
   timeInterfaceSection = graphicWebSection + 650;
@@ -427,9 +427,9 @@ function draw() {
     }
   }
   // Acorn Logo
-  if (abs(acornlogo.position.x - player.position.x) <= 180) {
+  if (abs(acornstation.position.x - player.position.x) <= 180) {
     if (keyPressed() == "E") {
-      slideShow("acorn");
+      slideShow("acorn", 1, "About");
       if (sound.checked) { continueSound = true; }
       else { continueSound = false; }
       slideShowing = true;
@@ -438,7 +438,7 @@ function draw() {
       leaveSlidesCheck();
     }
     else {
-      interactText("Press \"E\" to view", acornlogo, -90);
+      interactText("Press \"E\" to view", acornstation, -90);
       noSlideShow();
       if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
@@ -446,7 +446,7 @@ function draw() {
   // Time Interface
   if (abs(timeinterface.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
-      slideShow("Time Interface for LinkNYC");
+      slideShow("Time Interface for LinkNYC", 1, "About");
       if (sound.checked) { continueSound = true; }
       else { continueSound = false; }
       slideShowing = true;
@@ -474,7 +474,7 @@ function draw() {
   // Missile Command
   if (abs(missilecommand.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
-      slideShow("Missile Command Clone");
+      slideShow("Missile Command Clone", 1, "About");
       if (sound.checked) { continueSound = true; }
       else { continueSound = false; }
       slideShowing = true;
@@ -491,7 +491,7 @@ function draw() {
   // Wizard's Journey
   if (abs(wizardsjourney.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
-      slideShow("Wizard's Journey");
+      slideShow("Wizard's Journey", 1, "About");
       if (sound.checked) { continueSound = true; }
       else { continueSound = false; }
       slideShowing = true;
@@ -617,7 +617,7 @@ function chatBox(target, hover, length, height) {
   rect(target.position.x-(length/2), target.position.y-hover, length, height, 5);
 }
 
-function slideShow(title) {
+function slideShow(title, numOfSlides, title1) {
   snd_windyPetals.stop();
   moveSpeed = 0;
   player.changeAnimation("idle");
@@ -625,6 +625,7 @@ function slideShow(title) {
   document.getElementById("slideshow").style.visibility = "visible";
   document.getElementById("slideshow").style.opacity = "1";
   document.getElementById("title").innerHTML = title;
+  document.getElementById("aboutSectionHeader").innerHTML = title1;
 }
 
 function noSlideShow() {

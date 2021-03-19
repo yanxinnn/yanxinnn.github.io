@@ -41,7 +41,7 @@ body {
 }
 
 .menu-buttons button:hover {
-  background-color: pink;
+  background-color: #eea9bb;
 }
 
 /* In-game Widgets */
@@ -86,20 +86,20 @@ input#sound:checked ~ .off img {
 .loader-wrapper {
   width: 100%;
   height: 100%;
+  background: #73b1e1;
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #78b4e3;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1;
+  pointer-events: none;
 }
 
 .topMessage {
   position: fixed;
   top: 40px;
-  text-align: center;
   left: 50%;
   transform: translate(-50%, 0);
   color: white;
@@ -164,40 +164,109 @@ a:hover, a:active {
 
 .creditsContainer {
   position: relative;
+  top: 80px;
   text-align: center;
-  top: 100px;
+  font-family: "silkscreennormal";
+  font-weight: normal;
+  font-style: normal;
+  color: white;
+  font-size: 21px;
+  text-align: center;
+}
+
+#fadeIn {
+  /* reference: https://stackoverflow.com/questions/11679567/using-css-for-a-fade-in-effect-on-page-load */
+  -webkit-animation: fadein 2.5s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2.5s; /* Firefox < 16 */
+  -ms-animation: fadein 2.5s; /* Internet Explorer */
+  -o-animation: fadein 2.5s; /* Opera < 12.1 */
+  animation: fadein 2.5s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#fadeInFast {
+  -webkit-animation: fadeinfast 1s;
+  -moz-animation: fadeinfast 1s;
+  -ms-animation: fadeinfast 1s;
+  -o-animation: fadeinfast 1s;
+  animation: fadeinfast 1s;
+}
+
+@keyframes fadeinfast {
+    from { opacity: 0.6; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadeinfast {
+    from { opacity: 0.6; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeinfast {
+    from { opacity: 0.6; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadeinfast {
+    from { opacity: 0.6; }
+    to   { opacity: 1; }
 }
 
 .creditsContainer h1 {
-  font-family: "silkscreennormal";
-  font-weight: normal;
-  font-style: normal;
   font-size: 40px;
-  color: white;
 }
 
-.creditsContainer p {
-  position: block;
-  margin: auto;
-  font-family: "silkscreennormal";
-  font-weight: normal;
-  font-style: normal;
+.creditsSubtitle {
+  position: relative;
   font-size: 20px;
-  color: white;
-  width: 45%;
-  line-height: 24px;
-  padding-bottom: 50px;
+  top: -10px;
+}
+
+.letter {
+  position: absolute;
+  font-family: "consolas";
+  text-align: left;
+  font-size: 17px;
+  left: 47%;
+  width: 500px;
 }
 
 .contactInfo {
-  position: block;
+  position: absolute;
+  top: 550px;
   margin: auto;
-  /* border: 5px solid blue; */
   display: flex;
   flex-direction: row;
   width: 140px;
   justify-content: space-between;
   align-items: center;
+  left: 62%;
+  /* border: 5px solid blue; */
 }
 
 .contactInfoItem:hover {
@@ -209,15 +278,17 @@ a:hover, a:active {
 /* reference: https://www.w3schools.com/howto/howto_js_alert.asp */
 .alert {
   font-family: "silkscreennormal";
+  position: relative;
+  top: 200px;
   font-weight: normal;
   font-style: normal;
   position: block;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-size: 20px;
   padding: 20px;
-  background-color: pink;
+  background-color: #eea9bb;
   color: white;
   width: 500px;
   border-radius: 4px;
@@ -236,7 +307,13 @@ a:hover, a:active {
 }
 
 .closebtn:hover {
-  color: #8a8a8a;
+  color: gray;
+}
+
+.profilePicture {
+  width: 400px;
+  position: absolute;
+  right: 55%;
 }
 
 #slideshow {
@@ -266,6 +343,37 @@ a:hover, a:active {
   font-style: normal;
   font-size: 40px;
   opacity: 1;
+}
+
+#pictureSection {
+  position: fixed;
+  top: 100px;
+  right: 38.8%;
+  width: 50%;
+  height: 70%;
+  background: #3b3b3b;
+  border-radius: 5px;
+}
+
+#aboutSection {
+  position: fixed;
+  top: 100px;
+  left: 63.2%;
+  width: 25%;
+  height: 70%;
+  background: #3b3b3b;
+  border-radius: 5px;
+}
+
+#aboutSectionHeader {
+  position: relative;
+  top: 30px;
+  text-align: center;
+  color: white;
+  font-family: "silkscreennormal";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 28px;
 }
 
 @font-face {
