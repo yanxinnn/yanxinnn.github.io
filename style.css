@@ -215,25 +215,25 @@ a:hover, a:active {
 }
 
 @keyframes fadeinfast {
-    from { opacity: 0.6; }
+    from { opacity: 0.5; }
     to   { opacity: 1; }
 }
 
 /* Firefox < 16 */
 @-moz-keyframes fadeinfast {
-    from { opacity: 0.6; }
+    from { opacity: 0.5; }
     to   { opacity: 1; }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadeinfast {
-    from { opacity: 0.6; }
+    from { opacity: 0.5; }
     to   { opacity: 1; }
 }
 
 /* Internet Explorer */
 @-ms-keyframes fadeinfast {
-    from { opacity: 0.6; }
+    from { opacity: 0.5; }
     to   { opacity: 1; }
 }
 
