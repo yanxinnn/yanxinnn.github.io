@@ -152,6 +152,10 @@ var wizardsJourney4 = "images/environment/wizardsJourney4.png";
 var wizardsJourney;
 var wizardsjourney;
 var wizardsJourneySection;
+var wizardsJourney01 = "images/slides/wizardsJourney01.png";
+var wizardsJourney02 = "images/slides/wizardsJourney02.jpg";
+var wizardsJourney03 = "images/slides/wizardsJourney03.jpg";
+var wizardsJourneySlides;
 
 // Slideshow
 var slideShowing = false;
@@ -295,6 +299,7 @@ function setup() {
   wizardsJourneySection = gameSection + 560;
   wizardsjourney = createSprite(wizardsJourneySection, window.innerHeight-210, 150, 120);
   wizardsjourney.addAnimation("static", wizardsJourney);
+  wizardsJourneySlides = [wizardsJourney01, wizardsJourney02, wizardsJourney03];
 
   // Player Animations
   playerIdle.frameDelay = 18;
@@ -668,6 +673,8 @@ function slideShow(title, subtitle1) {
   currentSlides = timeInterfaceSlides;
   } else if (title == "Missile Command Clone") {
   currentSlides = missileCommandSlides;
+  } else if (title == "Wizard's Journey") {
+    currentSlides = wizardsJourneySlides;
   }
 
   if (newSlides == true) { // new set of slides
@@ -694,6 +701,9 @@ function slideShow(title, subtitle1) {
     } else if (string.charAt(string.length-1) == "v") { // checks if mov
       var currentSlide = document.createElement("video");
       currentSlide.controls = true;
+      currentSlide.disablePictureInPicture = true;
+      currentSlide.controlsList = "nodownload";
+      currentSlide.autoplay = true;
     }
     currentSlide.src = currentSlides[slideNum]; //shows slide or video
     document.getElementById("slides").appendChild(currentSlide); 

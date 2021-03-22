@@ -446,18 +446,20 @@ a:active {
 #nextBar {
   cursor: pointer;
   position: absolute;
-  height: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 150px;
   width: 100px;
   transition: 0.5s ease;
 }
 
 #prevBar {
-  border-radius: 5px 0 0 5px;
+  border-radius: 0 15px 15px 0;
 }
 
 #nextBar {
   right: 0;
-  border-radius: 0 5px 5px 0;
+  border-radius: 15px 0 0 15px;
 }
 
 #prevBar:hover,
