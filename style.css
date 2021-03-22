@@ -284,23 +284,23 @@ a:active {
 
 .letter {
   position: absolute;
-  font-family: "consolas";
+  font-family: "droidsansmono";
   text-align: left;
-  font-size: 17px;
+  font-size: 16px;
   left: 47%;
   width: 500px;
 }
 
 .contactInfo {
-  position: absolute;
-  top: 550px;
+  position: relative;
+  top: 466px;
+  left: 200px;
   margin: auto;
   display: flex;
   flex-direction: row;
   width: 140px;
   justify-content: space-between;
   align-items: center;
-  left: 62%;
   /* border: 5px solid blue; */
 }
 
@@ -347,6 +347,7 @@ a:active {
 
 .profilePicture {
   width: 400px;
+  height: auto;
   position: absolute;
   right: 55%;
 }
@@ -488,6 +489,15 @@ a:active {
   font-size: 28px;
 }
 
+#descriptions {
+  position: absolute;
+  font-family: "consolas";
+  color: white;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
+}
+
 @font-face {
   font-family: "silkscreennormal";
   src: url("fonts/slkscr-webfont.eot"); /* IE9 Compat Modes */
@@ -501,4 +511,37 @@ a:active {
       format("svg"); /* Legacy iOS */
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+  font-family: "droidsansmono";
+  src: url("fonts/droidsansmono-webfont.eot"); /* IE9 Compat Modes */
+  src: url("fonts/droidsansmono-webfont.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("fonts/droidsansmono-webfont.woff") format("woff"),
+    /* Pretty Modern Browsers */
+      url("fonts/droidsansmono-webfont-webfont.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("fonts/droidsansmono-webfont.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("fonts/droidsansmono-webfont.svg#svgFontName") format("svg"); /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media (max-height: 800px) {
+  .creditsContainer {
+    top: 40px;
+  }
+}
+
+@media (max-height: 665px) {
+  body {
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 950px) {
+  body {
+    overflow-x: auto;
+  }
 }
