@@ -21,10 +21,10 @@
       <!-- reference : https://stackoverflow.com/questions/22918220/how-to-create-a-only-mute-unmute-button-like-youtube-in-html -->
       <input type="checkbox" id="sound" onClick="toggleSound()">
       <label for="sound" class="on">
-        <img src="images/widgets/sound1.png">
+        <img src="images/widgets/sound1.png" id="onIcon">
       </label>
       <label for="sound" class="off">
-        <img src="images/widgets/sound2.png">
+        <img src="images/widgets/sound2.png" id="offIcon">
       </label>
     </div>
   </div>
@@ -34,7 +34,16 @@
   <div id="slideshow">
     <div id="backgroundScreen"></div>
     <div id="title"></div>
-    <div id="pictureSection"></div>
+    <div id="pictureSection">
+      <div id="dotsLayout"></div>
+      <div id="prevBar" onclick="nextSlide(-1)">
+        <div id="prev">&#10094;</div>
+      </div>
+      <div id="nextBar" onclick="nextSlide(1)">
+        <div id="next">&#10095;</div>
+      </div>
+      <div id="slides"></div>
+    </div>
     <div id="aboutSection">
       <div id="aboutSectionHeader"></div>
     </div>
@@ -42,7 +51,7 @@
   </div>
 
   <div class="loader-wrapper">
-    <img src="images/loading.gif"></img>
+    <img src="images/loading.gif">
   </div>
 
   <canvas id="myCanvas"></canvas>

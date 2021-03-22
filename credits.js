@@ -13,6 +13,9 @@ function setup() {
   canvas.parent("mainMenu-div");
   canvas.position(0, 0);
   canvas.style("z-index", "-1");
+  document.getElementById("profilePic").setAttribute("draggable", false);
+  document.getElementById("linkedInIcon").setAttribute("draggable", false);
+  document.getElementById("emailIcon").setAttribute("draggable", false);
 } // function setups
 
 //** Draw ****************

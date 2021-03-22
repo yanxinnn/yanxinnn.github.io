@@ -6,12 +6,10 @@ body {
   overflow-y: hidden;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
-}
-
-body {
-
 }
 
 /* Main Menu Options */
@@ -67,7 +65,7 @@ input#sound {
 .off img {
   opacity: 0.65;
 }
-.off img:hover{
+.off img:hover {
   opacity: 1;
   cursor: pointer;
 }
@@ -125,13 +123,16 @@ input#sound:checked ~ .off img {
 #movementDesktopMessage {
   opacity: 1;
   transition: opacity 2s;
+  user-select: none;
 }
 
 #escapeSlidesMessage {
   opacity: 0.7;
+  user-select: none;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
   color: white;
   background-color: transparent;
   text-decoration: none;
@@ -145,7 +146,8 @@ a:hover {
   cursor: pointer;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
   color: #8a8a8a;
   background-color: transparent;
   text-decoration: none;
@@ -160,6 +162,7 @@ a:hover, a:active {
   position: absolute;
   bottom: 30px;
   right: 40px;
+  user-select: none;
 }
 
 .creditsContainer {
@@ -184,26 +187,42 @@ a:hover, a:active {
 }
 
 @keyframes fadein {
-    from { opacity: 0.15; }
-    to   { opacity: 1; }
+  from {
+    opacity: 0.15;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Firefox < 16 */
 @-moz-keyframes fadein {
-    from { opacity: 0.15; }
-    to   { opacity: 1; }
+  from {
+    opacity: 0.15;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
-    from { opacity: 0.15; }
-    to   { opacity: 1; }
+  from {
+    opacity: 0.15;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Internet Explorer */
 @-ms-keyframes fadein {
-    from { opacity: 0.15; }
-    to   { opacity: 1; }
+  from {
+    opacity: 0.15;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 #fadeInFast {
@@ -215,26 +234,42 @@ a:hover, a:active {
 }
 
 @keyframes fadeinfast {
-    from { opacity: 0.5; }
-    to   { opacity: 1; }
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Firefox < 16 */
 @-moz-keyframes fadeinfast {
-    from { opacity: 0.5; }
-    to   { opacity: 1; }
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadeinfast {
-    from { opacity: 0.5; }
-    to   { opacity: 1; }
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Internet Explorer */
 @-ms-keyframes fadeinfast {
-    from { opacity: 0.5; }
-    to   { opacity: 1; }
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .creditsContainer h1 {
@@ -343,6 +378,7 @@ a:hover, a:active {
   font-style: normal;
   font-size: 40px;
   opacity: 1;
+  width: 700px;
 }
 
 #pictureSection {
@@ -353,6 +389,80 @@ a:hover, a:active {
   height: 70%;
   background: #3b3b3b;
   border-radius: 5px;
+}
+
+#slides img,
+#slides video {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  z-index: -1;
+  user-select: none;
+}
+
+/* reference: https://www.w3schools.com/howto/howto_js_slideshow.asp */
+#dotsLayout {
+  position: absolute;
+  text-align: center;
+  top: 92%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dots {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 3px;
+  background-color: #636363;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.4s ease;
+}
+
+.active,
+.dots:hover {
+  background-color: #eea9bb;
+}
+
+#prev,
+#next {
+  color: #d1d1d1;
+  font-weight: bold;
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+}
+
+#prevBar,
+#nextBar {
+  cursor: pointer;
+  position: absolute;
+  height: 100%;
+  width: 100px;
+  transition: 0.5s ease;
+}
+
+#prevBar {
+  border-radius: 5px 0 0 5px;
+}
+
+#nextBar {
+  right: 0;
+  border-radius: 0 5px 5px 0;
+}
+
+#prevBar:hover,
+#nextBar:hover {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 #aboutSection {
@@ -377,13 +487,16 @@ a:hover, a:active {
 }
 
 @font-face {
-    font-family: 'silkscreennormal';
-    src: url('fonts/slkscr-webfont.eot'); /* IE9 Compat Modes */
-    src: url('fonts/slkscr-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('fonts/slkscr-webfont.woff') format('woff'), /* Pretty Modern Browsers */
-         url('fonts/slkscr-webfont-webfont.woff2') format('woff2'), /* Super Modern Browsers */
-         url('fonts/slkscr-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('fonts/slkscr-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
-    font-weight: normal;
-    font-style: normal;
+  font-family: "silkscreennormal";
+  src: url("fonts/slkscr-webfont.eot"); /* IE9 Compat Modes */
+  src: url("fonts/slkscr-webfont.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("fonts/slkscr-webfont.woff") format("woff"),
+    /* Pretty Modern Browsers */ url("fonts/slkscr-webfont-webfont.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */ url("fonts/slkscr-webfont.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */ url("fonts/slkscr-webfont.svg#svgFontName")
+      format("svg"); /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
 }

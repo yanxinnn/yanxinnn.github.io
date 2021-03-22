@@ -98,9 +98,23 @@ var purpleTp3 = "images/environment/purpleTp3.png";
 var videoSection;
 
 // Graphic + Web
+var slideNum = 0;
+var dotCount = 0;
+var currentSlides;
+var dotUpdated = false;
+var newSlides = true;
+var newSlide = true;
 var acornStation;
 var acornstation;
 var acornSection;
+var acornLogo = "images/slides/acornLogo.png";
+var acornBottles = "images/slides/acornBottles.png";
+var acornDrafts1 = "images/slides/acornDrafts1.png";
+var acornDrafts2 = "images/slides/acornDrafts2.png";
+var acornDrafts3 = "images/slides/acornDrafts3.png";
+var acornApplications1 = "images/slides/acornApplications1.png";
+var acornApplications2 = "images/slides/acornApplications2.png";
+var acornSlides;
 var timeInterface1 = "images/environment/timeInterface1.png";
 var timeInterface2 = "images/environment/timeInterface2.png";
 var timeInterface3 = "images/environment/timeInterface3.png";
@@ -109,6 +123,16 @@ var timeInterface5 = "images/environment/timeInterface5.png";
 var timeInterface;
 var timeinterface;
 var timeInterfaceSection;
+var timeInterface
+var linkNYC = "images/slides/linkNYC.jpg";
+var timeInterface01 = "images/slides/timeInterface1.png";
+var timeInterface02 = "images/slides/timeInterface2.png";
+var timeInterface03 = "images/slides/timeInterface3.png";
+var timeInterface04 = "images/slides/timeInterface4.png";
+var timeInterface05 = "images/slides/timeInterface5.png";
+var timeInterfaceDrafts1 = "images/slides/timeInterfaceDrafts1.png";
+var timeInterfaceDrafts2 = "images/slides/timeInterfaceDrafts2.png";
+var timeInterfaceSlides;
 
 // Game
 var missileCommand1 = "images/environment/missileCommand1.png";
@@ -117,6 +141,10 @@ var missileCommand3 = "images/environment/missileCommand3.png";
 var missileCommand;
 var missilecommand;
 var missileCommandSection;
+var missileCommand01 = "images/slides/missileCommand01.png";
+var missileCommand02 = "images/slides/missileCommand02.png";
+var missileCommandVideo = "images/slides/missileCommandVideo.mov";
+var missileCommandSlides;
 var wizardsJourney1 = "images/environment/wizardsJourney1.png";
 var wizardsJourney2 = "images/environment/wizardsJourney2.png";
 var wizardsJourney3 = "images/environment/wizardsJourney3.png";
@@ -174,6 +202,10 @@ function setup() {
   canvas.parent("field-div");
   canvas.position(0, 0);
   canvas.style("z-index", "-1");
+
+  document.getElementById("onIcon").setAttribute("draggable", false);
+  document.getElementById("offIcon").setAttribute("draggable", false);
+  document.getElementById("slides").setAttribute("draggable", false);
 
   // Platforms
   var platformsAcross = 70;
@@ -244,17 +276,20 @@ function setup() {
   acornSection = graphicWebSection + 350;
   acornstation = createSprite(acornSection, window.innerHeight-225, 300, 150);
   acornstation.addImage(acornStation);
+  acornSlides = [acornLogo, acornDrafts1, acornDrafts2, acornDrafts3, acornBottles, acornApplications1, acornApplications2];
 
   timeInterface.frameDelay = 100;
   timeInterfaceSection = graphicWebSection + 650;
   timeinterface = createSprite(timeInterfaceSection, window.innerHeight-225, 100, 150);
   timeinterface.addAnimation("static", timeInterface);
+  timeInterfaceSlides = [linkNYC, timeInterface01, timeInterface02, timeInterface03, timeInterface04, timeInterface05, timeInterfaceDrafts1, timeInterfaceDrafts2];
 
   // Game (back)
   missileCommand.frameDelay = 8;
   missileCommandSection = gameSection + 350;
   missilecommand = createSprite(missileCommandSection, window.innerHeight-210, 100, 120);
   missilecommand.addAnimation("static", missileCommand);
+  missileCommandSlides = [missileCommand01, missileCommand02, missileCommandVideo]
 
   wizardsJourney.frameDelay = 10;
   wizardsJourneySection = gameSection + 560;
@@ -426,10 +461,10 @@ function draw() {
       interactText("Press \"E\" to teleport", graphicWebTp, -50);
     }
   }
-  // Acorn Logo
+  // Acorn Station
   if (abs(acornstation.position.x - player.position.x) <= 180) {
     if (keyPressed() == "E") {
-      slideShow("acorn", 1, "About");
+      slideShow("acorn", "About");
       if (sound.checked) { continueSound = true; }
       else { continueSound = false; }
       slideShowing = true;
@@ -446,7 +481,7 @@ function draw() {
   // Time Interface
   if (abs(timeinterface.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
-      slideShow("Time Interface for LinkNYC", 1, "About");
+      slideShow("LinkNYC Time Interface", "About");
       if (sound.checked) { continueSound = true; }
       else { continueSound = false; }
       slideShowing = true;
@@ -474,7 +509,7 @@ function draw() {
   // Missile Command
   if (abs(missilecommand.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
-      slideShow("Missile Command Clone", 1, "About");
+      slideShow("Missile Command Clone", "About");
       if (sound.checked) { continueSound = true; }
       else { continueSound = false; }
       slideShowing = true;
@@ -491,7 +526,7 @@ function draw() {
   // Wizard's Journey
   if (abs(wizardsjourney.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
-      slideShow("Wizard's Journey", 1, "About");
+      slideShow("Wizard's Journey", "About");
       if (sound.checked) { continueSound = true; }
       else { continueSound = false; }
       slideShowing = true;
@@ -617,7 +652,7 @@ function chatBox(target, hover, length, height) {
   rect(target.position.x-(length/2), target.position.y-hover, length, height, 5);
 }
 
-function slideShow(title, numOfSlides, title1) {
+function slideShow(title, subtitle1) {
   snd_windyPetals.stop();
   moveSpeed = 0;
   player.changeAnimation("idle");
@@ -625,7 +660,75 @@ function slideShow(title, numOfSlides, title1) {
   document.getElementById("slideshow").style.visibility = "visible";
   document.getElementById("slideshow").style.opacity = "1";
   document.getElementById("title").innerHTML = title;
-  document.getElementById("aboutSectionHeader").innerHTML = title1;
+  document.getElementById("aboutSectionHeader").innerHTML = subtitle1;
+  //Graphics and Web Design
+  if (title == "acorn") {
+    currentSlides = acornSlides;
+  } else if (title == "LinkNYC Time Interface") {
+  currentSlides = timeInterfaceSlides;
+  } else if (title == "Missile Command Clone") {
+  currentSlides = missileCommandSlides;
+  }
+
+  if (newSlides == true) { // new set of slides
+    while (dotCount < currentSlides.length) { // creates dots based on amount of slides
+      var child = document.createElement("div");
+      child.setAttribute("class", "dots");
+      document.getElementById("dotsLayout").appendChild(child);
+      dotCount++;
+    }
+    let dotsList = document.getElementsByClassName("dots");
+    for (i = 0; i < dotCount; i++) { // navigating using dots
+      dotsList[i].setAttribute("onclick", "showSlide(" + i + ")");
+    }
+    dotsList[slideNum].className += " active"; // shows inital active dot
+    newSlides = false;
+  }
+  if (newSlide == true) { // new slide showing
+    if (document.getElementById("slides").firstChild) { // refreshes showing slide
+      (document.getElementById("slides")).removeChild((document.getElementById("slides")).firstChild);
+    }
+    var string = currentSlides[slideNum];
+    if (string.charAt(string.length-1) == "g") { // checks if jpg, png
+      var currentSlide = document.createElement("img");
+    } else if (string.charAt(string.length-1) == "v") { // checks if mov
+      var currentSlide = document.createElement("video");
+      currentSlide.controls = true;
+    }
+    currentSlide.src = currentSlides[slideNum]; //shows slide or video
+    document.getElementById("slides").appendChild(currentSlide); 
+    newSlide = false;
+  }
+  if (dotUpdated == false) { // dot updates
+    dotUpdate();
+    dotUpdated = true;
+  }
+}
+
+function dotUpdate() {
+  let dotsList = document.getElementsByClassName("dots");
+  for (i = 0; i < dotsList.length; i++) { // refreshes dots
+    $(dotsList[i]).removeClass("active");
+  }
+  dotsList[slideNum].className += " active"; // shows active dot
+}
+
+function showSlide(n) {
+  slideNum = n;
+  dotUpdated = false;
+  newSlide = true;
+}
+
+function nextSlide(n) {
+  slideNum += n;
+  if (currentSlides.length <= slideNum) {
+    slideNum = 0;
+  }
+  if (slideNum < 0) {
+    slideNum = currentSlides.length-1;
+  }
+  dotUpdated = false;
+  newSlide = true;
 }
 
 function noSlideShow() {
@@ -633,6 +736,14 @@ function noSlideShow() {
   document.getElementById("slideshow").style.visibility = "hidden";
   document.getElementById("slideshow").style.opacity = "0";
   moveSpeed = staticMoveSpeed;
+  slideNum = 0;
+  dotCount = 0;
+  var parent = document.getElementById("dotsLayout");
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+  newSlides = true;
+  newSlide = true;
 }
 
 function noMoving() {
