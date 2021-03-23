@@ -95,6 +95,16 @@ input#sound:checked ~ .off img {
   pointer-events: none;
 }
 
+#loadScreen {
+  width: 100%;
+  height: 100%;
+  background: #73b1e1;
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  display: none;
+}
+
 .topMessage {
   position: fixed;
   top: 40px;
@@ -410,7 +420,7 @@ a:active {
 #dotsLayout {
   position: absolute;
   text-align: center;
-  top: 92%;
+  bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
 }

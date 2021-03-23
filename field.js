@@ -435,6 +435,7 @@ function draw() {
   displayText("Back to Start", beginningTp, 30, 120, 0, 255, CENTER, 20);
   if (abs(beginningTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
+      fadeInEffect();
       player.position.x = beginningSection;
     }
     else {
@@ -449,6 +450,7 @@ function draw() {
   displayText("3D Modeling + Animation", threeDTp, 30, 180, 0, 255, CENTER, 20);
   if (abs(threeDTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
+      fadeInEffect();
       player.position.x = threeDSection;
     }
     else {
@@ -460,6 +462,7 @@ function draw() {
   displayText("Graphic + Web Design", graphicWebTp, 30, 200, 0, 255, CENTER, 20);
   if (abs(graphicWebTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
+      fadeInEffect();
       player.position.x = graphicWebSection;
     }
     else {
@@ -505,6 +508,7 @@ function draw() {
   displayText("Game Design", gameTp, 30, 150, 0, 255, CENTER, 20);
   if (abs(gameTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
+      fadeInEffect();
       player.position.x = gameSection;
     }
     else {
@@ -550,6 +554,7 @@ function draw() {
   displayText("Video Creation", videoTp, 30, 150, 0, 255, CENTER, 20);
   if (abs(videoTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
+      fadeInEffect();
       player.position.x = videoSection;
     }
     else {
@@ -767,6 +772,11 @@ function leaveSlidesCheck() {
     slideShowing = false;
   }
   noMoving();
+}
+
+function fadeInEffect () {
+  $(".loader-wrapper").fadeIn(0);
+  $(".loader-wrapper").delay(800).fadeOut(200, "linear");
 }
 
 function sound(src) { // reference: https://www.w3schools.com/graphics/game_sound.asp
