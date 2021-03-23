@@ -776,7 +776,7 @@ function leaveSlidesCheck() {
 
 function fadeInEffect () {
   $(".loader-wrapper").fadeIn(0);
-  $(".loader-wrapper").delay(800).fadeOut(200, "linear");
+  $(".loader-wrapper").delay(400).fadeOut(800, "linear");
 }
 
 function sound(src) { // reference: https://www.w3schools.com/graphics/game_sound.asp

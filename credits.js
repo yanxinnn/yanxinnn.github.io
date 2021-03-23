@@ -21,7 +21,6 @@ function setup() {
 //** Draw ****************
 function draw() {
   background(skyBackground);
-  console.log(window.innerHeight);
 } // function draw
 
 function windowResized() {
