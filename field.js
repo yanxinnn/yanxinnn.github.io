@@ -26,14 +26,15 @@ var yanxinIdle3 = "images/characters/yanxinIdle3.png";
 var yanxinIdle;
 
 // Text
-var yanxinText1 = "Hi! Welcome to my portfolio! Feel free to take a look around!";
-var yanxinText2 = "Use the teleporters to my right to travel to different areas faster!";
-var yanxinText3 = "Glad to have you here!";
-var yanxinText4 = "Where are these petals coming from?";
-var yanxinText5 = "Mouths don't exist in this world";
-var yanxinText6 = "I'm always adding new things to this world. Come by again soon!";
-var yanxinText7 = "*bounce bounce bounce*";
-var yanxinTexts = [yanxinText1, yanxinText2, yanxinText3, yanxinText4, yanxinText5, yanxinText6, yanxinText7];
+var yanxinTexts = [
+  "Hi! Welcome to my portfolio! Feel free to take a look around!",
+  "Use the teleporters to my right to travel to different areas faster!",
+  "Glad to have you here!",
+  "Where are these petals coming from?",
+  "Mouths don't exist in this world",
+  "I'm always adding new things to this world. Come by again soon!",
+  "*bounce bounce bounce*"
+]
 var firstGreeting = false;
 var firstGreetingFinished = false;
 var greetingUsed = true;
@@ -107,14 +108,15 @@ var newSlide = true;
 var acornStation;
 var acornstation;
 var acornSection;
-var acornLogo = "images/slides/acornLogo.png";
-var acornBottles = "images/slides/acornBottles.png";
-var acornDrafts1 = "images/slides/acornDrafts1.png";
-var acornDrafts2 = "images/slides/acornDrafts2.png";
-var acornDrafts3 = "images/slides/acornDrafts3.png";
-var acornApplications1 = "images/slides/acornApplications1.png";
-var acornApplications2 = "images/slides/acornApplications2.png";
-var acornSlides;
+var acornSlides = [
+  "images/slides/acornLogo.png",
+  "images/slides/acornBottles.png",
+  "images/slides/acornDrafts1.png",
+  "images/slides/acornDrafts2.png",
+  "images/slides/acornDrafts3.png",
+  "images/slides/acornApplications1.png",
+  "images/slides/acornApplications2.png"
+]
 var timeInterface1 = "images/environment/timeInterface1.png";
 var timeInterface2 = "images/environment/timeInterface2.png";
 var timeInterface3 = "images/environment/timeInterface3.png";
@@ -123,16 +125,16 @@ var timeInterface5 = "images/environment/timeInterface5.png";
 var timeInterface;
 var timeinterface;
 var timeInterfaceSection;
-var timeInterface
-var linkNYC = "images/slides/linkNYC.jpg";
-var timeInterface01 = "images/slides/timeInterface1.png";
-var timeInterface02 = "images/slides/timeInterface2.png";
-var timeInterface03 = "images/slides/timeInterface3.png";
-var timeInterface04 = "images/slides/timeInterface4.png";
-var timeInterface05 = "images/slides/timeInterface5.png";
-var timeInterfaceDrafts1 = "images/slides/timeInterfaceDrafts1.png";
-var timeInterfaceDrafts2 = "images/slides/timeInterfaceDrafts2.png";
-var timeInterfaceSlides;
+var timeInterfaceSlides = [
+  "images/slides/linkNYC.jpg",
+  "images/slides/timeInterface1.png",
+  "images/slides/timeInterface2.png",
+  "images/slides/timeInterface3.png",
+  "images/slides/timeInterface4.png",
+  "images/slides/timeInterface5.png",
+  "images/slides/timeInterfaceDrafts1.png",
+  "images/slides/timeInterfaceDrafts2.png"
+]
 
 // Game
 var missileCommand1 = "images/environment/missileCommand1.png";
@@ -141,10 +143,11 @@ var missileCommand3 = "images/environment/missileCommand3.png";
 var missileCommand;
 var missilecommand;
 var missileCommandSection;
-var missileCommand01 = "images/slides/missileCommand01.png";
-var missileCommand02 = "images/slides/missileCommand02.png";
-var missileCommandVideo = "images/slides/missileCommandVideo.mov";
-var missileCommandSlides;
+var missileCommandSlides = [
+  "images/slides/missileCommand01.png",
+  "images/slides/missileCommand02.png",
+  "images/slides/missileCommandVideo.mov"
+]
 var wizardsJourney1 = "images/environment/wizardsJourney1.png";
 var wizardsJourney2 = "images/environment/wizardsJourney2.png";
 var wizardsJourney3 = "images/environment/wizardsJourney3.png";
@@ -152,10 +155,11 @@ var wizardsJourney4 = "images/environment/wizardsJourney4.png";
 var wizardsJourney;
 var wizardsjourney;
 var wizardsJourneySection;
-var wizardsJourney01 = "images/slides/wizardsJourney01.png";
-var wizardsJourney02 = "images/slides/wizardsJourney02.jpg";
-var wizardsJourney03 = "images/slides/wizardsJourney03.jpg";
-var wizardsJourneySlides;
+var wizardsJourneySlides = [
+  "images/slides/wizardsJourney01.png",
+  "images/slides/wizardsJourney02.jpg",
+  "images/slides/wizardsJourney03.jpg"
+]
 
 // Slideshow
 var slideShowing = false;
@@ -280,26 +284,22 @@ function setup() {
   acornSection = graphicWebSection + 350;
   acornstation = createSprite(acornSection, window.innerHeight-225, 300, 150);
   acornstation.addImage(acornStation);
-  acornSlides = [acornLogo, acornDrafts1, acornDrafts2, acornDrafts3, acornBottles, acornApplications1, acornApplications2];
 
   timeInterface.frameDelay = 100;
   timeInterfaceSection = graphicWebSection + 650;
   timeinterface = createSprite(timeInterfaceSection, window.innerHeight-225, 100, 150);
   timeinterface.addAnimation("static", timeInterface);
-  timeInterfaceSlides = [linkNYC, timeInterface01, timeInterface02, timeInterface03, timeInterface04, timeInterface05, timeInterfaceDrafts1, timeInterfaceDrafts2];
 
   // Game (back)
   missileCommand.frameDelay = 8;
   missileCommandSection = gameSection + 350;
   missilecommand = createSprite(missileCommandSection, window.innerHeight-210, 100, 120);
   missilecommand.addAnimation("static", missileCommand);
-  missileCommandSlides = [missileCommand01, missileCommand02, missileCommandVideo]
 
   wizardsJourney.frameDelay = 10;
   wizardsJourneySection = gameSection + 560;
   wizardsjourney = createSprite(wizardsJourneySection, window.innerHeight-210, 150, 120);
   wizardsjourney.addAnimation("static", wizardsJourney);
-  wizardsJourneySlides = [wizardsJourney01, wizardsJourney02, wizardsJourney03];
 
   // Player Animations
   playerIdle.frameDelay = 18;
@@ -410,7 +410,7 @@ function draw() {
     if (keyPressed() == "E" && firstGreeting == false) {
       chatBox(yanxin, 200, 450, 135);
       displayText("Yanxin", yanxin, 170, 400, 10, color("#FFBEBE"), LEFT, 18);
-      typeWriter(yanxinText1, yanxin, 140, 400, chatCounter, chatTimer, 10, 255);
+      typeWriter(yanxinTexts[0], yanxin, 140, 400, chatCounter, chatTimer, 10, 255);
       firstGreetingFinished = true;
     } else if (keyPressed() == "E") {
       if (greetingUsed == true) {
