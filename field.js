@@ -41,6 +41,8 @@ var greetingUsed = true;
 var randomText = "";
 var chatCounter = 0;
 var chatTimer = 0;
+var globalTimer = 0;
+var hoverAmnt = 0;
 
 // Sounds
 var snd_windyPetals;
@@ -347,6 +349,7 @@ function draw() {
   //console.log("position:", floor(player.position.x/100));
 
   background(skyBackground);
+  globalTimer++;
 
   // Player Movements
   player.velocity.x = 0;
@@ -432,6 +435,16 @@ function draw() {
   }
 
   // Teleporters
+  if (globalTimer >= 20) { // hover effect for teleporter text
+    hoverAmnt = 4;
+    if (globalTimer >= 60) {
+      hoverAmnt = -4;
+      globalTimer = -20;
+    }
+  }
+
+  console.log(hoverAmnt);
+
   displayText("Back to Start", beginningTp, 30, 120, 0, 255, CENTER, 20);
   if (abs(beginningTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
@@ -447,7 +460,7 @@ function draw() {
   var sound = document.getElementById("sound");
 
   // 3D Modeling + Animation
-  displayText("3D Modeling + Animation", threeDTp, 30, 180, 0, 255, CENTER, 20);
+  displayText("3D Modeling + Animation", threeDTp, 30, 180, 0, 255, CENTER, 20, hoverAmnt);
   if (abs(threeDTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       fadeInEffect();
@@ -459,7 +472,7 @@ function draw() {
   }
 
   // Graphic + Web Design
-  displayText("Graphic + Web Design", graphicWebTp, 30, 200, 0, 255, CENTER, 20);
+  displayText("Graphic + Web Design", graphicWebTp, 30, 200, 0, 255, CENTER, 20, hoverAmnt);
   if (abs(graphicWebTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       fadeInEffect();
@@ -505,7 +518,7 @@ function draw() {
   }
 
   // Game
-  displayText("Game Design", gameTp, 30, 150, 0, 255, CENTER, 20);
+  displayText("Game Design", gameTp, 30, 150, 0, 255, CENTER, 20, hoverAmnt);
   if (abs(gameTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       fadeInEffect();
@@ -551,7 +564,7 @@ function draw() {
   }
 
   // Video
-  displayText("Video Creation", videoTp, 30, 150, 0, 255, CENTER, 20);
+  displayText("Video Creation", videoTp, 30, 150, 0, 255, CENTER, 20, hoverAmnt);
   if (abs(videoTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       fadeInEffect();
@@ -632,11 +645,11 @@ function keyPressed() {
   return false;
 }
 
-function displayText(line, target, hover, length, custom, color, align, size) {
+function displayText(line, target, hover, length, custom, color, align, size, hoveramnt=0) {
   textSize(size);
   textAlign(align);
   fill(color);
-  text(line, target.position.x-(length/2)+custom, target.position.y-hover, length);
+  text(line, target.position.x-(length/2)+custom, target.position.y-hover+hoveramnt, length);
 }
 
 function typeWriter(script, target, hover, length, counter, timer, customX, color) {
@@ -775,8 +788,9 @@ function leaveSlidesCheck() {
 }
 
 function fadeInEffect () {
+  $(".bouncingDaisies").remove();
   $(".loader-wrapper").fadeIn(0);
-  $(".loader-wrapper").delay(400).fadeOut(800, "linear");
+  $(".loader-wrapper").delay(200).fadeOut(800, "linear");
 }
 
 function sound(src) { // reference: https://www.w3schools.com/graphics/game_sound.asp
