@@ -104,6 +104,7 @@ var videoSection;
 var slideNum = 0;
 var dotCount = 0;
 var currentSlides;
+var currentSlidesName;
 var dotUpdated = false;
 var newSlides = true;
 var newSlide = true;
@@ -119,6 +120,34 @@ var acornSlides = [
   "images/slides/acornApplications1.png",
   "images/slides/acornApplications2.png"
 ]
+var aboutAcorn = [
+
+  "For this project, I conceptualized a company and created a logo and physical applications for it. \
+  \"acorn\" is a health and wellness company that is dedicated to helping people live healthier \
+  and more eco-friendly lifestlyes. \"acorn\" believes that small changes one makes today are \
+  the seeds for a better future. <br><br>For the logo, I chose a simplistic and geometric design \
+  to emphasize the company's clean and environmental conscious mission. Squirrel-like shapes and \
+  custom lettering were created from transformations on circles. My favorite part of this \
+  design is how the \"a\" ties together the wordmark and pictorial mark, serving as a letter in a word \
+  and also the leg portion of a squirrel.",
+
+  "In the brainstorming stage, I came up with 10 unique designs for the \"acorn\" logo. \
+  I did a survey amongst my peers to find out which of these 10 were the most appealing to others. From \
+  this feedback, I was able to narrow down the possible designs to 3. These are the winners!",
+  
+  "I then created sevaral iterations of the 3 designs, playing around with fonts, colors, spacing, \
+  and other design elements. Shown in the picture are some of the iterations of the 3 chosen designs.",
+
+  "In the next step, I take the logo I've made for \"acorn\" and create drafts for possible company merchandise",
+
+  "I ended up selecting the water bottle and made three design iterations",
+
+  "Here are the final products! Created with vinyl sheets, vinyl cutter, and bottles I ordered from Amazon (haven't \
+  figured out glass blowing just yet)."
+
+]
+
+
 var timeInterface1 = "images/environment/timeInterface1.png";
 var timeInterface2 = "images/environment/timeInterface2.png";
 var timeInterface3 = "images/environment/timeInterface3.png";
@@ -443,8 +472,6 @@ function draw() {
     }
   }
 
-  console.log(hoverAmnt);
-
   displayText("Back to Start", beginningTp, 30, 120, 0, 255, CENTER, 20);
   if (abs(beginningTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
@@ -485,7 +512,7 @@ function draw() {
   // Acorn Station
   if (abs(acornstation.position.x - player.position.x) <= 180) {
     if (keyPressed() == "E") {
-      slideShow("acorn", "About");
+      slideShow("acorn");
       if (sound.checked) { continueSound = true; }
       else { continueSound = false; }
       slideShowing = true;
@@ -502,7 +529,7 @@ function draw() {
   // Time Interface
   if (abs(timeinterface.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
-      slideShow("LinkNYC Time Interface", "About");
+      slideShow("LinkNYC Time Interface");
       if (sound.checked) { continueSound = true; }
       else { continueSound = false; }
       slideShowing = true;
@@ -548,7 +575,7 @@ function draw() {
   // Wizard's Journey
   if (abs(wizardsjourney.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
-      slideShow("Wizard's Journey", "About");
+      slideShow("Wizard's Journey");
       if (sound.checked) { continueSound = true; }
       else { continueSound = false; }
       slideShowing = true;
@@ -675,7 +702,7 @@ function chatBox(target, hover, length, height) {
   rect(target.position.x-(length/2), target.position.y-hover, length, height, 5);
 }
 
-function slideShow(title, subtitle1) {
+function slideShow(title) {
   snd_windyPetals.stop();
   moveSpeed = 0;
   player.changeAnimation("idle");
@@ -683,16 +710,19 @@ function slideShow(title, subtitle1) {
   document.getElementById("slideshow").style.visibility = "visible";
   document.getElementById("slideshow").style.opacity = "1";
   document.getElementById("title").innerHTML = title;
-  document.getElementById("aboutSectionHeader").innerHTML = subtitle1;
   //Graphics and Web Design
   if (title == "acorn") {
     currentSlides = acornSlides;
+    currentSlidesName = "Acorn";
   } else if (title == "LinkNYC Time Interface") {
-  currentSlides = timeInterfaceSlides;
+    currentSlides = timeInterfaceSlides;
+    currentSlidesName = "TimeInterface";
   } else if (title == "Missile Command Clone") {
-  currentSlides = missileCommandSlides;
+    currentSlides = missileCommandSlides;
+    currentSlidesName = "MissileCommand";
   } else if (title == "Wizard's Journey") {
     currentSlides = wizardsJourneySlides;
+    currentSlidesName = "WizardsJourney";
   }
 
   if (newSlides == true) { // new set of slides
@@ -733,12 +763,32 @@ function slideShow(title, subtitle1) {
   }
 }
 
-function dotUpdate() {
+function dotUpdate() { // dot update, description, and subtitle update
   let dotsList = document.getElementsByClassName("dots");
   for (i = 0; i < dotsList.length; i++) { // refreshes dots
     $(dotsList[i]).removeClass("active");
   }
   dotsList[slideNum].className += " active"; // shows active dot
+
+  let currentAbout = document.getElementById("descriptions"); //description update
+  let currentSubtitle = document.getElementById("aboutSectionHeader");
+  if (slideNum == 0) {
+    currentSubtitle.innerHTML = "About";
+  }
+  if (currentSlidesName == "Acorn") {
+    if (slideNum == 1 || slideNum == 2) {
+      currentSubtitle.innerHTML = "Logo Drafts";
+    } else if (slideNum == 3 || slideNum == 4) {
+      currentSubtitle.innerHTML = "Physical Application Drafts";
+    } else if (slideNum == 5) {
+      currentSubtitle.innerHTML = "Final Physical Applications";
+    }
+    currentAbout.innerHTML = aboutAcorn[slideNum];
+  } else if (currentSlidesName == "TimeInterface") {
+    currentAbout.innerHTML = "";
+  } else {
+    currentAbout.innerHTML = "";
+  }
 }
 
 function showSlide(n) {
