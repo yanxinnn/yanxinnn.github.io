@@ -14,7 +14,7 @@ body {
 
 /* Main Menu Options */
 .menu-buttons button {
-  background-color: #8a8a8a;
+  background-color: #707070;
   border: none;
   border-radius: 8px;
   color: white;
@@ -175,14 +175,13 @@ a:active {
 
 .creditsContainer {
   position: relative;
-  top: 80px;
+  top: 4%;
   text-align: center;
   font-family: "silkscreennormal";
   font-weight: normal;
   font-style: normal;
   color: white;
   font-size: 21px;
-  text-align: center;
 }
 
 #fadeIn {
@@ -280,41 +279,46 @@ a:active {
   }
 }
 
+.creditsTitles {
+  background-color: #45454f;
+  padding: 1px;
+}
+
 .creditsContainer h1 {
   font-size: 40px;
+  line-height: 20px;
 }
 
 .creditsSubtitle {
   position: relative;
   font-size: 20px;
-  top: -10px;
 }
 
 .letter {
-  position: absolute;
+  position: relative;
+  margin: auto;
   font-family: "droidsansmono";
   text-align: left;
   font-size: 16px;
-  left: 47%;
+  left: 210px;
   width: 500px;
+  height: 526px;
+  top: -505px;
 }
 
 .contactInfo {
   position: relative;
-  top: 466px;
   left: 200px;
+  top: -580px;
   margin: auto;
   display: flex;
   flex-direction: row;
-  width: 140px;
+  width: 130px;
   justify-content: space-between;
   align-items: center;
-  /* border: 5px solid blue; */
 }
 
 .contactInfoItem:hover {
-  width: 60px;
-  height: 60px;
   cursor: pointer;
 }
 
@@ -322,7 +326,7 @@ a:active {
 .alert {
   font-family: "silkscreennormal";
   position: relative;
-  top: 200px;
+  top: -750px;
   font-weight: normal;
   font-style: normal;
   position: block;
@@ -331,10 +335,11 @@ a:active {
   margin-bottom: 20px;
   font-size: 20px;
   padding: 20px;
-  background-color: #eea9bb;
+  background-color: #e96384;
   color: white;
   width: 500px;
   border-radius: 4px;
+  user-select: none;
 }
 
 /* The close button */
@@ -343,21 +348,20 @@ a:active {
   color: white;
   font-weight: bold;
   float: right;
-  font-size: 28px;
-  line-height: 15px;
+  font-size: 30px;
+  line-height: 20px;
   cursor: pointer;
   transition: 0.4s;
 }
 
 .closebtn:hover {
-  color: gray;
+  color: #454545;
 }
 
 .profilePicture {
-  width: 400px;
-  height: auto;
-  position: absolute;
-  right: 55%;
+  position: relative;
+  right: 265px;
+  top: 30px;
 }
 
 #slideshow {
@@ -568,9 +572,6 @@ a:active {
 }
 
 @media (max-height: 800px) {
-  .creditsContainer {
-    top: 40px;
-  }
 }
 
 @media (max-height: 665px) {

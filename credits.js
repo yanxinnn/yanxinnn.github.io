@@ -1,11 +1,6 @@
 //** Variables **********
-//Background
-var sky = "images/blueSky.png";
 
 //** Preload *************
-function preload() {
-  skyBackground = loadImage(sky);
-}
 
 //** Setup *************
 function setup() {
@@ -20,7 +15,7 @@ function setup() {
 
 //** Draw ****************
 function draw() {
-  background(skyBackground);
+  background(36,36,41);
 } // function draw
 
 function windowResized() {
@@ -36,4 +31,13 @@ function copyToClipboard(element) {
   $temp.val($(element).text()).select();
   document.execCommand("copy");
   $temp.remove();
+}
+
+// reference: https://stackoverflow.com/questions/18032220/css-change-image-src-on-imghover
+function hover(element) {
+  element.setAttribute("src", "images/widgets/linkedIn2.png");
+}
+
+function unhover(element) {
+  element.setAttribute("src", "images/widgets/linkedIn1.png");
 }

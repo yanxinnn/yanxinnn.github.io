@@ -15,10 +15,13 @@
 
 <body>
   <div class="creditsContainer" id="fadeIn">
-    <h1>Credits</h1> 
-    <div class="creditsSubtitle">
-      <p>Code and Art by: Yanxin Jiang</p>
+    <div class="creditsTitles">
+      <h1>Credits</h1> 
+      <div class="creditsSubtitle">
+        <p>Code and Art by: Yanxin Jiang</p>
+      </div>
     </div>
+    <img src="images/me.jpg" class="profilePicture" id="profilePic">
     <div class="letter">
       <p>Hey there!</p>
       <p>Thanks for stopping by! My name is Yanxin and I'm a current junior at New York University studying Integrated Design & Media and Computer Science with a passion for UI/UX and Web Design.</p>
@@ -27,15 +30,14 @@
       <p>If you have any comments, questions, suggestions, or just want to say hi, feel free to contact me!</p>
       <p>Cheers,<br>Yanxin</p>
     </div>
-    <img src="images/me.jpg" class="profilePicture" id="profilePic">
+    <div class="contactInfo">
+      <a href="https://www.linkedin.com/in/yanxinn/" target="_blank"><img id="linkedInIcon" class="contactInfoItem" alt="LinkedIn" src="images/widgets/linkedIn1.png" onmouseover="hover(this);" onmouseout="unhover(this);"></a>
+      <p hidden id="email">yj1347@nyu.edu</p>
+      <img src="images/widgets/mail.png" class="contactInfoItem" alt="Email" id="emailIcon" onclick="copyToClipboard('#email')">
+    </div>
     <div hidden class="alert" id="emailCopiedMessage">
       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
       Email Copied to Clipboard!
-    </div>
-    <div class="contactInfo">
-      <a href="https://www.linkedin.com/in/yanxinn/" target="_blank"><img src="images/widgets/linkedIn.png" alt="LinkedIn" id="linkedInIcon" class="contactInfoItem" ></a>
-      <p hidden id="email">yj1347@nyu.edu</p>
-      <img src="images/widgets/mail.png" class="contactInfoItem" alt="Email" id="emailIcon" onclick="copyToClipboard('#email')">
     </div>
   </div>
 

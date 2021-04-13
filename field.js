@@ -1,7 +1,7 @@
 //** Variables **********
 
 //Background
-var sky = "images/blueSky.png";
+var sky = "images/blueSky.jpg";
 
 // Player Animation
 var lastKey = "";
