@@ -100,7 +100,8 @@ input#sound:checked ~ .off img {
 
 .topMessage {
   position: fixed;
-  top: 40px;
+  text-align: center;
+  top: 35px;
   left: 50%;
   transform: translate(-50%, 0);
   color: white;
@@ -299,17 +300,18 @@ a:active {
   margin: auto;
   font-family: "droidsansmono";
   text-align: left;
-  font-size: 16px;
+  font-size: 15px;
   left: 210px;
   width: 500px;
   height: 526px;
-  top: -505px;
+  top: -495px;
+  line-height: 1.5em;
 }
 
 .contactInfo {
   position: relative;
-  left: 200px;
-  top: -580px;
+  left: 250px;
+  top: -595px;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -361,7 +363,7 @@ a:active {
 .profilePicture {
   position: relative;
   right: 265px;
-  top: 30px;
+  top: 40px;
 }
 
 #slideshow {
@@ -574,9 +576,23 @@ a:active {
 @media (max-height: 800px) {
 }
 
-@media (max-height: 665px) {
+@media (max-height: 675px) {
   body {
     overflow-y: auto;
+  }
+  .profilePicture {
+    width: 300px;
+    height: auto;
+    right: 255px;
+  }
+  .letter {
+    font-size: 13px;
+    top: -373px;
+    left: 165px;
+  }
+  .contactInfo {
+    left: 160px;
+    top: -555px;
   }
 }
 

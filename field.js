@@ -472,7 +472,7 @@ function draw() {
     }
   }
 
-  displayText("Back to Start", beginningTp, 30, 120, 0, 255, CENTER, 20);
+  displayText("Back to Start", beginningTp, 30, 120, 5, 255, CENTER, 20);
   if (abs(beginningTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       fadeInEffect();
@@ -487,7 +487,7 @@ function draw() {
   var sound = document.getElementById("sound");
 
   // 3D Modeling + Animation
-  displayText("3D Modeling + Animation", threeDTp, 30, 180, 0, 255, CENTER, 20, hoverAmnt);
+  displayText("3D Modeling + Animation", threeDTp, 30, 180, 5, 255, CENTER, 20, hoverAmnt);
   if (abs(threeDTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       fadeInEffect();
@@ -499,7 +499,7 @@ function draw() {
   }
 
   // Graphic + Web Design
-  displayText("Graphic + Web Design", graphicWebTp, 30, 200, 0, 255, CENTER, 20, hoverAmnt);
+  displayText("Graphic + Web Design", graphicWebTp, 30, 200, 5, 255, CENTER, 20, hoverAmnt);
   if (abs(graphicWebTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       fadeInEffect();
@@ -545,7 +545,7 @@ function draw() {
   }
 
   // Game
-  displayText("Game Design", gameTp, 30, 150, 0, 255, CENTER, 20, hoverAmnt);
+  displayText("Game Design", gameTp, 30, 150, 5, 255, CENTER, 20, hoverAmnt);
   if (abs(gameTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       fadeInEffect();
@@ -591,7 +591,7 @@ function draw() {
   }
 
   // Video
-  displayText("Video Creation", videoTp, 30, 150, 0, 255, CENTER, 20, hoverAmnt);
+  displayText("Video Creation", videoTp, 30, 150, 5, 255, CENTER, 20, hoverAmnt);
   if (abs(videoTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       fadeInEffect();
@@ -695,8 +695,8 @@ function typeWriter(script, target, hover, length, counter, timer, customX, colo
 }
 
 function chatBox(target, hover, length, height) {
-  var boxColor = color(50);
-  boxColor.setAlpha(50);
+  var boxColor = color(0);
+  boxColor.setAlpha(60);
   fill(boxColor);
   noStroke();
   rect(target.position.x-(length/2), target.position.y-hover, length, height, 5);

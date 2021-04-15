@@ -35,9 +35,9 @@ function copyToClipboard(element) {
 
 // reference: https://stackoverflow.com/questions/18032220/css-change-image-src-on-imghover
 function hover(element) {
-  element.setAttribute("src", "images/widgets/linkedIn2.png");
+  element.setAttribute("src", "images/widgets/" + element.id + "2.png");
 }
 
 function unhover(element) {
-  element.setAttribute("src", "images/widgets/linkedIn1.png");
+  element.setAttribute("src", "images/widgets/" + element.id + "1.png");
 }
