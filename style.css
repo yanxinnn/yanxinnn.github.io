@@ -311,7 +311,7 @@ a:active {
 .contactInfo {
   position: relative;
   left: 250px;
-  top: -595px;
+  top: -580px;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -364,6 +364,8 @@ a:active {
   position: relative;
   right: 265px;
   top: 40px;
+  width: 400px;
+  height: auto;
 }
 
 #slideshow {
@@ -490,7 +492,6 @@ a:active {
   height: 70%;
   background: #3b3b3b;
   border-radius: 5px;
-  overflow: auto;
 }
 
 #aboutSectionHeader {
@@ -535,7 +536,7 @@ a:active {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #6b6b6b;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 /* Handle on hover */
@@ -591,13 +592,61 @@ a:active {
     left: 165px;
   }
   .contactInfo {
-    left: 160px;
-    top: -555px;
+    position: relative;
+    left: 25vw;
+    top: -620px;
   }
 }
 
 @media (max-width: 950px) {
+  .profilePicture {
+    right: 22vw;
+    width: 40vw;
+  }
+  .letter {
+    font-size: 13px;
+    width: 45vw;
+    top: -50vw;
+    left: 24vw;
+  }
+  .creditsContainer {
+    height: 100vh;
+  }
+  .contactInfo {
+    top: -55vw;
+    left: 200px;
+  }
+}
+
+@media (max-width: 700px) {
   body {
-    overflow-x: auto;
+    overflow-y: auto;
+  }
+  .creditsContainer h1 {
+    font-size: 35px;
+    line-height: 20px;
+  }
+
+  .creditsSubtitle {
+    position: relative;
+    font-size: 15px;
+  }
+  .profilePicture {
+    right: 10vw;
+    width: 60vw;
+  }
+  .letter {
+    left: 0px;
+    width: 80vw;
+    top: 8vh;
+  }
+  .contactInfo {
+    flex-direction: column;
+    height: 120px;
+    top: -860px;
+    left: 32vw;
+  }
+  #mainMenuLink {
+    font-size: 22px;
   }
 }
