@@ -51,6 +51,7 @@ var continueSound = false;
 // Environment
 var testSprite;
 var testObject;
+var numOfPlatforms = 80;
 var platformsGroup;
 var middlePlatform; // where camera snaps to following player
 var groundTopLeft;
@@ -247,9 +248,8 @@ function setup() {
   document.getElementById("slides").setAttribute("draggable", false);
 
   // Platforms
-  var platformsAcross = 70;
   platformsGroup = new Group();
-  for (i = 0; i < platformsAcross; ++i) { // top layer
+  for (i = 0; i < numOfPlatforms; ++i) { // top layer
     groundTop = createSprite(i * 100, window.innerHeight-100, 100, 100);
     groundTop.addImage(grass);
     platformsGroup.add(groundTop);
@@ -258,7 +258,7 @@ function setup() {
     groundTopLeft = createSprite(i * -100, window.innerHeight-100, 100, 100);
     groundTopLeft.addImage(grass);
   }
-  for (i = 0; i < platformsAcross; ++i) { // bottom layer
+  for (i = 0; i < numOfPlatforms; ++i) { // bottom layer
     groundBot = createSprite(i * 100, window.innerHeight, 100, 100);
     groundBot.addImage(dirt);
   }
@@ -362,9 +362,9 @@ function setup() {
 
   // Grassblades
   grassBlade.frameDelay = 11;
-  var numOfGrassblades = floor(platformsAcross/1.85);
+  var numOfGrassblades = floor(numOfPlatforms/1.85);
   for (i = 0; i < numOfGrassblades; ++i) {
-    let randomX = random(0, platformsAcross*100);
+    let randomX = random(0, numOfPlatforms*100);
     grassblade = createSprite(randomX, window.innerHeight-162);
     grassblade.addAnimation("grassBlade", grassBlade);
   }
@@ -603,7 +603,7 @@ function draw() {
   }
 
   // Platforms
-  for (var i = 0; i < platformsGroup.length; i++) {
+  for (var i = 0; i < numOfPlatforms; i++) {
     if (platformsGroup[i].overlapPixel(player.position.x, player.position.y+50)) {
       player.position.y -= 1;
       player.velocity.y = 0;
