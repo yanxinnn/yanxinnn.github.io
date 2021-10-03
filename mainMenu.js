@@ -27,7 +27,7 @@ function setup() {
   //Bubbles
   var numOfBubbles = window.innerWidth/80;
   bubbleGroup = new Group();
-  bubblePop.frameDelay = 6;
+  bubblePop.frameDelay = 5;
   for (i = 0; i < numOfBubbles; ++i) {
     let randomX = random(0, window.innerWidth * 1.2);
     let randomY = random(0, window.innerHeight);
@@ -64,7 +64,7 @@ function draw() {
       bubbleGroup[i].timerOn = true;
       bubbleGroup[i].changeAnimation("pop");
     }
-    if (bubbleGroup[i].timerOn && bubbleGroup[i].timer > 10) {
+    if (bubbleGroup[i].timerOn && bubbleGroup[i].timer > 9) {
       bubbleGroup[i].remove();
       let randomX = random(0, window.innerWidth * 1.2);
       let randomY = random(window.innerHeight*1.3, window.innerHeight);
