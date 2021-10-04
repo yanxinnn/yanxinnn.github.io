@@ -64,7 +64,7 @@ function draw() {
       bubbleGroup[i].timerOn = true;
       bubbleGroup[i].changeAnimation("pop");
     }
-    if (bubbleGroup[i].timerOn && bubbleGroup[i].timer > 9) {
+    if (bubbleGroup[i].timerOn && bubbleGroup[i].timer > 8) {
       bubbleGroup[i].remove();
       let randomX = random(0, window.innerWidth * 1.2);
       let randomY = random(window.innerHeight*1.3, window.innerHeight);
