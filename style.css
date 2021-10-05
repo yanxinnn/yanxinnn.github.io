@@ -12,18 +12,34 @@ body {
   box-sizing: inherit;
 }
 
+/* Main Menu Logo */
+.logo {
+  color: white;
+  font-family: "silkscreennormal";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 40px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-shadow: 4px 4px 1px #eea9bb, 0 0 5px white, 0 0 5px white;
+}
+
 /* Main Menu Options */
 .menu-buttons button {
-  background-color: #707070;
+  background-color: transparent;
   border: none;
-  border-radius: 8px;
   color: white;
-  padding: 20px 44px;
+  padding: 10px 20px;
   cursor: pointer;
   display: block;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   margin-left: 50%;
-  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
   font-family: "silkscreennormal";
   font-weight: normal;
   font-style: normal;
@@ -31,7 +47,7 @@ body {
 }
 
 .menu-buttons button:first-child {
-  margin-top: 50vh;
+  margin-top: 60vh;
 }
 
 .menu-buttons button:not(:last-child) {
@@ -39,7 +55,7 @@ body {
 }
 
 .menu-buttons button:hover {
-  background-color: #eea9bb;
+  color: #eea9bb;
 }
 
 /* In-game Widgets */
@@ -288,6 +304,7 @@ a:active {
 .creditsContainer h1 {
   font-size: 40px;
   line-height: 20px;
+  text-shadow: 4px 4px 1px #eea9bb, 0 0 5px white, 0 0 5px white;
 }
 
 .creditsSubtitle {
@@ -510,6 +527,7 @@ a:active {
 }
 
 #descriptions {
+  overflow-y: auto;
   position: relative;
   font-family: "consolas";
   color: white;
@@ -574,9 +592,6 @@ a:active {
   font-style: normal;
 }
 
-@media (max-height: 800px) {
-}
-
 @media (max-height: 675px) {
   body {
     overflow-y: auto;
@@ -594,7 +609,7 @@ a:active {
   .contactInfo {
     position: relative;
     left: 25vw;
-    top: -620px;
+    top: -550px;
   }
 }
 
@@ -613,8 +628,26 @@ a:active {
     height: 100vh;
   }
   .contactInfo {
-    top: -55vw;
+    top: -65vw;
     left: 200px;
+  }
+  #aboutSectionHeader {
+    font-size: 24px;
+  }
+  #descriptions {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 880px) {
+  .contactInfo {
+    top: -60vw;
+  }
+}
+
+@media (max-width: 800px) {
+  .contactInfo {
+    top: -55vw;
   }
 }
 
@@ -622,6 +655,10 @@ a:active {
   body {
     overflow-y: auto;
   }
+  .logo {
+    font-size: 35px;
+  }
+
   .creditsContainer h1 {
     font-size: 35px;
     line-height: 20px;
@@ -643,7 +680,7 @@ a:active {
   .contactInfo {
     flex-direction: column;
     height: 120px;
-    top: -860px;
+    top: -830px;
     left: 32vw;
   }
   #mainMenuLink {
