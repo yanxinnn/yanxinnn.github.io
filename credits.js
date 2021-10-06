@@ -10,14 +10,26 @@ var ripple6 = "images/environment/rain6.png";
 var ripple7 = "images/environment/rain7.png";
 var x = "images/environment/nothing.png";
 var rainGroup;
+var waterGradient = "images/environment/waterGradient.png";
+
+// Characters
+var yanxinIdle1 = "images/characters/yanxinIdle1.png";
+var yanxinIdle2 = "images/characters/yanxinIdle2.png";
+var yanxinIdle3 = "images/characters/yanxinIdle3.png";
+var yanxinIdle;
 
 //** Preload *************
 function preload() {
+  waterBackground = loadImage(waterGradient);
 
   //Ripples
   rainAnimation = loadAnimation(rainSprite);
   rippleAnimation = loadAnimation(ripple2, ripple3, ripple4, ripple5, ripple6, ripple7, x,x,x);
-}
+
+   // Characters
+   yanxinIdle = loadAnimation(yanxinIdle1, yanxinIdle2, yanxinIdle1, yanxinIdle3, yanxinIdle1, yanxinIdle3);
+
+  }
 
 //** Setup *************
 function setup() {
@@ -32,7 +44,7 @@ function setup() {
   //Bubbles
   var numOfRipples = window.innerWidth/10;
   rainGroup = new Group();
-  rippleAnimation.frameDelay = 6;
+  rippleAnimation.frameDelay = 5;
   for (i = 0; i < numOfRipples; ++i) {
     let randomX = random(0, window.innerWidth * 1.2);
     let randomY = random(-400, 0);
@@ -47,11 +59,18 @@ function setup() {
     rainGroup.add(rain);
   }
 
+  // Characters
+  yanxinIdle.frameDelay = 18;
+
+  yanxin = createSprite(window.innerWidth/3, window.innerHeight/2, 100, 100);
+  yanxin.scale = 3;
+  yanxin.addAnimation("idle", yanxinIdle);
+
 } // function setups
 
 //** Draw ****************
 function draw() {
-  background(36,36,41);
+  background(waterBackground);
   console.log(window.innerWidth);
 
   // Ripples

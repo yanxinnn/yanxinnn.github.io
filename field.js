@@ -1,7 +1,7 @@
 //** Variables **********
 
 //Background
-var sky = "images/blueSky.jpg";
+var sky = "images/environment/blueSky.jpg";
 
 // Player Animation
 var lastKey = "";
@@ -645,6 +645,7 @@ function toggleSound() {
   var sound = document.getElementById("sound");
   if (sound.checked) {
     snd_windyPetals.play();
+    snd_windyPetals.loop = true;
   }
   else {
     snd_windyPetals.stop();

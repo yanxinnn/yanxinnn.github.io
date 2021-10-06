@@ -308,14 +308,14 @@ a:active {
   margin: auto;
   font-family: "droidsansmono";
   text-align: left;
-  font-size: 15px;
+  font-size: 14px;
   left: 210px;
   width: 500px;
   height: 526px;
   top: -495px;
   line-height: 1.5em;
-  background: rgba(0, 0, 0, 0.9);
-  padding: 5px 15px 5px 20px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 8px 22px 5px 22px;
   border-radius: 6px;
 }
 

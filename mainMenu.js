@@ -1,6 +1,6 @@
 //** Variables **********
 //Background
-var sky = "images/blueSky.jpg";
+var sky = "images/environment/blueSky.jpg";
 var bubble;
 var bubbleSprite = "images/environment/bubble.png";
 var bubblePop2 = "images/environment/bubble2.png";
