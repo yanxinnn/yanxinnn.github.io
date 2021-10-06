@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <div class="creditsContainer" id="fadeIn">
+  <div class="creditsContainer">
     <div class="creditsTitles">
       <h1>Credits</h1> 
       <div class="creditsSubtitle">
@@ -42,6 +42,16 @@
       Email Copied to Clipboard!
     </div>
   </div>
+
+  <div class="loader-wrapper">
+    <img src="images/loading.gif" class="bouncingDaisies">
+  </div>
+
+  <script>
+    $(window).on("load", function() {
+      $(".loader-wrapper").delay(1000).fadeOut(500, "linear");
+    });
+  </script>
 
   <a href="index.html" id="mainMenuLink">Main Menu</a>
 

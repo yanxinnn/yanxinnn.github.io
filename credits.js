@@ -16,7 +16,7 @@ function preload() {
 
   //Ripples
   rainAnimation = loadAnimation(rainSprite);
-  rippleAnimation = loadAnimation(ripple2, ripple3, ripple4, ripple5, ripple6, ripple7, x,x,x,x,x,x);
+  rippleAnimation = loadAnimation(ripple2, ripple3, ripple4, ripple5, ripple6, ripple7, x,x,x);
 }
 
 //** Setup *************
@@ -30,17 +30,19 @@ function setup() {
   document.getElementById("emailIcon").setAttribute("draggable", false);
 
   //Bubbles
-  var numOfRipples = window.innerWidth/200;
+  var numOfRipples = window.innerWidth/10;
   rainGroup = new Group();
   rippleAnimation.frameDelay = 6;
   for (i = 0; i < numOfRipples; ++i) {
     let randomX = random(0, window.innerWidth * 1.2);
-    let randomY = random(-200, window.innerHeight);
+    let randomY = random(-400, 0);
     rain = createSprite(randomX, randomY, 300, 300);
-    rain.rippleTimerOn = true;
+    rain.rippleTimerOn = false;
     rain.rippleTimer = 0;
     rain.fallTimer = 0;
-    rain.scale = random(0.5, 0.8);
+    rain.scale = random(0.4, 0.6);
+    rain.setVelocity(0, random(30, 40));
+    rain.addAnimation("idle", rainAnimation);
     rain.addAnimation("rippling", rippleAnimation);
     rainGroup.add(rain);
   }
@@ -50,23 +52,24 @@ function setup() {
 //** Draw ****************
 function draw() {
   background(36,36,41);
+  console.log(window.innerWidth);
 
   // Ripples
-  var numOfRipples = window.innerWidth/200;
+  var numOfRipples = window.innerWidth/10;
   for (i = 0; i < numOfRipples; ++i) {
     rainGroup[i].fallTimer += 1;
-    if (rainGroup[i].fallTimer > random(50, 300)) {
+    if (rainGroup[i].fallTimer > random(0, window.innerHeight/5)) {
       rainGroup[i].rippleTimerOn = true;
     }
     if (rainGroup[i].rippleTimerOn) {
-      rain.setVelocity(0, 0);
-      rain.changeAnimation("rippling");
+      rainGroup[i].setVelocity(0, 0);
+      rainGroup[i].changeAnimation("rippling");
       rainGroup[i].rippleTimer += 1;
     }
-    if (rainGroup[i].rippleTimer > 4) {
+    if (rainGroup[i].rippleTimer > 35 || rainGroup[i].position.y > window.innerHeight * 1.2) {
       rainGroup[i].remove();
       let randomX = random(0, window.innerWidth * 1.2);
-      let randomY = random(-200, 0);
+      let randomY = random(-400, 0);
       rain = createSprite(randomX, randomY, 300, 300);
       rain.rippleTimerOn = false;
       rain.rippleTimer = 0;
@@ -74,7 +77,7 @@ function draw() {
       rain.addAnimation("idle", rainAnimation);
       rain.addAnimation("rippling", rippleAnimation);
       rain.setVelocity(0, random(30, 40));
-      rain.scale = random(0.5, 0.8);
+      rain.scale = random(0.4, 0.6);
       rainGroup.add(rain);
     }
   }

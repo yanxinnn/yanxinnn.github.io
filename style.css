@@ -25,7 +25,7 @@ body {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
-  text-shadow: 4px 4px 1px #eea9bb, 0 0 5px white, 0 0 5px white;
+  text-shadow: 4px 3px 1px #eea9bb, 0 0 5px white, 0 0 5px white;
 }
 
 /* Main Menu Options */
@@ -203,11 +203,11 @@ a:active {
 
 #fadeIn {
   /* reference: https://stackoverflow.com/questions/11679567/using-css-for-a-fade-in-effect-on-page-load */
-  -webkit-animation: fadein 2.5s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 2.5s; /* Firefox < 16 */
-  -ms-animation: fadein 2.5s; /* Internet Explorer */
-  -o-animation: fadein 2.5s; /* Opera < 12.1 */
-  animation: fadein 2.5s;
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera < 12.1 */
+  animation: fadein 2s;
 }
 
 @keyframes fadein {
@@ -247,14 +247,6 @@ a:active {
   to {
     opacity: 1;
   }
-}
-
-#fadeInFast {
-  -webkit-animation: fadeinfast 1s;
-  -moz-animation: fadeinfast 1s;
-  -ms-animation: fadeinfast 1s;
-  -o-animation: fadeinfast 1s;
-  animation: fadeinfast 1s;
 }
 
 @keyframes fadeinfast {
@@ -297,14 +289,13 @@ a:active {
 }
 
 .creditsTitles {
-  background-color: #45454f;
   padding: 1px;
 }
 
 .creditsContainer h1 {
   font-size: 40px;
   line-height: 20px;
-  text-shadow: 4px 4px 1px #eea9bb, 0 0 5px white, 0 0 5px white;
+  text-shadow: 4px 3px 1px #eea9bb, 0 0 5px white, 0 0 5px white;
 }
 
 .creditsSubtitle {
@@ -323,6 +314,9 @@ a:active {
   height: 526px;
   top: -495px;
   line-height: 1.5em;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 5px 15px 5px 20px;
+  border-radius: 6px;
 }
 
 .contactInfo {
@@ -621,6 +615,7 @@ a:active {
   .letter {
     font-size: 13px;
     width: 45vw;
+    height: 55vw;
     top: -50vw;
     left: 24vw;
   }
@@ -639,15 +634,39 @@ a:active {
   }
 }
 
+@media (max-width: 900px) {
+  .letter {
+    height: 60vw;
+  }
+}
+
 @media (max-width: 880px) {
   .contactInfo {
     top: -60vw;
+  }
+  .letter {
+    height: 60vw;
+  }
+}
+
+@media (max-width: 850px) {
+  .letter {
+    height: 70vw;
   }
 }
 
 @media (max-width: 800px) {
   .contactInfo {
     top: -55vw;
+  }
+  .letter {
+    height: 75vw;
+  }
+}
+
+@media (max-width: 750px) {
+  .letter {
+    height: 80vw;
   }
 }
 
@@ -676,6 +695,7 @@ a:active {
     left: 0px;
     width: 80vw;
     top: 8vh;
+    height: 65vw;
   }
   .contactInfo {
     flex-direction: column;
@@ -685,5 +705,71 @@ a:active {
   }
   #mainMenuLink {
     font-size: 22px;
+  }
+}
+
+@media (max-width: 635px) {
+  .letter {
+    height: 80vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .letter {
+    height: 90vw;
+  }
+}
+
+@media (max-width: 550px) {
+  .letter {
+    height: 100vw;
+  }
+}
+
+@media (max-width: 490px) {
+  .letter {
+    height: 110vw;
+  }
+}
+
+@media (max-width: 460px) {
+  .letter {
+    height: 120vw;
+  }
+}
+
+@media (max-width: 440px) {
+  .letter {
+    height: 140vw;
+  }
+}
+
+@media (max-width: 400px) {
+  .letter {
+    height: 160vw;
+  }
+}
+
+@media (max-width: 370px) {
+  .letter {
+    height: 180vw;
+  }
+}
+
+@media (max-width: 350px) {
+  .letter {
+    height: 200vw;
+  }
+}
+
+@media (max-width: 330px) {
+  .letter {
+    height: 210vw;
+  }
+}
+
+@media (max-width: 290px) {
+  .letter {
+    height: 270vw;
   }
 }
