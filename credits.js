@@ -11,6 +11,9 @@ var ripple7 = "images/environment/rain7.png";
 var x = "images/environment/nothing.png";
 var rainGroup;
 var waterGradient = "images/environment/waterGradient.png";
+var lilypad;
+var lilypad1 = "images/environment/lilypad1.png";
+var lilypad2 = "images/environment/lilypad2.png";
 
 //** Preload *************
 function preload() {
@@ -19,6 +22,7 @@ function preload() {
   //Ripples
   rainAnimation = loadAnimation(rainSprite);
   rippleAnimation = loadAnimation(ripple2, ripple3, ripple4, ripple5, ripple6, ripple7, x,x,x);
+  lilypadAnimation = loadAnimation(lilypad1, lilypad2);
 
   }
 
@@ -32,8 +36,8 @@ function setup() {
   document.getElementById("linkedInIcon").setAttribute("draggable", false);
   document.getElementById("emailIcon").setAttribute("draggable", false);
 
-  //Bubbles
-  var numOfRipples = window.innerWidth/10;
+  // Ripples
+  var numOfRipples = window.innerWidth/25;
   rainGroup = new Group();
   rippleAnimation.frameDelay = 5;
   for (i = 0; i < numOfRipples; ++i) {
@@ -43,14 +47,43 @@ function setup() {
     rain.rippleTimerOn = false;
     rain.rippleTimer = 0;
     rain.fallTimer = 0;
-    rain.scale = random(0.4, 0.6);
     rain.setVelocity(0, random(30, 40));
     rain.addAnimation("idle", rainAnimation);
+    rain.scale = random(0.8, 0.9);
     rain.addAnimation("rippling", rippleAnimation);
     rainGroup.add(rain);
   }
 
-} // function setups
+  // Lilypads
+  var numOfLilypadsBotLeft = window.innerWidth/200;
+  lilypadAnimation.frameDelay = 30;
+  for (i = 0; i < numOfLilypadsBotLeft; ++i) {
+    let randomX = random(0, window.innerWidth/6);
+    let randomY = random(window.innerHeight*8/10, window.innerHeight);
+    lilypad = createSprite(randomX, randomY, 550, 200);
+    lilypad.scale = random(0.4, 0.5);
+    lilypad.addAnimation("idle", lilypadAnimation);
+  }
+
+  var numOfLilypadsBotRight = window.innerWidth/200;
+  for (i = 0; i < numOfLilypadsBotRight; ++i) {
+    let randomX = random(window.innerWidth*5/6, window.innerWidth);
+    let randomY = random(window.innerHeight*8/10, window.innerHeight);
+    lilypad = createSprite(randomX, randomY, 550, 200);
+    lilypad.scale = random(0.4, 0.5);
+    lilypad.addAnimation("idle", lilypadAnimation);
+  }
+
+  var numOfLilypadsBot = window.innerWidth/400;
+  for (i = 0; i < numOfLilypadsBot; ++i) {
+    let randomX = random(window.innerWidth/6, window.innerWidth*5/6);
+    let randomY = random(window.innerHeight*9/10, window.innerHeight*1.05);
+    lilypad = createSprite(randomX, randomY, 550, 200);
+    lilypad.scale = random(0.4, 0.5);
+    lilypad.addAnimation("idle", lilypadAnimation);
+  }
+
+} // function setup
 
 //** Draw ****************
 function draw() {
@@ -58,7 +91,7 @@ function draw() {
   console.log(window.innerWidth);
 
   // Ripples
-  var numOfRipples = window.innerWidth/10;
+  var numOfRipples = window.innerWidth/25;
   for (i = 0; i < numOfRipples; ++i) {
     rainGroup[i].fallTimer += 1;
     if (rainGroup[i].fallTimer > random(0, window.innerHeight/5)) {
@@ -78,9 +111,9 @@ function draw() {
       rain.rippleTimer = 0;
       rain.fallTimer = 0;
       rain.addAnimation("idle", rainAnimation);
+      rain.scale = random(0.8, 0.9);
       rain.addAnimation("rippling", rippleAnimation);
       rain.setVelocity(0, random(30, 40));
-      rain.scale = random(0.4, 0.6);
       rainGroup.add(rain);
     }
   }

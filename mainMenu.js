@@ -1,16 +1,16 @@
 //** Variables **********
 //Background
-var sky = "images/environment/blueSky.jpg";
 var bubble;
 var bubbleSprite = "images/environment/bubble.png";
 var bubblePop2 = "images/environment/bubble2.png";
 var bubblePop3 = "images/environment/bubble3.png";
 var bubbleGroup;
 var userMouse;
+var menuGradient = "images/environment/blueSky.jpg";
 
 //** Preload *************
 function preload() {
-  skyBackground = loadImage(sky);
+  menuGradient = loadImage(menuGradient);
 
   //Bubbles
   bubbleIdle = loadAnimation(bubbleSprite);
@@ -32,7 +32,7 @@ function setup() {
     let randomX = random(0, window.innerWidth * 1.2);
     let randomY = random(0, window.innerHeight);
     let bubbleY = random(-1, -3);
-    let scaleX = random(0.2, 1.5);
+    let scaleX = random(0.3, 1.5);
     bubble = createSprite(randomX, randomY, 70, 70);
     bubble.timerOn = false;
     bubble.timer = 0;
@@ -49,7 +49,7 @@ function setup() {
 
 //** Draw ****************
 function draw() {
-  background(skyBackground);
+  background(menuGradient);
 
   userMouse.position.x = mouseX;
   userMouse.position.y = mouseY;
@@ -69,7 +69,7 @@ function draw() {
       let randomX = random(0, window.innerWidth * 1.2);
       let randomY = random(window.innerHeight*1.3, window.innerHeight);
       let bubbleY = random(-1, -3);
-      let scaleX = random(0.2, 1.5);
+      let scaleX = random(0.3, 1.5);
       bubble = createSprite(randomX, randomY, 70, 70);
       bubble.timerOn = false;
       bubble.timer = 0;
