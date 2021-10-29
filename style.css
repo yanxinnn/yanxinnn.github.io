@@ -339,7 +339,7 @@ a:active {
 .alert {
   font-family: "silkscreennormal";
   position: relative;
-  top: -750px;
+  top: -800px;
   font-weight: normal;
   font-style: normal;
   position: block;
@@ -348,11 +348,21 @@ a:active {
   margin-bottom: 20px;
   font-size: 20px;
   padding: 20px;
-  background-color: #e96384;
+  background-color: #e36b89;
   color: white;
-  width: 500px;
-  border-radius: 4px;
+  width: 38vw;
+  border-radius: 5px;
   user-select: none;
+}
+
+.selectEmail {
+  font-family: "consolas";
+  user-select: text;
+  background-color: #ffd8db;
+  color: black;
+  border-radius: 5px;
+  padding: 4px;
+  text-align: center;
 }
 
 /* The close button */
@@ -595,6 +605,9 @@ a:active {
     height: auto;
     right: 255px;
   }
+  .alert {
+    font-size: 18px;
+  }
   .letter {
     font-size: 13px;
     top: -373px;
@@ -611,6 +624,9 @@ a:active {
   .profilePicture {
     right: 22vw;
     width: 40vw;
+  }
+  .alert {
+    font-size: 18px;
   }
   .letter {
     font-size: 13px;
@@ -673,6 +689,9 @@ a:active {
 @media (max-width: 700px) {
   body {
     overflow-y: auto;
+  }
+  .alert {
+    font-size: 15px;
   }
   .logo {
     font-size: 35px;
