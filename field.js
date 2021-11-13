@@ -281,27 +281,31 @@ function setup() {
   textFont("silkscreennormal");
 
   // Teleporters
+  // Back to Beginning
   whiteTp.frameDelay = 12;
   beginningTp = createSprite(platformsGroup[65].position.x, window.innerHeight-200, 100, 100);
   beginningTp.addAnimation("static", whiteTp);
   beginningSection = platformsGroup[13].position.x;
 
+  // Graphic + Web Design
+  greenTp.frameDelay = 12;
+  graphicWebTp = createSprite(platformsGroup[15].position.x, window.innerHeight-200, 100, 100);
+  graphicWebTp.addAnimation("static", greenTp);
+  graphicWebSection = platformsGroup[30].position.x;
+
+  // Game Design
+  redTp.frameDelay = 12;
+  gameTp = createSprite(platformsGroup[17].position.x, window.innerHeight-200, 100, 100);
+  gameTp.addAnimation("static", redTp);
+  gameSection = platformsGroup[40].position.x;
+
   // 3D Modeling + Animation
   blueTp.frameDelay = 12;
-  threeDTp = createSprite(platformsGroup[15].position.x, window.innerHeight-200, 100, 100);
+  threeDTp = createSprite(platformsGroup[19].position.x, window.innerHeight-200, 100, 100);
   threeDTp.addAnimation("static", blueTp);
-  threeDSection = platformsGroup[30].position.x;
+  threeDSection = platformsGroup[50].position.x;
 
-  greenTp.frameDelay = 12;
-  graphicWebTp = createSprite(platformsGroup[17].position.x, window.innerHeight-200, 100, 100);
-  graphicWebTp.addAnimation("static", greenTp);
-  graphicWebSection = platformsGroup[40].position.x;
-
-  redTp.frameDelay = 12;
-  gameTp = createSprite(platformsGroup[19].position.x, window.innerHeight-200, 100, 100);
-  gameTp.addAnimation("static", redTp);
-  gameSection = platformsGroup[50].position.x;
-
+  // Video Editing
   purpleTp.frameDelay = 12;
   videoTp = createSprite(platformsGroup[21].position.x, window.innerHeight-200, 100, 100);
   videoTp.addAnimation("static", purpleTp);
@@ -486,18 +490,6 @@ function draw() {
   // Sound
   var sound = document.getElementById("sound");
 
-  // 3D Modeling + Animation
-  displayText("3D Modeling + Animation", threeDTp, 30, 180, 5, 255, CENTER, 20, hoverAmnt);
-  if (abs(threeDTp.position.x - player.position.x) <= 100) {
-    if (keyPressed() == "E") {
-      fadeInEffect();
-      player.position.x = threeDSection;
-    }
-    else {
-      interactText("Press \"E\" to teleport", threeDTp, -50);
-    }
-  }
-
   // Graphic + Web Design
   displayText("Graphic + Web Design", graphicWebTp, 30, 200, 5, 255, CENTER, 20, hoverAmnt);
   if (abs(graphicWebTp.position.x - player.position.x) <= 100) {
@@ -590,8 +582,20 @@ function draw() {
     }
   }
 
+    // 3D Modeling + Animation
+    displayText("3D Modeling + Animation", threeDTp, 30, 180, 5, 255, CENTER, 20, hoverAmnt);
+    if (abs(threeDTp.position.x - player.position.x) <= 100) {
+      if (keyPressed() == "E") {
+        fadeInEffect();
+        player.position.x = threeDSection;
+      }
+      else {
+        interactText("Press \"E\" to teleport", threeDTp, -50);
+      }
+    }
+
   // Video
-  displayText("Video Creation", videoTp, 30, 150, 5, 255, CENTER, 20, hoverAmnt);
+  displayText("Video Editing", videoTp, 30, 150, 5, 255, CENTER, 20, hoverAmnt);
   if (abs(videoTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       fadeInEffect();
@@ -600,6 +604,36 @@ function draw() {
     else {
       interactText("Press \"E\" to teleport", videoTp, -50);
     }
+  }
+
+  // Location Labels + Back to Start Link
+  if (player.position.x >= graphicWebSection) {
+    document.getElementById("locationMessage").style.visibility = "visible";
+    document.getElementById("locationMessage").style.opacity = "1";
+  }
+  if (player.position.x >= videoSection) {
+    document.getElementById("locationMessage").innerHTML = "Video Editing";
+  }
+  else if (player.position.x >= threeDSection) {
+    document.getElementById("locationMessage").innerHTML = "3D Modeling + Animation";
+  }
+  else if (player.position.x >= gameSection) {
+    document.getElementById("locationMessage").innerHTML = "Game Design";
+  }
+  else if (player.position.x >= graphicWebSection) {
+    document.getElementById("locationMessage").innerHTML = "Graphic + Web Design";
+  } 
+  else {
+    document.getElementById("locationMessage").style.visibility = "hidden";
+    document.getElementById("locationMessage").style.opacity = "0";
+  }
+  if (player.position.x < platformsGroup[15].position.x) {
+    document.getElementById("backToStartLink").style.visibility = "hidden";
+    document.getElementById("backToStartLink").style.opacity = "0";
+  }
+  else {
+    document.getElementById("backToStartLink").style.visibility = "visible";
+    document.getElementById("backToStartLink").style.opacity = "1";
   }
 
   // Platforms
@@ -697,7 +731,7 @@ function typeWriter(script, target, hover, length, counter, timer, customX, colo
 
 function chatBox(target, hover, length, height) {
   var boxColor = color(0);
-  boxColor.setAlpha(60);
+  boxColor.setAlpha(70);
   fill(boxColor);
   noStroke();
   rect(target.position.x-(length/2), target.position.y-hover, length, height, 5);
@@ -857,4 +891,10 @@ function sound(src) { // reference: https://www.w3schools.com/graphics/game_soun
   this.stop = function(){
     this.sound.pause();
   }
+}
+
+function backToStart() {
+  player.position.x = beginningSection;
+  fadeInEffect();
+  noSlideShow();
 }
