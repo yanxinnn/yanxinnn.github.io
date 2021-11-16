@@ -115,8 +115,8 @@ var acornSection;
 var acornSlides = [
   "images/slides/acornLogo.png",
   "images/slides/acornBottles.png",
-  "images/slides/acornDrafts1.png",
-  "images/slides/acornDrafts2.png",
+  "images/slides/acornDrafts01.png",
+  "images/slides/acornDrafts02.png",
   "images/slides/acornDrafts3.png",
   "images/slides/acornApplications1.png",
   "images/slides/acornApplications2.png"
