@@ -176,9 +176,9 @@ var missileCommand;
 var missilecommand;
 var missileCommandSection;
 var missileCommandSlides = [
+  "images/slides/missileCommandVideo.mov",
   "images/slides/missileCommand01.png",
-  "images/slides/missileCommand02.png",
-  "images/slides/missileCommandVideo.mov"
+  "images/slides/missileCommand02.png"
 ]
 var wizardsJourney1 = "images/environment/wizardsJourney1.png";
 var wizardsJourney2 = "images/environment/wizardsJourney2.png";
