@@ -26,6 +26,7 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
   text-shadow: 4px 3px 1px #eea9bb, 0 0 5px white, 0 0 5px white;
+  user-select: none;
 }
 
 /* Main Menu Options */
@@ -44,6 +45,7 @@ body {
   font-weight: normal;
   font-style: normal;
   font-size: 24px;
+  user-select: none;
 }
 
 .menu-buttons button:first-child {
@@ -345,6 +347,7 @@ a:active {
   font-size: 40px;
   line-height: 20px;
   text-shadow: 4px 3px 1px #eea9bb, 0 0 5px white, 0 0 5px white;
+  user-select: none;
 }
 
 .creditsSubtitle {
@@ -378,6 +381,7 @@ a:active {
   width: 130px;
   justify-content: space-between;
   align-items: center;
+  user-select: none;
 }
 
 .contactInfoItem:hover {
@@ -437,6 +441,7 @@ a:active {
   top: 40px;
   width: 400px;
   height: auto;
+  user-select: none;
 }
 
 #slideshow {
