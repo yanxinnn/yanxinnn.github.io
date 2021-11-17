@@ -405,7 +405,8 @@ a:active {
 }
 
 .selectEmail {
-  font-family: "consolas";
+  font-family: "droidsansmono";
+  font-size: 17px;
   user-select: text;
   background-color: #ffd8db;
   color: black;
@@ -582,16 +583,16 @@ a:active {
 #descriptions {
   overflow-y: auto;
   position: relative;
-  font-family: "consolas";
+  font-family: "droidsansmono";
   color: white;
   font-weight: normal;
   font-style: normal;
-  font-size: 16px;
+  font-size: 14px;
   width: 80%;
   left: 50%;
   top: 60px;
   transform: translateX(-50%);
-  line-height: 1.5;
+  line-height: 1.8;
 }
 
 /* width */
@@ -657,6 +658,9 @@ a:active {
   .alert {
     font-size: 18px;
   }
+  .selectEmail {
+    font-size: 16px;
+  }
   .letter {
     font-size: 13px;
     top: -373px;
@@ -676,6 +680,9 @@ a:active {
   }
   .alert {
     font-size: 18px;
+  }
+  .selectEmail {
+    font-size: 16px;
   }
   .letter {
     font-size: 13px;
@@ -740,6 +747,12 @@ a:active {
     overflow-y: auto;
   }
   .alert {
+    font-size: 15px;
+  }
+  .selectEmail {
+    font-size: 15px;
+  }
+  .selectEmail {
     font-size: 15px;
   }
   .logo {

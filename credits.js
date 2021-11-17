@@ -10,7 +10,7 @@ var ripple6 = "images/environment/rain6.png";
 var ripple7 = "images/environment/rain7.png";
 var x = "images/environment/nothing.png";
 var rainGroup;
-var waterGradient = "images/environment/waterGradient.png";
+var waterGradient = "images/environment/water.png";
 var lilypad;
 var lilypad1 = "images/environment/lilypad1.png";
 var lilypad2 = "images/environment/lilypad2.png";
