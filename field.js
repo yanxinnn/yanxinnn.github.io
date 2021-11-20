@@ -109,45 +109,51 @@ var currentSlidesName;
 var dotUpdated = false;
 var newSlides = true;
 var newSlide = true;
+
+var askApps;
+var askApps1 = "images/environment/askApps-1.png";
+var askApps2 = "images/environment/askApps-2.png";
+var askApps3 = "images/environment/askApps-3.png";
+var askApps4 = "images/environment/askApps-4.png";
+var askapps;
+var askAppsSection;
+var askAppsSlides = [
+  "images/slides/acornLogo.png"
+]
+
 var acornStation;
 var acornstation;
 var acornSection;
 var acornSlides = [
   "images/slides/acornLogo.png",
-  "images/slides/acornBottles.png",
-  "images/slides/acornDrafts01.png",
   "images/slides/acornDrafts02.png",
-  "images/slides/acornDrafts03.png",
   "images/slides/acornApplications01.png",
-  "images/slides/acornApplications02.png"
+  "images/slides/acornApplications02.png",
+  "images/slides/acornBottles.png"
 ]
 var aboutAcorn = [
 
   "For this project, I conceptualized a company and created a logo and physical applications for it. \
   \"acorn\" is a health and wellness company that is dedicated to helping people live healthier \
-  and more eco-friendly lifestlyes. \"acorn\" believes that small changes one makes today are \
-  the seeds for a better future. <br><br>For the logo, I chose a simplistic and geometric design \
+  and more eco-friendly lifestlyes. <br><br>For the logo, I chose a simplistic and geometric design \
   to emphasize the company's clean and environmental conscious mission. Squirrel-like shapes and \
-  custom lettering were created from transformations on circles. My favorite part of this \
-  design is how the \"a\" ties together the wordmark and pictorial mark, serving as a letter in a word \
-  and also the leg portion of a squirrel.",
+  custom lettering were created from transformations on circles. <br><br>Created with Adobe Illustrator",
 
   "In the brainstorming stage, I came up with 10 unique designs for the \"acorn\" logo. \
-  I did a survey amongst my peers to find out which of these 10 were the most appealing to others. From \
-  this feedback, I was able to narrow down the possible designs to 3. These are the winners!",
-  
-  "I then created sevaral iterations of the 3 designs, playing around with fonts, colors, spacing, \
-  and other design elements. Shown in the picture are some of the iterations of the 3 chosen designs.",
+  I did a survey with 25 people to find out which of these 10 were the most appealing to others. From \
+  this feedback, I was able to narrow down the possible designs to 3. <br><br>I then created sevaral iterations \
+  of the 3 designs, playing around with fonts, colors, spacing, and other design elements. \
+  Shown in the picture are some of the iterations of the 3 chosen designs. <br><br>Created with Adobe Illustrator",
 
-  "In the next step, I take the logo I've made for \"acorn\" and create drafts for possible company merchandise",
+  "In the next step, I take the logo I've made for \"acorn\" and created drafts for possible company merchandise. \
+  <br><br>Created with Adobe Photoshop",
 
-  "I ended up selecting the water bottle and made three design iterations",
+  "I ended up selecting the water bottle and made three design iterations. <br><br>Created with Adobe Photoshop",
 
-  "Here are the final products! Created with vinyl sheets, vinyl cutter, and bottles I ordered from Amazon (haven't \
-  figured out glass blowing just yet)."
+  "Here are the final products! <br><br>Created with vinyl sheets, vinyl cutter, and bottles I ordered from Amazon (haven't \
+  figured out glass blowing just yet)"
 
 ]
-
 
 var timeInterface1 = "images/environment/timeInterface1.png";
 var timeInterface2 = "images/environment/timeInterface2.png";
@@ -226,6 +232,7 @@ function preload() {
   purpleTp = loadAnimation(purpleTp1, purpleTp2, purpleTp3);
 
   // Graphic + Web
+  askApps = loadAnimation(askApps1, askApps2, askApps3, askApps4);
   acornStation = loadImage("images/environment/acornStation.png");
   timeInterface = loadAnimation(timeInterface1, timeInterface2, timeInterface3, timeInterface4, timeInterface5);
 
@@ -291,48 +298,53 @@ function setup() {
   greenTp.frameDelay = 12;
   graphicWebTp = createSprite(platformsGroup[15].position.x, window.innerHeight-200, 100, 100);
   graphicWebTp.addAnimation("static", greenTp);
-  graphicWebSection = platformsGroup[30].position.x;
+  graphicWebSection = platformsGroup[22].position.x;
 
   // Game Design
   redTp.frameDelay = 12;
   gameTp = createSprite(platformsGroup[17].position.x, window.innerHeight-200, 100, 100);
   gameTp.addAnimation("static", redTp);
-  gameSection = platformsGroup[40].position.x;
+  gameSection = platformsGroup[33].position.x;
 
   // 3D Modeling + Animation
-  blueTp.frameDelay = 12;
+  purpleTp.frameDelay = 12;
   threeDTp = createSprite(platformsGroup[19].position.x, window.innerHeight-200, 100, 100);
-  threeDTp.addAnimation("static", blueTp);
-  threeDSection = platformsGroup[50].position.x;
+  threeDTp.addAnimation("static", purpleTp);
+  threeDSection = platformsGroup[42].position.x;
 
   // Video Editing
-  purpleTp.frameDelay = 12;
-  videoTp = createSprite(platformsGroup[21].position.x, window.innerHeight-200, 100, 100);
-  videoTp.addAnimation("static", purpleTp);
-  videoSection = platformsGroup[60].position.x;
+  // purpleTp.frameDelay = 12;
+  // videoTp = createSprite(platformsGroup[21].position.x, window.innerHeight-200, 100, 100);
+  // videoTp.addAnimation("static", purpleTp);
+  // videoSection = platformsGroup[60].position.x;
 
   // Test Object
   testObject = createSprite(threeDSection, window.innerHeight-225, 100, 100);
   testObject.addAnimation("static", testSprite);
 
   // Graphic + Web (back)
-  acornSection = graphicWebSection + 350;
+  askApps.frameDelay = 20;
+  askAppsSection = graphicWebSection + 280;
+  askapps = createSprite(askAppsSection, window.innerHeight-225, 160, 150);
+  askapps.addAnimation("static", askApps);
+
+  acornSection = graphicWebSection + 610;
   acornstation = createSprite(acornSection, window.innerHeight-225, 300, 150);
   acornstation.addImage(acornStation);
 
   timeInterface.frameDelay = 100;
-  timeInterfaceSection = graphicWebSection + 650;
+  timeInterfaceSection = graphicWebSection + 910;
   timeinterface = createSprite(timeInterfaceSection, window.innerHeight-225, 100, 150);
   timeinterface.addAnimation("static", timeInterface);
 
   // Game (back)
   missileCommand.frameDelay = 8;
-  missileCommandSection = gameSection + 350;
+  missileCommandSection = gameSection + 280;
   missilecommand = createSprite(missileCommandSection, window.innerHeight-210, 100, 120);
   missilecommand.addAnimation("static", missileCommand);
 
   wizardsJourney.frameDelay = 10;
-  wizardsJourneySection = gameSection + 560;
+  wizardsJourneySection = gameSection + 500;
   wizardsjourney = createSprite(wizardsJourneySection, window.innerHeight-210, 150, 120);
   wizardsjourney.addAnimation("static", wizardsJourney);
 
@@ -379,7 +391,7 @@ function setup() {
 function draw() {
 
   // Debugging
-  //console.log("position:", floor(player.position.x/100));
+  console.log("position:", floor(player.position.x/100));
 
   background(skyBackground);
   globalTimer++;
@@ -501,6 +513,23 @@ function draw() {
       interactText("Press \"E\" to teleport", graphicWebTp, -50);
     }
   }
+  // Ask Apps
+  if (abs(askapps.position.x - player.position.x) <= 120) {
+    if (keyPressed() == "E") {
+      slideShow("Ask Applications Internship");
+      if (sound.checked) { continueSound = true; }
+      else { continueSound = false; }
+      slideShowing = true;
+    }
+    else if (slideShowing == true) {
+      leaveSlidesCheck();
+    }
+    else {
+      interactText("Press \"E\" to view", askapps, -90);
+      noSlideShow();
+      if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
+    }
+  }
   // Acorn Station
   if (abs(acornstation.position.x - player.position.x) <= 180) {
     if (keyPressed() == "E") {
@@ -595,33 +624,37 @@ function draw() {
     }
 
   // Video
-  displayText("Video Editing", videoTp, 30, 150, 5, 255, CENTER, 20, hoverAmnt);
-  if (abs(videoTp.position.x - player.position.x) <= 100) {
-    if (keyPressed() == "E") {
-      fadeInEffect();
-      player.position.x = videoSection;
-    }
-    else {
-      interactText("Press \"E\" to teleport", videoTp, -50);
-    }
-  }
+  // displayText("Video Editing", videoTp, 30, 150, 5, 255, CENTER, 20, hoverAmnt);
+  // if (abs(videoTp.position.x - player.position.x) <= 100) {
+  //   if (keyPressed() == "E") {
+  //     fadeInEffect();
+  //     player.position.x = videoSection;
+  //   }
+  //   else {
+  //     interactText("Press \"E\" to teleport", videoTp, -50);
+  //   }
+  // }
 
   // Location Labels + Back to Start Link
   if (player.position.x >= graphicWebSection) {
     document.getElementById("locationMessage").style.visibility = "visible";
     document.getElementById("locationMessage").style.opacity = "1";
+    document.getElementById("locationMessage").style.backgroundColor = "#5A89AD";
   }
-  if (player.position.x >= videoSection) {
-    document.getElementById("locationMessage").innerHTML = "Video Editing";
-  }
-  else if (player.position.x >= threeDSection) {
+  // if (player.position.x >= videoSection) {
+  //   document.getElementById("locationMessage").innerHTML = "Video Editing";
+  // } else if 
+  if (player.position.x >= threeDSection) {
     document.getElementById("locationMessage").innerHTML = "3D Modeling + Animation";
+    document.getElementById("locationMessage").style.backgroundColor = "#D3D1FF";
   }
   else if (player.position.x >= gameSection) {
     document.getElementById("locationMessage").innerHTML = "Game Design";
+    document.getElementById("locationMessage").style.backgroundColor = "#FFCCCC";
   }
   else if (player.position.x >= graphicWebSection) {
     document.getElementById("locationMessage").innerHTML = "Graphic + Web Design";
+    document.getElementById("locationMessage").style.backgroundColor = "#BEE8CC";
   } 
   else {
     document.getElementById("locationMessage").style.visibility = "hidden";
@@ -746,7 +779,10 @@ function slideShow(title) {
   document.getElementById("slideshow").style.opacity = "1";
   document.getElementById("title").innerHTML = title;
   //Graphics and Web Design
-  if (title == "acorn") {
+  if (title == "Ask Applications Internship") {
+    currentSlides = askAppsSlides;
+    currentSlidesName = "AskApplicationsInternship";
+  } else if (title == "acorn") {
     currentSlides = acornSlides;
     currentSlidesName = "Acorn";
   } else if (title == "LinkNYC Time Interface") {

@@ -138,12 +138,11 @@ input#sound:checked ~ .off img {
   top: 25px;
   left: 50%;
   transform: translate(-50%, 0);
-  color: white;
+  color: #5a89ad;
   font-family: "silkscreennormal";
   font-weight: normal;
   font-style: normal;
   font-size: 18px;
-  background-color: #4b7da3;
   padding: 15px 25px;
   border-radius: 5px;
   visibility: hidden;
