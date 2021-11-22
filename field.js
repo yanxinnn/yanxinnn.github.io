@@ -351,7 +351,7 @@ function setup() {
 
   // 3D Animation + Modeling (back)
   tanTrumSection = threeDSection + 280;
-  tantrum = createSprite(tanTrumSection, window.innerHeight-225, 170, 150);
+  tantrum = createSprite(tanTrumSection, window.innerHeight-225, 170, 100);
   tantrum.addImage(tanTrum);
 
   // Player Animations
@@ -626,6 +626,24 @@ function draw() {
       }
       else {
         interactText("Press \"E\" to teleport", threeDTp, -50);
+      }
+    }
+
+    // Tantrum
+    if (abs(tantrum.position.x - player.position.x) <= 100) {
+      if (keyPressed() == "E") {
+        slideShow("Tantrum");
+        if (sound.checked) { continueSound = true; }
+        else { continueSound = false; }
+        slideShowing = true;
+      }
+      else if (slideShowing == true) {
+        leaveSlidesCheck();
+      }
+      else {
+        interactText("Press \"E\" to view", tantrum, -90);
+        noSlideShow();
+        if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
       }
     }
 
