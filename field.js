@@ -49,8 +49,6 @@ var snd_windyPetals;
 var continueSound = false;
 
 // Environment
-var testSprite;
-var testObject;
 var numOfPlatforms = 80;
 var platformsGroup;
 var middlePlatform; // where camera snaps to following player
@@ -199,6 +197,13 @@ var wizardsJourneySlides = [
   "images/slides/wizardsJourney03.jpg"
 ]
 
+// 3D Modeling + Animation
+var tanTrum;
+var tantrum;
+var tanTrumSlides = [
+  "images/slides/acornLogo.png"
+]
+
 // Slideshow
 var slideShowing = false;
 
@@ -206,9 +211,6 @@ var slideShowing = false;
 function preload() {
 
   skyBackground = loadImage(sky);
-
-  // Test Object
-  testSprite = loadAnimation("images/environment/test.png");
 
   // Player Animations
   playerIdle = loadAnimation(playerIdle1, playerIdle2, playerIdle1, playerIdle3, playerIdle1, playerIdle3);
@@ -239,6 +241,9 @@ function preload() {
   // Game
   missileCommand = loadAnimation(missileCommand1, missileCommand2, missileCommand3);
   wizardsJourney = loadAnimation(wizardsJourney1, wizardsJourney2, wizardsJourney3, wizardsJourney4);
+
+  // 3D Modeling + Animation
+  tanTrum = loadImage("images/environment/tantrum.png");
 
 }
 
@@ -318,10 +323,6 @@ function setup() {
   // videoTp.addAnimation("static", purpleTp);
   // videoSection = platformsGroup[60].position.x;
 
-  // Test Object
-  testObject = createSprite(threeDSection, window.innerHeight-225, 100, 100);
-  testObject.addAnimation("static", testSprite);
-
   // Graphic + Web (back)
   askApps.frameDelay = 20;
   askAppsSection = graphicWebSection + 280;
@@ -347,6 +348,11 @@ function setup() {
   wizardsJourneySection = gameSection + 500;
   wizardsjourney = createSprite(wizardsJourneySection, window.innerHeight-210, 150, 120);
   wizardsjourney.addAnimation("static", wizardsJourney);
+
+  // 3D Animation + Modeling (back)
+  tanTrumSection = threeDSection + 280;
+  tantrum = createSprite(tanTrumSection, window.innerHeight-225, 170, 150);
+  tantrum.addImage(tanTrum);
 
   // Player Animations
   playerIdle.frameDelay = 18;
@@ -391,7 +397,7 @@ function setup() {
 function draw() {
 
   // Debugging
-  console.log("position:", floor(player.position.x/100));
+  //console.log("position:", floor(player.position.x/100));
 
   background(skyBackground);
   globalTimer++;
