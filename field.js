@@ -200,7 +200,16 @@ var wizardsJourneySlides = [
 // 3D Modeling + Animation
 var tanTrum;
 var tantrum;
+var tanTrumSection;
 var tanTrumSlides = [
+  "images/slides/acornLogo.png"
+]
+var deskRoom;
+var deskroom;
+var deskRoomSection;
+var deskRoom1 = "images/environment/deskRoom1.png";
+var deskRoom2 = "images/environment/deskRoom2.png";
+var deskRoomSlides = [
   "images/slides/acornLogo.png"
 ]
 
@@ -244,6 +253,7 @@ function preload() {
 
   // 3D Modeling + Animation
   tanTrum = loadImage("images/environment/tantrum.png");
+  deskRoom = loadAnimation(deskRoom1, deskRoom2);
 
 }
 
@@ -353,6 +363,11 @@ function setup() {
   tanTrumSection = threeDSection + 280;
   tantrum = createSprite(tanTrumSection, window.innerHeight-225, 170, 100);
   tantrum.addImage(tanTrum);
+
+  deskRoom.frameDelay = 25;
+  deskRoomSection = threeDSection + 520;
+  deskroom = createSprite(deskRoomSection, window.innerHeight-260, 160, 220);
+  deskroom.addAnimation("static", deskRoom);
 
   // Player Animations
   playerIdle.frameDelay = 18;
@@ -628,7 +643,6 @@ function draw() {
         interactText("Press \"E\" to teleport", threeDTp, -50);
       }
     }
-
     // Tantrum
     if (abs(tantrum.position.x - player.position.x) <= 100) {
       if (keyPressed() == "E") {
@@ -642,6 +656,23 @@ function draw() {
       }
       else {
         interactText("Press \"E\" to view", tantrum, -90);
+        noSlideShow();
+        if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
+      }
+    }
+    // Desk Room
+    if (abs(deskroom.position.x - player.position.x) <= 120) {
+      if (keyPressed() == "E") {
+        slideShow("3D Room");
+        if (sound.checked) { continueSound = true; }
+        else { continueSound = false; }
+        slideShowing = true;
+      }
+      else if (slideShowing == true) {
+        leaveSlidesCheck();
+      }
+      else {
+        interactText("Press \"E\" to view", deskroom, -120);
         noSlideShow();
         if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
       }
@@ -818,6 +849,12 @@ function slideShow(title) {
   } else if (title == "Wizard's Journey") {
     currentSlides = wizardsJourneySlides;
     currentSlidesName = "WizardsJourney";
+  } else if (title == "Tantrum") {
+    currentSlides = tanTrumSlides;
+    currentSlidesName = "TanTrum";
+  } else if (title == "3D Room") {
+    currentSlides = deskRoomSlides;
+    currentSlidesName = "DeskRoom";
   }
 
   if (newSlides == true) { // new set of slides
