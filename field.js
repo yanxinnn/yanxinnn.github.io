@@ -212,6 +212,12 @@ var deskRoom2 = "images/environment/deskRoom2.png";
 var deskRoomSlides = [
   "images/slides/acornLogo.png"
 ]
+var rayGun;
+var raygun;
+var raygunSection;
+var rayGunSlides = [
+  "images/slides/acornLogo.png"
+]
 
 // Slideshow
 var slideShowing = false;
@@ -254,6 +260,7 @@ function preload() {
   // 3D Modeling + Animation
   tanTrum = loadImage("images/environment/tantrum.png");
   deskRoom = loadAnimation(deskRoom1, deskRoom2);
+  rayGun = loadImage("images/environment/raygun.png");
 
 }
 
@@ -368,6 +375,10 @@ function setup() {
   deskRoomSection = threeDSection + 520;
   deskroom = createSprite(deskRoomSection, window.innerHeight-260, 160, 220);
   deskroom.addAnimation("static", deskRoom);
+
+  rayGunSection = threeDSection + 800;
+  raygun = createSprite(rayGunSection, window.innerHeight-220, 210, 140);
+  raygun.addImage(rayGun);
 
   // Player Animations
   playerIdle.frameDelay = 18;
@@ -632,63 +643,80 @@ function draw() {
     }
   }
 
-    // 3D Modeling + Animation
-    displayText("3D Modeling + Animation", threeDTp, 30, 180, 5, 255, CENTER, 20, hoverAmnt);
-    if (abs(threeDTp.position.x - player.position.x) <= 100) {
-      if (keyPressed() == "E") {
-        fadeInEffect();
-        player.position.x = threeDSection;
-      }
-      else {
-        interactText("Press \"E\" to teleport", threeDTp, -50);
-      }
+  // 3D Modeling + Animation
+  displayText("3D Modeling + Animation", threeDTp, 30, 180, 5, 255, CENTER, 20, hoverAmnt);
+  if (abs(threeDTp.position.x - player.position.x) <= 100) {
+    if (keyPressed() == "E") {
+      fadeInEffect();
+      player.position.x = threeDSection;
     }
-    // Tantrum
-    if (abs(tantrum.position.x - player.position.x) <= 100) {
-      if (keyPressed() == "E") {
-        slideShow("Tantrum");
-        if (sound.checked) { continueSound = true; }
-        else { continueSound = false; }
-        slideShowing = true;
-      }
-      else if (slideShowing == true) {
-        leaveSlidesCheck();
-      }
-      else {
-        interactText("Press \"E\" to view", tantrum, -90);
-        noSlideShow();
-        if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
-      }
+    else {
+      interactText("Press \"E\" to teleport", threeDTp, -50);
     }
-    // Desk Room
-    if (abs(deskroom.position.x - player.position.x) <= 120) {
-      if (keyPressed() == "E") {
-        slideShow("3D Room");
-        if (sound.checked) { continueSound = true; }
-        else { continueSound = false; }
-        slideShowing = true;
-      }
-      else if (slideShowing == true) {
-        leaveSlidesCheck();
-      }
-      else {
-        interactText("Press \"E\" to view", deskroom, -120);
-        noSlideShow();
-        if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
-      }
+  }
+  // Tantrum
+  if (abs(tantrum.position.x - player.position.x) <= 100) {
+    if (keyPressed() == "E") {
+      slideShow("Tantrum");
+      if (sound.checked) { continueSound = true; }
+      else { continueSound = false; }
+      slideShowing = true;
     }
+    else if (slideShowing == true) {
+      leaveSlidesCheck();
+    }
+    else {
+      interactText("Press \"E\" to view", tantrum, -90);
+      noSlideShow();
+      if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
+    }
+  }
+  // Desk Room
+  if (abs(deskroom.position.x - player.position.x) <= 120) {
+    if (keyPressed() == "E") {
+      slideShow("3D Room");
+      if (sound.checked) { continueSound = true; }
+      else { continueSound = false; }
+      slideShowing = true;
+    }
+    else if (slideShowing == true) {
+      leaveSlidesCheck();
+    }
+    else {
+      interactText("Press \"E\" to view", deskroom, -120);
+      noSlideShow();
+      if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
+    }
+  }
+  // Raygun
+  if (abs(raygun.position.x - player.position.x) <= 140) {
+    if (keyPressed() == "E") {
+      slideShow("Raygun");
+      if (sound.checked) { continueSound = true; }
+      else { continueSound = false; }
+      slideShowing = true;
+    }
+    else if (slideShowing == true) {
+      leaveSlidesCheck();
+    }
+    else {
+      interactText("Press \"E\" to view", raygun, -120);
+      noSlideShow();
+      if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
+    }
+  }
 
-  // Video
-  // displayText("Video Editing", videoTp, 30, 150, 5, 255, CENTER, 20, hoverAmnt);
-  // if (abs(videoTp.position.x - player.position.x) <= 100) {
-  //   if (keyPressed() == "E") {
-  //     fadeInEffect();
-  //     player.position.x = videoSection;
-  //   }
-  //   else {
-  //     interactText("Press \"E\" to teleport", videoTp, -50);
-  //   }
-  // }
+    // Video
+    // displayText("Video Editing", videoTp, 30, 150, 5, 255, CENTER, 20, hoverAmnt);
+    // if (abs(videoTp.position.x - player.position.x) <= 100) {
+    //   if (keyPressed() == "E") {
+    //     fadeInEffect();
+    //     player.position.x = videoSection;
+    //   }
+    //   else {
+    //     interactText("Press \"E\" to teleport", videoTp, -50);
+    //   }
+    // }
 
   // Location Labels + Back to Start Link
   if (player.position.x >= graphicWebSection) {
@@ -855,6 +883,9 @@ function slideShow(title) {
   } else if (title == "3D Room") {
     currentSlides = deskRoomSlides;
     currentSlidesName = "DeskRoom";
+  } else if (title == "Raygun") {
+    currentSlides = rayGunSlides;
+    currentSlidesName = "RayGun";
   }
 
   if (newSlides == true) { // new set of slides
