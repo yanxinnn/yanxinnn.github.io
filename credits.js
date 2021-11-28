@@ -144,3 +144,7 @@ function hover(element) {
 function unhover(element) {
   element.setAttribute("src", "images/widgets/" + element.id + "1.png");
 }
+
+function mainMenu() {
+  window.location = "index.html";
+}

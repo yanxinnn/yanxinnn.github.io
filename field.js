@@ -184,6 +184,13 @@ var missileCommandSlides = [
   "images/slides/missileCommand1.png",
   "images/slides/missileCommand2.png"
 ]
+var aboutMissileCommandClone = [
+  "A clone of the classic arcade game Missile Command by Atari. <br><br>Created with GameMaker Studio 2",
+
+  "Snapshot #1. <br><br>Created with GameMaker Studio 2",
+
+  "Snapshot #2. <br><br>Created with GameMaker Studio 2"
+]
 var wizardsJourney1 = "images/environment/wizardsJourney1.png";
 var wizardsJourney2 = "images/environment/wizardsJourney2.png";
 var wizardsJourney3 = "images/environment/wizardsJourney3.png";
@@ -196,13 +203,36 @@ var wizardsJourneySlides = [
   "images/slides/wizardsJourney02.jpg",
   "images/slides/wizardsJourney03.jpg"
 ]
+var aboutWizardsJourney = [
+  "An original multiplayer vertical race game. 3 playable characters each with different spells that can be used to hinder other players \
+  or destroy incoming non-player projectiles. Mana bars at the top indicate the respective color's ability to use spells and teleport \
+  back into view if they fall behind. First to the top wins. <br><br>Created with GameMaker Studio 2",
+
+  "Snapshot #1. <br><br>Created with GameMaker Studio 2",
+
+  "Snapshot #2. <br><br>Created with GameMaker Studio 2",
+
+  "Snapshot #3. <br><br>Created with GameMaker Studio 2"
+]
 
 // 3D Modeling + Animation
 var tanTrum;
 var tantrum;
 var tanTrumSection;
 var tanTrumSlides = [
-  "images/slides/acornLogo.png"
+  "images/slides/tantrum.mov",
+  "images/slides/tantrum01.png",
+  "images/slides/tantrum02.png",
+  "images/slides/tantrum03.png"
+]
+var aboutTanTrum = [
+  "1 minute animation of a child learning the pain of defeat. <br><br>Created with Autodesk Maya",
+
+  "Snapshot #1. <br><br>Created with Autodesk Maya",
+
+  "Snapshot #2. <br><br>Created with Autodesk Maya",
+
+  "Snapshot #3. <br><br>Created with Autodesk Maya"
 ]
 var deskRoom;
 var deskroom;
@@ -210,13 +240,28 @@ var deskRoomSection;
 var deskRoom1 = "images/environment/deskRoom1.png";
 var deskRoom2 = "images/environment/deskRoom2.png";
 var deskRoomSlides = [
-  "images/slides/acornLogo.png"
+  "images/slides/deskRoom01.png",
+  "images/slides/deskRoom02.png",
+  "images/slides/deskRoom03.png"
+]
+var aboutDeskRoom = [
+  "Rendered 3d model of a room from reference. <br><br>Created with Autodesk Maya",
+
+  "Reference used for room model.",
+
+  "Work in progress room render. <br><br>Created with Autodesk Maya"
 ]
 var rayGun;
 var raygun;
 var raygunSection;
 var rayGunSlides = [
-  "images/slides/acornLogo.png"
+  "images/slides/raygun.mov",
+  "images/slides/raygunReference.png"
+]
+var aboutRaygun = [
+  "Rendered 3d model of raygun from reference. <br><br>Created with Autodesk Maya",
+
+  "Reference used for raygun model.",
 ]
 
 // Slideshow
@@ -700,7 +745,7 @@ function draw() {
       leaveSlidesCheck();
     }
     else {
-      interactText("Press \"E\" to view", raygun, -120);
+      interactText("Press \"E\" to view", raygun, -80);
       noSlideShow();
       if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
@@ -873,7 +918,7 @@ function slideShow(title) {
     currentSlidesName = "TimeInterface";
   } else if (title == "Missile Command Clone") {
     currentSlides = missileCommandSlides;
-    currentSlidesName = "MissileCommand";
+    currentSlidesName = "MissileCommandClone";
   } else if (title == "Wizard's Journey") {
     currentSlides = wizardsJourneySlides;
     currentSlidesName = "WizardsJourney";
@@ -915,6 +960,7 @@ function slideShow(title) {
       currentSlide.disablePictureInPicture = true;
       currentSlide.controlsList = "nodownload";
       currentSlide.autoplay = true;
+      currentSlide.volume = 0.2;
     }
     currentSlide.src = currentSlides[slideNum]; //shows slide or video
     document.getElementById("slides").appendChild(currentSlide); 
@@ -938,6 +984,8 @@ function dotUpdate() { // dot update, description, and subtitle update
   if (slideNum == 0) {
     currentSubtitle.innerHTML = "About";
   }
+  // Graphic + Web Design
+  // Acorn Station
   if (currentSlidesName == "Acorn") {
     if (slideNum == 1 || slideNum == 2) {
       currentSubtitle.innerHTML = "Logo Drafts";
@@ -949,6 +997,40 @@ function dotUpdate() { // dot update, description, and subtitle update
     currentAbout.innerHTML = aboutAcorn[slideNum];
   } else if (currentSlidesName == "TimeInterface") {
     currentAbout.innerHTML = "";
+  // Game Design
+  // Missile Command Clone
+  } else if (currentSlidesName == "MissileCommandClone") {
+    if (slideNum >= 1) {
+      currentSubtitle.innerHTML = "Snapshots"
+    }
+    currentAbout.innerHTML = aboutMissileCommandClone[slideNum];
+  // Wizard's Journey
+  } else if (currentSlidesName == "WizardsJourney") {
+    if (slideNum >= 1) {
+      currentSubtitle.innerHTML = "Snapshots"
+    }
+    currentAbout.innerHTML = aboutWizardsJourney[slideNum];
+  // 3D Modeling + Animation
+  // Tantrum
+  } else if (currentSlidesName == "TanTrum") {
+    if (slideNum >= 1) {
+      currentSubtitle.innerHTML = "Snapshots"
+    }
+    currentAbout.innerHTML = aboutTanTrum[slideNum];
+  // Desk Room
+  } else if (currentSlidesName == "DeskRoom") {
+    if (slideNum == 1) {
+      currentSubtitle.innerHTML = "Reference";
+    } else if (slideNum == 2) {
+      currentSubtitle.innerHTML = "WIP";
+    }
+    currentAbout.innerHTML = aboutDeskRoom[slideNum];
+  // Raygun
+  } else if (currentSlidesName == "RayGun") {
+    if (slideNum == 1) {
+      currentSubtitle.innerHTML = "Reference";
+    }
+    currentAbout.innerHTML = aboutRaygun[slideNum];
   } else {
     currentAbout.innerHTML = "";
   }
@@ -973,12 +1055,16 @@ function nextSlide(n) {
 }
 
 function noSlideShow() {
+  if (document.getElementById("slides").firstChild) { // refreshes showing slide
+    (document.getElementById("slides")).removeChild((document.getElementById("slides")).firstChild);
+  }
   document.getElementById("widgets").style.display = "grid";
   document.getElementById("slideshow").style.visibility = "hidden";
   document.getElementById("slideshow").style.opacity = "0";
   moveSpeed = staticMoveSpeed;
   slideNum = 0;
   dotCount = 0;
+  dotUpdated = false;
   var parent = document.getElementById("dotsLayout");
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild);
@@ -1026,3 +1112,7 @@ function backToStart() {
   fadeInEffect();
   noSlideShow();
 }
+
+ function mainMenu() {
+   window.location = "index.html";
+ }

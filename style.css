@@ -4,6 +4,7 @@ body {
   padding: 0;
   overflow-x: hidden;
   overflow-y: hidden;
+  cursor: url(images/icon-daisy2.png), default;
 }
 
 *,
@@ -35,7 +36,7 @@ body {
   border: none;
   color: white;
   padding: 10px 20px;
-  cursor: pointer;
+  cursor: url(images/icon-daisy3.png), pointer;
   display: block;
   margin-bottom: 15px;
   margin-left: 50%;
@@ -58,6 +59,7 @@ body {
 
 .menu-buttons button:hover {
   color: #eea9bb;
+  cursor: url(images/icon-daisy3.png), pointer;
 }
 
 /* In-game Widgets */
@@ -79,7 +81,7 @@ input#sound {
 }
 .on img:hover {
   opacity: 1;
-  cursor: pointer;
+  cursor: url(images/icon-daisy3.png), pointer;
 }
 .off img {
   opacity: 0.65;
@@ -87,7 +89,7 @@ input#sound {
 }
 .off img:hover {
   opacity: 1;
-  cursor: pointer;
+  cursor: url(images/icon-daisy3.png), pointer;
 }
 input#sound:checked ~ .on img {
   display: initial;
@@ -148,6 +150,7 @@ input#sound:checked ~ .off img {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.5s, opacity 0.5s;
+  user-select: none;
 }
 
 .bottomMessage {
@@ -190,7 +193,7 @@ a:visited {
 }
 
 a:hover {
-  cursor: pointer;
+  cursor: url(images/icon-daisy3.png), pointer;
 }
 
 a:hover,
@@ -206,20 +209,29 @@ a:active {
 }
 
 #mainMenuLink {
+  font-family: "silkscreennormal";
+  font-weight: normal;
+  font-style: normal;
   font-size: 24px;
   position: absolute;
   bottom: 30px;
   right: 40px;
   user-select: none;
   color: white;
+  border: none;
+  background-color: transparent;
 }
 
 #mainMenuLink:hover {
-  color: #8a8a8a;
+  color: #eea9bb;
+  cursor: url(images/icon-daisy3.png), pointer;
+  border: none;
 }
 
 #backToStartLink {
   font-family: "silkscreennormal";
+  font-weight: normal;
+  font-style: normal;
   user-select: none;
   font-size: 24px;
   position: absolute;
@@ -235,8 +247,8 @@ a:active {
 }
 
 #backToStartLink:hover {
-  color: #8a8a8a;
-  cursor: pointer;
+  color: #eea9bb;
+  cursor: url(images/icon-daisy3.png), pointer;
   border: none;
 }
 
@@ -384,7 +396,7 @@ a:active {
 }
 
 .contactInfoItem:hover {
-  cursor: pointer;
+  cursor: url(images/icon-daisy3.png), pointer;
 }
 
 /* reference: https://www.w3schools.com/howto/howto_js_alert.asp */
@@ -426,7 +438,7 @@ a:active {
   float: right;
   font-size: 30px;
   line-height: 20px;
-  cursor: pointer;
+  cursor: url(images/icon-daisy3.png), pointer;
   transition: 0.4s;
 }
 
@@ -471,6 +483,7 @@ a:active {
   font-size: 40px;
   opacity: 1;
   width: 700px;
+  user-select: none;
 }
 
 #pictureSection {
@@ -507,7 +520,7 @@ a:active {
 }
 
 .dots {
-  cursor: pointer;
+  cursor: url(images/icon-daisy3.png), pointer;
   height: 15px;
   width: 15px;
   margin: 5px 3px 3px;
@@ -536,7 +549,7 @@ a:active {
 
 #prevBar,
 #nextBar {
-  cursor: pointer;
+  cursor: url(images/icon-daisy3.png), pointer;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -582,6 +595,7 @@ a:active {
   transform: translateX(-50%);
   text-align: center;
   line-height: 1.1;
+  user-select: none;
 }
 
 #descriptions {
