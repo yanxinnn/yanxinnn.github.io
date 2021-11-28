@@ -320,6 +320,9 @@ function setup() {
   document.getElementById("onIcon").setAttribute("draggable", false);
   document.getElementById("offIcon").setAttribute("draggable", false);
   document.getElementById("slides").setAttribute("draggable", false);
+  document.getElementById("backToStartLink").style.backgroundColor = "rgba(0,0,0,0.3)";
+  document.getElementById("widgets").style.backgroundColor = "rgba(0,0,0,0.3)";
+  document.getElementById("movementDesktopMessage").style.backgroundColor = "rgba(0,0,0,0.3)";
 
   // Platforms
   platformsGroup = new Group();
@@ -892,7 +895,7 @@ function typeWriter(script, target, hover, length, counter, timer, customX, colo
 
 function chatBox(target, hover, length, height) {
   var boxColor = color(0);
-  boxColor.setAlpha(70);
+  boxColor.setAlpha(80);
   fill(boxColor);
   noStroke();
   rect(target.position.x-(length/2), target.position.y-hover, length, height, 5);
@@ -902,11 +905,13 @@ function slideShow(title) {
   snd_windyPetals.stop();
   moveSpeed = 0;
   player.changeAnimation("idle");
-  document.getElementById("widgets").style.display = "none";
+
+  document.getElementById("widgets").lastChild.display = "none";
   document.getElementById("slideshow").style.visibility = "visible";
   document.getElementById("slideshow").style.opacity = "1";
   document.getElementById("title").innerHTML = title;
-  //Graphics and Web Design
+
+  // Graphics and Web Design
   if (title == "Ask Applications Internship") {
     currentSlides = askAppsSlides;
     currentSlidesName = "AskApplicationsInternship";
@@ -916,13 +921,17 @@ function slideShow(title) {
   } else if (title == "LinkNYC Time Interface") {
     currentSlides = timeInterfaceSlides;
     currentSlidesName = "TimeInterface";
-  } else if (title == "Missile Command Clone") {
+  } 
+  // Game Design
+  else if (title == "Missile Command Clone") {
     currentSlides = missileCommandSlides;
     currentSlidesName = "MissileCommandClone";
   } else if (title == "Wizard's Journey") {
     currentSlides = wizardsJourneySlides;
     currentSlidesName = "WizardsJourney";
-  } else if (title == "Tantrum") {
+  } 
+  // 3D Modeling + Animation 
+  else if (title == "Tantrum") {
     currentSlides = tanTrumSlides;
     currentSlidesName = "TanTrum";
   } else if (title == "3D Room") {
@@ -1058,7 +1067,6 @@ function noSlideShow() {
   if (document.getElementById("slides").firstChild) { // refreshes showing slide
     (document.getElementById("slides")).removeChild((document.getElementById("slides")).firstChild);
   }
-  document.getElementById("widgets").style.display = "grid";
   document.getElementById("slideshow").style.visibility = "hidden";
   document.getElementById("slideshow").style.opacity = "0";
   moveSpeed = staticMoveSpeed;

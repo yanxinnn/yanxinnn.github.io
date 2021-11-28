@@ -65,9 +65,26 @@ body {
 /* In-game Widgets */
 #widgets {
   display: grid;
-  grid-template-columns: 18px 50px auto 50px 18px;
-  grid-template-rows: 12px auto 12px;
+  grid-template-columns: 18px 50px;
+  grid-template-rows: 15px 30px 30px 30px 15px;
   position: fixed;
+  user-select: none;
+  border-radius: 0px 0px 5px;
+  z-index: 1;
+}
+
+/* Home Button */
+#homeIcon {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  background: url("images/widgets/home1.png") no-repeat;
+  margin-right: 15px;
+  border: none;
+}
+
+#homeIcon:hover {
+  cursor: url(images/icon-daisy3.png), pointer;
+  background: url("images/widgets/home2.png") no-repeat;
 }
 
 /* Mute / Unmute Widget */
@@ -75,21 +92,19 @@ input#sound {
   display: none;
 }
 .on img {
+  background: url("images/widgets/sound1-1.png") no-repeat;
   display: none;
-  opacity: 0.65;
-  user-select: none;
 }
 .on img:hover {
-  opacity: 1;
   cursor: url(images/icon-daisy3.png), pointer;
+  background: url("images/widgets/sound1-2.png") no-repeat;
 }
 .off img {
-  opacity: 0.65;
-  user-select: none;
+  background: url("images/widgets/sound2-1.png") no-repeat;
 }
 .off img:hover {
-  opacity: 1;
   cursor: url(images/icon-daisy3.png), pointer;
+  background: url("images/widgets/sound2-2.png") no-repeat;
 }
 input#sound:checked ~ .on img {
   display: initial;
@@ -100,7 +115,7 @@ input#sound:checked ~ .off img {
 
 #soundIcon {
   grid-column-start: 2;
-  grid-row-start: 2;
+  grid-row-start: 4;
 }
 
 .loader-wrapper {
@@ -113,7 +128,7 @@ input#sound:checked ~ .off img {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
+  z-index: 99999;
   pointer-events: none;
   user-select: none;
 }
@@ -129,7 +144,6 @@ input#sound:checked ~ .off img {
   font-weight: normal;
   font-style: normal;
   font-size: 18px;
-  background-color: #5a89ad;
   padding: 15px 25px 35px;
   border-radius: 5px;
 }
@@ -140,11 +154,11 @@ input#sound:checked ~ .off img {
   top: 25px;
   left: 50%;
   transform: translate(-50%, 0);
-  color: #5a89ad;
   font-family: "silkscreennormal";
   font-weight: normal;
   font-style: normal;
   font-size: 18px;
+  color: rgba(0, 0, 0, 0.45);
   padding: 15px 25px;
   border-radius: 5px;
   visibility: hidden;
@@ -208,26 +222,6 @@ a:active {
   transition: 0.4s;
 }
 
-#mainMenuLink {
-  font-family: "silkscreennormal";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  position: absolute;
-  bottom: 30px;
-  right: 40px;
-  user-select: none;
-  color: white;
-  border: none;
-  background-color: transparent;
-}
-
-#mainMenuLink:hover {
-  color: #eea9bb;
-  cursor: url(images/icon-daisy3.png), pointer;
-  border: none;
-}
-
 #backToStartLink {
   font-family: "silkscreennormal";
   font-weight: normal;
@@ -235,14 +229,17 @@ a:active {
   user-select: none;
   font-size: 24px;
   position: absolute;
-  bottom: 80px;
-  right: 40px;
+  transform: rotate(-90deg);
+  transform-origin: right top 0;
+  top: 150px;
+  left: -210px;
   user-select: none;
   color: white;
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.5s, opacity 0.5s;
-  background-color: transparent;
+  border-radius: 4px;
+  padding: 10px;
   border: none;
 }
 
@@ -467,7 +464,7 @@ a:active {
   width: 100%;
   height: 100%;
   background-color: #000000;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 #title {
@@ -492,7 +489,7 @@ a:active {
   right: 38.8%;
   width: 50%;
   height: 70%;
-  background: #3b3b3b;
+  background: rgba(28, 28, 28, 0.8);
   border-radius: 5px;
 }
 
@@ -517,14 +514,16 @@ a:active {
   bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 500px;
+  padding: 2px 8px 5px 8px;
 }
 
 .dots {
-  cursor: url(images/icon-daisy3.png), pointer;
   height: 15px;
   width: 15px;
   margin: 5px 3px 3px;
-  background-color: #636363;
+  background-color: rgba(28, 30, 31, 0.7);
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.4s ease;
@@ -532,7 +531,8 @@ a:active {
 
 .active,
 .dots:hover {
-  background-color: #eea9bb;
+  cursor: url(images/icon-daisy3.png), pointer;
+  background-color: rgba(238, 169, 187, 1);
 }
 
 #prev,
@@ -549,7 +549,6 @@ a:active {
 
 #prevBar,
 #nextBar {
-  cursor: url(images/icon-daisy3.png), pointer;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -569,6 +568,7 @@ a:active {
 
 #prevBar:hover,
 #nextBar:hover {
+  cursor: url(images/icon-daisy3.png), pointer;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -801,9 +801,6 @@ a:active {
     height: 120px;
     top: -830px;
     left: 32vw;
-  }
-  #mainMenuLink {
-    font-size: 22px;
   }
 }
 

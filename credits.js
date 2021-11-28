@@ -35,6 +35,8 @@ function setup() {
   document.getElementById("profilePic").setAttribute("draggable", false);
   document.getElementById("linkedInIcon").setAttribute("draggable", false);
   document.getElementById("emailIcon").setAttribute("draggable", false);
+  document.getElementById("widgets").style.backgroundColor = "rgba(0,0,0,0.4)";
+  document.getElementById("widgets").style.gridTemplateRows = "15px 30px 15px";
 
   // Ripples
   var numOfRipples = window.innerWidth/25;

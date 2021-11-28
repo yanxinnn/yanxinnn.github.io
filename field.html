@@ -16,15 +16,16 @@
 <body>
 
   <div id="widgets">
+    <button onclick="mainMenu()" id="homeIcon" alt="Return to Main Menu"></button>
+    <!-- Mute / Unmute Widget -->
+    <!-- reference : https://stackoverflow.com/questions/22918220/how-to-create-a-only-mute-unmute-button-like-youtube-in-html -->
     <div id="soundIcon">
-      <!-- Mute / Unmute Widget -->
-      <!-- reference : https://stackoverflow.com/questions/22918220/how-to-create-a-only-mute-unmute-button-like-youtube-in-html -->
       <input type="checkbox" id="sound" onClick="toggleSound()">
       <label for="sound" class="on">
-        <img src="images/widgets/sound1.png" id="onIcon">
+        <img src="images/widgets/nothing.png" id="onIcon">
       </label>
       <label for="sound" class="off">
-        <img src="images/widgets/sound2.png" id="offIcon">
+        <img src="images/widgets/nothing.png" id="offIcon">
       </label>
     </div>
   </div>
@@ -61,8 +62,6 @@
   <div id="field-div"></div>
 
   <button onclick="backToStart()" id="backToStartLink" alt="Back to Start">BACK TO START</button>
-
-  <button onclick="mainMenu()" id="mainMenuLink" alt="Return to Main Menu">MAIN MENU</button>
 
   <script>
     $(window).on("load", function() {

@@ -97,10 +97,6 @@ function credits() {
   window.location = "credits.html";
 }
 
-function menu() {
-  window.location = "index.html";
-}
-
 // reference: https://codepen.io/shaikmaqsood/pen/XmydxJ
 function copyToClipboard(element) {
   var $temp = $("<input>");
