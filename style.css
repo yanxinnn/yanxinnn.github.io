@@ -158,7 +158,7 @@ input#sound:checked ~ .off img {
   font-weight: normal;
   font-style: normal;
   font-size: 18px;
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.5);
   padding: 15px 25px;
   border-radius: 5px;
   visibility: hidden;
@@ -227,12 +227,10 @@ a:active {
   font-weight: normal;
   font-style: normal;
   user-select: none;
-  font-size: 24px;
+  font-size: 22px;
   position: absolute;
-  transform: rotate(-90deg);
-  transform-origin: right top 0;
-  top: 150px;
-  left: -210px;
+  top: 20px;
+  left: 90px;
   user-select: none;
   color: white;
   visibility: hidden;
@@ -489,7 +487,7 @@ a:active {
   right: 38.8%;
   width: 50%;
   height: 70%;
-  background: rgba(28, 28, 28, 0.8);
+  background: rgba(28, 28, 28, 1);
   border-radius: 5px;
 }
 
@@ -578,7 +576,7 @@ a:active {
   left: 63.2%;
   width: 25%;
   height: 70%;
-  background: #3b3b3b;
+  background: rgba(28, 28, 28, 1);
   border-radius: 5px;
 }
 

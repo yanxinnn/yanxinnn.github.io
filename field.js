@@ -162,14 +162,21 @@ var timeInterface;
 var timeinterface;
 var timeInterfaceSection;
 var timeInterfaceSlides = [
-  "images/slides/linkNYC.jpg",
-  "images/slides/timeInterface1.png",
-  "images/slides/timeInterface2.png",
-  "images/slides/timeInterface3.png",
-  "images/slides/timeInterface4.png",
-  "images/slides/timeInterface5.png",
-  "images/slides/timeInterfaceDrafts1.png",
-  "images/slides/timeInterfaceDrafts2.png"
+  "images/slides/timeInterface01.png",
+  "images/slides/timeInterface02.png",
+  "images/slides/timeInterface03.png",
+  "images/slides/timeInterface04.png"
+]
+var aboutTimeInterface = [
+  "An alternative clock interface design that explores the relationship between time and weather. Distinguishes \
+  the type and severity of the current percipitation within the span of an hour (1st screen), the forecast for tomorrow (2nd screen), \
+  and the forecast for the next few days (3rd screen). <br><br>Created with Adobe Photoshop",
+
+  "Designs created and scaled for LinkNYC kiosks.",
+
+  "Drafts #1. Initial low fidelity prototype. <br><br>Created with Adobe Photoshop",
+
+  "Drafts #2. Sample of iterations made for the 3 screens. <br><br>Created with Adobe Photoshop"
 ]
 
 // Game
@@ -906,7 +913,8 @@ function slideShow(title) {
   moveSpeed = 0;
   player.changeAnimation("idle");
 
-  document.getElementById("widgets").lastChild.display = "none";
+  document.getElementById("widgets").style.gridTemplateRows = "15px 30px 15px";
+  document.getElementById("soundIcon").style.display = "none";
   document.getElementById("slideshow").style.visibility = "visible";
   document.getElementById("slideshow").style.opacity = "1";
   document.getElementById("title").innerHTML = title;
@@ -1005,7 +1013,12 @@ function dotUpdate() { // dot update, description, and subtitle update
     }
     currentAbout.innerHTML = aboutAcorn[slideNum];
   } else if (currentSlidesName == "TimeInterface") {
-    currentAbout.innerHTML = "";
+    if (slideNum == 1) {
+      currentSubtitle.innerHTML = "What is LinkNYC?";
+    } else if (slideNum >= 2) {
+      currentSubtitle.innerHTML = "Drafts";
+    }
+    currentAbout.innerHTML = aboutTimeInterface[slideNum];
   // Game Design
   // Missile Command Clone
   } else if (currentSlidesName == "MissileCommandClone") {
@@ -1067,6 +1080,8 @@ function noSlideShow() {
   if (document.getElementById("slides").firstChild) { // refreshes showing slide
     (document.getElementById("slides")).removeChild((document.getElementById("slides")).firstChild);
   }
+  document.getElementById("widgets").style.gridTemplateRows = "15px 30px 30px 30px 15px";
+  document.getElementById("soundIcon").style.display = "initial";
   document.getElementById("slideshow").style.visibility = "hidden";
   document.getElementById("slideshow").style.opacity = "0";
   moveSpeed = staticMoveSpeed;
