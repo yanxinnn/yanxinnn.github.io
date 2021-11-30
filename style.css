@@ -741,6 +741,12 @@ a:active {
   .letter {
     height: 70vw;
   }
+  #title {
+    font-size: 28px;
+  }
+  #aboutSectionHeader {
+    font-size: 22px;
+  }
 }
 
 @media (max-width: 800px) {
@@ -799,6 +805,9 @@ a:active {
     height: 120px;
     top: -830px;
     left: 32vw;
+  }
+  #title {
+    width: 300px;
   }
 }
 

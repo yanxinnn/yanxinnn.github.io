@@ -116,7 +116,31 @@ var askApps4 = "images/environment/askApps-4.png";
 var askapps;
 var askAppsSection;
 var askAppsSlides = [
-  "images/slides/acornLogo.png"
+  "images/slides/askApps1.png",
+  "images/slides/askApps2.png",
+  "images/slides/askApps3.png",
+  "images/slides/askApps4.png",
+  "images/slides/askApps5.png",
+  "images/slides/askApps6.png",
+  "images/slides/askApps7.png"
+]
+var aboutAskApps = [
+  "Uninstall pages created for Ask Apps browser extensions. Collaboration with product management intern \
+  to boost install rates for other company products. Instead of the usual uninstall page asking users for feedback \
+  after uninstallation (which often went unread and unorganized due to the large quantity), our proposal aims to use the space \
+  in a more effective and productive way. <br><br>Created with Adobe Photoshop",
+
+  "Sample #1 of ad designs made for Slimware in accordance to Google compliant ad specifications. <br><br>Created with Adobe Photoshop",
+
+  "Sample #2 of ad designs made for Slimware in accordance to Google compliant ad specifications. <br><br>Created with Adobe Photoshop",
+
+  "Sample #1 of landing page designs for various browser extensions. <br><br>Created with Adobe Photoshop and proprietary CMS and HTML/CSS",
+
+  "Sample #2 of landing page designs for various browser extensions. <br><br>Created with Adobe Photoshop and proprietary CMS and HTML/CSS",
+
+  "Sample #3 of landing page designs for various browser extensions. <br><br>Created with Adobe Photoshop and proprietary CMS and HTML/CSS",
+
+  "Sample #4 of landing page designs for various browser extensions. <br><br>Created with Adobe Photoshop and proprietary CMS and HTML/CSS"
 ]
 
 var acornStation;
@@ -206,12 +230,13 @@ var wizardsJourney;
 var wizardsjourney;
 var wizardsJourneySection;
 var wizardsJourneySlides = [
+  "images/slides/wizardsJourney.mov",
   "images/slides/wizardsJourney01.png",
   "images/slides/wizardsJourney02.jpg",
   "images/slides/wizardsJourney03.jpg"
 ]
 var aboutWizardsJourney = [
-  "An original multiplayer vertical race game. 3 playable characters each with different spells that can be used to hinder other players \
+  "A multiplayer vertical obstacle race game. 3 playable characters each with different spells that can be used to hinder other players \
   or destroy incoming non-player projectiles. Mana bars at the top indicate the respective color's ability to use spells and teleport \
   back into view if they fall behind. First to the top wins. <br><br>Created with GameMaker Studio 2",
 
@@ -1002,8 +1027,26 @@ function dotUpdate() { // dot update, description, and subtitle update
     currentSubtitle.innerHTML = "About";
   }
   // Graphic + Web Design
+  // Ask Applications
+  if (currentSlidesName == "AskApplicationsInternship") {
+    if (slideNum == 0) {
+      currentSubtitle.innerHTML = "Uninstall Pages";
+    } else if (slideNum == 1) {
+      currentSubtitle.innerHTML = "Ads for Slimware #1";
+    } else if (slideNum == 2) {
+      currentSubtitle.innerHTML = "Ads for Slimware #2";
+    } else if (slideNum == 3) {
+      currentSubtitle.innerHTML = "Landing Pages for Browser Extensions #1";
+    } else if (slideNum == 4) {
+      currentSubtitle.innerHTML = "Landing Pages for Browser Extensions #2";
+    } else if (slideNum == 5) {
+      currentSubtitle.innerHTML = "Landing Pages for Browser Extensions #3";
+    } else if (slideNum == 6) {
+      currentSubtitle.innerHTML = "Landing Pages for Browser Extensions #4";
+    }
+    currentAbout.innerHTML = aboutAskApps[slideNum];
   // Acorn Station
-  if (currentSlidesName == "Acorn") {
+  } else if (currentSlidesName == "Acorn") {
     if (slideNum == 1 || slideNum == 2) {
       currentSubtitle.innerHTML = "Logo Drafts";
     } else if (slideNum == 3 || slideNum == 4) {
