@@ -49,9 +49,10 @@ var snd_windyPetals;
 var continueSound = false;
 
 // Environment
-var numOfPlatforms = 80;
+var numOfPlatforms = 70;
 var platformsGroup;
 var middlePlatform; // where camera snaps to following player
+var endPlatform = 56; 
 var groundTopLeft;
 var groundBottomLeft;
 var groundTop;
@@ -423,7 +424,7 @@ function setup() {
   // Teleporters
   // Back to Beginning
   whiteTp.frameDelay = 12;
-  beginningTp = createSprite(platformsGroup[65].position.x, window.innerHeight-200, 100, 100);
+  beginningTp = createSprite(platformsGroup[55].position.x, window.innerHeight-200, 100, 100);
   beginningTp.addAnimation("static", whiteTp);
   beginningSection = platformsGroup[13].position.x;
 
@@ -591,8 +592,12 @@ function draw() {
   }
 
   // Camera
-  if (player.position.x >= platformsGroup[middlePlatform].position.x) {
+  if (player.position.x >= platformsGroup[middlePlatform].position.x) { // snaps camera onto player
     camera.position.x = player.position.x;
+  }
+
+  if (player.position.x >= platformsGroup[endPlatform].position.x) { // camera stops moving player at end
+    camera.position.x = platformsGroup[endPlatform].position.x;
   }
 
   // Characters
@@ -893,8 +898,11 @@ function draw() {
       jump = false;
     }
   }
-  if (player.position.x < 24) {
+  if (player.position.x < 24) { // keeps player in screen
     player.position.x = 24;
+  }
+  if (player.position.x >= platformsGroup[endPlatform].position.x + 1) { // keeps player in screen
+    player.position.x -= 6.5;
   }
 
   // Petals
