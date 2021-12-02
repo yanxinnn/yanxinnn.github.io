@@ -204,6 +204,36 @@ var aboutTimeInterface = [
 ]
 
 // Game
+var outCast1 = "images/environment/outcast1.png";
+var outCast2 = "images/environment/outcast2.png";
+var outCast;
+var outcast;
+var outCastSection;
+var outCastSlides = [
+  "images/slides/outcastVideo.mov",
+  "images/slides/outCast1.jpg",
+  "images/slides/outCast2.jpg",
+  "images/slides/outCast3.jpg",
+  "images/slides/outCast4.jpg",
+  "images/slides/outCast5.jpg"
+]
+var aboutOutCast = [
+  "\"Outcast\" is a narrative RPG adventure developed by a team of 3. My role was the game's lead map designer \
+  and artist. All sprites other than the player model are originals. Plot: A young boy who once weilded the most powerful \
+  sword known to man loses everything and everyone he knows and loves when his village is attacked by strange hostile creatures. \
+  The hostile race steals the legendary sword and banishes the main character into an unfamiliar world. \
+  <br><br>Created with Gamemaker Studio 2 and Medibang Paint",
+
+  "Snapshot #1. <br><br>Created with Gamemaker Studio 2 and Medibang Paint",
+
+  "Snapshot #2. <br><br>Created with Gamemaker Studio 2 and Medibang Paint",
+
+  "Snapshot #3. <br><br>Created with Gamemaker Studio 2 and Medibang Paint",
+
+  "Snapshot #4. <br><br>Created with Gamemaker Studio 2 and Medibang Paint",
+
+  "Snapshot #5. <br><br>Created with Gamemaker Studio 2 and Medibang Paint"
+]
 var missileCommand1 = "images/environment/missileCommand1.png";
 var missileCommand2 = "images/environment/missileCommand2.png";
 var missileCommand3 = "images/environment/missileCommand3.png";
@@ -331,6 +361,7 @@ function preload() {
   timeInterface = loadAnimation(timeInterface1, timeInterface2, timeInterface3, timeInterface4, timeInterface5);
 
   // Game
+  outCast = loadAnimation(outCast1, outCast1, outCast1, outCast2);
   missileCommand = loadAnimation(missileCommand1, missileCommand2, missileCommand3);
   wizardsJourney = loadAnimation(wizardsJourney1, wizardsJourney2, wizardsJourney3, wizardsJourney4);
 
@@ -412,7 +443,7 @@ function setup() {
   purpleTp.frameDelay = 12;
   threeDTp = createSprite(platformsGroup[19].position.x, window.innerHeight-200, 100, 100);
   threeDTp.addAnimation("static", purpleTp);
-  threeDSection = platformsGroup[42].position.x;
+  threeDSection = platformsGroup[43].position.x;
 
   // Video Editing
   // purpleTp.frameDelay = 12;
@@ -422,41 +453,46 @@ function setup() {
 
   // Graphic + Web (back)
   askApps.frameDelay = 20;
-  askAppsSection = graphicWebSection + 280;
+  askAppsSection = graphicWebSection + 250;
   askapps = createSprite(askAppsSection, window.innerHeight-225, 160, 150);
   askapps.addAnimation("static", askApps);
 
-  acornSection = graphicWebSection + 610;
+  acornSection = graphicWebSection + 580;
   acornstation = createSprite(acornSection, window.innerHeight-225, 300, 150);
   acornstation.addImage(acornStation);
 
   timeInterface.frameDelay = 100;
-  timeInterfaceSection = graphicWebSection + 910;
+  timeInterfaceSection = graphicWebSection + 880;
   timeinterface = createSprite(timeInterfaceSection, window.innerHeight-225, 100, 150);
   timeinterface.addAnimation("static", timeInterface);
 
   // Game (back)
+  outCast.frameDelay = 8;
+  outCastSection = gameSection + 250;
+  outcast = createSprite(outCastSection, window.innerHeight-220, 150, 130);
+  outcast.addAnimation("static", outCast);
+
   missileCommand.frameDelay = 8;
-  missileCommandSection = gameSection + 280;
+  missileCommandSection = gameSection + 500;
   missilecommand = createSprite(missileCommandSection, window.innerHeight-210, 100, 120);
   missilecommand.addAnimation("static", missileCommand);
 
   wizardsJourney.frameDelay = 10;
-  wizardsJourneySection = gameSection + 500;
+  wizardsJourneySection = gameSection + 740;
   wizardsjourney = createSprite(wizardsJourneySection, window.innerHeight-210, 150, 120);
   wizardsjourney.addAnimation("static", wizardsJourney);
 
   // 3D Animation + Modeling (back)
-  tanTrumSection = threeDSection + 280;
+  tanTrumSection = threeDSection + 250;
   tantrum = createSprite(tanTrumSection, window.innerHeight-225, 170, 100);
   tantrum.addImage(tanTrum);
 
   deskRoom.frameDelay = 25;
-  deskRoomSection = threeDSection + 520;
+  deskRoomSection = threeDSection + 500;
   deskroom = createSprite(deskRoomSection, window.innerHeight-260, 160, 220);
   deskroom.addAnimation("static", deskRoom);
 
-  rayGunSection = threeDSection + 800;
+  rayGunSection = threeDSection + 790;
   raygun = createSprite(rayGunSection, window.innerHeight-220, 210, 140);
   raygun.addImage(rayGun);
 
@@ -688,10 +724,27 @@ function draw() {
       interactText("Press \"E\" to teleport", gameTp, -50);
     }
   }
+  // Outcast
+  if (abs(outcast.position.x - player.position.x) <= 120) {
+    if (keyPressed() == "E") {
+      slideShow("Outcast");
+      if (sound.checked) { continueSound = true; }
+      else { continueSound = false; }
+      slideShowing = true;
+    }
+    else if (slideShowing == true) {
+      leaveSlidesCheck();
+    }
+    else {
+      interactText("Press \"E\" to view", outcast, -80);
+      noSlideShow();
+      if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
+    }
+  }
   // Missile Command
   if (abs(missilecommand.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
-      slideShow("Missile Command Clone", "About");
+      slideShow("Missile Command Clone");
       if (sound.checked) { continueSound = true; }
       else { continueSound = false; }
       slideShowing = true;
@@ -956,7 +1009,10 @@ function slideShow(title) {
     currentSlidesName = "TimeInterface";
   } 
   // Game Design
-  else if (title == "Missile Command Clone") {
+  else if (title == "Outcast") {
+    currentSlides = outCastSlides;
+    currentSlidesName = "OutCast";
+  } else if (title == "Missile Command Clone") {
     currentSlides = missileCommandSlides;
     currentSlidesName = "MissileCommandClone";
   } else if (title == "Wizard's Journey") {
@@ -1031,19 +1087,11 @@ function dotUpdate() { // dot update, description, and subtitle update
   if (currentSlidesName == "AskApplicationsInternship") {
     if (slideNum == 0) {
       currentSubtitle.innerHTML = "Uninstall Pages";
-    } else if (slideNum == 1) {
-      currentSubtitle.innerHTML = "Ads for Slimware #1";
-    } else if (slideNum == 2) {
-      currentSubtitle.innerHTML = "Ads for Slimware #2";
-    } else if (slideNum == 3) {
-      currentSubtitle.innerHTML = "Landing Pages for Browser Extensions #1";
-    } else if (slideNum == 4) {
-      currentSubtitle.innerHTML = "Landing Pages for Browser Extensions #2";
-    } else if (slideNum == 5) {
-      currentSubtitle.innerHTML = "Landing Pages for Browser Extensions #3";
-    } else if (slideNum == 6) {
-      currentSubtitle.innerHTML = "Landing Pages for Browser Extensions #4";
-    }
+    } else if (slideNum == 1 || slideNum == 2) {
+      currentSubtitle.innerHTML = "Ads for Slimware";
+    } else if (slideNum >= 3) {
+      currentSubtitle.innerHTML = "Landing Pages for Browser Extensions";
+    } 
     currentAbout.innerHTML = aboutAskApps[slideNum];
   // Acorn Station
   } else if (currentSlidesName == "Acorn") {
@@ -1063,23 +1111,29 @@ function dotUpdate() { // dot update, description, and subtitle update
     }
     currentAbout.innerHTML = aboutTimeInterface[slideNum];
   // Game Design
+  // Outcast 
+  } else if (currentSlidesName == "OutCast") {
+    if (slideNum >= 1) {
+      currentSubtitle.innerHTML = "Snapshots";
+    }
+    currentAbout.innerHTML = aboutOutCast[slideNum];
   // Missile Command Clone
   } else if (currentSlidesName == "MissileCommandClone") {
     if (slideNum >= 1) {
-      currentSubtitle.innerHTML = "Snapshots"
+      currentSubtitle.innerHTML = "Snapshots";
     }
     currentAbout.innerHTML = aboutMissileCommandClone[slideNum];
   // Wizard's Journey
   } else if (currentSlidesName == "WizardsJourney") {
     if (slideNum >= 1) {
-      currentSubtitle.innerHTML = "Snapshots"
+      currentSubtitle.innerHTML = "Snapshots";
     }
     currentAbout.innerHTML = aboutWizardsJourney[slideNum];
   // 3D Modeling + Animation
   // Tantrum
   } else if (currentSlidesName == "TanTrum") {
     if (slideNum >= 1) {
-      currentSubtitle.innerHTML = "Snapshots"
+      currentSubtitle.innerHTML = "Snapshots";
     }
     currentAbout.innerHTML = aboutTanTrum[slideNum];
   // Desk Room
