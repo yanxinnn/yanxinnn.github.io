@@ -52,7 +52,7 @@ var continueSound = false;
 var numOfPlatforms = 70;
 var platformsGroup;
 var middlePlatform; // where camera snaps to following player
-var endPlatform = 56; 
+var endPlatform = 58; 
 var groundTopLeft;
 var groundBottomLeft;
 var groundTop;
@@ -69,32 +69,32 @@ var grassBlade2 = "images/environment/grassblade2.png";
 var grassBlade3 = "images/environment/grassblade3.png";
 var grassBlade4 = "images/environment/grassblade4.png";
 var grassBlade5 = "images/environment/grassblade5.png";
-var whiteTp;
+var whiteTpFrames;
 var whiteTp1 = "images/environment/whiteTp1.png";
 var whiteTp2 = "images/environment/whiteTp2.png";
 var whiteTp3 = "images/environment/whiteTp3.png";
 var beginningTp;
 var beginningSection;
 var threeDTp;
-var blueTp;
+var blueTpFrames;
 var blueTp1 = "images/environment/blueTp1.png";
 var blueTp2 = "images/environment/blueTp2.png";
 var blueTp3 = "images/environment/blueTp3.png";
 var threeDSection;
-var greenTp;
 var graphicWebTp;
+var greenTpFrames;
 var greenTp1 = "images/environment/greenTp1.png";
 var greenTp2 = "images/environment/greenTp2.png";
 var greenTp3 = "images/environment/greenTp3.png";
 var graphicWebSection;
-var redTp;
 var gameTp;
+var redTpFrames;
 var redTp1 = "images/environment/redTp1.png";
 var redTp2 = "images/environment/redTp2.png";
 var redTp3 = "images/environment/redTp3.png";
 var gameSection;
-var purpleTp;
 var videoTp;
+var purpleTpFrames;
 var purpleTp1 = "images/environment/purpleTp1.png";
 var purpleTp2 = "images/environment/purpleTp2.png";
 var purpleTp3 = "images/environment/purpleTp3.png";
@@ -109,12 +109,88 @@ var dotUpdated = false;
 var newSlides = true;
 var newSlide = true;
 
-var askApps;
+var floatItFrames;
+var floatIt1 = "images/environment/floatItFountain1.png";
+var floatIt2 = "images/environment/floatItFountain2.png";
+var floatIt3 = "images/environment/floatItFountain3.png";
+var floatIt4 = "images/environment/floatItFountain4.png";
+var floatItNotes;
+var floatItSection;
+var floatItSlides = [
+  "images/slides/floatItTrailer.mov",
+  "images/slides/floatIt01.png",
+  "images/slides/floatIt02.png",
+  "images/slides/floatIt03.png",
+  "images/slides/floatItQuestions.png",
+  "images/slides/floatItUserResearch.png",
+  "images/slides/floatItCompetitor.png",
+  "images/slides/floatItMoscow.png",
+  "images/slides/floatItDocumentation1.png",
+  "images/slides/floatItDocumentation2.mov"
+]
+var aboutFloatItNotes = [
+  "Staying on track with classes, work, meetings, assignments, and deadlines is hard. It's stressful enough \
+  when life seems to have it out for you and throws all the lemons it's got at you. But on top of that, you \
+  have to deal with schoolwork, work-work, life-work, all the things you need to work on, but for some reason, \
+  it's just not working out. I decided to tackle this great woe of our generation by building a chrome extension that \
+  helps users stay afloat in the hecticity of their everyday by providing them with a sanctuary in their New Tab page \
+  where they can stay organized, motivated, and sane, with light-hearted aesthetics, daily inspirational quotes, and \
+  built-in task management tools. <br><br>Users store their tasks as bottles that get added onto their New Tab page's waterscape \
+  and can view/update their tasks throughout the day. <br><br>Features include a time/date display, planner functionalities \
+  (create/edit/delete tasks, create/edit/delete subjects, progress tracker for tasks, and customizable color coded subjects), \
+  hand-drawn images and animations, and daily inspirational quotes.<br><br>This was my undergrad senior project that I am continuing \
+  to work on and is for those who need a planner and appreciate a bit of playfulness throughout their daily \
+  chrome browsing experience! <br><br>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint",
+
+  "Screenshots of page when there are no tasks (top) and when there are tasks (bottom). \
+  <br><br>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint",
+
+  "Screenshots of page when users click/hover bottles (top) and confirmation pop-up for deletion of a task (bottom). \
+  <br><br>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint",
+
+  "Screenshots of create a new subject form (top left), create a new task form (right), and view of existing subjects (bottom left). \
+  <br><br>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint",
+
+  "My target audience is Chrome users on laptops/desktops ages 14-25. My initial user research goal was to find out my target \
+  audience's general online habits, their usage of planners, if any (physical and/or digital), their favorite aspects \
+  of their current solution, and parts of their current solution that don’t work for them. <br><br>These are the user research \
+  questions that I asked participants (ages 16-23) during one-on-one interviews.",
+
+  "From my user research, I was able to understand who popular competitors are for futher competitive analysis, \
+  important planner functionalities that users preferred, and what tools are considered “fluff” and/or unnecessary \
+  by a majority of them. <br><br>Here are some of the big takeaways from the interviews: <br><br>1. Most of the participants \
+  use a digital planner with a few using a mix of both/only physical planners. Most of the digital planner \
+  users used Google Calenders, Notes app, or Trello to keep track of their schedules and to-do lists. <br><br>2. \
+  Benefits of using digital planners for participants include ease of organization (pre-formatted unlike physical planners), \
+  easy access on the phone/computer, being able to see a daily/weekly view of their schedule, \
+  a place to have important links, and reminders. Pain points of using digital planners include the lack of \
+  customization outside of text boxes, an overwhelming amount of tools that go unused, and the lack of sorting by subject/groups. \
+  <br><br>3. Benefits of physical planners include the freedom of formatting (not prestructured like digital planners), \
+  ability to add creative non-text additions, and a space for brain dump. Pain points include not being able to edit tasks like \
+  digital planners, it being harder to find what you’re looking for in all the pages, and needing to carry it around everywhere.",
+
+  "Here are some of the competitors I researched that take over the New Tab page. I took note of each of their \
+  taglines, audiences, purposes, features, scopes, and visual styles.",
+
+  "Based on my research findings, I came up with a list of considerations for my chrome extension to include features that users \
+  appreciate in a planner/task manager. I used the MoSCoW method to prioritize certain features to be completed in time for my undergrad \
+  senior project gallery exhibition but plan to implement more of them before releasing my chrome extension onto the Chrome App Store!",
+
+  "An early rough sketch of Float-it Notes (top) and a work-in-progress screenshot (bottom). <br><br>Fun fact: The name Float-it Notes \
+  is a wordplay of Post-it Notes, because instead of posting stuff, you're floating them :)! \
+  <br><br>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint",
+
+  "An early in-progress video showcasing creating/deleting tasks. <br><br>Fun fact: Another name considered \
+  for Float-it Notes was Task in a Flask, but the name Float-it Notes was picked because it was easier to say!\
+  <br><br>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint"
+]
+
+var askAppsFrames;
 var askApps1 = "images/environment/askApps-1.png";
 var askApps2 = "images/environment/askApps-2.png";
 var askApps3 = "images/environment/askApps-3.png";
 var askApps4 = "images/environment/askApps-4.png";
-var askapps;
+var askApps;
 var askAppsSection;
 var askAppsSlides = [
   "images/slides/askApps1.png",
@@ -135,17 +211,17 @@ var aboutAskApps = [
 
   "Sample #2 of ad designs made for Slimware in accordance to Google compliant ad specifications. <br><br>Created with Adobe Photoshop",
 
-  "Sample #1 of landing page designs for various browser extensions. <br><br>Created with Adobe Photoshop and proprietary CMS and HTML/CSS",
+  "Sample #1 of landing page designs for various browser extensions. <br><br>Created with Adobe Photoshop, proprietary CMS, and HTML/CSS",
 
-  "Sample #2 of landing page designs for various browser extensions. <br><br>Created with Adobe Photoshop and proprietary CMS and HTML/CSS",
+  "Sample #2 of landing page designs for various browser extensions. <br><br>Created with Adobe Photoshop, proprietary CMS, and HTML/CSS",
 
-  "Sample #3 of landing page designs for various browser extensions. <br><br>Created with Adobe Photoshop and proprietary CMS and HTML/CSS",
+  "Sample #3 of landing page designs for various browser extensions. <br><br>Created with Adobe Photoshop, proprietary CMS, and HTML/CSS",
 
-  "Sample #4 of landing page designs for various browser extensions. <br><br>Created with Adobe Photoshop and proprietary CMS and HTML/CSS"
+  "Sample #4 of landing page designs for various browser extensions. <br><br>Created with Adobe Photoshop, proprietary CMS, and HTML/CSS"
 ]
 
+var acornStationFrames;
 var acornStation;
-var acornstation;
 var acornSection;
 var acornSlides = [
   "images/slides/acornLogo.png",
@@ -178,26 +254,26 @@ var aboutAcorn = [
 
 ]
 
+var timeInterfaceFrames;
 var timeInterface1 = "images/environment/timeInterface1.png";
 var timeInterface2 = "images/environment/timeInterface2.png";
 var timeInterface3 = "images/environment/timeInterface3.png";
 var timeInterface4 = "images/environment/timeInterface4.png";
 var timeInterface5 = "images/environment/timeInterface5.png";
 var timeInterface;
-var timeinterface;
 var timeInterfaceSection;
 var timeInterfaceSlides = [
-  "images/slides/timeInterface01.png",
   "images/slides/timeInterface02.png",
+  "images/slides/timeInterface01.png",
   "images/slides/timeInterface03.png",
   "images/slides/timeInterface04.png"
 ]
 var aboutTimeInterface = [
-  "An alternative clock interface design that explores the relationship between time and weather. Distinguishes \
-  the type and severity of the current percipitation within the span of an hour (1st screen), the forecast for tomorrow (2nd screen), \
-  and the forecast for the next few days (3rd screen). <br><br>Created with Adobe Photoshop",
+  "Alternative clock interface designs created and scaled for LinkNYC kiosks. <br><br>Created with Adobe Photoshop",
 
-  "Designs created and scaled for LinkNYC kiosks.",
+  "An alternative clock interface design that explores the relationship between time and weather. Distinguishes \
+  the type and severity of the current percipitation within the span of an hour (1st column), the forecast for tomorrow (2nd column), \
+  and the forecast for the next few days (3rd column). <br><br>Created with Adobe Photoshop",
 
   "Drafts #1. Initial low fidelity prototype. <br><br>Created with Adobe Photoshop",
 
@@ -205,12 +281,12 @@ var aboutTimeInterface = [
 ]
 
 // Game
-var outCast1 = "images/environment/outcast1.png";
-var outCast2 = "images/environment/outcast2.png";
-var outCast;
+var outcastFrames;
+var outcast1 = "images/environment/outcast1.png";
+var outcast2 = "images/environment/outcast2.png";
 var outcast;
-var outCastSection;
-var outCastSlides = [
+var outcastSection;
+var outcastSlides = [
   "images/slides/outcastVideo.mov",
   "images/slides/outCast1.jpg",
   "images/slides/outCast2.jpg",
@@ -218,7 +294,7 @@ var outCastSlides = [
   "images/slides/outCast4.jpg",
   "images/slides/outCast5.jpg"
 ]
-var aboutOutCast = [
+var aboutOutcast = [
   "\"Outcast\" is a narrative RPG adventure developed by a team of 3. My role was the game's lead map designer \
   and artist. All sprites other than the player model are originals. Plot: A young boy who once weilded the most powerful \
   sword known to man loses everything and everyone he knows and loves when his village is attacked by strange hostile creatures. \
@@ -235,11 +311,12 @@ var aboutOutCast = [
 
   "Snapshot #5. <br><br>Created with Gamemaker Studio 2 and Medibang Paint"
 ]
+
+var missileCommandFrames;
 var missileCommand1 = "images/environment/missileCommand1.png";
 var missileCommand2 = "images/environment/missileCommand2.png";
 var missileCommand3 = "images/environment/missileCommand3.png";
 var missileCommand;
-var missilecommand;
 var missileCommandSection;
 var missileCommandSlides = [
   "images/slides/missileCommandVideo.mov",
@@ -253,12 +330,13 @@ var aboutMissileCommandClone = [
 
   "Snapshot #2. <br><br>Created with GameMaker Studio 2"
 ]
+
+var wizardsJourneyFrames;
 var wizardsJourney1 = "images/environment/wizardsJourney1.png";
 var wizardsJourney2 = "images/environment/wizardsJourney2.png";
 var wizardsJourney3 = "images/environment/wizardsJourney3.png";
 var wizardsJourney4 = "images/environment/wizardsJourney4.png";
 var wizardsJourney;
-var wizardsjourney;
 var wizardsJourneySection;
 var wizardsJourneySlides = [
   "images/slides/wizardsJourney.mov",
@@ -279,16 +357,16 @@ var aboutWizardsJourney = [
 ]
 
 // 3D Modeling + Animation
-var tanTrum;
+var tantrumFrames;
 var tantrum;
-var tanTrumSection;
-var tanTrumSlides = [
+var tantrumSection;
+var tantrumSlides = [
   "images/slides/tantrum.mov",
   "images/slides/tantrum01.png",
   "images/slides/tantrum02.png",
   "images/slides/tantrum03.png"
 ]
-var aboutTanTrum = [
+var aboutTantrum = [
   "1 minute animation of a child learning the pain of defeat. <br><br>Created with Autodesk Maya",
 
   "Snapshot #1. <br><br>Created with Autodesk Maya",
@@ -297,8 +375,9 @@ var aboutTanTrum = [
 
   "Snapshot #3. <br><br>Created with Autodesk Maya"
 ]
+
+var deskRoomFrames;
 var deskRoom;
-var deskroom;
 var deskRoomSection;
 var deskRoom1 = "images/environment/deskRoom1.png";
 var deskRoom2 = "images/environment/deskRoom2.png";
@@ -314,10 +393,11 @@ var aboutDeskRoom = [
 
   "Work in progress room render. <br><br>Created with Autodesk Maya"
 ]
-var rayGun;
+
+var raygunFrames;
 var raygun;
 var raygunSection;
-var rayGunSlides = [
+var raygunSlides = [
   "images/slides/raygun.mov",
   "images/slides/raygunReference.png"
 ]
@@ -350,26 +430,27 @@ function preload() {
   dirt = loadImage("images/environment/dirt.png");
   pinkPetal = loadImage("images/environment/petal.png");
   grassBlade = loadAnimation(grassBlade1, grassBlade2, grassBlade3, grassBlade4, grassBlade5, grassBlade4, grassBlade3, grassBlade2);
-  whiteTp = loadAnimation(whiteTp1, whiteTp2, whiteTp3);
-  blueTp = loadAnimation(blueTp1, blueTp2, blueTp3);
-  greenTp = loadAnimation(greenTp1, greenTp2, greenTp3);
-  redTp = loadAnimation(redTp1, redTp2, redTp3);
-  purpleTp = loadAnimation(purpleTp1, purpleTp2, purpleTp3);
+  whiteTpFrames = loadAnimation(whiteTp1, whiteTp2, whiteTp3);
+  blueTpFrames = loadAnimation(blueTp1, blueTp2, blueTp3);
+  greenTpFrames = loadAnimation(greenTp1, greenTp2, greenTp3);
+  redTpFrames = loadAnimation(redTp1, redTp2, redTp3);
+  purpleTpFrames = loadAnimation(purpleTp1, purpleTp2, purpleTp3);
 
   // Graphic + Web
-  askApps = loadAnimation(askApps1, askApps2, askApps3, askApps4);
-  acornStation = loadImage("images/environment/acornStation.png");
-  timeInterface = loadAnimation(timeInterface1, timeInterface2, timeInterface3, timeInterface4, timeInterface5);
+  floatItFrames = loadAnimation(floatIt1, floatIt2, floatIt3, floatIt4);
+  askAppsFrames = loadAnimation(askApps1, askApps2, askApps3, askApps4);
+  acornStationFrames = loadImage("images/environment/acornStation.png");
+  timeInterfaceFrames = loadAnimation(timeInterface1, timeInterface2, timeInterface3, timeInterface4, timeInterface5);
 
   // Game
-  outCast = loadAnimation(outCast1, outCast1, outCast1, outCast2);
-  missileCommand = loadAnimation(missileCommand1, missileCommand2, missileCommand3);
-  wizardsJourney = loadAnimation(wizardsJourney1, wizardsJourney2, wizardsJourney3, wizardsJourney4);
+  outcastFrames = loadAnimation(outcast1, outcast1, outcast1, outcast2);
+  missileCommandFrames = loadAnimation(missileCommand1, missileCommand2, missileCommand3);
+  wizardsJourneyFrames = loadAnimation(wizardsJourney1, wizardsJourney2, wizardsJourney3, wizardsJourney4);
 
   // 3D Modeling + Animation
-  tanTrum = loadImage("images/environment/tantrum.png");
-  deskRoom = loadAnimation(deskRoom1, deskRoom2);
-  rayGun = loadImage("images/environment/raygun.png");
+  tantrumFrames = loadImage("images/environment/tantrum.png");
+  deskRoomFrames = loadAnimation(deskRoom1, deskRoom2);
+  raygunFrames = loadImage("images/environment/raygun.png");
 
 }
 
@@ -423,79 +504,84 @@ function setup() {
 
   // Teleporters
   // Back to Beginning
-  whiteTp.frameDelay = 12;
-  beginningTp = createSprite(platformsGroup[55].position.x, window.innerHeight-200, 100, 100);
-  beginningTp.addAnimation("static", whiteTp);
+  whiteTpFrames.frameDelay = 12;
+  beginningTp = createSprite(platformsGroup[57].position.x, window.innerHeight-200, 100, 100);
+  beginningTp.addAnimation("static", whiteTpFrames);
   beginningSection = platformsGroup[13].position.x;
 
   // Graphic + Web Design
-  greenTp.frameDelay = 12;
+  greenTpFrames.frameDelay = 12;
   graphicWebTp = createSprite(platformsGroup[15].position.x, window.innerHeight-200, 100, 100);
-  graphicWebTp.addAnimation("static", greenTp);
-  graphicWebSection = platformsGroup[22].position.x;
+  graphicWebTp.addAnimation("static", greenTpFrames);
+  graphicWebSection = platformsGroup[21].position.x;
 
   // Game Design
-  redTp.frameDelay = 12;
+  redTpFrames.frameDelay = 12;
   gameTp = createSprite(platformsGroup[17].position.x, window.innerHeight-200, 100, 100);
-  gameTp.addAnimation("static", redTp);
-  gameSection = platformsGroup[33].position.x;
+  gameTp.addAnimation("static", redTpFrames);
+  gameSection = platformsGroup[35].position.x;
 
   // 3D Modeling + Animation
-  purpleTp.frameDelay = 12;
+  purpleTpFrames.frameDelay = 12;
   threeDTp = createSprite(platformsGroup[19].position.x, window.innerHeight-200, 100, 100);
-  threeDTp.addAnimation("static", purpleTp);
-  threeDSection = platformsGroup[43].position.x;
+  threeDTp.addAnimation("static", purpleTpFrames);
+  threeDSection = platformsGroup[45].position.x;
 
   // Video Editing
-  // purpleTp.frameDelay = 12;
+  // purpleTpFrames.frameDelay = 12;
   // videoTp = createSprite(platformsGroup[21].position.x, window.innerHeight-200, 100, 100);
-  // videoTp.addAnimation("static", purpleTp);
+  // videoTp.addAnimation("static", purpleTpFrames);
   // videoSection = platformsGroup[60].position.x;
 
   // Graphic + Web (back)
-  askApps.frameDelay = 20;
-  askAppsSection = graphicWebSection + 250;
-  askapps = createSprite(askAppsSection, window.innerHeight-225, 160, 150);
-  askapps.addAnimation("static", askApps);
+  floatItFrames.frameDelay = 15;
+  floatItSection = graphicWebSection + 250;
+  floatItNotes = createSprite(floatItSection, window.innerHeight-220, 220, 140);
+  floatItNotes.addAnimation("static", floatItFrames);
 
-  acornSection = graphicWebSection + 580;
-  acornstation = createSprite(acornSection, window.innerHeight-225, 300, 150);
-  acornstation.addImage(acornStation);
+  askAppsFrames.frameDelay = 20;
+  askAppsSection = graphicWebSection + 550;
+  askApps = createSprite(askAppsSection, window.innerHeight-225, 160, 150);
+  askApps.addAnimation("static", askAppsFrames);
 
-  timeInterface.frameDelay = 100;
-  timeInterfaceSection = graphicWebSection + 880;
-  timeinterface = createSprite(timeInterfaceSection, window.innerHeight-225, 100, 150);
-  timeinterface.addAnimation("static", timeInterface);
+  acornSection = graphicWebSection + 880;
+  acornStation = createSprite(acornSection, window.innerHeight-225, 300, 150);
+  acornStation.addImage(acornStationFrames);
+
+  timeInterfaceFrames.frameDelay = 100;
+  timeInterfaceSection = graphicWebSection + 1180;
+  timeInterface = createSprite(timeInterfaceSection, window.innerHeight-225, 100, 150);
+  timeInterface.addAnimation("static", timeInterfaceFrames);
 
   // Game (back)
-  outCast.frameDelay = 8;
-  outCastSection = gameSection + 250;
-  outcast = createSprite(outCastSection, window.innerHeight-220, 150, 130);
-  outcast.addAnimation("static", outCast);
+  outcastFrames.frameDelay = 8;
+  outcastSection = gameSection + 250;
+  outcast = createSprite(outcastSection, window.innerHeight-220, 150, 130);
+  outcast.addAnimation("static", outcastFrames);
 
-  missileCommand.frameDelay = 8;
+  missileCommandFrames.frameDelay = 8;
   missileCommandSection = gameSection + 500;
-  missilecommand = createSprite(missileCommandSection, window.innerHeight-210, 100, 120);
-  missilecommand.addAnimation("static", missileCommand);
+  missileCommand = createSprite(missileCommandSection, window.innerHeight-210, 100, 120);
+  missileCommand.addAnimation("static", missileCommandFrames);
 
-  wizardsJourney.frameDelay = 10;
+  wizardsJourneyFrames.frameDelay = 10;
   wizardsJourneySection = gameSection + 740;
-  wizardsjourney = createSprite(wizardsJourneySection, window.innerHeight-210, 150, 120);
-  wizardsjourney.addAnimation("static", wizardsJourney);
+  wizardsJourney = createSprite(wizardsJourneySection, window.innerHeight-210, 150, 120);
+  wizardsJourney.addAnimation("static", wizardsJourneyFrames);
 
   // 3D Animation + Modeling (back)
-  tanTrumSection = threeDSection + 250;
-  tantrum = createSprite(tanTrumSection, window.innerHeight-225, 170, 100);
-  tantrum.addImage(tanTrum);
+  tantrumSection = threeDSection + 220;
+  tantrum = createSprite(tantrumSection, window.innerHeight-225, 170, 100);
+  tantrum.addImage(tantrumFrames);
 
-  deskRoom.frameDelay = 25;
-  deskRoomSection = threeDSection + 500;
-  deskroom = createSprite(deskRoomSection, window.innerHeight-260, 160, 220);
-  deskroom.addAnimation("static", deskRoom);
+  deskRoomFrames.frameDelay = 25;
+  deskRoomSection = threeDSection + 470;
+  deskRoom = createSprite(deskRoomSection, window.innerHeight-260, 160, 220);
+  deskRoom.addAnimation("static", deskRoomFrames);
 
-  rayGunSection = threeDSection + 790;
-  raygun = createSprite(rayGunSection, window.innerHeight-220, 210, 140);
-  raygun.addImage(rayGun);
+  raygunSection = threeDSection + 760;
+  raygun = createSprite(raygunSection, window.innerHeight-220, 210, 140);
+  raygun.addImage(raygunFrames);
 
   // Player Animations
   playerIdle.frameDelay = 18;
@@ -641,7 +727,7 @@ function draw() {
     }
   }
 
-  displayText("Back to Start", beginningTp, 30, 120, 5, 255, CENTER, 20);
+  displayText("Back to Teleporters", beginningTp, 30, 120, 5, 255, CENTER, 20);
   if (abs(beginningTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       fadeInEffect();
@@ -666,8 +752,25 @@ function draw() {
       interactText("Press \"E\" to teleport", graphicWebTp, -50);
     }
   }
+  // Float-it Notes
+  if (abs(floatItNotes.position.x - player.position.x) <= 140) {
+    if (keyPressed() == "E") {
+      slideShow("Float-it Notes");
+      if (sound.checked) { continueSound = true; }
+      else { continueSound = false; }
+      slideShowing = true;
+    }
+    else if (slideShowing == true) {
+      leaveSlidesCheck();
+    }
+    else {
+      interactText("Press \"E\" to view", floatItNotes, -85);
+      noSlideShow();
+      if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
+    }
+  }
   // Ask Apps
-  if (abs(askapps.position.x - player.position.x) <= 120) {
+  if (abs(askApps.position.x - player.position.x) <= 120) {
     if (keyPressed() == "E") {
       slideShow("Ask Applications Internship");
       if (sound.checked) { continueSound = true; }
@@ -678,13 +781,13 @@ function draw() {
       leaveSlidesCheck();
     }
     else {
-      interactText("Press \"E\" to view", askapps, -90);
+      interactText("Press \"E\" to view", askApps, -90);
       noSlideShow();
       if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
   }
   // Acorn Station
-  if (abs(acornstation.position.x - player.position.x) <= 180) {
+  if (abs(acornStation.position.x - player.position.x) <= 180) {
     if (keyPressed() == "E") {
       slideShow("acorn");
       if (sound.checked) { continueSound = true; }
@@ -695,13 +798,13 @@ function draw() {
       leaveSlidesCheck();
     }
     else {
-      interactText("Press \"E\" to view", acornstation, -90);
+      interactText("Press \"E\" to view", acornStation, -90);
       noSlideShow();
       if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
   }
   // Time Interface
-  if (abs(timeinterface.position.x - player.position.x) <= 100) {
+  if (abs(timeInterface.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       slideShow("LinkNYC Time Interface");
       if (sound.checked) { continueSound = true; }
@@ -712,7 +815,7 @@ function draw() {
       leaveSlidesCheck();
     }
     else {
-      interactText("Press \"E\" to view", timeinterface, -90);
+      interactText("Press \"E\" to view", timeInterface, -90);
       noSlideShow();
       if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
@@ -747,7 +850,7 @@ function draw() {
     }
   }
   // Missile Command
-  if (abs(missilecommand.position.x - player.position.x) <= 100) {
+  if (abs(missileCommand.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       slideShow("Missile Command Clone");
       if (sound.checked) { continueSound = true; }
@@ -758,13 +861,13 @@ function draw() {
       leaveSlidesCheck();
     }
     else {
-      interactText("Press \"E\" to view", missilecommand, -80);
+      interactText("Press \"E\" to view", missileCommand, -80);
       noSlideShow();
       if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
   }
   // Wizard's Journey
-  if (abs(wizardsjourney.position.x - player.position.x) <= 100) {
+  if (abs(wizardsJourney.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       slideShow("Wizard's Journey");
       if (sound.checked) { continueSound = true; }
@@ -775,7 +878,7 @@ function draw() {
       leaveSlidesCheck();
     }
     else {
-      interactText("Press \"E\" to view", wizardsjourney, -80);
+      interactText("Press \"E\" to view", wizardsJourney, -80);
       noSlideShow();
       if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
@@ -810,7 +913,7 @@ function draw() {
     }
   }
   // Desk Room
-  if (abs(deskroom.position.x - player.position.x) <= 120) {
+  if (abs(deskRoom.position.x - player.position.x) <= 120) {
     if (keyPressed() == "E") {
       slideShow("3D Room");
       if (sound.checked) { continueSound = true; }
@@ -821,7 +924,7 @@ function draw() {
       leaveSlidesCheck();
     }
     else {
-      interactText("Press \"E\" to view", deskroom, -120);
+      interactText("Press \"E\" to view", deskRoom, -120);
       noSlideShow();
       if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
@@ -1006,7 +1109,10 @@ function slideShow(title) {
   document.getElementById("title").innerHTML = title;
 
   // Graphics and Web Design
-  if (title == "Ask Applications Internship") {
+  if (title == "Float-it Notes") {
+    currentSlides = floatItSlides;
+    currentSlidesName = "FloatItNotes";
+  } else if (title == "Ask Applications Internship") {
     currentSlides = askAppsSlides;
     currentSlidesName = "AskApplicationsInternship";
   } else if (title == "acorn") {
@@ -1018,8 +1124,8 @@ function slideShow(title) {
   } 
   // Game Design
   else if (title == "Outcast") {
-    currentSlides = outCastSlides;
-    currentSlidesName = "OutCast";
+    currentSlides = outcastSlides;
+    currentSlidesName = "Outcast";
   } else if (title == "Missile Command Clone") {
     currentSlides = missileCommandSlides;
     currentSlidesName = "MissileCommandClone";
@@ -1029,14 +1135,14 @@ function slideShow(title) {
   } 
   // 3D Modeling + Animation 
   else if (title == "Tantrum") {
-    currentSlides = tanTrumSlides;
-    currentSlidesName = "TanTrum";
+    currentSlides = tantrumSlides;
+    currentSlidesName = "Tantrum";
   } else if (title == "3D Room") {
     currentSlides = deskRoomSlides;
     currentSlidesName = "DeskRoom";
   } else if (title == "Raygun") {
-    currentSlides = rayGunSlides;
-    currentSlidesName = "RayGun";
+    currentSlides = raygunSlides;
+    currentSlidesName = "Raygun";
   }
 
   if (newSlides == true) { // new set of slides
@@ -1091,8 +1197,23 @@ function dotUpdate() { // dot update, description, and subtitle update
     currentSubtitle.innerHTML = "About";
   }
   // Graphic + Web Design
+  if (currentSlidesName == "FloatItNotes") {
+    if (slideNum == 0) {
+      currentSubtitle.innerHTML = "About";
+    } else if (slideNum == 1 || slideNum == 2 || slideNum == 3) {
+      currentSubtitle.innerHTML = "Screenshots";
+    } else if (slideNum == 4 || slideNum == 5) {
+      currentSubtitle.innerHTML = "User Research";
+    } else if (slideNum == 6) {
+      currentSubtitle.innerHTML = "Competitive Analysis";
+    } else if (slideNum == 7) {
+      currentSubtitle.innerHTML = "Feature Prioritization List";
+    } else if (slideNum >= 8) {
+      currentSubtitle.innerHTML = "Documentation";
+    }
+    currentAbout.innerHTML = aboutFloatItNotes[slideNum];
   // Ask Applications
-  if (currentSlidesName == "AskApplicationsInternship") {
+  } else if (currentSlidesName == "AskApplicationsInternship") {
     if (slideNum == 0) {
       currentSubtitle.innerHTML = "Uninstall Pages";
     } else if (slideNum == 1 || slideNum == 2) {
@@ -1113,18 +1234,18 @@ function dotUpdate() { // dot update, description, and subtitle update
     currentAbout.innerHTML = aboutAcorn[slideNum];
   } else if (currentSlidesName == "TimeInterface") {
     if (slideNum == 1) {
-      currentSubtitle.innerHTML = "What is LinkNYC?";
+      currentSubtitle.innerHTML = "About";
     } else if (slideNum >= 2) {
       currentSubtitle.innerHTML = "Drafts";
     }
     currentAbout.innerHTML = aboutTimeInterface[slideNum];
   // Game Design
   // Outcast 
-  } else if (currentSlidesName == "OutCast") {
+  } else if (currentSlidesName == "Outcast") {
     if (slideNum >= 1) {
       currentSubtitle.innerHTML = "Snapshots";
     }
-    currentAbout.innerHTML = aboutOutCast[slideNum];
+    currentAbout.innerHTML = aboutOutcast[slideNum];
   // Missile Command Clone
   } else if (currentSlidesName == "MissileCommandClone") {
     if (slideNum >= 1) {
@@ -1139,11 +1260,11 @@ function dotUpdate() { // dot update, description, and subtitle update
     currentAbout.innerHTML = aboutWizardsJourney[slideNum];
   // 3D Modeling + Animation
   // Tantrum
-  } else if (currentSlidesName == "TanTrum") {
+  } else if (currentSlidesName == "Tantrum") {
     if (slideNum >= 1) {
       currentSubtitle.innerHTML = "Snapshots";
     }
-    currentAbout.innerHTML = aboutTanTrum[slideNum];
+    currentAbout.innerHTML = aboutTantrum[slideNum];
   // Desk Room
   } else if (currentSlidesName == "DeskRoom") {
     if (slideNum == 1) {
@@ -1153,7 +1274,7 @@ function dotUpdate() { // dot update, description, and subtitle update
     }
     currentAbout.innerHTML = aboutDeskRoom[slideNum];
   // Raygun
-  } else if (currentSlidesName == "RayGun") {
+  } else if (currentSlidesName == "Raygun") {
     if (slideNum == 1) {
       currentSubtitle.innerHTML = "Reference";
     }

@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Yanxin Jiang</title>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="credits.js"></script>
+  <link rel="icon" type="image/png" href="images/icon-daisy.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="creditsContainer" id="fadeIn">
+    <h1>Credits</h1>
+    <div class="creditsSubtitle">
+      <p>Code and Art by: Yanxin Jiang</p>
+    </div>
+    <div class="letter">
+      <p>Hey there!</p>
+      <p>Thanks for stopping by! My name is Yanxin and I'm a current junior at New York University studying Integrated Design & Media and Computer Science with a passion for UI/UX and Web Design.</p>
+      <p>I decided to take my interests in both art and coding and challenge myself to building out an idea that's been sitting in the back of my mind for a while.</p>
+      <p>This portfolio was inspired by my love for games, pastels, and all things cute (and bouncy!). I developed this website from scratch using front end technologies including HTML, CSS, and Javascript. I hope you enjoy exploring around in my little world! :)</p>
+      <p>If you have any comments, questions, suggestions, or just want to say hi, feel free to contact me!</p>
+      <p>Cheers,<br>Yanxin</p>
+    </div>
+    <img src="images/me.jpg" class="profilePicture" id="profilePic">
+    <div hidden class="alert" id="emailCopiedMessage">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      Email Copied to Clipboard!
+    </div>
+    <div class="contactInfo">
+      <a href="https://www.linkedin.com/in/yanxinn/" target="_blank"><img src="images/widgets/linkedIn.png" alt="LinkedIn" id="linkedInIcon" class="contactInfoItem" ></a>
+      <p hidden id="email">yj1347@nyu.edu</p>
+      <img src="images/widgets/mail.png" class="contactInfoItem" alt="Email" id="emailIcon" onclick="copyToClipboard('#email')">
+    </div>
+  </div>
+
+  <a href="index.html" id="mainMenuLink">Main Menu</a>
+
+  <!-- Javascript Sketch -->
+  <div id="mainMenu-div"></div>
+
+</body>
+
+</html>

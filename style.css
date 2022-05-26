@@ -32,13 +32,14 @@ body {
 
 /* Main Menu Options */
 .menu-buttons button {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.24);
+  border-radius: 6px;
   border: none;
   color: white;
-  padding: 10px 20px;
+  padding: 15px 22px;
   cursor: url(images/icon-daisy3.png), pointer;
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   margin-left: 50%;
   -webkit-transform: translate(-50%, 0%);
   transform: translate(-50%, 0%);
@@ -50,7 +51,7 @@ body {
 }
 
 .menu-buttons button:first-child {
-  margin-top: 60vh;
+  margin-top: 58vh;
 }
 
 .menu-buttons button:not(:last-child) {
@@ -484,9 +485,9 @@ a:active {
 #pictureSection {
   position: fixed;
   top: 100px;
-  right: 38.8%;
-  width: 50%;
-  height: 70%;
+  right: 38%;
+  width: 60%;
+  height: 78%;
   background: rgba(28, 28, 28, 1);
   border-radius: 5px;
 }
@@ -572,10 +573,11 @@ a:active {
 
 #aboutSection {
   position: fixed;
+  display: block;
   top: 100px;
   left: 63.2%;
-  width: 25%;
-  height: 70%;
+  width: 35%;
+  height: 78%;
   background: rgba(28, 28, 28, 1);
   border-radius: 5px;
 }
@@ -597,23 +599,26 @@ a:active {
 }
 
 #descriptions {
-  overflow-y: auto;
   position: relative;
   font-family: "droidsansmono";
   color: white;
   font-weight: normal;
   font-style: normal;
   font-size: 14px;
-  width: 80%;
+  width: 85%;
   left: 50%;
   top: 60px;
   transform: translateX(-50%);
   line-height: 1.8;
+  height: 80%;
+  overflow-y: auto;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 /* width */
 ::-webkit-scrollbar {
-  width: auto;
+  width: 12px;
 }
 
 /* Track */

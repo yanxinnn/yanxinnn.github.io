@@ -1,0 +1,75 @@
+<html lang="en">
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Yanxin Jiang</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+  <script src="lib/p5.play.js"></script>
+  <script src="field.js"></script>
+  <link rel="icon" type="image/png" href="images/icon-daisy.png">
+
+</head>
+
+<body>
+
+  <div id="widgets">
+    <div id="soundIcon">
+      <!-- Mute / Unmute Widget -->
+      <!-- reference : https://stackoverflow.com/questions/22918220/how-to-create-a-only-mute-unmute-button-like-youtube-in-html -->
+      <input type="checkbox" id="sound" onClick="toggleSound()">
+      <label for="sound" class="on">
+        <img src="images/widgets/sound1.png" id="onIcon">
+      </label>
+      <label for="sound" class="off">
+        <img src="images/widgets/sound2.png" id="offIcon">
+      </label>
+    </div>
+  </div>
+
+  <div class="topMessage" id="movementDesktopMessage">Use "WASD" or arrow keys to move around</div>
+
+  <div id="slideshow">
+    <div id="backgroundScreen"></div>
+    <div id="title"></div>
+    <div id="pictureSection">
+      <div id="dotsLayout">
+        <span class="dots"></span>
+        <span class="dots"></span>
+      </div>
+      <div id="prevBar">
+        <div id="prev">&#10094;</div>
+      </div>
+      <div id="nextBar">
+        <div id="next">&#10095;</div>
+      </div>
+      <img id="slides">
+    </div>
+    <div id="aboutSection">
+      <div id="aboutSectionHeader"></div>
+    </div>
+    <div class="bottomMessage" id="escapeSlidesMessage">Press "Escape" to Exit</div>
+  </div>
+
+  <div class="loader-wrapper">
+    <img src="images/loading.gif">
+  </div>
+
+  <canvas id="myCanvas"></canvas>
+
+  <!-- Javascript Sketch -->
+  <div id="field-div"></div>
+
+  <a href="index.html" id="mainMenuLink">MAIN MENU</a>
+
+  <script>
+    $(window).on("load", function() {
+      $(".loader-wrapper").delay(3000).fadeOut(1000, "linear");
+    });
+  </script>
+
+</body>
+
+</html>
