@@ -295,10 +295,8 @@ var outcastSlides = [
   "images/slides/outCast5.jpg"
 ]
 var aboutOutcast = [
-  "\"Outcast\" is a narrative RPG adventure developed by a team of 3. My role was the game's lead map designer \
-  and artist. All sprites other than the player model are originals. Plot: A young boy who once weilded the most powerful \
-  sword known to man loses everything and everyone he knows and loves when his village is attacked by strange hostile creatures. \
-  The hostile race steals the legendary sword and banishes the main character into an unfamiliar world. \
+  "\"Outcast\" is a narrative RPG adventure developed by a team of 3. My role was the game's lead artist and map designer. All sprites other than the player model are originals. Plot: A young boy who once weilded the most \
+  powerful sword known to man loses everything and everyone he knows and loves when his village is attacked by strange hostile creatures. The hostile race steals the legendary sword and banishes the main character into an unfamiliar world. \
   <br><br>Created with Gamemaker Studio 2 and Medibang Paint",
 
   "Snapshot #1. <br><br>Created with Gamemaker Studio 2 and Medibang Paint",
@@ -345,9 +343,8 @@ var wizardsJourneySlides = [
   "images/slides/wizardsJourney03.jpg"
 ]
 var aboutWizardsJourney = [
-  "A multiplayer vertical obstacle race game. 3 playable characters each with different spells that can be used to hinder other players \
-  or destroy incoming non-player projectiles. Mana bars at the top indicate the respective color's ability to use spells and teleport \
-  back into view if they fall behind. First to the top wins. <br><br>Created with GameMaker Studio 2",
+  "A multiplayer vertical obstacle race game. 3 playable characters each with different spells that can be used to hinder other players or destroy incoming non-player projectiles. Mana bars at the top indicate the respective color's ability to use spells and teleport \
+  back into view if they fall behind. Characters that run out of mana are removed from the race. First to the top or last one with mana left wins. <br><br>Created with GameMaker Studio 2",
 
   "Snapshot #1. <br><br>Created with GameMaker Studio 2",
 
@@ -367,7 +364,7 @@ var tantrumSlides = [
   "images/slides/tantrum03.png"
 ]
 var aboutTantrum = [
-  "1 minute animation of a child learning the pain of defeat. <br><br>Created with Autodesk Maya",
+  "1 minute animation of a child learning the agony of defeat. <br><br>Created with Autodesk Maya",
 
   "Snapshot #1. <br><br>Created with Autodesk Maya",
 
