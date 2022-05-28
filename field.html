@@ -43,13 +43,18 @@
       <div id="nextBar" onclick="nextSlide(1)">
         <div id="next">&#10095;</div>
       </div>
+      <button id="expandButton" onClick="expandCurrentImage()"></button>
       <div id="slides"></div>
     </div>
     <div id="aboutSection">
       <div id="aboutSectionHeader"></div>
       <div id="descriptions"></div>
     </div>
-    <div class="bottomMessage" id="escapeSlidesMessage">Press "Escape" to Exit</div>
+    <div class="bottomMessage" id="escapeSlidesMessage">Press "Escape" to Exit Project At Anytime</div>
+    <div id="expandedSlideScreen">
+      <div id="expandedSlideImage"></div>
+      <button id="compressButton" onClick="compressCurrentImage()"></button>
+    </div>
   </div>
 
   <div class="loader-wrapper">

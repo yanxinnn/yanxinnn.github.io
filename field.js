@@ -409,6 +409,7 @@ var aboutRaygun = [
 
 // Slideshow
 var slideShowing = false;
+var expandedImageShowing = false;
 
 //** Preload *************
 function preload() {
@@ -663,7 +664,7 @@ function draw() {
     player.changeAnimation("run");
     player.velocity.x = -(moveSpeed);
   }
-  if (keyIsDown(UP_ARROW) || keyIsDown(87)) {
+  if (keyIsDown(UP_ARROW) || keyIsDown(87) || keyIsDown(32)) {
     if (moved == false) {
       moved = true;
     }
@@ -959,6 +960,15 @@ function draw() {
     //   }
     // }
 
+  if (expandedImageShowing) { // turn off widgets in expanded image mode
+    document.getElementById("widgets").style.visibility = "hidden";
+    document.getElementById("widgets").style.opacity = "0";
+  } 
+  else {
+    document.getElementById("widgets").style.visibility = "visible";
+    document.getElementById("widgets").style.opacity = "1";
+  }
+
   // Location Labels + Back to Start Link
   if (player.position.x >= graphicWebSection) {
     document.getElementById("locationMessage").style.visibility = "visible";
@@ -984,7 +994,7 @@ function draw() {
     document.getElementById("locationMessage").style.visibility = "hidden";
     document.getElementById("locationMessage").style.opacity = "0";
   }
-  if (player.position.x < platformsGroup[15].position.x) {
+  if (player.position.x < platformsGroup[15].position.x || expandedImageShowing) {
     document.getElementById("backToStartLink").style.visibility = "hidden";
     document.getElementById("backToStartLink").style.opacity = "0";
   }
@@ -1166,6 +1176,14 @@ function slideShow(title) {
     var string = currentSlides[slideNum];
     if (string.charAt(string.length-1) == "g") { // checks if jpg, png
       var currentSlide = document.createElement("img");
+      document.getElementById("expandButton").style.visibility = "visible"; // hides expand image button since video has prebuilt expand
+      document.getElementById("expandButton").style.opacity = 1;
+
+      // Prepare a space for a new expanded image for new slide
+      if (document.getElementById("expandedSlideImage").firstChild) {
+          document.getElementById("expandedSlideImage").removeChild((document.getElementById("expandedSlideImage")).firstChild);
+      }
+      
     } else if (string.charAt(string.length-1) == "v") { // checks if mov
       var currentSlide = document.createElement("video");
       currentSlide.controls = true;
@@ -1173,6 +1191,8 @@ function slideShow(title) {
       currentSlide.controlsList = "nodownload";
       currentSlide.autoplay = true;
       currentSlide.volume = 0.2;
+      document.getElementById("expandButton").style.visibility = "hidden"; // hides expand image button since video has prebuilt expand
+      document.getElementById("expandButton").style.opacity = 0;
     }
     currentSlide.src = currentSlides[slideNum]; //shows slide or video
     document.getElementById("slides").appendChild(currentSlide); 
@@ -1302,10 +1322,39 @@ function nextSlide(n) {
   newSlide = true;
 }
 
+function expandCurrentImage() { 
+  document.getElementById("expandedSlideScreen").style.visibility = "visible";
+  document.getElementById("expandedSlideScreen").style.opacity = "1";
+  expandedImageShowing = true;
+
+  var currentSlide = document.getElementById("slides").firstChild;
+  if (document.getElementById("expandedSlideImage").firstChild) { // if coming from expanded image view (an expanded image is already prepared), keep same image if on same slide
+    return;
+  }
+  // Otherwise, ready a new expanded image for new slide
+  var expandedImage = document.createElement("img");
+  expandedImage.src = currentSlide.getAttribute("src");
+  expandedImage.style.maxWidth = window.innerWidth;
+  expandedImage.style.maxHeight = window.innerHeight;
+  expandedImage.style.objectFit = "scale-down";
+  document.getElementById("expandedSlideImage").appendChild(expandedImage);
+}
+
+function compressCurrentImage() {
+  document.getElementById("expandedSlideScreen").style.visibility = "hidden";
+  document.getElementById("expandedSlideScreen").style.opacity = "0";
+  expandedImageShowing = false;
+}
+
 function noSlideShow() {
   if (document.getElementById("slides").firstChild) { // refreshes showing slide
     (document.getElementById("slides")).removeChild((document.getElementById("slides")).firstChild);
   }
+  if (document.getElementById("expandedSlideImage").firstChild) { // refreshes expanded slide image space and hides it
+    document.getElementById("expandedSlideImage").removeChild((document.getElementById("expandedSlideImage")).firstChild);
+  }
+  compressCurrentImage();
+
   document.getElementById("widgets").style.gridTemplateRows = "15px 30px 30px 30px 15px";
   document.getElementById("soundIcon").style.display = "initial";
   document.getElementById("slideshow").style.visibility = "hidden";
