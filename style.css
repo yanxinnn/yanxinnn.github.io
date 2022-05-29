@@ -403,7 +403,7 @@ a:active {
   margin: auto;
   display: flex;
   flex-direction: row;
-  width: 130px;
+  width: 250px;
   justify-content: space-between;
   align-items: center;
   user-select: none;
@@ -442,6 +442,20 @@ a:active {
   border-radius: 5px;
   padding: 4px;
   text-align: center;
+}
+
+#resume {
+  font-family: "silkscreennormal";
+  font-size: 18px;
+  background-color: #787878;
+  color: white;
+  border-radius: 5px;
+  padding: 12px;
+  border: none;
+}
+
+#resume:hover {
+  background-color: #FFB2C2;
 }
 
 /* The close button */
@@ -521,8 +535,11 @@ a:active {
   max-width: 100%;
   max-height: 100%;
   z-index: -1;
-  pointer-events: none;
   user-select: none;
+}
+
+#slides img {
+  pointer-events: none;
 }
 
 /* reference: https://www.w3schools.com/howto/howto_js_slideshow.asp */
@@ -800,7 +817,7 @@ a:active {
   .letter {
     font-size: 13px;
     width: 45vw;
-    height: 55vw;
+    height: 60vw;
     top: -50vw;
     left: 24vw;
   }
@@ -808,8 +825,8 @@ a:active {
     height: 100vh;
   }
   .contactInfo {
-    top: -65vw;
-    left: 200px;
+    top: -58vw;
+    left: 250px;
   }
   #aboutSectionHeader {
     font-size: 24px;
@@ -821,22 +838,13 @@ a:active {
 
 @media (max-width: 900px) {
   .letter {
-    height: 60vw;
-  }
-}
-
-@media (max-width: 880px) {
-  .contactInfo {
-    top: -60vw;
-  }
-  .letter {
-    height: 60vw;
+    height: 66vw;
   }
 }
 
 @media (max-width: 850px) {
   .letter {
-    height: 70vw;
+    height: 75vw;
   }
   #title {
     font-size: 28px;
@@ -844,20 +852,26 @@ a:active {
   #aboutSectionHeader {
     font-size: 22px;
   }
+  .contactInfo {
+    left: 220px;
+  }
 }
 
 @media (max-width: 800px) {
   .contactInfo {
-    top: -55vw;
+    top: -60vw;
   }
   .letter {
-    height: 75vw;
+    height: 82vw;
+  }
+  .contactInfo {
+    left: 210px;
   }
 }
 
 @media (max-width: 750px) {
   .letter {
-    height: 80vw;
+    height: 96vw;
   }
 }
 
@@ -899,11 +913,11 @@ a:active {
     left: 0px;
     width: 80vw;
     top: 8vh;
-    height: 65vw;
+    height: 70vw;
   }
   .contactInfo {
     flex-direction: column;
-    height: 120px;
+    height: 180px;
     top: -830px;
     left: 32vw;
   }

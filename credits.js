@@ -150,3 +150,7 @@ function unhover(element) {
 function mainMenu() {
   window.location = "index.html";
 }
+
+function openResume() {
+  window.open("images/YanxinJiangResume.pdf");
+}

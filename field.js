@@ -138,7 +138,7 @@ var aboutFloatItNotes = [
   built-in task management tools. <br><br>Users store their tasks as bottles that get added onto their New Tab page's waterscape \
   and can view/update their tasks throughout the day. <br><br>Features include a time/date display, planner functionalities \
   (create/edit/delete tasks, create/edit/delete subjects, progress tracker for tasks, and customizable color coded subjects), \
-  hand-drawn images and animations, and daily inspirational quotes.<br><br>This was my undergrad senior project that I am continuing \
+  hand-drawn images and animations, and daily inspirational quotes.<br><br>This was my undergrad Senior Capstone Project that I am continuing \
   to work on and is for those who need a planner and appreciate a bit of playfulness throughout their daily \
   chrome browsing experience! <br><br>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint",
 
@@ -174,7 +174,7 @@ var aboutFloatItNotes = [
 
   "Based on my research findings, I came up with a list of considerations for my chrome extension to include features that users \
   appreciate in a planner/task manager. I used the MoSCoW method to prioritize certain features to be completed in time for my undergrad \
-  senior project gallery exhibition but plan to implement more of them before releasing my chrome extension onto the Chrome App Store!",
+  Senior Capstone Project Gallery Exhibition but plan to implement more of them before releasing my chrome extension onto the Chrome App Store!",
 
   "An early rough sketch of Float-it Notes (top) and a work-in-progress screenshot (bottom). <br><br>Fun fact: The name Float-it Notes \
   is a wordplay of Post-it Notes, because instead of posting stuff, you're floating them :)! \

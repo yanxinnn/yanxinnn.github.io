@@ -1,3 +1,3 @@
 # Portfolio
 
-This is my portfolio in progress!
+This is my portfolio that I made from scratch!
