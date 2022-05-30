@@ -170,13 +170,13 @@ input#sound:checked ~ .off img {
 #locationMessage {
   position: fixed;
   text-align: center;
-  top: 25px;
+  top: 32px;
   left: 50%;
   transform: translate(-50%, 0);
   font-family: "silkscreennormal";
   font-weight: normal;
   font-style: normal;
-  font-size: 18px;
+  font-size: 24px;
   color: rgba(0, 0, 0, 0.5);
   padding: 15px 25px;
   border-radius: 5px;
@@ -552,6 +552,7 @@ a:active {
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 500px;
   padding: 2px 8px 5px 8px;
+  user-select: none;
 }
 
 .dots {

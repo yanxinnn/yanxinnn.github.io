@@ -33,7 +33,9 @@ var yanxinTexts = [
   "Where are these petals coming from?",
   "Mouths don't exist in this world",
   "I'm always adding new things to this world. Come by again soon!",
-  "*bounce bounce bounce*"
+  "*bounce bounce bounce*",
+  "Don't forget to drink water!",
+  "The sky isn't blue. It's actually #74B2E5🤓"
 ]
 var firstGreeting = false;
 var firstGreetingFinished = false;
