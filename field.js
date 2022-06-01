@@ -51,10 +51,10 @@ var snd_windyPetals;
 var continueSound = false;
 
 // Environment
-var numOfPlatforms = 70;
+var numOfPlatforms = 80;
 var platformsGroup;
 var middlePlatform; // where camera snaps to following player
-var endPlatform = 58; 
+var endPlatform = 63; 
 var groundTopLeft;
 var groundBottomLeft;
 var groundTop;
@@ -102,7 +102,7 @@ var purpleTp2 = "images/environment/purpleTp2.png";
 var purpleTp3 = "images/environment/purpleTp3.png";
 var videoSection;
 
-// Graphic + Web
+// UI/UX + Web
 var slideNum = 0;
 var dotCount = 0;
 var currentSlides;
@@ -131,18 +131,8 @@ var floatItSlides = [
   "images/slides/floatItDocumentation2.mov"
 ]
 var aboutFloatItNotes = [
-  "Staying on track with classes, work, meetings, assignments, and deadlines is hard. It's stressful enough \
-  when life seems to have it out for you and throws all the lemons it's got at you. But on top of that, you \
-  have to deal with schoolwork, work-work, life-work, all the things you need to work on, but for some reason, \
-  it's just not working out. I decided to tackle this great woe of our generation by building a chrome extension that \
-  helps users stay afloat in the hecticity of their everyday by providing them with a sanctuary in their New Tab page \
-  where they can stay organized, motivated, and sane, with light-hearted aesthetics, daily inspirational quotes, and \
-  built-in task management tools. <br><br>Users store their tasks as bottles that get added onto their New Tab page's waterscape \
-  and can view/update their tasks throughout the day. <br><br>Features include a time/date display, planner functionalities \
-  (create/edit/delete tasks, create/edit/delete subjects, progress tracker for tasks, and customizable color coded subjects), \
-  hand-drawn images and animations, and daily inspirational quotes.<br><br>This was my undergrad Senior Capstone Project that I am continuing \
-  to work on and is for those who need a planner and appreciate a bit of playfulness throughout their daily \
-  chrome browsing experience! <br><br>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint",
+  "Float-it Notes - Float Your Stress Away <br><br> \
+  Staying on track with classes, work, meetings, assignments, and deadlines is hard. It's stressful enough when life seems to have it out for you and throws all the lemons it's got at you. But on top of that, you have to deal with schoolwork, work-work, life-work, all the things you need to work on, but for some reason, it's just not working out. <br><br>I decided to tackle this great woe of our generation by building a chrome extension that helps users stay afloat in the hecticity of their everyday by providing them with a sanctuary in their New Tab page where they can stay organized, motivated, and sane, with light-hearted aesthetics, daily inspirational quotes, and built-in task management tools. <br><br>Users store their tasks as bottles that get added onto their New Tab page's waterscape and can view/update their tasks throughout the day. <br><br>Features include a time/date display, planner functionalities (create/edit/delete tasks, create/edit/delete subjects, progress tracker for tasks, and customizable color coded subjects), hand-drawn images and animations, and daily inspirational quotes.<br><br>This was my undergrad Senior Capstone Project that I am continuing to work on and is for those who need a planner and appreciate a bit of playfulness throughout their daily chrome browsing experience! <br><br>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint",
 
   "Screenshots of page when there are no tasks (top) and when there are tasks (bottom). \
   <br><br>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint",
@@ -153,38 +143,65 @@ var aboutFloatItNotes = [
   "Screenshots of create a new subject form (top left), create a new task form (right), and view of existing subjects (bottom left). \
   <br><br>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint",
 
-  "My target audience is Chrome users on laptops/desktops ages 14-25. My initial user research goal was to find out my target \
-  audience's general online habits, their usage of planners, if any (physical and/or digital), their favorite aspects \
-  of their current solution, and parts of their current solution that don’t work for them. <br><br>These are the user research \
-  questions that I asked participants (ages 16-23) during one-on-one interviews.",
+  "My target audience is Chrome users on laptops/desktops ages 14-25. My initial user research goal was to find out my target audience's general online habits, their usage of planners, if any (physical and/or digital), their favorite aspects of their current solution, and parts of their current solution that don’t work for them. <br><br>These are the user research questions that I asked participants (ages 16-23) during one-on-one interviews.",
 
-  "From my user research, I was able to understand who popular competitors are for futher competitive analysis, \
-  important planner functionalities that users preferred, and what tools are considered “fluff” and/or unnecessary \
-  by a majority of them. <br><br>Here are some of the big takeaways from the interviews: <br><br>1. Most of the participants \
-  use a digital planner with a few using a mix of both/only physical planners. Most of the digital planner \
-  users used Google Calenders, Notes app, or Trello to keep track of their schedules and to-do lists. <br><br>2. \
-  Benefits of using digital planners for participants include ease of organization (pre-formatted unlike physical planners), \
-  easy access on the phone/computer, being able to see a daily/weekly view of their schedule, \
+  "From my user research, I was able to understand who popular competitors are for futher competitive analysis, important planner functionalities that users preferred, and what tools are considered “fluff” and/or unnecessary by a majority of them. <br><br>Here are some of the big takeaways from the interviews: <br><br>1. Most of the participants use a digital planner with a few using a mix of both/only physical planners. Most of the digital planner users used Google Calenders, Notes app, or Trello to keep track of their schedules and to-do lists. <br><br>2. Benefits of using digital planners for participants include ease of organization (pre-formatted unlike physical planners), easy access on the phone/computer, being able to see a daily/weekly view of their schedule, \
   a place to have important links, and reminders. Pain points of using digital planners include the lack of \
-  customization outside of text boxes, an overwhelming amount of tools that go unused, and the lack of sorting by subject/groups. \
-  <br><br>3. Benefits of physical planners include the freedom of formatting (not prestructured like digital planners), \
-  ability to add creative non-text additions, and a space for brain dump. Pain points include not being able to edit tasks like \
-  digital planners, it being harder to find what you’re looking for in all the pages, and needing to carry it around everywhere.",
+  customization outside of text boxes, an overwhelming amount of tools that go unused, and the lack of sorting by subject/groups. <br><br>3. Benefits of physical planners include the freedom of formatting (not prestructured like digital planners), ability to add creative non-text additions, and a space for brain dump. Pain points include not being able to edit tasks like digital planners, it being harder to find what you’re looking for in all the pages, and needing to carry it around everywhere.",
 
-  "Here are some of the competitors I researched that take over the New Tab page. I took note of each of their \
-  taglines, audiences, purposes, features, scopes, and visual styles.",
+  "Here are some of the competitors I researched that take over the New Tab page. I took note of each of their taglines, audiences, purposes, features, scopes, and visual styles.",
 
-  "Based on my research findings, I came up with a list of considerations for my chrome extension to include features that users \
-  appreciate in a planner/task manager. I used the MoSCoW method to prioritize certain features to be completed in time for my undergrad \
-  Senior Capstone Project Gallery Exhibition but plan to implement more of them before releasing my chrome extension onto the Chrome App Store!",
+  "Based on my research findings, I came up with a list of considerations for my chrome extension to include features that users appreciate in a planner/task manager. I used the MoSCoW method to prioritize certain features to be completed in time for my Undergrad Senior Capstone Project Gallery Exhibition but plan to implement more of them before releasing my chrome extension onto the Chrome App Store!",
 
-  "An early rough sketch of Float-it Notes (top) and a work-in-progress screenshot (bottom). <br><br>Fun fact: The name Float-it Notes \
-  is a wordplay of Post-it Notes, because instead of posting stuff, you're floating them :)! \
+  "An early rough sketch of Float-it Notes (top) and a work-in-progress screenshot (bottom). <br><br>Fun fact: The name Float-it Notes is a wordplay of Post-it Notes, because instead of posting stuff, you're floating them :)! \
   <br><br>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint",
 
-  "An early in-progress video showcasing creating/deleting tasks. <br><br>Fun fact: Another name considered \
-  for Float-it Notes was Task in a Flask, but the name Float-it Notes was picked because it was easier to say!\
+  "An early in-progress video showcasing creating/deleting tasks. <br><br>Fun fact: Another name considered for Float-it Notes was Task in a Flask, but the name Float-it Notes was picked because it was easier to say!\
   <br><br>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint"
+]
+
+var inertiaFrames;
+var inertia1 = "images/environment/inertia1.png";
+var inertia2 = "images/environment/inertia2.png";
+var inertia3 = "images/environment/inertia3.png";
+var inertia4 = "images/environment/inertia4.png";
+var inertia;
+var inertiaSection;
+var inertiaSlides = [
+  "images/slides/askApps1.png",
+  "images/slides/askApps2.png",
+  "images/slides/inertiaQuestions1.png",
+  "images/slides/inertiaFindings1.png",
+  "images/slides/askApps2.png",
+  "images/slides/askApps2.png",
+  "images/slides/askApps2.png",
+  "images/slides/askApps2.png",
+  "images/slides/inertiaStyleGuide.png"
+]
+var aboutInertia = [
+  "Inertia - The Mobile Game That Mobilizes Gamers <br><br> \
+  Studies in 2021 have shown that more than 82 million US residents aged 6 and above don't exercise at all, making it more likely for them to develop a host of health problems like high blood pressure, high cholesterol, and heart disease. On the other hand, the mobile gaming market is booming, with global mobile games revenue on track to surpass the $100 billion mark by 2023. <br><br>So here are our two facts: <br><br> 1. A lot of people don't exercise enough. <br> 2. A lot of people love their mobile games. <br><br> This brought me to ask the question, what if working out was as addicting as a game? What if... it was a game? <br><br> \
+  I designed Inertia, a mobile fitness game that helps members of the gaming community and RPG fans transform their gaming passions into a healthier lifestyle. <br><br>Inertia gives users a setting they are familiar and drawn to, RPG games, and motivates users to workout by recognizing their efforts with in-game rewards and progression. While the rewards of physical body changes from working out might take at least a few months to show, Inertia helps keep users excited for their next session by providing more immediate feedback every time they complete a run or workout.\
+  <br><br> For this project, I: <br><br> - Researched exercise and mobile gaming statistics in the US <br>- Analyzed competitor fitness apps and their features<br>- Conducted two rounds of user research amongst gamers to learn my target audience's core needs and workout habits (1st round) and to recieve insight for how users interact with the mobile prototype (2nd round) <br>- Generated user-flows for different user experiences <br>- Created a style guide for the app's colors, typography, buttons, and branding <br>- Designed low and high-fidelity wireframes prototyping the sign-in/sign-up process, character creation, various game features (inventory, shop, skills, and Battle Tower system) and the workout experience for users. \
+  <br><br>Created with Figma",
+
+  "I started this project with background research on exercise and mobile gaming, primarily in the US, to gain an understanding of how my hybrid app can potentially bridge the gap between these two industries. Further competitive analysis of various fitness apps showed how current solutions were addressing the problem of inactivity among US residents and the various features that made them successful/stand out, giving me ideas for features to incorporate into Inertia.",
+
+  "My first round of user research's goal was to learn my target audience's core needs and workout habits. <br><br>I surveyed 16 participants, ages 15-21, that played at least 3 hours of games a week, and asked them questions concerning their gaming and exercise habits and preferences. These surveys were done through Google Forms for anonymity as some people may not be comfortable disclosing sensitive information such as how much they exercise, how long they spend playing games, etc.",
+
+  "Main findings from the first round of user research included: <br>- Participants’ reasons for playing games were for entertainment, to escape, or to socialization. <br>- What participants found most appealing about RPGs were the storylines, the game completion/achievements, ability to play with friends, the sense of progression, and character creation and customization. <br>- Most of participants that did work out either did light workouts a few times a week just to keep active and did not have workout equipment. <br>- Participants' motivations for working out were for physical changes, more energy, self-esteem, sports-related, and mental health reasons. <br><br>This research was crucial in understanding the target audience and their needs and served as a guide for the brainstorming and subsequent designs of Inertia.",
+
+  "The second round of user research was live 1-on-1 recorded interviews with participants on either Zoom or Discord testing for app navigation and usability. In these 10-15 minute interviews, participants were given a link to a mobile prototype of Inertia and asked to share their screen while I asked them a series of questions and gave them tasks to complete within the app.",
+
+  "From the second round of user research, I got a lot of valuable feedback that I incorporated into the final design of Inertia. As my users were all gamers interacting with Inertia for the first time, they were able to bring in their own knowledge and understanding of games they are used to playing, helping me improve the user experience of Inertia as not only a fitness app, but also as a functional and enjoyable game. <br><br>Highlighted bullet points in the image indicate popular/repeated feeback from participants.",
+
+  "I created multiple user-flows for different user motives, such as a user-flow for returning users logging on to complete a workout (using Workout) and a user-flow for returning users preparing character for the Battle Tower (using Shop, Skills, Inventory, Battle Tower). <br><br>In the image is the main user flow, showing all the possible navigations users can make within the app.",
+
+  "The app's game portion is an RPG. Users play as a character of a class of their choosing (warrior, mage, priest, archer, or assassin) as they battle their way through floors of the virtual world’s dungeon, called the Battle Tower, either solo or with friends. The battle system is turn based, with each player/enemy character using their mana to cast an ability on their turn. The battle ends when all the characters of a side has no health left. <br><br>Players can make their characters stronger with equipment and skill points they gain from working out. They can sell/buy/customize their equipment in the Shop, level up their unique class skills/abilities in Skills, and change their equipment and character appearance in Inventory. <br><br>Created with Figma",
+
+  "The fitness portion of the app consists players completing runs or workouts for the chance to obtain better equipment and to gain skill points to aid them in their Battle Tower climb. <br><br>The first few floors of the Battle Tower can be defeated without grinding out runs and workouts to give users a taste of what the gameplay is like and hopefully, make them excited to exercise to continue advancing. The rewards from these workouts scales with the user's in-game progression. <br><br>To ensure that users are honestly working out, the app will require users to verify their exercises by scanning QR codes on workout machines, using their phone's camera to track their movements, or linking to a heart rate monitor. <br><br>Created with Figma",
+
+  "Last but not least, I also created a style guide for Inertia to make sure that the app's colors, typography, buttons, and branding are consistent throughout all the pages for a holistic user experience."
 ]
 
 var askAppsFrames;
@@ -204,16 +221,13 @@ var askAppsSlides = [
   "images/slides/askApps7.png"
 ]
 var aboutAskApps = [
-  "Uninstall pages created for Ask Apps browser extensions. Collaboration with product management intern \
-  to boost install rates for other company products. Instead of the usual uninstall page asking users for feedback \
-  after uninstallation (which often went unread and unorganized due to the large quantity), our proposal aims to use the space \
-  in a more effective and productive way. <br><br>Created with Adobe Photoshop",
+  "Uninstall pages created for three Ask Apps browser extensions. <br><br>This was a collaboration with the product management intern to boost install rates for other company products after users uninstall these extensions. Instead of the usual uninstall page asking users for feedback after uninstallation (which often went unread and unorganized due to the large quantity), our proposal aims to use the space in a more effective and productive way. <br><br>Created with Adobe Photoshop",
 
   "Sample #1 of ad designs made for Slimware in accordance to Google compliant ad specifications. <br><br>Created with Adobe Photoshop",
 
   "Sample #2 of ad designs made for Slimware in accordance to Google compliant ad specifications. <br><br>Created with Adobe Photoshop",
 
-  "Sample #1 of landing page designs for various browser extensions. <br><br>Created with Adobe Photoshop, proprietary CMS, and HTML/CSS",
+  "Sample #1 of landing page designs created for various browser extensions. <br><br> As Ask Apps has over a hundred browser extensions, many with the same generic landing page design, I aimed to differentiate and liven them up by giving them their own unique landing page designs that were related to the extension's function in some way. <br><br>Created with Adobe Photoshop, proprietary CMS, and HTML/CSS",
 
   "Sample #2 of landing page designs for various browser extensions. <br><br>Created with Adobe Photoshop, proprietary CMS, and HTML/CSS",
 
@@ -324,7 +338,7 @@ var missileCommandSlides = [
   "images/slides/missileCommand2.png"
 ]
 var aboutMissileCommandClone = [
-  "A clone of the classic arcade game Missile Command by Atari. <br><br>Created with GameMaker Studio 2",
+  "A clone of the classic arcade game Missile Command by Atari. Complete with a menu page, scaling level difficulty, true-to-original sprites, point system, and game-over screen. <br><br>Created with GameMaker Studio 2",
 
   "Snapshot #1. <br><br>Created with GameMaker Studio 2",
 
@@ -345,14 +359,14 @@ var wizardsJourneySlides = [
   "images/slides/wizardsJourney03.jpg"
 ]
 var aboutWizardsJourney = [
-  "A multiplayer vertical obstacle race game. 3 playable characters each with different spells that can be used to hinder other players or destroy incoming non-player projectiles. Mana bars at the top indicate the respective color's ability to use spells and teleport \
-  back into view if they fall behind. Characters that run out of mana are removed from the race. First to the top or last one with mana left wins. <br><br>Created with GameMaker Studio 2",
+  "An original multiplayer vertical obstacle race game. There are 3 playable characters each with different spells that can be used to hinder other players or to destroy incoming map projectiles. Mana bars at the top indicate the respective color's ability to use spells and teleport \
+  back into view if they fall behind. Characters that run out of mana are removed from the race. First to the top wins! <br><br>Created with GameMaker Studio 2",
 
-  "Snapshot #1. <br><br>Created with GameMaker Studio 2",
+  "Snapshot #1 of starting match countdown. <br><br>Created with GameMaker Studio 2",
 
-  "Snapshot #2. <br><br>Created with GameMaker Studio 2",
+  "Snapshot #2 of characters climbing up obstacle course. <br><br>Created with GameMaker Studio 2",
 
-  "Snapshot #3. <br><br>Created with GameMaker Studio 2"
+  "Snapshot #3 of end game screen. Confetti matches color of winning character. If there is no winner (no one made it to the top), no one ends up on the pedestal and there is no confetti :(<br><br>Fun fact: The confetti in this game is the same sprite used for the falling petals on this portfolio, just recolored!<br><br>Created with GameMaker Studio 2"
 ]
 
 // 3D Modeling + Animation
@@ -366,13 +380,13 @@ var tantrumSlides = [
   "images/slides/tantrum03.png"
 ]
 var aboutTantrum = [
-  "1 minute animation of a child learning the agony of defeat. <br><br>Created with Autodesk Maya",
+  "1 minute animation of a child going through the stages of grief over a box of KitKat. <br><br>Created with Autodesk Maya",
 
-  "Snapshot #1. <br><br>Created with Autodesk Maya",
+  "Snapshot #1 of bargaining stage. <br><br>Created with Autodesk Maya",
 
-  "Snapshot #2. <br><br>Created with Autodesk Maya",
+  "Snapshot #2 of anger stage. <br><br>Created with Autodesk Maya",
 
-  "Snapshot #3. <br><br>Created with Autodesk Maya"
+  "Snapshot #3 of acceptance stage. <br><br>Created with Autodesk Maya"
 ]
 
 var deskRoomFrames;
@@ -386,11 +400,11 @@ var deskRoomSlides = [
   "images/slides/deskRoom03.png"
 ]
 var aboutDeskRoom = [
-  "Rendered 3d model of a room from reference. <br><br>Created with Autodesk Maya",
+  "Rendered 3d model of a room created from a reference photo. <br><br>Created with Autodesk Maya",
 
-  "Reference used for room model.",
+  "Reference photo used for room model. Thanks Pinterest!",
 
-  "Work in progress room render. <br><br>Created with Autodesk Maya"
+  "Work in progress screenshot of room, rendered. <br><br>Created with Autodesk Maya"
 ]
 
 var raygunFrames;
@@ -436,8 +450,9 @@ function preload() {
   redTpFrames = loadAnimation(redTp1, redTp2, redTp3);
   purpleTpFrames = loadAnimation(purpleTp1, purpleTp2, purpleTp3);
 
-  // Graphic + Web
+  // UI/UX + Web
   floatItFrames = loadAnimation(floatIt1, floatIt2, floatIt3, floatIt4);
+  inertiaFrames = loadAnimation(inertia1, inertia2, inertia3, inertia4);
   askAppsFrames = loadAnimation(askApps1, askApps2, askApps3, askApps4);
   acornStationFrames = loadImage("images/environment/acornStation.png");
   timeInterfaceFrames = loadAnimation(timeInterface1, timeInterface2, timeInterface3, timeInterface4, timeInterface5);
@@ -505,11 +520,11 @@ function setup() {
   // Teleporters
   // Back to Beginning
   whiteTpFrames.frameDelay = 12;
-  beginningTp = createSprite(platformsGroup[57].position.x, window.innerHeight-200, 100, 100);
+  beginningTp = createSprite(platformsGroup[61].position.x, window.innerHeight-200, 100, 100);
   beginningTp.addAnimation("static", whiteTpFrames);
   beginningSection = platformsGroup[13].position.x;
 
-  // Graphic + Web Design
+  // UI/UX + Web Design
   greenTpFrames.frameDelay = 12;
   graphicWebTp = createSprite(platformsGroup[15].position.x, window.innerHeight-200, 100, 100);
   graphicWebTp.addAnimation("static", greenTpFrames);
@@ -519,13 +534,13 @@ function setup() {
   redTpFrames.frameDelay = 12;
   gameTp = createSprite(platformsGroup[17].position.x, window.innerHeight-200, 100, 100);
   gameTp.addAnimation("static", redTpFrames);
-  gameSection = platformsGroup[35].position.x;
+  gameSection = platformsGroup[39].position.x;
 
   // 3D Modeling + Animation
   purpleTpFrames.frameDelay = 12;
   threeDTp = createSprite(platformsGroup[19].position.x, window.innerHeight-200, 100, 100);
   threeDTp.addAnimation("static", purpleTpFrames);
-  threeDSection = platformsGroup[45].position.x;
+  threeDSection = platformsGroup[49].position.x;
 
   // Video Editing
   // purpleTpFrames.frameDelay = 12;
@@ -533,23 +548,28 @@ function setup() {
   // videoTp.addAnimation("static", purpleTpFrames);
   // videoSection = platformsGroup[60].position.x;
 
-  // Graphic + Web (back)
+  // UI/UX + Web (back)
   floatItFrames.frameDelay = 15;
   floatItSection = graphicWebSection + 250;
   floatItNotes = createSprite(floatItSection, window.innerHeight-220, 220, 140);
   floatItNotes.addAnimation("static", floatItFrames);
 
+  inertiaFrames.frameDelay = 25;
+  inertiaSection = graphicWebSection + 550;
+  inertia = createSprite(inertiaSection, window.innerHeight-225, 180, 150);
+  inertia.addAnimation("static", inertiaFrames);
+
   askAppsFrames.frameDelay = 20;
-  askAppsSection = graphicWebSection + 550;
+  askAppsSection = graphicWebSection + 840;
   askApps = createSprite(askAppsSection, window.innerHeight-225, 160, 150);
   askApps.addAnimation("static", askAppsFrames);
 
-  acornSection = graphicWebSection + 880;
+  acornSection = graphicWebSection + 1180;
   acornStation = createSprite(acornSection, window.innerHeight-225, 300, 150);
   acornStation.addImage(acornStationFrames);
 
   timeInterfaceFrames.frameDelay = 100;
-  timeInterfaceSection = graphicWebSection + 1180;
+  timeInterfaceSection = graphicWebSection + 1500;
   timeInterface = createSprite(timeInterfaceSection, window.innerHeight-225, 100, 150);
   timeInterface.addAnimation("static", timeInterfaceFrames);
 
@@ -741,8 +761,8 @@ function draw() {
   // Sound
   var sound = document.getElementById("sound");
 
-  // Graphic + Web Design
-  displayText("Graphic + Web Design", graphicWebTp, 30, 200, 5, 255, CENTER, 20, hoverAmnt);
+  // UI/UX + Web Design
+  displayText("UI/UX + Web Design", graphicWebTp, 30, 200, 5, 255, CENTER, 20, hoverAmnt);
   if (abs(graphicWebTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       fadeInEffect();
@@ -765,6 +785,23 @@ function draw() {
     }
     else {
       interactText("Press \"E\" to view", floatItNotes, -85);
+      noSlideShow();
+      if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
+    }
+  }
+  // Inertia
+  if (abs(inertia.position.x - player.position.x) <= 130) {
+    if (keyPressed() == "E") {
+      slideShow("Inertia");
+      if (sound.checked) { continueSound = true; }
+      else { continueSound = false; }
+      slideShowing = true;
+    }
+    else if (slideShowing == true) {
+      leaveSlidesCheck();
+    }
+    else {
+      interactText("Press \"E\" to view", inertia, -85);
       noSlideShow();
       if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
@@ -986,7 +1023,7 @@ function draw() {
     document.getElementById("locationMessage").style.backgroundColor = "#FFCCCC";
   }
   else if (player.position.x >= graphicWebSection) {
-    document.getElementById("locationMessage").innerHTML = "Graphic + Web Design";
+    document.getElementById("locationMessage").innerHTML = "UI/UX + Web Design";
     document.getElementById("locationMessage").style.backgroundColor = "#BEE8CC";
   } 
   else {
@@ -1121,6 +1158,9 @@ function slideShow(title) {
   if (title == "Float-it Notes") {
     currentSlides = floatItSlides;
     currentSlidesName = "FloatItNotes";
+  } else if (title == "Inertia") {
+    currentSlides = inertiaSlides;
+    currentSlidesName = "Inertia";
   } else if (title == "Ask Applications Internship") {
     currentSlides = askAppsSlides;
     currentSlidesName = "AskApplicationsInternship";
@@ -1215,7 +1255,8 @@ function dotUpdate() { // dot update, description, and subtitle update
   if (slideNum == 0) {
     currentSubtitle.innerHTML = "About";
   }
-  // Graphic + Web Design
+  // UI/UX + Web Design
+  // Float-it Notes
   if (currentSlidesName == "FloatItNotes") {
     if (slideNum == 0) {
       currentSubtitle.innerHTML = "About";
@@ -1231,6 +1272,30 @@ function dotUpdate() { // dot update, description, and subtitle update
       currentSubtitle.innerHTML = "Documentation";
     }
     currentAbout.innerHTML = aboutFloatItNotes[slideNum];
+  // Inertia
+  } else if (currentSlidesName == "Inertia") {
+    if (slideNum == 0) {
+      currentSubtitle.innerHTML = "About";
+    } else if (slideNum == 1) {
+      currentSubtitle.innerHTML = "Background and Competitive Research";
+    } else if (slideNum == 2) {
+      currentSubtitle.innerHTML = "User Research #1";
+    } else if (slideNum == 3) {
+      currentSubtitle.innerHTML = "User Research #1 Findings";
+    } else if (slideNum == 4) {
+      currentSubtitle.innerHTML = "User Research #2";
+    } else if (slideNum == 5) {
+      currentSubtitle.innerHTML = "User Research #2 Findings";
+    } else if (slideNum == 6) {
+      currentSubtitle.innerHTML = "User Flows";
+    } else if (slideNum == 7) {
+      currentSubtitle.innerHTML = "The Game";
+    } else if (slideNum == 8) {
+      currentSubtitle.innerHTML = "The Fitness App";
+    } else if (slideNum == 9) {
+      currentSubtitle.innerHTML = "Style Guide";
+    }
+    currentAbout.innerHTML = aboutInertia[slideNum];
   // Ask Applications
   } else if (currentSlidesName == "AskApplicationsInternship") {
     if (slideNum == 0) {
