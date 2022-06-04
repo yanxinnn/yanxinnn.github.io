@@ -188,7 +188,7 @@ input#sound:checked ~ .off img {
 
 .bottomMessage {
   position: fixed;
-  bottom: 40px;
+  bottom: 25px;
   text-align: center;
   left: 50%;
   transform: translate(-50%, 0);
@@ -719,6 +719,31 @@ a:active {
   padding-left: 10px;
 }
 
+.createdWith {
+  color: #a1a1a1;
+  font-size: 13px;
+}
+
+.slidesLink {
+  color: white;
+  font-family: "silkscreennormal";
+  font-weight: normal;
+  font-style: normal;
+  padding: 12px 18px;
+  font-size: 18px;
+  background-color: #658AA9;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  border: none;
+}
+
+.slidesLink:hover {
+  background-color: #FFB2C2;
+  cursor: url(images/icon-daisy3.png), pointer;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 12px;
@@ -731,7 +756,7 @@ a:active {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #6b6b6b;
+  background: #575757;
   border-radius: 4px;
 }
 
@@ -770,7 +795,7 @@ a:active {
   font-style: normal;
 }
 
-@media (max-height: 675px) {
+@media (max-height: 680px) {
   body {
     overflow-y: auto;
   }
@@ -792,8 +817,8 @@ a:active {
   }
   .contactInfo {
     position: relative;
-    left: 25vw;
-    top: -550px;
+    left: 18vw;
+    top: -500px;
   }
 }
 

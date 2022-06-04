@@ -132,16 +132,17 @@ var floatItSlides = [
 ]
 var aboutFloatItNotes = [
   "Float-it Notes - Float Your Stress Away <br><br> \
-  Staying on track with classes, work, meetings, assignments, and deadlines is hard. It's stressful enough when life seems to have it out for you and throws all the lemons it's got at you. But on top of that, you have to deal with schoolwork, work-work, life-work, all the things you need to work on, but for some reason, it's just not working out. <br><br>I decided to tackle this great woe of our generation by building a chrome extension that helps users stay afloat in the hecticity of their everyday by providing them with a sanctuary in their New Tab page where they can stay organized, motivated, and sane, with light-hearted aesthetics, daily inspirational quotes, and built-in task management tools. <br><br>Users store their tasks as bottles that get added onto their New Tab page's waterscape and can view/update their tasks throughout the day. <br><br>Features include a time/date display, planner functionalities (create/edit/delete tasks, create/edit/delete subjects, progress tracker for tasks, and customizable color coded subjects), hand-drawn images and animations, and daily inspirational quotes.<br><br>This was my undergrad Senior Capstone Project that I am continuing to work on and is for those who need a planner and appreciate a bit of playfulness throughout their daily chrome browsing experience! <br><br>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint",
+  Staying on track with classes, work, meetings, assignments, and deadlines is hard. It's stressful enough when life seems to have it out for you and throws all the lemons it's got at you. But on top of that, you have to deal with schoolwork, work-work, life-work, all the things you need to work on, but for some reason, it's just not working out. <br><br>I decided to tackle this great woe of our generation by building a chrome extension that helps users stay afloat in the hecticity of their everyday by providing them with a sanctuary in their New Tab page where they can stay organized, motivated, and sane, with light-hearted aesthetics, daily inspirational quotes, and built-in task management tools. <br><br>Users store their tasks as bottles that get added onto their New Tab page's waterscape and can view/update their tasks throughout the day. <br><br>Features include a time/date display, planner functionalities (create/edit/delete tasks, create/edit/delete subjects, progress tracker for tasks, and customizable color coded subjects), hand-drawn images and animations, and daily inspirational quotes.<br><br>This was my undergrad Senior Capstone Project that I am continuing to work on and is for those who need a planner and appreciate a bit of playfulness throughout their daily chrome browsing experience! \
+  <br><br><div class='createdWith'>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint</div>",
 
   "Screenshots of page when there are no tasks (top) and when there are tasks (bottom). \
-  <br><br>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint",
+  <br><br><div class='createdWith'>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint</div>",
 
   "Screenshots of page when users click/hover bottles (top) and confirmation pop-up for deletion of a task (bottom). \
-  <br><br>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint",
+  <br><br><div class='createdWith'>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint</div>",
 
   "Screenshots of create a new subject form (top left), create a new task form (right), and view of existing subjects (bottom left). \
-  <br><br>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint",
+  <br><br><div class='createdWith'>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint</div>",
 
   "My target audience is Chrome users on laptops/desktops ages 14-25. My initial user research goal was to find out my target audience's general online habits, their usage of planners, if any (physical and/or digital), their favorite aspects of their current solution, and parts of their current solution that don’t work for them. <br><br>These are the user research questions that I asked participants (ages 16-23) during one-on-one interviews.",
 
@@ -154,10 +155,10 @@ var aboutFloatItNotes = [
   "Based on my research findings, I came up with a list of considerations for my chrome extension to include features that users appreciate in a planner/task manager. I used the MoSCoW method to prioritize certain features to be completed in time for my Undergrad Senior Capstone Project Gallery Exhibition but plan to implement more of them before releasing my chrome extension onto the Chrome App Store!",
 
   "An early rough sketch of Float-it Notes (top) and a work-in-progress screenshot (bottom). <br><br>Fun fact: The name Float-it Notes is a wordplay of Post-it Notes, because instead of posting stuff, you're floating them :)! \
-  <br><br>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint",
+  <br><br><div class='createdWith'>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint</div>",
 
   "An early in-progress video showcasing creating/deleting tasks. <br><br>Fun fact: Another name considered for Float-it Notes was Task in a Flask, but the name Float-it Notes was picked because it was easier to say!\
-  <br><br>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint"
+  <br><br><div class='createdWith'>Created with HTML/CSS, Javascript, Adobe Photoshop, and Medibang Paint</div>"
 ]
 
 var inertiaFrames;
@@ -172,36 +173,38 @@ var inertiaSlides = [
   "images/slides/askApps2.png",
   "images/slides/inertiaQuestions1.png",
   "images/slides/inertiaFindings1.png",
+  "images/slides/inertiaFlow.png",
+  "images/slides/inertiaQuestions2.png",
+  "images/slides/inertiaFindings2.png",
   "images/slides/askApps2.png",
-  "images/slides/askApps2.png",
-  "images/slides/askApps2.png",
-  "images/slides/askApps2.png",
+  "images/slides/inertiaStyleGuide.png",
   "images/slides/inertiaStyleGuide.png"
 ]
 var aboutInertia = [
   "Inertia - The Mobile Game That Mobilizes Gamers <br><br> \
+  <button class='slidesLink' onclick=\"window.open('https://www.figma.com/file/4GKpbsBQxAKKfarmcLW0tp/Inertia','_blank')\">View Figma Designs</button><br><br> \
   Studies in 2021 have shown that more than 82 million US residents aged 6 and above don't exercise at all, making it more likely for them to develop a host of health problems like high blood pressure, high cholesterol, and heart disease. On the other hand, the mobile gaming market is booming, with global mobile games revenue on track to surpass the $100 billion mark by 2023. <br><br>So here are our two facts: <br><br> 1. A lot of people don't exercise enough. <br> 2. A lot of people love their mobile games. <br><br> This brought me to ask the question, what if working out was as addicting as a game? What if... it was a game? <br><br> \
   I designed Inertia, a mobile fitness game that helps members of the gaming community and RPG fans transform their gaming passions into a healthier lifestyle. <br><br>Inertia gives users a setting they are familiar and drawn to, RPG games, and motivates users to workout by recognizing their efforts with in-game rewards and progression. While the rewards of physical body changes from working out might take at least a few months to show, Inertia helps keep users excited for their next session by providing more immediate feedback every time they complete a run or workout.\
   <br><br> For this project, I: <br><br> - Researched exercise and mobile gaming statistics in the US <br>- Analyzed competitor fitness apps and their features<br>- Conducted two rounds of user research amongst gamers to learn my target audience's core needs and workout habits (1st round) and to recieve insight for how users interact with the mobile prototype (2nd round) <br>- Generated user-flows for different user experiences <br>- Created a style guide for the app's colors, typography, buttons, and branding <br>- Designed low and high-fidelity wireframes prototyping the sign-in/sign-up process, character creation, various game features (inventory, shop, skills, and Battle Tower system) and the workout experience for users. \
-  <br><br>Created with Figma",
+  <br><br><div class='createdWith'>Created with Figma</div>",
 
   "I started this project with background research on exercise and mobile gaming, primarily in the US, to gain an understanding of how my hybrid app can potentially bridge the gap between these two industries. Further competitive analysis of various fitness apps showed how current solutions were addressing the problem of inactivity among US residents and the various features that made them successful/stand out, giving me ideas for features to incorporate into Inertia.",
 
   "My first round of user research's goal was to learn my target audience's core needs and workout habits. <br><br>I surveyed 16 participants, ages 15-21, that played at least 3 hours of games a week, and asked them questions concerning their gaming and exercise habits and preferences. These surveys were done through Google Forms for anonymity as some people may not be comfortable disclosing sensitive information such as how much they exercise, how long they spend playing games, etc.",
 
-  "Main findings from the first round of user research included: <br>- Participants’ reasons for playing games were for entertainment, to escape, or to socialization. <br>- What participants found most appealing about RPGs were the storylines, the game completion/achievements, ability to play with friends, the sense of progression, and character creation and customization. <br>- Most of participants that did work out either did light workouts a few times a week just to keep active and did not have workout equipment. <br>- Participants' motivations for working out were for physical changes, more energy, self-esteem, sports-related, and mental health reasons. <br><br>This research was crucial in understanding the target audience and their needs and served as a guide for the brainstorming and subsequent designs of Inertia.",
+  "Main findings from the first round of user research included: <br><br>1. Participants’ reasons for playing games were for entertainment, escape, or socialization. <br><br>2. What participants found most appealing about RPGs were the storylines, the game completion/achievements, ability to play with friends, the sense of progression, and character creation and customization. <br><br>3. Most of participants that did work out either did light workouts a few times a week just to keep active and did not have workout equipment. <br><br>4. Participants' motivations for working out were for physical changes, more energy, self-esteem, sports-related, and mental health reasons. <br><br>This research was crucial in understanding the target audience and their needs and served as a guide for the brainstorming and subsequent designs of Inertia.",
 
-  "The second round of user research was live 1-on-1 recorded interviews with participants on either Zoom or Discord testing for app navigation and usability. In these 10-15 minute interviews, participants were given a link to a mobile prototype of Inertia and asked to share their screen while I asked them a series of questions and gave them tasks to complete within the app.",
+  "I created multiple user-flows for different user motives, such as a user-flow for returning users logging on to complete a workout (using Workout) and a user-flow for returning users preparing character for the Battle Tower (using Shop, Skills, Inventory, Battle Tower). <br><br>In the image is the main user flow, showing all the possible navigations users can make within the app. <br><br><div class='createdWith'>Created with Figma</div>",
+
+  "The second round of user research was live 1-on-1 recorded interviews with participants on either Zoom or Discord testing for app navigation and usability. <br><br>In these 10-15 minute interviews, participants were given a link to a mobile prototype of Inertia and asked to share their screen while I asked them a series of questions and gave them tasks to complete within the app.",
 
   "From the second round of user research, I got a lot of valuable feedback that I incorporated into the final design of Inertia. As my users were all gamers interacting with Inertia for the first time, they were able to bring in their own knowledge and understanding of games they are used to playing, helping me improve the user experience of Inertia as not only a fitness app, but also as a functional and enjoyable game. <br><br>Highlighted bullet points in the image indicate popular/repeated feeback from participants.",
 
-  "I created multiple user-flows for different user motives, such as a user-flow for returning users logging on to complete a workout (using Workout) and a user-flow for returning users preparing character for the Battle Tower (using Shop, Skills, Inventory, Battle Tower). <br><br>In the image is the main user flow, showing all the possible navigations users can make within the app.",
+  "The app's game portion is an RPG. Users play as a character of a class of their choosing (warrior, mage, priest, archer, or assassin) as they battle their way through floors of the virtual world’s dungeon, called the Battle Tower, either solo or with friends. The battle system is turn based, with each player/enemy character using their mana to cast an ability on their turn. The battle ends when all the characters of a side has no health left. <br><br>Players can make their characters stronger with equipment and skill points they gain from working out. They can sell/buy/customize their equipment in the Shop, level up their unique class skills/abilities in Skills, and change their equipment and character appearance in Inventory. <br><br><div class='createdWith'>Created with Figma</div>",
 
-  "The app's game portion is an RPG. Users play as a character of a class of their choosing (warrior, mage, priest, archer, or assassin) as they battle their way through floors of the virtual world’s dungeon, called the Battle Tower, either solo or with friends. The battle system is turn based, with each player/enemy character using their mana to cast an ability on their turn. The battle ends when all the characters of a side has no health left. <br><br>Players can make their characters stronger with equipment and skill points they gain from working out. They can sell/buy/customize their equipment in the Shop, level up their unique class skills/abilities in Skills, and change their equipment and character appearance in Inventory. <br><br>Created with Figma",
+  "The fitness portion of the app consists players completing runs or workouts for the chance to obtain better equipment and to gain skill points to aid them in their Battle Tower climb. <br><br>The first few floors of the Battle Tower can be defeated without grinding out runs and workouts to give users a taste of what the gameplay is like and hopefully, make them excited to exercise to continue advancing. The rewards from these workouts scales with the user's in-game progression. <br><br>To ensure that users are honestly working out, the app will require users to verify their exercises by scanning QR codes on workout machines, using their phone's camera to track their movements, or linking to a heart rate monitor. <br><br><div class='createdWith'>Created with Figma</div>",
 
-  "The fitness portion of the app consists players completing runs or workouts for the chance to obtain better equipment and to gain skill points to aid them in their Battle Tower climb. <br><br>The first few floors of the Battle Tower can be defeated without grinding out runs and workouts to give users a taste of what the gameplay is like and hopefully, make them excited to exercise to continue advancing. The rewards from these workouts scales with the user's in-game progression. <br><br>To ensure that users are honestly working out, the app will require users to verify their exercises by scanning QR codes on workout machines, using their phone's camera to track their movements, or linking to a heart rate monitor. <br><br>Created with Figma",
-
-  "Last but not least, I also created a style guide for Inertia to make sure that the app's colors, typography, buttons, and branding are consistent throughout all the pages for a holistic user experience."
+  "Last but not least, I also created a style guide for Inertia to make sure that the app's colors, typography, buttons, and branding are consistent throughout all the pages for a holistic user experience. <br><br><div class='createdWith'>Created with Figma</div>"
 ]
 
 var askAppsFrames;
@@ -221,19 +224,19 @@ var askAppsSlides = [
   "images/slides/askApps7.png"
 ]
 var aboutAskApps = [
-  "Uninstall pages created for three Ask Apps browser extensions. <br><br>This was a collaboration with the product management intern to boost install rates for other company products after users uninstall these extensions. Instead of the usual uninstall page asking users for feedback after uninstallation (which often went unread and unorganized due to the large quantity), our proposal aims to use the space in a more effective and productive way. <br><br>Created with Adobe Photoshop",
+  "Uninstall pages created for three Ask Apps browser extensions. <br><br>This was a collaboration with the product management intern to boost install rates for other company products after users uninstall these extensions. Instead of the usual uninstall page asking users for feedback after uninstallation (which often went unread and unorganized due to the large quantity), our proposal aims to use the space in a more effective and productive way. <br><br><div class='createdWith'>Created with Adobe Photoshop</div>",
 
-  "Sample #1 of ad designs made for Slimware in accordance to Google compliant ad specifications. <br><br>Created with Adobe Photoshop",
+  "Sample #1 of ad designs made for Slimware in accordance to Google compliant ad specifications. <br><br><div class='createdWith'>Created with Adobe Photoshop</div>",
 
-  "Sample #2 of ad designs made for Slimware in accordance to Google compliant ad specifications. <br><br>Created with Adobe Photoshop",
+  "Sample #2 of ad designs made for Slimware in accordance to Google compliant ad specifications. <br><br><div class='createdWith'>Created with Adobe Photoshop</div>",
 
-  "Sample #1 of landing page designs created for various browser extensions. <br><br> As Ask Apps has over a hundred browser extensions, many with the same generic landing page design, I aimed to differentiate and liven them up by giving them their own unique landing page designs that were related to the extension's function in some way. <br><br>Created with Adobe Photoshop, proprietary CMS, and HTML/CSS",
+  "Sample #1 of landing page designs created for various browser extensions. <br><br> As Ask Apps has over a hundred browser extensions, many with the same generic landing page design, I aimed to differentiate and liven them up by giving them their own unique landing page designs that were related to the extension's function in some way. <br><br><div class='createdWith'>Created with Adobe Photoshop, proprietary CMS, and HTML/CSS</div>",
 
-  "Sample #2 of landing page designs for various browser extensions. <br><br>Created with Adobe Photoshop, proprietary CMS, and HTML/CSS",
+  "Sample #2 of landing page designs for various browser extensions. <br><br><div class='createdWith'>Created with Adobe Photoshop, proprietary CMS, and HTML/CSS</div>",
 
-  "Sample #3 of landing page designs for various browser extensions. <br><br>Created with Adobe Photoshop, proprietary CMS, and HTML/CSS",
+  "Sample #3 of landing page designs for various browser extensions. <br><br><div class='createdWith'>Created with Adobe Photoshop, proprietary CMS, and HTML/CSS</div>",
 
-  "Sample #4 of landing page designs for various browser extensions. <br><br>Created with Adobe Photoshop, proprietary CMS, and HTML/CSS"
+  "Sample #4 of landing page designs for various browser extensions. <br><br><div class='createdWith'>Created with Adobe Photoshop, proprietary CMS, and HTML/CSS</div>"
 ]
 
 var acornStationFrames;
@@ -252,21 +255,20 @@ var aboutAcorn = [
   \"acorn\" is a health and wellness company that is dedicated to helping people live healthier \
   and more eco-friendly lifestlyes. <br><br>For the logo, I chose a simplistic and geometric design \
   to emphasize the company's clean and environmental conscious mission. Squirrel-like shapes and \
-  custom lettering were created from transformations on circles. <br><br>Created with Adobe Illustrator",
+  custom lettering were created from transformations on circles. <br><br><div class='createdWith'>Created with Adobe Illustrator</div>",
 
   "In the brainstorming stage, I came up with 10 unique designs for the \"acorn\" logo. \
   I did a survey with 25 people to find out which of these 10 were the most appealing to others. From \
   this feedback, I was able to narrow down the possible designs to 3. <br><br>I then created sevaral iterations \
   of the 3 designs, playing around with fonts, colors, spacing, and other design elements. \
-  Shown in the picture are some of the iterations of the 3 chosen designs. <br><br>Created with Adobe Illustrator",
+  Shown in the picture are some of the iterations of the 3 chosen designs. <br><br><div class='createdWith'>Created with Adobe Illustrator</div>",
 
   "In the next step, I take the logo I've made for \"acorn\" and created drafts for possible company merchandise. \
-  <br><br>Created with Adobe Photoshop",
+  <br><br><div class='createdWith'>Created with Adobe Photoshop</div>",
 
-  "I ended up selecting the water bottle and made three design iterations. <br><br>Created with Adobe Photoshop",
+  "I ended up selecting the water bottle and made three design iterations. <br><br><div class='createdWith'>Created with Adobe Photoshop</div>",
 
-  "Here are the final products! <br><br>Created with vinyl sheets, vinyl cutter, and bottles I ordered from Amazon (haven't \
-  figured out glass blowing just yet)"
+  "Here are the final products! <br><br><div class='createdWith'>Created with vinyl sheets, vinyl cutter, and bottles </div>"
 
 ]
 
@@ -285,15 +287,15 @@ var timeInterfaceSlides = [
   "images/slides/timeInterface04.png"
 ]
 var aboutTimeInterface = [
-  "Alternative clock interface designs created and scaled for LinkNYC kiosks. <br><br>Created with Adobe Photoshop",
+  "Alternative clock interface designs created and scaled for LinkNYC kiosks. <br><br><div class='createdWith'>Created with Adobe Photoshop</div>",
 
   "An alternative clock interface design that explores the relationship between time and weather. Distinguishes \
   the type and severity of the current percipitation within the span of an hour (1st column), the forecast for tomorrow (2nd column), \
-  and the forecast for the next few days (3rd column). <br><br>Created with Adobe Photoshop",
+  and the forecast for the next few days (3rd column). <br><br><div class='createdWith'>Created with Adobe Photoshop</div>",
 
-  "Drafts #1. Initial low fidelity prototype. <br><br>Created with Adobe Photoshop",
+  "Drafts #1. Initial low fidelity prototype. <br><br><div class='createdWith'>Created with Adobe Photoshop</div>",
 
-  "Drafts #2. Sample of iterations made for the 3 screens. <br><br>Created with Adobe Photoshop"
+  "Drafts #2. Sample of iterations made for the 3 screens. <br><br><div class='createdWith'>Created with Adobe Photoshop</div>"
 ]
 
 // Game
@@ -313,17 +315,17 @@ var outcastSlides = [
 var aboutOutcast = [
   "\"Outcast\" is a narrative RPG adventure developed by a team of 3. My role was the game's lead artist and map designer. All sprites other than the player model are originals. Plot: A young boy who once weilded the most \
   powerful sword known to man loses everything and everyone he knows and loves when his village is attacked by strange hostile creatures. The hostile race steals the legendary sword and banishes the main character into an unfamiliar world. \
-  <br><br>Created with Gamemaker Studio 2 and Medibang Paint",
+  <br><br><div class='createdWith'>Created with Gamemaker Studio 2 and Medibang Paint</div>",
 
-  "Snapshot #1. <br><br>Created with Gamemaker Studio 2 and Medibang Paint",
+  "Snapshot #1. <br><br><div class='createdWith'>Created with Gamemaker Studio 2 and Medibang Paint</div>",
 
-  "Snapshot #2. <br><br>Created with Gamemaker Studio 2 and Medibang Paint",
+  "Snapshot #2. <br><br><div class='createdWith'>Created with Gamemaker Studio 2 and Medibang Paint</div>",
 
-  "Snapshot #3. <br><br>Created with Gamemaker Studio 2 and Medibang Paint",
+  "Snapshot #3. <br><br><div class='createdWith'>Created with Gamemaker Studio 2 and Medibang Paint</div>",
 
-  "Snapshot #4. <br><br>Created with Gamemaker Studio 2 and Medibang Paint",
+  "Snapshot #4. <br><br><div class='createdWith'>Created with Gamemaker Studio 2 and Medibang Paint</div>",
 
-  "Snapshot #5. <br><br>Created with Gamemaker Studio 2 and Medibang Paint"
+  "Snapshot #5. <br><br><div class='createdWith'>Created with Gamemaker Studio 2 and Medibang Paint</div>"
 ]
 
 var missileCommandFrames;
@@ -338,11 +340,11 @@ var missileCommandSlides = [
   "images/slides/missileCommand2.png"
 ]
 var aboutMissileCommandClone = [
-  "A clone of the classic arcade game Missile Command by Atari. Complete with a menu page, scaling level difficulty, true-to-original sprites, point system, and game-over screen. <br><br>Created with GameMaker Studio 2",
+  "A clone of the classic arcade game Missile Command by Atari. Complete with a menu page, scaling level difficulty, true-to-original sprites, point system, and game-over screen. <br><br><div class='createdWith'>Created with GameMaker Studio 2</div>",
 
-  "Snapshot #1. <br><br>Created with GameMaker Studio 2",
+  "Snapshot #1. <br><br><div class='createdWith'>Created with GameMaker Studio 2</div>",
 
-  "Snapshot #2. <br><br>Created with GameMaker Studio 2"
+  "Snapshot #2. <br><br><div class='createdWith'>Created with GameMaker Studio 2</div>"
 ]
 
 var wizardsJourneyFrames;
@@ -360,13 +362,13 @@ var wizardsJourneySlides = [
 ]
 var aboutWizardsJourney = [
   "An original multiplayer vertical obstacle race game. There are 3 playable characters each with different spells that can be used to hinder other players or to destroy incoming map projectiles. Mana bars at the top indicate the respective color's ability to use spells and teleport \
-  back into view if they fall behind. Characters that run out of mana are removed from the race. First to the top wins! <br><br>Created with GameMaker Studio 2",
+  back into view if they fall behind. Characters that run out of mana are removed from the race. First to the top wins! <br><br><div class='createdWith'>Created with GameMaker Studio 2</div>",
 
-  "Snapshot #1 of starting match countdown. <br><br>Created with GameMaker Studio 2",
+  "Snapshot #1 of starting match countdown. <br><br><div class='createdWith'>Created with GameMaker Studio 2</div>",
 
-  "Snapshot #2 of characters climbing up obstacle course. <br><br>Created with GameMaker Studio 2",
+  "Snapshot #2 of characters climbing up obstacle course. <br><br><div class='createdWith'>Created with GameMaker Studio 2</div>",
 
-  "Snapshot #3 of end game screen. Confetti matches color of winning character. If there is no winner (no one made it to the top), no one ends up on the pedestal and there is no confetti :(<br><br>Fun fact: The confetti in this game is the same sprite used for the falling petals on this portfolio, just recolored!<br><br>Created with GameMaker Studio 2"
+  "Snapshot #3 of end game screen. Confetti matches color of winning character. If there is no winner (no one made it to the top), no one ends up on the pedestal and there is no confetti :(<br><br>Fun fact: The confetti in this game is the same sprite used for the falling petals on this portfolio, just recolored!<br><br><div class='createdWith'>Created with GameMaker Studio 2</div>"
 ]
 
 // 3D Modeling + Animation
@@ -380,13 +382,13 @@ var tantrumSlides = [
   "images/slides/tantrum03.png"
 ]
 var aboutTantrum = [
-  "1 minute animation of a child going through the stages of grief over a box of KitKat. <br><br>Created with Autodesk Maya",
+  "1 minute animation of a child going through the stages of grief over a box of KitKat. <br><br><div class='createdWith'>Created with Autodesk Maya and Adobe Photoshop</div>",
 
-  "Snapshot #1 of bargaining stage. <br><br>Created with Autodesk Maya",
+  "Snapshot #1 of bargaining stage. <br><br><div class='createdWith'>Created with Autodesk Maya</div>",
 
-  "Snapshot #2 of anger stage. <br><br>Created with Autodesk Maya",
+  "Snapshot #2 of anger stage. <br><br><div class='createdWith'>Created with Autodesk Maya</div>",
 
-  "Snapshot #3 of acceptance stage. <br><br>Created with Autodesk Maya"
+  "Snapshot #3 of acceptance stage. <br><br><div class='createdWith'>Created with Autodesk Maya</div>"
 ]
 
 var deskRoomFrames;
@@ -400,11 +402,11 @@ var deskRoomSlides = [
   "images/slides/deskRoom03.png"
 ]
 var aboutDeskRoom = [
-  "Rendered 3d model of a room created from a reference photo. <br><br>Created with Autodesk Maya",
+  "Rendered 3d model of a room created from a reference photo. <br><br><div class='createdWith'>Created with Autodesk Maya</div>",
 
   "Reference photo used for room model. Thanks Pinterest!",
 
-  "Work in progress screenshot of room, rendered. <br><br>Created with Autodesk Maya"
+  "Work in progress screenshot of room, rendered. <br><br><div class='createdWith'>Created with Autodesk Maya</div>"
 ]
 
 var raygunFrames;
@@ -415,7 +417,7 @@ var raygunSlides = [
   "images/slides/raygunReference.png"
 ]
 var aboutRaygun = [
-  "Rendered 3d model of raygun from reference. <br><br>Created with Autodesk Maya",
+  "Rendered 3d model of raygun from reference. <br><br><div class='createdWith'>Created with Autodesk Maya</div>",
 
   "Reference used for raygun model.",
 ]
@@ -1283,11 +1285,11 @@ function dotUpdate() { // dot update, description, and subtitle update
     } else if (slideNum == 3) {
       currentSubtitle.innerHTML = "User Research #1 Findings";
     } else if (slideNum == 4) {
-      currentSubtitle.innerHTML = "User Research #2";
-    } else if (slideNum == 5) {
-      currentSubtitle.innerHTML = "User Research #2 Findings";
-    } else if (slideNum == 6) {
       currentSubtitle.innerHTML = "User Flows";
+    } else if (slideNum == 5) {
+      currentSubtitle.innerHTML = "User Research #2";
+    } else if (slideNum == 6) {
+      currentSubtitle.innerHTML = "User Research #2 Findings";
     } else if (slideNum == 7) {
       currentSubtitle.innerHTML = "The Game";
     } else if (slideNum == 8) {
