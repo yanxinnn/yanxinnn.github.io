@@ -6,11 +6,9 @@ var bubblePop2 = "images/environment/bubble2.png";
 var bubblePop3 = "images/environment/bubble3.png";
 var bubbleGroup;
 var userMouse;
-var menuGradient = "images/environment/blueSky.jpg";
 
 //** Preload *************
 function preload() {
-  menuGradient = loadImage(menuGradient);
 
   //Bubbles
   bubbleIdle = loadAnimation(bubbleSprite);
@@ -49,7 +47,7 @@ function setup() {
 
 //** Draw ****************
 function draw() {
-  background(menuGradient);
+  background(color(144,199,247));
 
   userMouse.position.x = mouseX;
   userMouse.position.y = mouseY;
