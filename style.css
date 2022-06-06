@@ -80,6 +80,11 @@ body {
   background-color: #FFB2C2;
 }
 
+.backgroundImage {
+  -webkit-transition: background-image 0.2s ease-in-out;
+  transition: background-image 0.2s ease-in-out;
+}
+
 /* In-game Widgets */
 #widgets {
   display: grid;

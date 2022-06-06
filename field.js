@@ -1,7 +1,7 @@
 //** Variables **********
 
 //Background
-var sky = "images/environment/blueSky.jpg";
+var gradientRange = 80;
 
 // Player Animation
 var lastKey = "";
@@ -35,7 +35,7 @@ var yanxinTexts = [
   "I'm always adding new things to this world. Come by again soon!",
   "*bounce bounce bounce*",
   "Don't forget to drink water!",
-  "The sky isn't blue. It's actually #74B2E5🤓"
+  "The sky isn't blue. It's actually #90c7f7🤓"
 ]
 var firstGreeting = false;
 var firstGreetingFinished = false;
@@ -429,8 +429,6 @@ var expandedImageShowing = false;
 //** Preload *************
 function preload() {
 
-  skyBackground = loadImage(sky);
-
   // Player Animations
   playerIdle = loadAnimation(playerIdle1, playerIdle2, playerIdle1, playerIdle3, playerIdle1, playerIdle3);
   playerRun = loadAnimation(playerRun1, playerRun2, playerRun3, playerRun2, playerRun1, playerRun4, playerRun3, playerRun2);
@@ -650,7 +648,7 @@ function draw() {
   // Debugging
   //console.log("position:", floor(player.position.x/100));
 
-  background(skyBackground);
+  background(color(144,199,247));
   globalTimer++;
 
   // Player Movements
@@ -738,6 +736,58 @@ function draw() {
       }
       greetingUsed = true;
     }
+  }
+
+  if (expandedImageShowing) { // turn off widgets in expanded image mode
+    document.getElementById("widgets").style.visibility = "hidden";
+    document.getElementById("widgets").style.opacity = "0";
+  } 
+  else {
+    document.getElementById("widgets").style.visibility = "visible";
+    document.getElementById("widgets").style.opacity = "1";
+  }
+
+  // Location Labels + Back to Start Link
+  if (player.position.x >= graphicWebSection) {
+    document.getElementById("locationMessage").style.visibility = "visible";
+    document.getElementById("locationMessage").style.opacity = "1";
+    document.getElementById("locationMessage").style.backgroundColor = "#5A89AD";
+  }
+  // if (player.position.x >= videoSection) {
+  //   document.getElementById("locationMessage").innerHTML = "Video Editing";
+  // } else if 
+  if (player.position.x >= threeDSection - 100) {
+    document.getElementById("locationMessage").innerHTML = "3D Modeling + Animation";
+    document.getElementById("locationMessage").style.backgroundColor = "#D3D1FF";
+    let startColor = color(148,193,234);
+    let endColor = color(158,187,230);
+    background(lerpColor(startColor, endColor, map(player.position.x - threeDSection, -gradientRange, gradientRange, 0, 1)));
+  }
+  else if (player.position.x >= gameSection - 100) {
+    document.getElementById("locationMessage").innerHTML = "Game Design";
+    document.getElementById("locationMessage").style.backgroundColor = "#FFCCCC";
+    let startColor = color(135,201,226);
+    let endColor = color(148,193,234);
+    background(lerpColor(startColor, endColor, map(player.position.x - gameSection, -gradientRange, gradientRange, 0, 1)));
+  }
+  else if (player.position.x >= graphicWebSection - 100) {
+    document.getElementById("locationMessage").innerHTML = "UI/UX + Web Design";
+    document.getElementById("locationMessage").style.backgroundColor = "#BEE8CC";
+    let startColor = color(136,195,245);
+    let endColor = color(135,201,226);
+    background(lerpColor(startColor, endColor, map(player.position.x - graphicWebSection, -gradientRange, gradientRange, 0, 1)));
+  } 
+  else {
+    document.getElementById("locationMessage").style.visibility = "hidden";
+    document.getElementById("locationMessage").style.opacity = "0";
+  }
+  if (player.position.x < platformsGroup[15].position.x || expandedImageShowing) {
+    document.getElementById("backToStartLink").style.visibility = "hidden";
+    document.getElementById("backToStartLink").style.opacity = "0";
+  }
+  else {
+    document.getElementById("backToStartLink").style.visibility = "visible";
+    document.getElementById("backToStartLink").style.opacity = "1";
   }
 
   // Teleporters
@@ -997,49 +1047,6 @@ function draw() {
     //     interactText("Press \"E\" to teleport", videoTp, -50);
     //   }
     // }
-
-  if (expandedImageShowing) { // turn off widgets in expanded image mode
-    document.getElementById("widgets").style.visibility = "hidden";
-    document.getElementById("widgets").style.opacity = "0";
-  } 
-  else {
-    document.getElementById("widgets").style.visibility = "visible";
-    document.getElementById("widgets").style.opacity = "1";
-  }
-
-  // Location Labels + Back to Start Link
-  if (player.position.x >= graphicWebSection) {
-    document.getElementById("locationMessage").style.visibility = "visible";
-    document.getElementById("locationMessage").style.opacity = "1";
-    document.getElementById("locationMessage").style.backgroundColor = "#5A89AD";
-  }
-  // if (player.position.x >= videoSection) {
-  //   document.getElementById("locationMessage").innerHTML = "Video Editing";
-  // } else if 
-  if (player.position.x >= threeDSection) {
-    document.getElementById("locationMessage").innerHTML = "3D Modeling + Animation";
-    document.getElementById("locationMessage").style.backgroundColor = "#D3D1FF";
-  }
-  else if (player.position.x >= gameSection) {
-    document.getElementById("locationMessage").innerHTML = "Game Design";
-    document.getElementById("locationMessage").style.backgroundColor = "#FFCCCC";
-  }
-  else if (player.position.x >= graphicWebSection) {
-    document.getElementById("locationMessage").innerHTML = "UI/UX + Web Design";
-    document.getElementById("locationMessage").style.backgroundColor = "#BEE8CC";
-  } 
-  else {
-    document.getElementById("locationMessage").style.visibility = "hidden";
-    document.getElementById("locationMessage").style.opacity = "0";
-  }
-  if (player.position.x < platformsGroup[15].position.x || expandedImageShowing) {
-    document.getElementById("backToStartLink").style.visibility = "hidden";
-    document.getElementById("backToStartLink").style.opacity = "0";
-  }
-  else {
-    document.getElementById("backToStartLink").style.visibility = "visible";
-    document.getElementById("backToStartLink").style.opacity = "1";
-  }
 
   // Platforms
   for (var i = 0; i < numOfPlatforms; i++) {
