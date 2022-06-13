@@ -170,14 +170,14 @@ var inertia;
 var inertiaSection;
 var inertiaSlides = [
   "images/slides/askApps1.png",
-  "images/slides/askApps2.png",
+  "images/slides/inertiaResearch.png",
   "images/slides/inertiaQuestions1.png",
   "images/slides/inertiaFindings1.png",
   "images/slides/inertiaFlow.png",
   "images/slides/inertiaQuestions2.png",
   "images/slides/inertiaFindings2.png",
-  "images/slides/askApps2.png",
-  "images/slides/inertiaStyleGuide.png",
+  "images/slides/inertiaGame.png",
+  "images/slides/inertiaWorkout.png",
   "images/slides/inertiaStyleGuide.png"
 ]
 var aboutInertia = [
