@@ -47,7 +47,7 @@ function setup() {
 
 //** Draw ****************
 function draw() {
-  background(color(144,199,247));
+  background(color(132, 183, 227));
 
   userMouse.position.x = mouseX;
   userMouse.position.y = mouseY;
