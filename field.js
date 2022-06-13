@@ -169,7 +169,7 @@ var inertia4 = "images/environment/inertia4.png";
 var inertia;
 var inertiaSection;
 var inertiaSlides = [
-  "images/slides/askApps1.png",
+  "images/slides/inertiaTrailer.mov",
   "images/slides/inertiaResearch.png",
   "images/slides/inertiaQuestions1.png",
   "images/slides/inertiaFindings1.png",
