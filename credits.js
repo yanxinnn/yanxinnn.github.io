@@ -89,7 +89,7 @@ function setup() {
 
 //** Draw ****************
 function draw() {
-  background(color(144,199,247));
+  background(waterBackground);
 
   // Ripples
   var numOfRipples = window.innerWidth/25;
