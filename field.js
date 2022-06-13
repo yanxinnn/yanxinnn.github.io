@@ -1116,10 +1116,7 @@ function keyPressed() {
   if (keyCode == 69) {
     return "E";
   }
-  if (keyCode == 27) {
-    return "ESCAPE";
-  }
-  return false;
+  return true;
 }
 
 function displayText(line, target, hover, length, custom, color, align, size, hoveramnt=0) {
@@ -1451,7 +1448,7 @@ function noMoving() {
 }
 
 function leaveSlidesCheck() {
-  if (keyPressed() == "ESCAPE") {
+  if (keyPressed()) {
     slideShowing = false;
   }
   noMoving();
