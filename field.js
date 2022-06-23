@@ -648,7 +648,7 @@ function draw() {
   // Debugging
   //console.log("position:", floor(player.position.x/100));
 
-  background(color(144,199,247));
+  background(color(134, 193, 239));
   globalTimer++;
 
   // Player Movements
@@ -766,15 +766,15 @@ function draw() {
   else if (player.position.x >= gameSection - 100) {
     document.getElementById("locationMessage").innerHTML = "Game Design";
     document.getElementById("locationMessage").style.backgroundColor = "#FFCCCC";
-    let startColor = color(135,201,226);
+    let startColor = color(135, 198, 221);
     let endColor = color(148,193,234);
     background(lerpColor(startColor, endColor, map(player.position.x - gameSection, -gradientRange, gradientRange, 0, 1)));
   }
   else if (player.position.x >= graphicWebSection - 100) {
     document.getElementById("locationMessage").innerHTML = "UI/UX + Web Design";
     document.getElementById("locationMessage").style.backgroundColor = "#BEE8CC";
-    let startColor = color(136,195,245);
-    let endColor = color(135,201,226);
+    let startColor = color(134, 193, 239);
+    let endColor = color(135, 198, 221);
     background(lerpColor(startColor, endColor, map(player.position.x - graphicWebSection, -gradientRange, gradientRange, 0, 1)));
   } 
   else {
