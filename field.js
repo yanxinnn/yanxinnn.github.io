@@ -557,7 +557,7 @@ function setup() {
   floatItFrames.frameDelay = 15;
   floatItSection = graphicWebSection + 550;
   floatItNotes = createSprite(floatItSection, window.innerHeight-220, 220, 140);
-  floatItNotes.addAnimationd("static", floatItFrames);
+  floatItNotes.addAnimation("static", floatItFrames);
 
   askAppsFrames.frameDelay = 20;
   askAppsSection = graphicWebSection + 840;
