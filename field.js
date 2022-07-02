@@ -549,15 +549,15 @@ function setup() {
   // videoSection = platformsGroup[60].position.x;
 
   // UI/UX + Web (back)
-  floatItFrames.frameDelay = 15;
-  floatItSection = graphicWebSection + 250;
-  floatItNotes = createSprite(floatItSection, window.innerHeight-220, 220, 140);
-  floatItNotes.addAnimation("static", floatItFrames);
-
   inertiaFrames.frameDelay = 25;
-  inertiaSection = graphicWebSection + 550;
+  inertiaSection = graphicWebSection + 250;
   inertia = createSprite(inertiaSection, window.innerHeight-225, 180, 150);
   inertia.addAnimation("static", inertiaFrames);
+
+  floatItFrames.frameDelay = 15;
+  floatItSection = graphicWebSection + 550;
+  floatItNotes = createSprite(floatItSection, window.innerHeight-220, 220, 140);
+  floatItNotes.addAnimationd("static", floatItFrames);
 
   askAppsFrames.frameDelay = 20;
   askAppsSection = graphicWebSection + 840;
