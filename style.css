@@ -720,8 +720,57 @@ a:active {
   line-height: 1.8;
   height: 80%;
   overflow-y: auto;
+  padding-right: 20px;
+  padding-left: 5px;
+}
+
+.descriptionsIndent {
+  padding-top: 10px;
+  padding-left: 20px;
   padding-right: 10px;
+  padding-bottom: 20px;
+}
+
+.projectCardsSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.projectCards {
+  background-color: rgb(43, 43, 43);
+  border-radius: 5px;
+  width: 27%;
+  min-width: 100px;
+  padding-left: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 8px;
+}
+
+.projectCardsTitle {
+  color: rgb(255, 248, 155);
+  border-bottom: 2px solid rgb(27, 27, 27);
+  padding-bottom: 3px;
+  width: calc(100% - 4px);
+}
+
+.projectSubtitles {
+  font-size: 20px;
+  color: rgb(255, 248, 155);
+  border-bottom: 2px solid rgb(58, 58, 58);
+  padding-bottom: 2px;
+}
+
+.funFact {
+  margin-top: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   padding-left: 10px;
+  padding-right: 10px;
+  font-size: 13px;
+  background-color: rgb(43, 43, 43);
+  border-radius: 5px;
 }
 
 .createdWith {
@@ -742,6 +791,7 @@ a:active {
   transform: translateX(-50%);
   border-radius: 5px;
   border: none;
+  margin-bottom: 20px;
 }
 
 .slidesLink:hover {
@@ -824,6 +874,17 @@ a:active {
     position: relative;
     left: 18vw;
     top: -500px;
+  }
+}
+
+@media (max-width: 1370px) {
+  .projectCardsSection {
+    display: flex;
+    flex-direction: column;
+  }
+  .projectCards {
+    width: calc(100% - 20px);
+    margin-bottom: 12px;
   }
 }
 
