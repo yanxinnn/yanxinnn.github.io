@@ -95,7 +95,7 @@ function credits() {
   window.location = "credits.html";
 }
 
-// reference: https://codepen.io/shaikmaqsood/pen/XmydxJ
+// Reference: https://codepen.io/shaikmaqsood/pen/XmydxJ
 function copyToClipboard(element) {
   var $temp = $("<input>");
   var message = document.getElementById("emailCopiedMessage");

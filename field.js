@@ -729,6 +729,10 @@ function draw() {
   background(color(134, 193, 239));
   globalTimer++;
 
+  if (deviceType() != "desktop") {
+    alert("Uh oh! The mobile version of this page is in the works. Please view using a laptop or desktop!");
+  }
+
   // Player Movements
   player.velocity.x = 0;
   player.velocity.y += 0.85;
@@ -1623,3 +1627,15 @@ function backToStart() {
  function mainMenu() {
    window.location = "index.html";
  }
+
+ //  Reference: https://attacomsian.com/blog/javascript-detect-mobile-device
+const deviceType = () => {
+  const ua = navigator.userAgent;
+  if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+      return "tablet";
+  }
+  else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+      return "mobile";
+  }
+  return "desktop";
+};
