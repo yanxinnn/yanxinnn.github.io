@@ -182,7 +182,7 @@ input#sound:checked ~ .off img {
   font-weight: normal;
   font-style: normal;
   font-size: 24px;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.56);
   padding: 15px 25px;
   border-radius: 5px;
   visibility: hidden;

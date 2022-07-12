@@ -83,12 +83,12 @@ var blueTp1 = "images/environment/blueTp1.png";
 var blueTp2 = "images/environment/blueTp2.png";
 var blueTp3 = "images/environment/blueTp3.png";
 var threeDSection;
-var graphicWebTp;
+var uiUxTp;
 var greenTpFrames;
 var greenTp1 = "images/environment/greenTp1.png";
 var greenTp2 = "images/environment/greenTp2.png";
 var greenTp3 = "images/environment/greenTp3.png";
-var graphicWebSection;
+var uiUxSection;
 var gameTp;
 var redTpFrames;
 var redTp1 = "images/environment/redTp1.png";
@@ -102,7 +102,12 @@ var purpleTp2 = "images/environment/purpleTp2.png";
 var purpleTp3 = "images/environment/purpleTp3.png";
 var videoSection;
 
-// UI/UX + Web
+var tpLabelTextHeight = 70;
+var tpLabelChatboxHover = 78;
+var tpInstructionChatboxHover = 132;
+var tpInteractTextHover = -110;
+
+// UI/UX
 var slideNum = 0;
 var dotCount = 0;
 var currentSlides;
@@ -179,12 +184,12 @@ var inertiaSlides = [
 var aboutInertia = [
   "Inertia - The Mobile Game That Mobilizes Gamers <br><br> \
   <div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Mobile App, Fitness, Gaming</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Figma, Adobe Photoshop, Trello</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Figma, Adobe Photoshop</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>UX Design, UX Research, UI Design, Wireframing</div></div><br>\
   <button class='slidesLink' onclick=\"window.open('https://www.figma.com/file/4GKpbsBQxAKKfarmcLW0tp/Inertia','_blank')\">View Figma Designs</button><br>\
   <div class='projectSubtitles'>The Problem</div>Studies in 2021 have shown that more than 82 million US residents aged 6 and above don't exercise at all, making it more likely for them to develop a host of health problems like high blood pressure, high cholesterol, and heart disease. On the other hand, the mobile gaming market is booming, with global mobile games revenue on track to surpass the $100 billion mark by 2023. <br><br>So here are our two facts: <div class='descriptionsIndent'>1. A lot of people don't exercise enough. <br> 2. A lot of people love their mobile games.</div><div class='projectSubtitles'>The Solution</div>This brought me to ask the question, what if working out was as addicting as a game? What if... it was a game? <br><br> \
   I designed Inertia, a mobile fitness game that helps members of the gaming community and RPG fans transform their gaming passions into a healthier lifestyle. <br><br>Inertia gives users a setting they are familiar and drawn to, RPG games, and motivates users to workout by recognizing their efforts with in-game rewards and progression. While the rewards of physical body changes from working out might take at least a few months to show, Inertia helps keep users excited for their next session by providing more immediate feedback every time they complete a run or workout.\
-  <br><br><div class='projectSubtitles'>The Process</div>For this project, I: <div class='descriptionsIndent'>○ Researched exercise and mobile gaming statistics in the US <br>○ Analyzed competitor fitness apps and their features<br>○ Conducted two rounds of user research amongst gamers to learn my target audience's core needs and workout habits (1st round) and to recieve insight for how users interact with the mobile prototype (2nd round) <br>○ Generated user-flows for different user experiences <br>○ Created a style guide for the app's colors, typography, buttons, and branding <br>○ Designed low and high-fidelity wireframes prototyping the sign-in/sign-up process, character creation, various game features (inventory, shop, skills, and Battle Tower system) and the workout experience for users.</div><button class='slidesLink' onclick=\"window.open('https://www.figma.com/file/4GKpbsBQxAKKfarmcLW0tp/Inertia','_blank')\">View Figma Designs</button>",
+  <br><br><div class='projectSubtitles'>The Process</div>For this project, I: <div class='descriptionsIndent'>○ Researched exercise and mobile gaming statistics in the US <br>○ Analyzed competitor fitness apps and their features<br>○ Conducted two rounds of user research amongst gamers to learn my target audience's core needs and workout habits (1st round) and to recieve insight for how users interact with the mobile prototype (2nd round) <br>○ Generated user flows for different user experiences <br>○ Created a style guide for the app's colors, typography, buttons, and branding <br>○ Designed low and high-fidelity wireframes prototyping the sign-in/sign-up process for mobile and desktop, character creation, various game features (inventory, shop, skills, and Battle Tower system) and the workout experience for users.</div><button class='slidesLink' onclick=\"window.open('https://www.figma.com/file/4GKpbsBQxAKKfarmcLW0tp/Inertia','_blank')\">View Figma Designs</button>",
 
   "I started this project with background research on exercise and mobile gaming, primarily in the US, to gain an understanding of how my hybrid app can potentially bridge the gap between these two industries. <br><br>Further competitive analysis of various fitness apps showed how current solutions were addressing the problem of inactivity among US residents and the various features that made them successful/stand out, giving me ideas for features to incorporate into Inertia.",
 
@@ -192,7 +197,7 @@ var aboutInertia = [
 
   "Main findings from the first round of user research included: <div class='descriptionsIndent'>1. Participants’ reasons for playing games were for entertainment, escape, or socialization. <br>2. What participants found most appealing about RPGs were the storylines, the game completion/achievements, ability to play with friends, the sense of progression, and character creation and customization. <br>3. Most of participants that did work out either did light workouts a few times a week just to keep active and did not have workout equipment. <br>4. Participants' motivations for working out were for physical changes, more energy, self-esteem, sports-related, and mental health reasons. </div>This research was crucial in understanding the target audience and their needs and served as a guide for the brainstorming and subsequent designs of Inertia.",
 
-  "I created multiple user-flows for different user motives, such as a user-flow for returning users logging on to complete a workout (using Workout) and a user-flow for returning users preparing character for the Battle Tower (using Shop, Skills, Inventory, Battle Tower). <br><br>In the image is the main user flow, showing all the possible navigations users can make within the app.",
+  "I created multiple user-flows for different user motives, such as a user-flow for returning users logging on to complete a workout (using Workout) and a user-flow for returning users preparing character for the Battle Tower (using Shop, Skills, Inventory, Battle Tower).",
 
   "The second round of user research was live 1-on-1 recorded interviews with participants on either Zoom or Discord testing for app navigation and usability. <br><br>In these 10-15 minute interviews, participants were given a link to a mobile prototype of Inertia and asked to share their screen while I asked them a series of questions and gave them tasks to complete within the app.",
 
@@ -203,6 +208,48 @@ var aboutInertia = [
   "The fitness portion of the app consists players completing runs or workouts for the chance to obtain better equipment and to gain skill points to aid them in their Battle Tower climb. <br><br>The first few floors of the Battle Tower can be defeated without grinding out runs and workouts to give users a taste of what the gameplay is like and hopefully, make them excited to exercise to continue advancing. The rewards from these workouts scales with the user's in-game progression. <br><br>To ensure that users are honestly working out, the app will require users to verify their exercises by scanning QR codes on workout machines, using their phone's camera to track their movements, or linking to a heart rate monitor.",
 
   "Inertia's designs adhere to a style guide to make sure that the app's colors, typography, buttons, and branding are consistent throughout all the pages for a holistic user experience."
+]
+
+var roomFrames;
+var room1 = "images/environment/room-1.png";
+var room2 = "images/environment/room-2.png";
+var room3 = "images/environment/room-3.png";
+var room;
+var roomSection;
+var roomSlides = [
+  "images/slides/room.mov",
+  "images/slides/roomCompetitiveResearch.png",
+  "images/slides/roomQuestions.png",
+  "images/slides/roomFindings.png",
+  "images/slides/roomPersonas.png",
+  "images/slides/roomJourneyMaps.png",
+  "images/slides/roomFlows.png",
+  "images/slides/roomStrategy.png"
+]
+var aboutRoom = [
+  "Room and Roommate Finder App<br><br> \
+  <div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Mobile App, Social Networking</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Figma</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>UX Design, UX Research, UI Design, Wireframing</div></div><br>\
+  <button class='slidesLink' onclick=\"window.open('https://www.figma.com/file/oEjvYKDuItXKElZCPmSFCE/Room?node-id=0%3A1')\">View Figma Designs</button><br>\
+  <div class='projectSubtitles'>The Problem</div>54% of the world’s population live in urban communities. The average age for men is 29 (up from 26 two decades ago) and for women is 27 (up from 23 in the same time period). Given these trends, city dwellers tend to spend most of their twenties living with roommates. Find and keeping a good roommate, however, gets harder as more people swarm into cities. <br><br>Propose a mobile product experience that appeals to millenials that makes it safe to find the ideal roommate in New York City.<br><br><div class='projectSubtitles'>The Solution</div>Room is an app designed by a team of 3 that helps users with finding the perfect roommate match, finding a place to live, and navigating their new independent life with their new roommates in a peaceful and harmonious fashion.\
+  <br><br><div class='projectSubtitles'>The Process</div>For Room, my teammates and I: <div class='descriptionsIndent'>○ Analyzed competitors in the current roommate matching market<br>○ Conducted surveys amongst our targeted demographic to learn the objectives and pain points of their roommate/room experiences<br>○ Generated personas and journey maps from the collected user research data<br>○ Constructed user flows for both new and returning users with different objectives<br>○ Created a strategy document outlining product objectives, market opportunities, and product visions<br>○ Designed high fidelity wireframes prototyping the sign-in/sign-up process, user profile customizations, roommate matching system and apartment listings search system</div>",
+
+  "Competitive analysis was done with 6 of the most popular room and/or roommate finder and other apps with similar functionalities. They were distinguished by competitor type, priorities, key features, region accessibility, and KPIs. <br><br>From this research, opportunities were found to include the following features into Room:<div class='descriptionsIndent'>○ Combine Tinder's swiping feature with Roomi's background checks and in-depth questionnaires to ensure mutual safety and increase user excitement for sharing commonalities with their matches<br>○ Have a wide selection of search parameters for users to filter roommates and rentable rooms<br>○ Make app accessible worldwide and available in multiple languages<br>○ Landlords' profiles and details shown on listings for easy user access<br>○ Different communication methods available such as text, call, and video call so people can familiarize with one another online before meeting in person<br>○ Include ratings and testimonials for landlords and rooms/apartments from past renters<br>○ Include additional resources to help users transition smoothly into their new shared space (paying bills, splitting chores, buying shared groceries, etc.)</div>",
+  
+  "The goal of our user research was to understand the concerns and desires 18-25 year olds have in regards to the roommate/room  searching process. Participants were asked about their past or current rooming experiences, their experience with NYU's roommate matching system (if applicable), their current solutions to finding a roommate or room, and their level of comfort in using quick digital transaction to pay for rent.<br><br>The surveys were carried out through anonymous Google Forms which were sent out to the NYU community, friends, and friends of friends.",
+
+  "Our research of 21 participants, with an age range of mostly 18-23, found that the majority of them:<div class='descriptionsIndent'>○ Have a roommate<br>○   Prefer to live with one roommate<br>○ Find NYU's roommate matching system's personality quiz successful in pairing roommates that get along<br>○ Would love for NYU's process to have more options/preferences for selecting roommates and to have the ability to connect with potential roommates beforehand<br>○ Use Zillow as the main app to find places to live</div><br>\
+  The main worries participants have surrounding finding a roommate all fell into the categories of:<div class='descriptionsIndent'>○ The cleanliness of the roommate<br>○ Possible personality/lifestyle clashes<br>○ Communication problems</div><br>\
+  It was also found that:<div class='descriptionsIndent'>○ There is a 50/50 divide in trusting Venmo<br>○ Those that said they trusted Venmo for paying their rent expressed it was because of the convenience and ability to confirm transactions with checks<br>○ Those that expressed concern about using Venmo for their rent gave the reason of Venmo being informal</div>",
+
+  "From the user research, we were able to optimize Room's filtering system to make sure that users are able to search for roommates and rooms by the categories most important to them. It also gave us a clear picture of who our target demographic was, their situations, their motives, and their fears, informing the construction of our 2 personas, Naomi and Arjun.<br><br>While Naomi and Arjun are both searching for a roommate, their differences in age, occupation, personalities, likes/dislikes, and circumstances mean that their criterias for a roommate are very different. During the designing of Room, we looked through the eyes of Naomi and Arjun to make sure that the experience our app provided was versatile and useful for a broad spectrum of users.",
+
+  "Journey maps created for Naomi and Arjun showcase two scenarios where users use Room to find a roommate. Each of these experiences have their own high and low points of user satisfaction. These journey maps pinpoint pivitol moments where we can capitalize on the positives emotions and take proactive steps to ease the negative feelings.",
+
+  "Our 2 user flows for new and returning users show the different screens they visit and decisions they make as they complete their goals within the app. This ensures that each step of their in-app experience is efficient and makes sense.",
+
+  "Lastly, here is a strategy document that compiles Room's product objectives, market opportunities, and product vision."
 ]
 
 var askAppsFrames;
@@ -282,31 +329,31 @@ var aboutAcorn = [
 
 ]
 
-var timeInterfaceFrames;
-var timeInterface1 = "images/environment/timeInterface1.png";
-var timeInterface2 = "images/environment/timeInterface2.png";
-var timeInterface3 = "images/environment/timeInterface3.png";
-var timeInterface4 = "images/environment/timeInterface4.png";
-var timeInterface5 = "images/environment/timeInterface5.png";
-var timeInterface;
-var timeInterfaceSection;
-var timeInterfaceSlides = [
-  "images/slides/timeInterface02.png",
-  "images/slides/timeInterface01.png",
-  "images/slides/timeInterface03.png",
-  "images/slides/timeInterface04.png"
-]
-var aboutTimeInterface = [
-  "Clock Interface For LinkNYC Kiosks<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Digital Interface</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Graphic Design</div></div><br><br><div class='projectSubtitles'>The Problem</div>Clock interfaces are usually similar in design. For this project, I challenge myself to build an alternative clock that tells time in an unconventional way.<br><br><div class='projectSubtitles'>The Solution</div>I created a clock interface design scaled for LinkNYC kiosks that explores the relationship between time and weather.",
+// var timeInterfaceFrames;
+// var timeInterface1 = "images/environment/timeInterface1.png";
+// var timeInterface2 = "images/environment/timeInterface2.png";
+// var timeInterface3 = "images/environment/timeInterface3.png";
+// var timeInterface4 = "images/environment/timeInterface4.png";
+// var timeInterface5 = "images/environment/timeInterface5.png";
+// var timeInterface;
+// var timeInterfaceSection;
+// var timeInterfaceSlides = [
+//   "images/slides/timeInterface02.png",
+//   "images/slides/timeInterface01.png",
+//   "images/slides/timeInterface03.png",
+//   "images/slides/timeInterface04.png"
+// ]
+// var aboutTimeInterface = [
+//   "Clock Interface For LinkNYC Kiosks<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Digital Interface</div>\
+//   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop</div>\
+//   <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Graphic Design</div></div><br><br><div class='projectSubtitles'>The Problem</div>Clock interfaces are usually similar in design. For this project, I challenge myself to build an alternative clock that tells time in an unconventional way.<br><br><div class='projectSubtitles'>The Solution</div>I created a clock interface design scaled for LinkNYC kiosks that explores the relationship between time and weather.",
 
-  "The interface shows the progression of time through the passing weathers.<br><br>The 1st column images show the first screen that distinguishes the type and severity of the current percipitation within the span of an hour. The 2nd column shows the second screen that displays the weather forecast for tomorrow, and the 3rd column shows the last screen, showing the forecast for the next few days.",
+//   "The interface shows the progression of time through the passing weathers.<br><br>The 1st column images show the first screen that distinguishes the type and severity of the current percipitation within the span of an hour. The 2nd column shows the second screen that displays the weather forecast for tomorrow, and the 3rd column shows the last screen, showing the forecast for the next few days.",
 
-  "Drafts #1. Initial low fidelity prototype.",
+//   "Drafts #1. Initial low fidelity prototype.",
 
-  "Drafts #2. Sample of iterations made for the 3 screens."
-]
+//   "Drafts #2. Sample of iterations made for the 3 screens."
+// ]
 
 // Game
 var outcastFrames;
@@ -378,7 +425,7 @@ var aboutWizardsJourney = [
   "Multiplayer Race Game<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Digital Game</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>GameMaker Studio 2, Adobe Photoshop</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Game Development, Game UI, Game Design</div></div><br>\
-  <div class='projectSubtitles'>The Problem</div>Make an original multiplayer game.<br><br><div class='projectSubtitles'>The Solution</div>I designed and developed a multiplayer vertical obstacle race game.<br><br>Rules:<br><div class='descriptionsIndent'>○ 3 playable characters each with different spells that can be used to hinder other players or to destroy incoming map projectiles<br>○ Mana bars at the top indicate the respective color's ability to use spells and teleport back into view if they fall behind<br>○ Characters that run out of mana are removed from the race<br>○ First to the top wins!</div><div class='funFact'>✿ Fun fact: This video showcasing the gameplay took multiple takes because my sister/opponent was not the best gamer and unfortunately kept dying before we could reach the top.",
+  <div class='projectSubtitles'>The Problem</div>Make original multiplayer game.<br><br><div class='projectSubtitles'>The Solution</div>I designed and developed a multiplayer vertical obstacle race game.<br><br>Rules:<br><div class='descriptionsIndent'>○ 3 playable characters each with different spells that can be used to hinder other players or to destroy incoming map projectiles<br>○ Mana bars at the top indicate the respective color's ability to use spells and teleport back into view if they fall behind<br>○ Characters that run out of mana are removed from the race<br>○ First to the top wins!</div><div class='funFact'>✿ Fun fact: This video showcasing the gameplay took multiple takes because my sister/opponent was not the best gamer and unfortunately kept dying before we could reach the top.",
 
   "Snapshot #1 of starting match countdown.",
 
@@ -398,13 +445,16 @@ var tantrumSlides = [
   "images/slides/tantrum03.png"
 ]
 var aboutTantrum = [
-  "1 minute animation of a child going through the stages of grief over a box of KitKat. <br><br><div class='createdWith'>Created with Autodesk Maya and Adobe Photoshop</div>",
+  "Short 3D Animation<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>3D Animated Video</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Autodesk Maya, Adobe Photoshop, Adobe Premiere Pro</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>3D Animation, Video Editing</div></div>\
+  <br><div class='projectSubtitles'>The Problem</div>Make animated short that tells a story.<br><br><div class='projectSubtitles'>The Solution</div>I created a 1 minute animation of a child going through the stages of grief over a box of KitKat.",
 
-  "Snapshot #1 of bargaining stage. <br><br><div class='createdWith'>Created with Autodesk Maya</div>",
+  "Snapshot #1 of bargaining stage.",
 
-  "Snapshot #2 of anger stage. <br><br><div class='createdWith'>Created with Autodesk Maya</div>",
+  "Snapshot #2 of anger stage.",
 
-  "Snapshot #3 of acceptance stage. <br><br><div class='createdWith'>Created with Autodesk Maya</div>"
+  "Snapshot #3 of acceptance stage."
 ]
 
 var deskRoomFrames;
@@ -418,11 +468,14 @@ var deskRoomSlides = [
   "images/slides/deskRoom03.png"
 ]
 var aboutDeskRoom = [
-  "Rendered 3d model of a room created from a reference photo. <br><br><div class='createdWith'>Created with Autodesk Maya</div>",
+  "3D Environment Model<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>3D Environment</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Autodesk Maya</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>3D Modeling</div></div>\
+  <br><div class='projectSubtitles'>The Problem</div>3D model a room from a reference photo.<br><br><div class='projectSubtitles'>The Solution</div>I created a 3d model of a study room complete with textures and lighting.",
 
   "Reference photo used for room model. Thanks Pinterest!",
 
-  "Work in progress screenshot of room, rendered. <br><br><div class='createdWith'>Created with Autodesk Maya</div>"
+  "Work in progress screenshot of room."
 ]
 
 var raygunFrames;
@@ -433,7 +486,10 @@ var raygunSlides = [
   "images/slides/raygunReference.png"
 ]
 var aboutRaygun = [
-  "Rendered 3d model of raygun from reference. <br><br><div class='createdWith'>Created with Autodesk Maya</div>",
+  "3D Raygun Model<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>3D Model</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Autodesk Maya</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>3D Modeling</div></div>\
+  <br><div class='projectSubtitles'>The Problem</div>3D model a raygun from a reference photo.<br><br><div class='projectSubtitles'>The Solution</div>I created a 3d model of a raygun.",
 
   "Reference used for raygun model.",
 ]
@@ -466,12 +522,13 @@ function preload() {
   redTpFrames = loadAnimation(redTp1, redTp2, redTp3);
   purpleTpFrames = loadAnimation(purpleTp1, purpleTp2, purpleTp3);
 
-  // UI/UX + Web
+  // UI/UX 
   floatItFrames = loadAnimation(floatIt1, floatIt2, floatIt3, floatIt4);
   inertiaFrames = loadAnimation(inertia1, inertia2, inertia3, inertia4);
+  roomFrames = loadAnimation(room1, room2, room3, room2);
   askAppsFrames = loadAnimation(askApps1, askApps2, askApps3, askApps4);
   acornStationFrames = loadImage("images/environment/acornStation.png");
-  timeInterfaceFrames = loadAnimation(timeInterface1, timeInterface2, timeInterface3, timeInterface4, timeInterface5);
+  // timeInterfaceFrames = loadAnimation(timeInterface1, timeInterface2, timeInterface3, timeInterface4, timeInterface5);
 
   // Game
   outcastFrames = loadAnimation(outcast1, outcast1, outcast1, outcast2);
@@ -540,11 +597,11 @@ function setup() {
   beginningTp.addAnimation("static", whiteTpFrames);
   beginningSection = platformsGroup[13].position.x;
 
-  // UI/UX + Web Design
+  // UI/UX Design
   greenTpFrames.frameDelay = 12;
-  graphicWebTp = createSprite(platformsGroup[15].position.x, window.innerHeight-200, 100, 100);
-  graphicWebTp.addAnimation("static", greenTpFrames);
-  graphicWebSection = platformsGroup[21].position.x;
+  uiUxTp = createSprite(platformsGroup[15].position.x, window.innerHeight-200, 100, 100);
+  uiUxTp.addAnimation("static", greenTpFrames);
+  uiUxSection = platformsGroup[21].position.x;
 
   // Game Design
   redTpFrames.frameDelay = 12;
@@ -564,30 +621,35 @@ function setup() {
   // videoTp.addAnimation("static", purpleTpFrames);
   // videoSection = platformsGroup[60].position.x;
 
-  // UI/UX + Web (back)
+  // UI/UX (back)
   inertiaFrames.frameDelay = 25;
-  inertiaSection = graphicWebSection + 250;
+  inertiaSection = uiUxSection + 250;
   inertia = createSprite(inertiaSection, window.innerHeight-225, 180, 150);
   inertia.addAnimation("static", inertiaFrames);
 
   floatItFrames.frameDelay = 15;
-  floatItSection = graphicWebSection + 550;
+  floatItSection = uiUxSection + 550;
   floatItNotes = createSprite(floatItSection, window.innerHeight-220, 220, 140);
   floatItNotes.addAnimation("static", floatItFrames);
 
+  roomFrames.frameDelay = 20;
+  roomSection = uiUxSection + 860;
+  room = createSprite(roomSection, window.innerHeight-225, 180, 150);
+  room.addAnimation("static", roomFrames);
+
   askAppsFrames.frameDelay = 20;
-  askAppsSection = graphicWebSection + 840;
+  askAppsSection = uiUxSection + 1180;
   askApps = createSprite(askAppsSection, window.innerHeight-225, 160, 150);
   askApps.addAnimation("static", askAppsFrames);
 
-  acornSection = graphicWebSection + 1180;
+  acornSection = uiUxSection + 1500;
   acornStation = createSprite(acornSection, window.innerHeight-225, 300, 150);
   acornStation.addImage(acornStationFrames);
 
-  timeInterfaceFrames.frameDelay = 100;
-  timeInterfaceSection = graphicWebSection + 1500;
-  timeInterface = createSprite(timeInterfaceSection, window.innerHeight-225, 100, 150);
-  timeInterface.addAnimation("static", timeInterfaceFrames);
+  // timeInterfaceFrames.frameDelay = 100;
+  // timeInterfaceSection = uiUxSection + 1500;
+  // timeInterface = createSprite(timeInterfaceSection, window.innerHeight-225, 100, 150);
+  // timeInterface.addAnimation("static", timeInterfaceFrames);
 
   // Game (back)
   outcastFrames.frameDelay = 8;
@@ -731,7 +793,7 @@ function draw() {
   }
   if (abs(yanxin.position.x - player.position.x) <= 130) {
     if (keyPressed() == "E" && firstGreeting == false) {
-      chatBox(yanxin, 200, 450, 135);
+      chatBox(yanxin, 200, 450, 135, 80, 0);
       displayText("Yanxin", yanxin, 170, 400, 10, color("#FFBEBE"), LEFT, 18);
       typeWriter(yanxinTexts[0], yanxin, 140, 400, chatCounter, chatTimer, 10, 255);
       firstGreetingFinished = true;
@@ -740,11 +802,12 @@ function draw() {
         randomText = random(yanxinTexts);
         greetingUsed = false;
       }
-      chatBox(yanxin, 200, 450, 135);
+      chatBox(yanxin, 200, 450, 135, 80, 0);
       displayText("Yanxin", yanxin, 170, 400, 10, color("#FFBEBE"), LEFT, 18);
       typeWriter(randomText, yanxin, 140, 400, chatCounter, chatTimer, 10, 255);
     } else {
-      interactText("Press \"E\" to interact", yanxin, -50);
+      chatBox(yanxin, 77, 270, 32, 50, 0);
+      interactText("Press \"E\" to interact", yanxin, -55, 0);
       chatCounter = 0;
       chatTimer = 0;
       if (firstGreetingFinished == true) {
@@ -764,7 +827,7 @@ function draw() {
   }
 
   // Location Labels + Back to Start Link
-  if (player.position.x >= graphicWebSection) {
+  if (player.position.x >= uiUxSection) {
     document.getElementById("locationMessage").style.visibility = "visible";
     document.getElementById("locationMessage").style.opacity = "1";
     document.getElementById("locationMessage").style.backgroundColor = "#5A89AD";
@@ -781,17 +844,17 @@ function draw() {
   }
   else if (player.position.x >= gameSection - 100) {
     document.getElementById("locationMessage").innerHTML = "Game Design";
-    document.getElementById("locationMessage").style.backgroundColor = "#FFCCCC";
+    document.getElementById("locationMessage").style.backgroundColor = "#FFD0CC";
     let startColor = color(135, 198, 221);
     let endColor = color(148,193,234);
     background(lerpColor(startColor, endColor, map(player.position.x - gameSection, -gradientRange, gradientRange, 0, 1)));
   }
-  else if (player.position.x >= graphicWebSection - 100) {
-    document.getElementById("locationMessage").innerHTML = "UI/UX + Web Design";
+  else if (player.position.x >= uiUxSection - 100) {
+    document.getElementById("locationMessage").innerHTML = "UI/UX Design";
     document.getElementById("locationMessage").style.backgroundColor = "#BEE8CC";
     let startColor = color(134, 193, 239);
     let endColor = color(135, 198, 221);
-    background(lerpColor(startColor, endColor, map(player.position.x - graphicWebSection, -gradientRange, gradientRange, 0, 1)));
+    background(lerpColor(startColor, endColor, map(player.position.x - uiUxSection, -gradientRange, gradientRange, 0, 1)));
   } 
   else {
     document.getElementById("locationMessage").style.visibility = "hidden";
@@ -806,6 +869,9 @@ function draw() {
     document.getElementById("backToStartLink").style.opacity = "1";
   }
 
+  // Sound
+  var sound = document.getElementById("sound");
+
   // Teleporters
   if (globalTimer >= 20) { // hover effect for teleporter text
     hoverAmnt = 4;
@@ -815,29 +881,31 @@ function draw() {
     }
   }
 
-  displayText("Back to Teleporters", beginningTp, 30, 120, 5, 255, CENTER, 20);
+  // Back to Beginning 
+  chatBox(beginningTp, tpLabelChatboxHover, 170, 60, 255, 0, 'rgb(220, 220, 220)', hoverAmnt);
+  displayText("Back to Teleporters", beginningTp, tpLabelTextHeight, 120, 5, 95, CENTER, 20, hoverAmnt);
   if (abs(beginningTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       fadeInEffect();
       player.position.x = beginningSection;
     }
     else {
-      interactText("Press \"E\" to teleport", beginningTp, -50);
+      chatBox(beginningTp, tpInstructionChatboxHover, 270, 32, 50, 0);
+      interactText("Press \"E\" to teleport", beginningTp, tpInteractTextHover, 0);
     }
   }
 
-  // Sound
-  var sound = document.getElementById("sound");
-
-  // UI/UX + Web Design
-  displayText("UI/UX + Web Design", graphicWebTp, 30, 200, 5, 255, CENTER, 20, hoverAmnt);
-  if (abs(graphicWebTp.position.x - player.position.x) <= 100) {
+  // UI/UX Design
+  chatBox(uiUxTp, tpLabelChatboxHover, 115, 60, 255, 0, 'rgb(190, 232, 204)', hoverAmnt);
+  displayText("UI/UX Design", uiUxTp, tpLabelTextHeight, 160, 5, '#53665A', CENTER, 20, hoverAmnt);
+  if (abs(uiUxTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       fadeInEffect();
-      player.position.x = graphicWebSection;
+      player.position.x = uiUxSection;
     }
     else {
-      interactText("Press \"E\" to teleport", graphicWebTp, -50);
+      chatBox(uiUxTp, tpInstructionChatboxHover, 270, 32, 50, 0);
+      interactText("Press \"E\" to teleport", uiUxTp, tpInteractTextHover, 0);
     }
   }
   // Float-it Notes
@@ -852,7 +920,8 @@ function draw() {
       leaveSlidesCheck();
     }
     else {
-      interactText("Press \"E\" to view", floatItNotes, -85);
+      chatBox(floatItNotes, 107, 230, 32, 50, 0);
+      interactText("Press \"E\" to view", floatItNotes, -85, 0);
       noSlideShow();
       if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
@@ -869,11 +938,32 @@ function draw() {
       leaveSlidesCheck();
     }
     else {
-      interactText("Press \"E\" to view", inertia, -85);
+      chatBox(inertia, 97, 230, 32, 50, 0);
+      interactText("Press \"E\" to view", inertia, -75, 0);
       noSlideShow();
       if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
   }
+
+  // Room
+  if (abs(room.position.x - player.position.x) <= 130) {
+    if (keyPressed() == "E") {
+      slideShow("Room");
+      if (sound.checked) { continueSound = true; }
+      else { continueSound = false; }
+      slideShowing = true;
+    }
+    else if (slideShowing == true) {
+      leaveSlidesCheck();
+    }
+    else {
+      chatBox(room, 117, 230, 32, 50, 5);
+      interactText("Press \"E\" to view", room, -95, 5);
+      noSlideShow();
+      if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
+    }
+  }
+
   // Ask Apps
   if (abs(askApps.position.x - player.position.x) <= 120) {
     if (keyPressed() == "E") {
@@ -886,7 +976,8 @@ function draw() {
       leaveSlidesCheck();
     }
     else {
-      interactText("Press \"E\" to view", askApps, -90);
+      chatBox(askApps, 117, 230, 32, 50, 0);
+      interactText("Press \"E\" to view", askApps, -95, 0);
       noSlideShow();
       if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
@@ -903,38 +994,41 @@ function draw() {
       leaveSlidesCheck();
     }
     else {
-      interactText("Press \"E\" to view", acornStation, -90);
+      chatBox(acornStation, 117, 230, 32, 50, 5);
+      interactText("Press \"E\" to view", acornStation, -95, 0);
       noSlideShow();
       if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
   }
-  // Time Interface
-  if (abs(timeInterface.position.x - player.position.x) <= 100) {
-    if (keyPressed() == "E") {
-      slideShow("LinkNYC Time Interface");
-      if (sound.checked) { continueSound = true; }
-      else { continueSound = false; }
-      slideShowing = true;
-    }
-    else if (slideShowing == true) {
-      leaveSlidesCheck();
-    }
-    else {
-      interactText("Press \"E\" to view", timeInterface, -90);
-      noSlideShow();
-      if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
-    }
-  }
+  // // Time Interface
+  // if (abs(timeInterface.position.x - player.position.x) <= 100) {
+  //   if (keyPressed() == "E") {
+  //     slideShow("LinkNYC Time Interface");
+  //     if (sound.checked) { continueSound = true; }
+  //     else { continueSound = false; }
+  //     slideShowing = true;
+  //   }
+  //   else if (slideShowing == true) {
+  //     leaveSlidesCheck();
+  //   }
+  //   else {
+  //     interactText("Press \"E\" to view", timeInterface, -90);
+  //     noSlideShow();
+  //     if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
+  //   }
+  // }
 
   // Game
-  displayText("Game Design", gameTp, 30, 150, 5, 255, CENTER, 20, hoverAmnt);
+  chatBox(gameTp, tpLabelChatboxHover, 115, 60, 255, 0, 'rgb(255, 208, 204)', hoverAmnt);
+  displayText("Game Design", gameTp, tpLabelTextHeight, 150, 5, 'rgb(127, 102, 102)', CENTER, 20, hoverAmnt);
   if (abs(gameTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       fadeInEffect();
       player.position.x = gameSection;
     }
     else {
-      interactText("Press \"E\" to teleport", gameTp, -50);
+      chatBox(gameTp, tpInstructionChatboxHover, 270, 32, 50, 0);
+      interactText("Press \"E\" to teleport", gameTp, tpInteractTextHover, 0);
     }
   }
   // Outcast
@@ -949,7 +1043,8 @@ function draw() {
       leaveSlidesCheck();
     }
     else {
-      interactText("Press \"E\" to view", outcast, -80);
+      chatBox(outcast, 112, 230, 32, 50, 0);
+      interactText("Press \"E\" to view", outcast, -90, 0);
       noSlideShow();
       if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
@@ -966,7 +1061,8 @@ function draw() {
       leaveSlidesCheck();
     }
     else {
-      interactText("Press \"E\" to view", missileCommand, -80);
+      chatBox(missileCommand, 107, 230, 32, 50, 0);
+      interactText("Press \"E\" to view", missileCommand, -85, 0);
       noSlideShow();
       if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
@@ -983,21 +1079,24 @@ function draw() {
       leaveSlidesCheck();
     }
     else {
-      interactText("Press \"E\" to view", wizardsJourney, -80);
+      chatBox(wizardsJourney, 107, 230, 32, 50, 0);
+      interactText("Press \"E\" to view", wizardsJourney, -85, 0);
       noSlideShow();
       if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
   }
 
   // 3D Modeling + Animation
-  displayText("3D Modeling + Animation", threeDTp, 30, 180, 5, 255, CENTER, 20, hoverAmnt);
+  chatBox(threeDTp, tpLabelChatboxHover, 180, 60, 255, 0, 'rgb(211, 209, 255)', hoverAmnt);
+  displayText("3D Modeling + Animation", threeDTp, tpLabelTextHeight, 180, 5, 'rgb(105, 104, 127)', CENTER, 20, hoverAmnt);
   if (abs(threeDTp.position.x - player.position.x) <= 100) {
     if (keyPressed() == "E") {
       fadeInEffect();
       player.position.x = threeDSection;
     }
     else {
-      interactText("Press \"E\" to teleport", threeDTp, -50);
+      chatBox(threeDTp, tpInstructionChatboxHover, 270, 32, 50, 0);
+      interactText("Press \"E\" to teleport", threeDTp, tpInteractTextHover, 0);
     }
   }
   // Tantrum
@@ -1012,7 +1111,8 @@ function draw() {
       leaveSlidesCheck();
     }
     else {
-      interactText("Press \"E\" to view", tantrum, -90);
+      chatBox(tantrum, 127, 230, 32, 50, 0);
+      interactText("Press \"E\" to view", tantrum, -105, 0);
       noSlideShow();
       if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
@@ -1029,7 +1129,8 @@ function draw() {
       leaveSlidesCheck();
     }
     else {
-      interactText("Press \"E\" to view", deskRoom, -120);
+      chatBox(deskRoom, 154, 230, 32, 50, 0);
+      interactText("Press \"E\" to view", deskRoom, -132, 0);
       noSlideShow();
       if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
@@ -1046,21 +1147,22 @@ function draw() {
       leaveSlidesCheck();
     }
     else {
-      interactText("Press \"E\" to view", raygun, -80);
+      chatBox(raygun, 117, 230, 32, 50, 0);
+      interactText("Press \"E\" to view", raygun, -95, 0);
       noSlideShow();
       if (sound.checked && continueSound == true) { toggleSound(); continueSound = false; }
     }
   }
 
     // Video
-    // displayText("Video Editing", videoTp, 30, 150, 5, 255, CENTER, 20, hoverAmnt);
+    // displayText("Video Editing", videoTp, tpLabelTextHeight, 150, 5, 255, CENTER, 20, hoverAmnt);
     // if (abs(videoTp.position.x - player.position.x) <= 100) {
     //   if (keyPressed() == "E") {
     //     fadeInEffect();
     //     player.position.x = videoSection;
     //   }
     //   else {
-    //     interactText("Press \"E\" to teleport", videoTp, -50);
+    //     interactText("Press \"E\" to teleport", videoTp, -100, 0);
     //   }
     // }
 
@@ -1122,10 +1224,11 @@ function movementDesktopMessageFade() {
 }
 
 // Text
-function interactText(txt, target, hover) {
+function interactText(txt, target, hover, horizontal) {
+  fill(255, 255, 255);
   textSize(18);
   textAlign(CENTER);
-  text(txt, target.position.x, target.position.y+hover);
+  text(txt, target.position.x+horizontal, target.position.y+hover);
 }
 
 function keyPressed() {
@@ -1157,12 +1260,12 @@ function typeWriter(script, target, hover, length, counter, timer, customX, colo
   }
 }
 
-function chatBox(target, hover, length, height) {
-  var boxColor = color(0);
-  boxColor.setAlpha(80);
+function chatBox(target, hover, length, height, alpha, horizontal, clr='rgb(0,0,0)', hoveramnt=0) {
+  var boxColor = color(clr);
+  boxColor.setAlpha(alpha);
   fill(boxColor);
   noStroke();
-  rect(target.position.x-(length/2), target.position.y-hover, length, height, 5);
+  rect(target.position.x-(length/2)+horizontal, target.position.y-hover+hoveramnt, length, height, 5);
 }
 
 function slideShow(title) {
@@ -1183,18 +1286,21 @@ function slideShow(title) {
   } else if (title == "Inertia") {
     currentSlides = inertiaSlides;
     currentSlidesName = "Inertia";
+  } else if (title == "Room") {
+    currentSlides = roomSlides;
+    currentSlidesName = "Room";
   } else if (title == "Ask Applications Internship") {
     currentSlides = askAppsSlides;
     currentSlidesName = "AskApplicationsInternship";
   } else if (title == "acorn") {
     currentSlides = acornSlides;
     currentSlidesName = "Acorn";
-  } else if (title == "LinkNYC Time Interface") {
-    currentSlides = timeInterfaceSlides;
-    currentSlidesName = "TimeInterface";
-  } 
+  // } else if (title == "LinkNYC Time Interface") {
+  //   currentSlides = timeInterfaceSlides;
+  //   currentSlidesName = "TimeInterface";
+  // } 
   // Game Design
-  else if (title == "Outcast") {
+  } else if (title == "Outcast") {
     currentSlides = outcastSlides;
     currentSlidesName = "Outcast";
   } else if (title == "Missile Command Clone") {
@@ -1277,7 +1383,7 @@ function dotUpdate() { // dot update, description, and subtitle update
   if (slideNum == 0) {
     currentSubtitle.innerHTML = "About";
   }
-  // UI/UX + Web Design
+  // UI/UX Design
   // Float-it Notes
   if (currentSlidesName == "FloatItNotes") {
     if (slideNum == 0) {
@@ -1318,6 +1424,23 @@ function dotUpdate() { // dot update, description, and subtitle update
       currentSubtitle.innerHTML = "Style Guide";
     }
     currentAbout.innerHTML = aboutInertia[slideNum];
+  } else if (currentSlidesName == "Room") {
+    if (slideNum == 1) {
+      currentSubtitle.innerHTML = "Competitive Analysis";
+    } else if (slideNum == 2) {
+      currentSubtitle.innerHTML = "User Research";
+    } else if (slideNum == 3) {
+      currentSubtitle.innerHTML = "User Research Findings";
+    } else if (slideNum == 4) {
+      currentSubtitle.innerHTML = "Personas";
+    } else if (slideNum == 5) {
+      currentSubtitle.innerHTML = "Journey Maps";
+    } else if (slideNum == 6) {
+      currentSubtitle.innerHTML = "User Flows";
+    } else if (slideNum == 7) {
+      currentSubtitle.innerHTML = "Strategy Document";
+    }
+    currentAbout.innerHTML = aboutRoom[slideNum];
   // Ask Applications
   } else if (currentSlidesName == "AskApplicationsInternship") {
     if (slideNum == 0) {
@@ -1338,13 +1461,13 @@ function dotUpdate() { // dot update, description, and subtitle update
       currentSubtitle.innerHTML = "Final Product Design";
     }
     currentAbout.innerHTML = aboutAcorn[slideNum];
-  } else if (currentSlidesName == "TimeInterface") {
-    if (slideNum == 1) {
-      currentSubtitle.innerHTML = "About";
-    } else if (slideNum >= 2) {
-      currentSubtitle.innerHTML = "Drafts";
-    }
-    currentAbout.innerHTML = aboutTimeInterface[slideNum];
+  // } else if (currentSlidesName == "TimeInterface") {
+  //   if (slideNum == 1) {
+  //     currentSubtitle.innerHTML = "About";
+  //   } else if (slideNum >= 2) {
+  //     currentSubtitle.innerHTML = "Drafts";
+  //   }
+  //   currentAbout.innerHTML = aboutTimeInterface[slideNum];
   // Game Design
   // Outcast 
   } else if (currentSlidesName == "Outcast") {
