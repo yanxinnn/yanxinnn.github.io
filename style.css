@@ -157,6 +157,28 @@ input#sound:checked ~ .off img {
   user-select: none;
 }
 
+#joystick-outerCircle {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 25px;
+  left: 50px;
+}
+
+#joystick-innerCircle {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #A0A0A0;
+  outline: 4px solid #686868;
+  top: 50%;
+  left: 50%;
+  margin: -21px 0px 0px -21px;
+}
+
 .topMessage {
   position: fixed;
   text-align: center;

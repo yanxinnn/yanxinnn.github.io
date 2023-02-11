@@ -35,7 +35,7 @@ var yanxinTexts = [
   "I'm always adding new things to this world. Come by again soon!",
   "*bounce bounce bounce*",
   "Don't forget to drink water!",
-  "The sky isn't blue. It's actually #90c7f7🤓"
+  "The sky isn't blue, it's actually #90c7f7🤓"
 ]
 var firstGreeting = false;
 var firstGreetingFinished = false;
@@ -1639,3 +1639,9 @@ const deviceType = () => {
   }
   return "desktop";
 };
+
+function joystickUserInput() {
+  console.log("");
+  document.getElementById("joystick-innerCircle").style.top = "20%";
+  document.getElementById("joystick-innerCircle").style.left = "20%";
+}
