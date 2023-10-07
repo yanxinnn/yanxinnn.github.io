@@ -211,14 +211,13 @@ input#sound:checked ~ .off img {
   transition: visibility 0.5s, opacity 0.5s;
   user-select: none;
 }
-
-.bottomMessage {
+#exitSlideshowMessage {
   position: fixed;
-  top: 3.75rem;
+  top: 5.5rem;
   text-align: center;
   left: 50%;
   transform: translate(-50%, 0);
-  color: white;
+  color: #ffffff80;
   font-family: "silkscreennormal";
   font-weight: normal;
   font-style: normal;
@@ -233,11 +232,6 @@ input#sound:checked ~ .off img {
 
 #movementDesktopMessage h2 {
   color: #ffbebe;
-}
-
-#escapeSlidesMessage {
-  opacity: 0.8;
-  user-select: none;
 }
 
 a:link,
@@ -542,10 +536,10 @@ a:active {
 
 #pictureSection {
   position: fixed;
-  top: 6.25rem;
+  top: 8rem;
   right: 38%;
   width: 60%;
-  height: 78%;
+  height: 83%;
   background: rgba(28, 28, 28, 1);
   border-radius: 5px;
 }
@@ -703,10 +697,10 @@ a:active {
 #aboutSection {
   position: fixed;
   display: block;
-  top: 6.25rem;
+  top: 8rem;
   left: 63.2%;
   width: 35%;
-  height: 78%;
+  height: 83%;
   background: #1c1c1c;
   border-radius: 5px;
 }
@@ -739,7 +733,7 @@ a:active {
   top: 3.75rem;
   transform: translateX(-50%);
   line-height: 1.8;
-  height: 80%;
+  height: 83%;
   overflow-y: auto;
   padding-right: 1.25rem;
   padding-left: .3125rem;

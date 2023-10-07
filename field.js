@@ -840,14 +840,18 @@ function draw() {
   }
 
   // Location Labels + Back to Start Link
-  if (player.position.x >= uiUxSection) {
+  if (slideShowing) {
+    document.getElementById("locationMessage").style.visibility = "hidden";
+    document.getElementById("locationMessage").style.opacity = "0";
+  }
+  else if (player.position.x >= uiUxSection) {
     document.getElementById("locationMessage").style.visibility = "visible";
     document.getElementById("locationMessage").style.opacity = "1";
     document.getElementById("locationMessage").style.backgroundColor = "#5A89AD";
   }
   // if (player.position.x >= videoSection) {
   //   document.getElementById("locationMessage").innerHTML = "Video Editing";
-  // } else if 
+  // } else if
   if (player.position.x >= threeDSection - 100) {
     document.getElementById("locationMessage").innerHTML = "3D Modeling + Animation";
     document.getElementById("locationMessage").style.backgroundColor = "#D3D1FF";
