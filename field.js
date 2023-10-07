@@ -35,7 +35,7 @@ var yanxinTexts = [
   "I'm always adding new things to this world. Come by again soon!",
   "*bounce bounce bounce*",
   "Don't forget to drink water!",
-  "The sky isn't blue, it's actually #90c7f7🤓"
+  "The sky isn't blue, it's actually #90c7f7🤓",
 ]
 var firstGreeting = false;
 var firstGreetingFinished = false;
@@ -43,7 +43,7 @@ var greetingUsed = true;
 var randomText = "";
 var chatCounter = 0;
 var chatTimer = 0;
-var globalTimer = 0;
+var teleporterHoverTimer = 0;
 var hoverAmnt = 0;
 
 // Sounds
@@ -724,10 +724,10 @@ function setup() {
 function draw() {
 
   // Debugging
-  //console.log("position:", floor(player.position.x/100));
+  //console.log("position x:", floor(player.position.x));
 
   background(color(134, 193, 239));
-  globalTimer++;
+  teleporterHoverTimer++;
 
   if (deviceType() != "desktop") {
     alert("Uh oh! The mobile version of this page is in the works. Please view using a laptop or desktop!");
@@ -821,13 +821,22 @@ function draw() {
     }
   }
 
-  if (expandedImageShowing) { // turn off widgets in expanded image mode
+  if (slideShowing) { // turn off widgets in slideshow mode
     document.getElementById("widgets").style.visibility = "hidden";
     document.getElementById("widgets").style.opacity = "0";
   } 
   else {
     document.getElementById("widgets").style.visibility = "visible";
     document.getElementById("widgets").style.opacity = "1";
+  }
+
+  if (player.position.x < platformsGroup[15].position.x || slideShowing) { // turns off "Back to Teleporters" button when user hasn't passed it yet or in slideshow mode
+    document.getElementById("backToStartLink").style.visibility = "hidden";
+    document.getElementById("backToStartLink").style.opacity = "0";
+  }
+  else {
+    document.getElementById("backToStartLink").style.visibility = "visible";
+    document.getElementById("backToStartLink").style.opacity = "1";
   }
 
   // Location Labels + Back to Start Link
@@ -864,24 +873,16 @@ function draw() {
     document.getElementById("locationMessage").style.visibility = "hidden";
     document.getElementById("locationMessage").style.opacity = "0";
   }
-  if (player.position.x < platformsGroup[15].position.x || expandedImageShowing) {
-    document.getElementById("backToStartLink").style.visibility = "hidden";
-    document.getElementById("backToStartLink").style.opacity = "0";
-  }
-  else {
-    document.getElementById("backToStartLink").style.visibility = "visible";
-    document.getElementById("backToStartLink").style.opacity = "1";
-  }
 
   // Sound
   var sound = document.getElementById("sound");
 
   // Teleporters
-  if (globalTimer >= 20) { // hover effect for teleporter text
+  if (teleporterHoverTimer >= 20) { // hover effect for teleporter text
     hoverAmnt = 4;
-    if (globalTimer >= 60) {
+    if (teleporterHoverTimer >= 60) {
       hoverAmnt = -4;
-      globalTimer = -20;
+      teleporterHoverTimer = -20;
     }
   }
 
@@ -1239,6 +1240,9 @@ function keyPressed() {
   if (keyCode == 69) {
     return "E";
   }
+  if (keyIsDown(ESCAPE) || keyCode == 81) {
+    return "ESCAPE";
+  }
   return true;
 }
 
@@ -1362,7 +1366,7 @@ function slideShow(title) {
       currentSlide.controlsList = "nodownload";
       currentSlide.autoplay = true;
       currentSlide.volume = 0.2;
-      document.getElementById("expandButton").style.visibility = "hidden"; // hides expand image button since video has prebuilt expand
+      document.getElementById("expandButton").style.visibility = "hidden"; // hides expand image button since video has built-in expand
       document.getElementById("expandButton").style.opacity = 0;
     }
     currentSlide.src = currentSlides[slideNum]; //shows slide or video
@@ -1383,6 +1387,7 @@ function dotUpdate() { // dot update, description, and subtitle update
   dotsList[slideNum].className += " active"; // shows active dot
 
   let currentAbout = document.getElementById("descriptions"); //description update
+  currentAbout.scrollTop = 0;
   let currentSubtitle = document.getElementById("aboutSectionHeader");
   if (slideNum == 0) {
     currentSubtitle.innerHTML = "About";
@@ -1591,7 +1596,7 @@ function noMoving() {
 }
 
 function leaveSlidesCheck() {
-  if (keyPressed()) {
+  if (keyPressed() == "ESCAPE") {
     slideShowing = false;
   }
   noMoving();
