@@ -152,5 +152,5 @@ function mainMenu() {
 }
 
 function openResume() {
-  window.open("images/YanxinJiangResume.pdf");
+  window.open("images/YanxinJiang_Resume.pdf");
 }
