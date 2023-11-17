@@ -39,7 +39,7 @@ function setup() {
   document.getElementById("widgets").style.gridTemplateRows = "15px 30px 15px";
 
   // Ripples
-  var numOfRipples = window.innerWidth/25;
+  var numOfRipples = window.innerWidth / 25;
   rainGroup = new Group();
   rippleAnimation.frameDelay = 5;
   for (i = 0; i < numOfRipples; ++i) {
@@ -57,33 +57,40 @@ function setup() {
   }
 
   // Lilypads
-  var numOfLilypadsBotLeft = window.innerWidth/200;
+  function createLilypads(num, startXRange, endXRange, startYRange, endYRange) {
+    for (let i = 0; i < num; ++i) {
+      let randomX = random(startXRange, endXRange);
+      let randomY = random(startYRange, endYRange);
+      let lilypad = createSprite(randomX, randomY, 550, 200);
+      lilypad.scale = random(0.4, 0.5);
+      lilypad.addAnimation("idle", lilypadAnimation);
+    }
+  }
+  
+  const numOfLilypadsBotLeft = window.innerWidth / 200;
+  const numOfLilypadsBotRight = window.innerWidth / 200;
+  const numOfLilypadsBot = window.innerWidth / 400;
+  const numOfLilypadsTopLeft = window.innerWidth / 250;
+  const numOfLilypadsTopRight = window.innerWidth / 250;
+  const numOfLilypadsTop = window.innerWidth / 400;
+  
+  const leftXRange = [0, window.innerWidth / 6];
+  const rightXRange = [window.innerWidth * 5 / 6, window.innerWidth];
+  const botYRange = [window.innerHeight * 8 / 10, window.innerHeight];
+  const centerXRange = [window.innerWidth / 6, window.innerWidth * 5 / 6];
+  const topSidesYRange = [-window.innerHeight / 10, window.innerHeight / 10];
+  const topYRange = [-window.innerHeight / 10, window.innerHeight / 40];
+
   lilypadAnimation.frameDelay = 30;
-  for (i = 0; i < numOfLilypadsBotLeft; ++i) {
-    let randomX = random(0, window.innerWidth/6);
-    let randomY = random(window.innerHeight*8/10, window.innerHeight);
-    lilypad = createSprite(randomX, randomY, 550, 200);
-    lilypad.scale = random(0.4, 0.5);
-    lilypad.addAnimation("idle", lilypadAnimation);
-  }
+  
+  createLilypads(numOfLilypadsBotLeft, ...leftXRange, ...botYRange);
+  createLilypads(numOfLilypadsBotRight, ...rightXRange, ...botYRange);
+  createLilypads(numOfLilypadsBot, ...centerXRange, ...botYRange);
+  
+  createLilypads(numOfLilypadsTopLeft, ...leftXRange, ...topSidesYRange);
+  createLilypads(numOfLilypadsTopRight, ...rightXRange, ...topSidesYRange);
+  createLilypads(numOfLilypadsTop, ...centerXRange, ...topYRange);
 
-  var numOfLilypadsBotRight = window.innerWidth/200;
-  for (i = 0; i < numOfLilypadsBotRight; ++i) {
-    let randomX = random(window.innerWidth*5/6, window.innerWidth);
-    let randomY = random(window.innerHeight*8/10, window.innerHeight);
-    lilypad = createSprite(randomX, randomY, 550, 200);
-    lilypad.scale = random(0.4, 0.5);
-    lilypad.addAnimation("idle", lilypadAnimation);
-  }
-
-  var numOfLilypadsBot = window.innerWidth/400;
-  for (i = 0; i < numOfLilypadsBot; ++i) {
-    let randomX = random(window.innerWidth/6, window.innerWidth*5/6);
-    let randomY = random(window.innerHeight*9/10, window.innerHeight*1.05);
-    lilypad = createSprite(randomX, randomY, 550, 200);
-    lilypad.scale = random(0.4, 0.5);
-    lilypad.addAnimation("idle", lilypadAnimation);
-  }
 
 } // function setup
 
@@ -92,7 +99,7 @@ function draw() {
   background(waterBackground);
 
   // Ripples
-  var numOfRipples = window.innerWidth/25;
+  var numOfRipples = window.innerWidth / 25;
   for (i = 0; i < numOfRipples; ++i) {
     rainGroup[i].fallTimer += 1;
     if (rainGroup[i].fallTimer > random(0, window.innerHeight/5)) {
