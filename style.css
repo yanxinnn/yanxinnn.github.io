@@ -66,7 +66,7 @@ body {
 }
 
 .menu-buttons button:first-child {
-  margin-top: 35vh;
+  margin-top: 28vh;
 }
 
 .menu-buttons button:not(:last-child) {
@@ -286,7 +286,7 @@ a:active {
 
 .creditsContainer {
   position: relative;
-  top: 4%;
+  margin-top: 4vh;
   text-align: center;
   font-family: "silkscreennormal";
   font-weight: normal;
@@ -383,7 +383,7 @@ a:active {
 }
 
 .creditsTitles {
-  padding: .0625rem;
+  margin-top: 4rem;
 }
 
 .creditsContainer h1 {
