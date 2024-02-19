@@ -36,7 +36,7 @@ var continueSound = false;
 var numOfPlatforms = 80;
 var platformsGroup;
 var middlePlatform; // where camera snaps to following player
-var endPlatform = 64; // where world stops
+var endPlatform = 65; // where world stops
 var groundTopLeft;
 var groundBottomLeft;
 var groundTop;
@@ -271,11 +271,11 @@ function setup() {
 
   // Teleporters
   beginningSection = platformsGroup[13].position.x;
-  uiUxSection = platformsGroup[22].position.x;
-  gameSection = platformsGroup[39].position.x;
-  threeDSection = platformsGroup[49].position.x;
+  uiUxSection = platformsGroup[22].position.x + 50;
+  gameSection = platformsGroup[39].position.x + 100;
+  threeDSection = platformsGroup[49].position.x + 150;
 
-  beginningTp = createTp({ frames: whiteTpFrames, positionIndex: 62 });
+  beginningTp = createTp({ frames: whiteTpFrames, positionIndex: 63 });
   uiUxTp = createTp({ frames: greenTpFrames, positionIndex: 15 });
   gameTp = createTp({
     frames: redTpFrames,
