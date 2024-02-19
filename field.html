@@ -1,82 +1,81 @@
 <html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Yanxin Jiang</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+    <script src="lib/p5.play.js"></script>
+    <script src="field.js" type="module"></script>
+    <link rel="icon" type="image/png" href="images/icon-daisy.png" />
+  </head>
 
-<head>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <title>Yanxin Jiang</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
-  <script src="lib/p5.play.js"></script>
-  <script src="field.js"></script>
-  <link rel="icon" type="image/png" href="images/icon-daisy.png">
-
-</head>
-
-<body>
-
-  <div id="widgets">
-    <button onclick="mainMenu()" id="homeIcon" alt="Return to Main Menu"></button>
-    <!-- Mute / Unmute Widget -->
-    <!-- reference : https://stackoverflow.com/questions/22918220/how-to-create-a-only-mute-unmute-button-like-youtube-in-html -->
-    <div id="soundIcon">
-      <input type="checkbox" id="sound" onClick="toggleSound()">
-      <label for="sound" class="on">
-        <img src="images/widgets/nothing.png" id="onIcon">
-      </label>
-      <label for="sound" class="off">
-        <img src="images/widgets/nothing.png" id="offIcon">
-      </label>
+  <body>
+    <div id="widgets">
+      <button id="homeIcon" alt="Return to Main Menu"></button>
+      <!-- Mute / Unmute Widget -->
+      <!-- reference : https://stackoverflow.com/questions/22918220/how-to-create-a-only-mute-unmute-button-like-youtube-in-html -->
+      <div id="soundIcon">
+        <input id="sound" type="checkbox" />
+        <label for="sound" class="on">
+          <img src="images/widgets/nothing.png" id="onIcon" />
+        </label>
+        <label for="sound" class="off">
+          <img src="images/widgets/nothing.png" id="offIcon" />
+        </label>
+      </div>
     </div>
-  </div>
 
-  <div class="topMessage" id="movementDesktopMessage"><h2>Welcome to my portfolio!</h2><br>Use "WASD" or arrow keys to move around</div>
-  <div id="locationMessage"></div>
-  <!-- <div id="joystick-outerCircle" onClick="joystickUserInput()">
+    <div class="topMessage" id="movementDesktopMessage">
+      <h2>Welcome to my portfolio!</h2>
+      <br />Use "WASD" or arrow keys to move around
+    </div>
+    <div id="locationMessage"></div>
+    <!-- <div id="joystick-outerCircle" onClick="joystickUserInput()">
     <div id="joystick-innerCircle"></div>
   </div> -->
-  <div id="slideshow">
-    <div id="backgroundScreen"></div>
-    <div id="title"></div>
-    <div id="exitSlideshowMessage">Press "Q" or "ESCAPE" to Exit</div>
-    <div id="pictureSection">
-      <div id="dotsLayout"></div>
-      <div id="prevBar" onclick="nextSlide(-1)">
-        <div id="prev">&#10094;</div>
+    <div id="slideshow">
+      <div id="backgroundScreen"></div>
+      <div id="title"></div>
+      <div id="exitSlideshowMessage">Press "Q" or "ESCAPE" to Exit</div>
+      <div id="pictureSection">
+        <div id="dotsLayout"></div>
+        <div id="prevSlideButton">
+          <div id="prev">&#10094;</div>
+        </div>
+        <div id="nextSlideButton">
+          <div id="next">&#10095;</div>
+        </div>
+        <button id="expandSlideImageButton"></button>
+        <div id="slides"></div>
       </div>
-      <div id="nextBar" onclick="nextSlide(1)">
-        <div id="next">&#10095;</div>
+      <div id="aboutSection">
+        <div id="aboutSectionHeader"></div>
+        <div id="descriptions"></div>
       </div>
-      <button id="expandButton" onClick="expandCurrentImage()"></button>
-      <div id="slides"></div>
+      <div id="expandedSlideScreen">
+        <div id="expandedSlideImage"></div>
+        <button id="compressSlideImageButton"></button>
+      </div>
     </div>
-    <div id="aboutSection">
-      <div id="aboutSectionHeader"></div>
-      <div id="descriptions"></div>
+
+    <div class="loader-wrapper">
+      <img src="images/loading.gif" class="bouncingDaisies" />
     </div>
-    <div id="expandedSlideScreen">
-      <div id="expandedSlideImage"></div>
-      <button id="compressButton" onClick="compressCurrentImage()"></button>
-    </div>
-  </div>
 
-  <div class="loader-wrapper">
-    <img src="images/loading.gif" class="bouncingDaisies">
-  </div>
+    <canvas id="myCanvas"></canvas>
 
-  <canvas id="myCanvas"></canvas>
+    <!-- Javascript Sketch -->
+    <div id="field-div"></div>
 
-  <!-- Javascript Sketch -->
-  <div id="field-div"></div>
+    <button id="backToStartLink" alt="Back to Teleporters">
+      BACK TO TELEPORTERS
+    </button>
 
-  <button onclick="backToStart()" id="backToStartLink" alt="Back to Teleporters">BACK TO TELEPORTERS</button>
-
-  <script>
-    $(window).on("load", function() {
-      $(".loader-wrapper").delay(3000).fadeOut(1000, "linear");
-    });
-  </script>
-
-</body>
-
+    <script>
+      $(window).on("load", function () {
+        $(".loader-wrapper").delay(3000).fadeOut(1000, "linear");
+      });
+    </script>
+  </body>
 </html>
