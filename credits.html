@@ -1,65 +1,106 @@
 <html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Yanxin Jiang</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+    <script src="lib/p5.play.js"></script>
+    <script src="credits.js"></script>
+    <link rel="icon" type="image/png" href="images/icon-daisy.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <title>Yanxin Jiang</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
-  <script src="lib/p5.play.js"></script>
-  <script src="credits.js"></script>
-  <link rel="icon" type="image/png" href="images/icon-daisy.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
-  <div id="widgets">
-    <button onclick="mainMenu()" id="homeIcon" alt="Return to Main Menu"></button>
-  </div>
-  <div class="creditsContainer">
-    <div class="creditsTitles">
-      <h1>Credits</h1> 
-      <div class="creditsSubtitle">
-        <p>Code and Art by: Yanxin Jiang</p>
+  <body>
+    <div id="widgets">
+      <button
+        id="homeIcon"
+        onclick="mainMenu()"
+        alt="Return to Main Menu"
+      ></button>
+    </div>
+    <div class="creditsContainer">
+      <div class="creditsTitles">
+        <h1>Credits</h1>
+        <div class="creditsSubtitle">
+          <p>Code and Art by: Yanxin Jiang</p>
+        </div>
+      </div>
+      <div class="creditsBody">
+        <img id="profilePic" src="images/me2.gif" alt="Sprite of Yanxin" />
+        <div class="letter">
+          <p>Hey there!</p>
+          <p>
+            I'm Yanxin, a UX/UI developer with a passion for creating beautiful
+            and functional digital experiences. I graduated from New York
+            University, where I studied Integrated Design & Media, Computer
+            Science, and Science and Technology Studies.
+          </p>
+          <p>
+            This portfolio was inspired by my love for video games, pastels, and
+            all things cute (and bouncy!). I created this website from scratch
+            using Javascript (p5.js, jQuery), HTML/CSS, and graphic editors such
+            as Adobe Photoshop, Medibang Paint, and Piskel. I hope you enjoy
+            exploring my little world! :)
+          </p>
+          <p>
+            If you have any comments, questions, suggestions, or just want to
+            say hi, feel free to drop me a message anytime!
+          </p>
+          <br />
+          <p>Catch you on the pixelated side!<br />Yanxin</p>
+          <div class="contactInfo">
+            <a href="https://www.linkedin.com/in/yanxinn/" target="_blank"
+              ><img
+                id="linkedInIcon"
+                class="contactInfoItem"
+                alt="LinkedIn"
+                src="images/widgets/linkedInIcon1.png"
+                onmouseover="hover(this);"
+                onmouseout="unhover(this);"
+            /></a>
+            <p hidden id="email">yanxinjiang@live.com</p>
+            <img
+              src="images/widgets/emailIcon1.png"
+              class="contactInfoItem"
+              alt="Email"
+              id="emailIcon"
+              onclick="copyToClipboard('#email')"
+              onmouseover="hover(this);"
+              onmouseout="unhover(this);"
+            />
+            <button id="resume" class="contactInfoItem" onclick="openResume()">
+              Resume
+            </button>
+          </div>
+        </div>
+      </div>
+      <div hidden class="alert" id="emailCopiedMessage">
+        <span
+          class="closeCopiedEmailButton"
+          onclick="this.parentElement.style.display='none';"
+          >&times;</span
+        >
+        Email Copied to Clipboard!
+        <br /><br />
+        <div class="selectEmail">yanxinjiang@live.com</div>
       </div>
     </div>
-    <img src="images/me2.gif" class="profilePicture" id="profilePic" alt="Sprite of Me">
-    <div class="letter">
-      <p>Hey there!</p>
-      <p>I'm Yanxin, a UX/UI developer with a passion for creating beautiful and functional digital experiences. I graduated from New York University, where I studied Integrated Design & Media, Computer Science, and Science and Technology Studies.</p>
-      <p>This portfolio was inspired by my love for video games, pastels, and all things cute (and bouncy!). I created this website from scratch using Javascript (p5.js, jQuery), HTML/CSS, and graphic editors such as Adobe Photoshop, Medibang Paint, and Piskel. I hope you enjoy exploring my little world! :)</p>
-      <p>If you have any comments, questions, suggestions, or just want to say hi, feel free to drop me a message anytime!</p>
-      <br>
-      <p>Catch you on the pixelated side!<br>Yanxin</p>
+
+    <div class="loaderWrapper">
+      <img src="images/loading.gif" class="bouncingDaisies" />
     </div>
-    <div class="contactInfo">
-      <a href="https://www.linkedin.com/in/yanxinn/" target="_blank"><img id="linkedInIcon" class="contactInfoItem" alt="LinkedIn" src="images/widgets/linkedInIcon1.png" onmouseover="hover(this);" onmouseout="unhover(this);"></a>
-      <p hidden id="email">yanxinjiang@live.com</p>
-      <img src="images/widgets/emailIcon1.png" class="contactInfoItem" alt="Email" id="emailIcon" onclick="copyToClipboard('#email')" onmouseover="hover(this);" onmouseout="unhover(this);">
-      <button id="resume" class="contactInfoItem" onclick="openResume()">Resume</button>
-    </div>
-    <div hidden class="alert" id="emailCopiedMessage">
-      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-      Email Copied to Clipboard! 
-      <br><br><div class="selectEmail">yanxinjiang@live.com</div>
-    </div>
-  </div>
 
-  <div class="loader-wrapper">
-    <img src="images/loading.gif" class="bouncingDaisies">
-  </div>
+    <script>
+      $(window).on("load", function () {
+        $(".loaderWrapper").delay(1000).fadeOut(500, "linear");
+      });
+    </script>
 
-  <script>
-    $(window).on("load", function() {
-      $(".loader-wrapper").delay(1000).fadeOut(500, "linear");
-    });
-  </script>
-
-  <!-- Javascript Sketch -->
-  <div id="mainMenu-div"></div>
-
-</body>
-
+    <!-- Javascript Sketch -->
+    <div id="mainMenuDiv"></div>
+  </body>
 </html>

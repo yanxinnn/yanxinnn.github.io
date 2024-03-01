@@ -21,15 +21,24 @@ function preload() {
 
   //Ripples
   rainAnimation = loadAnimation(rainSprite);
-  rippleAnimation = loadAnimation(ripple2, ripple3, ripple4, ripple5, ripple6, ripple7, x,x,x);
+  rippleAnimation = loadAnimation(
+    ripple2,
+    ripple3,
+    ripple4,
+    ripple5,
+    ripple6,
+    ripple7,
+    x,
+    x,
+    x
+  );
   lilypadAnimation = loadAnimation(lilypad1, lilypad2);
-
-  }
+}
 
 //** Setup *************
 function setup() {
   var canvas = createCanvas(window.innerWidth, window.innerHeight);
-  canvas.parent("mainMenu-div");
+  canvas.parent("mainMenuDiv");
   canvas.position(0, 0);
   canvas.style("z-index", "-1");
   document.getElementById("profilePic").setAttribute("draggable", false);
@@ -66,32 +75,30 @@ function setup() {
       lilypad.addAnimation("idle", lilypadAnimation);
     }
   }
-  
+
   const numOfLilypadsBotLeft = window.innerWidth / 200;
   const numOfLilypadsBotRight = window.innerWidth / 200;
   const numOfLilypadsBot = window.innerWidth / 400;
   const numOfLilypadsTopLeft = window.innerWidth / 250;
   const numOfLilypadsTopRight = window.innerWidth / 250;
   const numOfLilypadsTop = window.innerWidth / 400;
-  
+
   const leftXRange = [0, window.innerWidth / 6];
-  const rightXRange = [window.innerWidth * 5 / 6, window.innerWidth];
-  const botYRange = [window.innerHeight * 8 / 10, window.innerHeight];
-  const centerXRange = [window.innerWidth / 6, window.innerWidth * 5 / 6];
+  const rightXRange = [(window.innerWidth * 5) / 6, window.innerWidth];
+  const botYRange = [(window.innerHeight * 8) / 10, window.innerHeight];
+  const centerXRange = [window.innerWidth / 6, (window.innerWidth * 5) / 6];
   const topSidesYRange = [-window.innerHeight / 10, window.innerHeight / 10];
   const topYRange = [-window.innerHeight / 10, window.innerHeight / 40];
 
   lilypadAnimation.frameDelay = 30;
-  
+
   createLilypads(numOfLilypadsBotLeft, ...leftXRange, ...botYRange);
   createLilypads(numOfLilypadsBotRight, ...rightXRange, ...botYRange);
   createLilypads(numOfLilypadsBot, ...centerXRange, ...botYRange);
-  
+
   createLilypads(numOfLilypadsTopLeft, ...leftXRange, ...topSidesYRange);
   createLilypads(numOfLilypadsTopRight, ...rightXRange, ...topSidesYRange);
   createLilypads(numOfLilypadsTop, ...centerXRange, ...topYRange);
-
-
 } // function setup
 
 //** Draw ****************
@@ -102,7 +109,7 @@ function draw() {
   var numOfRipples = window.innerWidth / 25;
   for (i = 0; i < numOfRipples; ++i) {
     rainGroup[i].fallTimer += 1;
-    if (rainGroup[i].fallTimer > random(0, window.innerHeight/5)) {
+    if (rainGroup[i].fallTimer > random(0, window.innerHeight / 5)) {
       rainGroup[i].rippleTimerOn = true;
     }
     if (rainGroup[i].rippleTimerOn) {
@@ -110,7 +117,10 @@ function draw() {
       rainGroup[i].changeAnimation("rippling");
       rainGroup[i].rippleTimer += 1;
     }
-    if (rainGroup[i].rippleTimer > 35 || rainGroup[i].position.y > window.innerHeight * 1.2) {
+    if (
+      rainGroup[i].rippleTimer > 35 ||
+      rainGroup[i].position.y > window.innerHeight * 1.2
+    ) {
       rainGroup[i].remove();
       let randomX = random(0, window.innerWidth * 1.2);
       let randomY = random(-400, 0);
@@ -127,7 +137,6 @@ function draw() {
   }
 
   drawSprites();
-
 } // function draw
 
 function windowResized() {

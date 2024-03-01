@@ -12,14 +12,18 @@ export var yanxinIdle3 = "images/characters/yanxinIdle3.png";
 
 export const yanxinTexts = [
   "Hi! Welcome to my portfolio! Feel free to take a look around!",
-  "Use the teleporters to my right to travel to different areas faster!",
-  "Glad to have you here!",
+  "Use the teleporters next to me to travel to sections faster!",
+  "Glad to have you hare!",
   "Where are these petals coming from?",
-  "Mouths don't exist in this world",
+  "Mouths don't exist in this world... how am I talking??",
   "I'm always adding new things to this world. Come by again soon!",
   "*bounce bounce bounce*",
   "Don't forget to drink water!",
-  "The sky isn't blue, it's actually #90c7f7🤓",
+  "The sky isn't blue, it's actually #90c7f7! 🤓",
+  "Hello, nonbunnary bunny!",
+  "Don't worry, be hoppy!",
+  "Keep calm and carrot on!",
+  "Imagine if we're all just living in a simulated world... haha no way!",
 ];
 
 //** Sound Variables **********
@@ -112,8 +116,8 @@ export const inertiaDescriptions = [
     <div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Mobile App, Fitness, Gaming</div>\
     <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Figma, Adobe Photoshop</div>\
     <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>UX Design, UX Research, UI Design, Wireframing</div></div><br>\
-    <button class='slidesLink' onclick=\"window.open('https://www.figma.com/file/4GKpbsBQxAKKfarmcLW0tp/Inertia','_blank')\">View Figma Designs</button><br>\
-    <div class='projectSubtitles'>The Problem</div>Studies in 2021 have shown that more than 82 million US residents aged 6 and above don't exercise at all, making it more likely for them to develop a host of health problems like high blood pressure, high cholesterol, and heart disease. On the other hand, the mobile gaming market is booming, with global mobile games revenue on track to surpass the $100 billion mark by 2023. <br><br>So here are our two facts: <div class='descriptionsIndent'>1. A lot of people don't exercise enough. <br> 2. A lot of people love their mobile games.</div><div class='projectSubtitles'>The Solution</div>This brought me to ask the question, what if working out was as addicting as a game? What if... it was a game? <br><br> \
+    <div class='slidesLinkSection'><button class='slidesLink' onclick=\"window.open('https://www.figma.com/file/4GKpbsBQxAKKfarmcLW0tp/Inertia','_blank')\">View Figma Designs</button></div><br>\
+    <div class='projectSubtitles'>The Problem</div>Studies in 2021 have shown that more than 82 million US residents aged 6 and above don't exercise at all, making it more likely for them to develop a host of health problems like high blood pressure, high cholesterol, and heart disease. On the other hand, the mobile gaming market is booming, with global mobile games revenue on track to surpass the $100 billion mark by 2023. <br><br>So here are our two facts: <div class='descriptionsIndent'>1. A lot of people don't exercise enough. <br> 2. A lot of people love their mobile games.</div><div class='projectSubtitles'>The Solution</div>This brought me to ask:  What if we encouraged doing something we usually avoid by combining it with something that's nearly irresistible? What if working out was as addicting as a game? What if... it was a game? <br><br> \
     I designed Inertia, a mobile fitness game that helps members of the gaming community and RPG fans transform their gaming passions into a healthier lifestyle. <br><br>Inertia gives users a setting they are familiar and drawn to, RPG games, and motivates users to workout by recognizing their efforts with in-game rewards and progression. While the rewards of physical body changes from working out might take at least a few months to show, Inertia helps keep users excited for their next session by providing more immediate feedback every time they complete a run or workout.\
     <br><br><div class='projectSubtitles'>The Process</div>For this project, I: <div class='descriptionsIndent'>○ Researched exercise and mobile gaming statistics in the US <br>○ Analyzed competitor fitness apps and their features<br>○ Conducted two rounds of user research amongst gamers to learn my target audience's core needs and workout habits (1st round) and to receive insight for how users interact with the mobile prototype (2nd round) <br>○ Generated user flows for different user experiences <br>○ Created a style guide for the app's colors, typography, buttons, and branding <br>○ Designed low and high-fidelity wireframes prototyping the sign-in/sign-up process for mobile and desktop, character creation, various game features (inventory, shop, skills, and Battle Tower system) and the workout experience for users.",
 
@@ -213,7 +217,7 @@ export const roomDescriptions = [
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Figma</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>UX Design, UX Research, UI Design, Wireframing</div></div><br>\
   <button class='slidesLink' onclick=\"window.open('https://www.figma.com/file/oEjvYKDuItXKElZCPmSFCE/Room?node-id=0%3A1')\">View Figma Designs</button><br>\
-  <div class='projectSubtitles'>The Problem</div>54% of the world’s population live in urban communities. The average age for men is 29 (up from 26 two decades ago) and for women is 27 (up from 23 in the same time period). Given these trends, city dwellers tend to spend most of their twenties living with roommates. Find and keeping a good roommate, however, gets harder as more people swarm into cities. <br><br>Propose a mobile product experience that appeals to millenials that makes it safe to find the ideal roommate in New York City.<br><br><div class='projectSubtitles'>The Solution</div>Room is an app designed by a team of 3 that helps users with finding the perfect roommate match, finding a place to live, and navigating their new independent life with their new roommates in a peaceful and harmonious fashion.\
+  <div class='projectSubtitles'>The Problem</div>54% of the world’s population live in urban communities. The average age for men is 29 (up from 26 two decades ago) and for women is 27 (up from 23 in the same time period). Given these trends, city dwellers tend to spend most of their twenties living with roommates. Finding and keeping a good roommate, however, gets harder as more people swarm into cities. <br><br>Propose a mobile product experience that appeals to millenials that makes it easy and safe to find the ideal roommate in New York City.<br><br><div class='projectSubtitles'>The Solution</div>Room is an app designed by a team of 3 that helps users with finding the perfect roommate match, finding a place to live, and navigating their new independent life with their new roommates in a peaceful and harmonious fashion.\
   <br><br><div class='projectSubtitles'>The Process</div>For Room, my teammates and I: <div class='descriptionsIndent'>○ Analyzed competitors in the current roommate matching market<br>○ Conducted surveys amongst our targeted demographic to learn the objectives and pain points of their roommate/room experiences<br>○ Generated personas and journey maps from the collected user research data<br>○ Constructed user flows for both new and returning users with different objectives<br>○ Created a strategy document outlining product objectives, market opportunities, and product visions<br>○ Designed high fidelity wireframes prototyping the sign-in/sign-up process, user profile customizations, roommate matching system and apartment listings search system</div>",
 
   "Competitive analysis was done with 6 of the most popular room and/or roommate finder and other apps with similar functionalities. They were distinguished by competitor type, priorities, key features, region accessibility, and KPIs. <br><br>From this research, opportunities were found to include the following features into Room:<div class='descriptionsIndent'>○ Combine Tinder's swiping feature with Roomi's background checks and in-depth questionnaires to ensure mutual safety and increase user excitement for sharing commonalities with their matches<br>○ Have a wide selection of search parameters for users to filter roommates and rentable rooms<br>○ Make app accessible worldwide and available in multiple languages<br>○ Landlords' profiles and details shown on listings for easy user access<br>○ Different communication methods available such as text, call, and video call so people can familiarize with one another online before meeting in person<br>○ Include ratings and testimonials for landlords and rooms/apartments from past renters<br>○ Include additional resources to help users transition smoothly into their new shared space (paying bills, splitting chores, buying shared groceries, etc.)</div>",
@@ -253,32 +257,32 @@ export const askAppsDescriptions = [
   "Uninstall Pages for Ask Apps Browser Extensions<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Web Design</div></div><br>\
-  <div class='projectSubtitles'>The Problem</div>Ask Applications' usual uninstall pages are unstyled feedback forms returning data that often go unread, unorganized, and unused due to the large quantity of them.<br><br><div class='projectSubtitles'>The Solution</div>This project was a collaboration with the product management intern to boost install rates for other company products after users uninstall the browser extension. Our proposal aims to use the space in a more effective and productive way by referring users to other products.",
+  <div class='projectSubtitles'>The Problem</div>Ask Applications' usual uninstall pages are unstyled feedback forms returning data that often go unread, unorganized, and unused due to the large quantity of them. This inefficiency is a miseed opportunity, as any valuable user insights are buried amidst the overwhelming quantity of feedback, undermining the intended purpose of these pages.<br><br><div class='projectSubtitles'>The Solution</div>This project was a collaborative effort with the product management intern to use the available space on the uninstall pages more effectively and productively. Instead of presenting the usual feedback forms, I redesigned the uninstall pages to now showcase and highlight Ask Applications' other products, maximizing the potential of this valuable real estate by boosting awareness and visibility for other company products, and potentially leading to an increase in install rates and customer retention.",
 
   "Ad Designs for Slimware Product<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Web Ad, E-Commerce</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Web Design</div></div><br>\
-  <div class='projectSubtitles'>The Problem</div>Ask Applications needs ads for their Slimware brand advertising one of their PC products.<br><br><div class='projectSubtitles'>The Solution</div>This is a sample of ad designs made for Slimware in accordance to Google compliant ad specifications.",
+  <div class='projectSubtitles'>The Problem</div>Ask Applications needed ads for their Slimware brand to advertise one of their PC products.<br><br><div class='projectSubtitles'>The Solution</div>I created various ad designs for Slimware in accordance to Google compliant ad specifications.<br><br>Here is a sample of a set that I made.",
 
   "Landing Pages for Ask Apps Browser Extensions Sample #1<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop, proprietary CMS, HTML/CSS</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Web Design</div></div><br>\
-  <div class='projectSubtitles'>The Problem</div>Ask Applications needs landing pages for a multitude of their browser-based tools.<br><br><div class='projectSubtitles'>The Solution</div>As Ask Apps has over a hundred browser extensions, many with the same generic/brandless landing page design, I aimed to differentiate and liven them up by giving them their own unique landing page designs that were related to the extension's function in some way. <br><br>This is a sample of the landing page designs I created for various browser extensions.",
+  <div class='projectSubtitles'>The Problem</div>Ask Applications needed landing pages for a multitude of their browser-based tools. The existing ones were plain, generic templates that had little to no correlation to the product being advertised, resulting in a loss of opportunity to attract and engage new users effectively.<br><br><div class='projectSubtitles'>The Solution</div>As Ask Applications has over a hundred browser extensions, many with the same generic/brandless landing page design, I aimed to differentiate and liven them up by giving them their own unique landing page designs that reflected the extension's utility in some way. These custom pages were designed to add personality, relevance, and improve user engagement.<br><br>This is a sample of the landing page designs I created for various browser extensions.",
 
   "Landing Pages for Ask Apps Browser Extensions Sample #2<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop, proprietary CMS, HTML/CSS</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Web Design</div></div><br>\
-  <div class='projectSubtitles'>The Problem</div>Ask Applications needs landing pages for a multitude of their browser-based tools.<br><br><div class='projectSubtitles'>The Solution</div>As Ask Apps has over a hundred browser extensions, many with the same generic/brandless landing page design, I aimed to differentiate and liven them up by giving them their own unique landing page designs that were related to the extension's function in some way. <br><br>This is a sample of the landing page designs I created for various browser extensions.",
+  <div class='projectSubtitles'>The Problem</div>Ask Applications needed landing pages for a multitude of their browser-based tools. The existing ones were plain, generic templates that had little to no correlation to the product being advertised, resulting in a loss of opportunity to attract and engage new users effectively.<br><br><div class='projectSubtitles'>The Solution</div>As Ask Applications has over a hundred browser extensions, many with the same generic/brandless landing page design, I aimed to differentiate and liven them up by giving them their own unique landing page designs that reflected the extension's utility in some way. These custom pages were designed to add personality, relevance, and improve user engagement.<br><br>This is a sample of the landing page designs I created for various browser extensions.",
 
   "Landing Pages for Ask Apps Browser Extensions Sample #3<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop, proprietary CMS, HTML/CSS</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Web Design</div></div><br>\
-  <div class='projectSubtitles'>The Problem</div>Ask Applications needs landing pages for a multitude of their browser-based tools.<br><br><div class='projectSubtitles'>The Solution</div>As Ask Apps has over a hundred browser extensions, many with the same generic/brandless landing page design, I aimed to differentiate and liven them up by giving them their own unique landing page designs that were related to the extension's function in some way. <br><br>This is a sample of the landing page designs I created for various browser extensions.",
+  <div class='projectSubtitles'>The Problem</div>Ask Applications needed landing pages for a multitude of their browser-based tools. The existing ones were plain, generic templates that had little to no correlation to the product being advertised, resulting in a loss of opportunity to attract and engage new users effectively.<br><br><div class='projectSubtitles'>The Solution</div>As Ask Applications has over a hundred browser extensions, many with the same generic/brandless landing page design, I aimed to differentiate and liven them up by giving them their own unique landing page designs that reflected the extension's utility in some way. These custom pages were designed to add personality, relevance, and improve user engagement.<br><br>This is a sample of the landing page designs I created for various browser extensions.",
 
   "Landing Pages for Ask Apps Browser Extensions Sample #4<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop, proprietary CMS, HTML/CSS</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Web Design</div></div><br>\
-  <div class='projectSubtitles'>The Problem</div>Ask Applications needs landing pages for a multitude of their browser-based tools.<br><br><div class='projectSubtitles'>The Solution</div>As Ask Apps has over a hundred browser extensions, many with the same generic/brandless landing page design, I aimed to differentiate and liven them up by giving them their own unique landing page designs that were related to the extension's function in some way. <br><br>This is a sample of the landing page designs I created for various browser extensions.",
+  <div class='projectSubtitles'>The Problem</div>Ask Applications needed landing pages for a multitude of their browser-based tools. The existing ones were plain, generic templates that had little to no correlation to the product being advertised, resulting in a loss of opportunity to attract and engage new users effectively.<br><br><div class='projectSubtitles'>The Solution</div>As Ask Applications has over a hundred browser extensions, many with the same generic/brandless landing page design, I aimed to differentiate and liven them up by giving them their own unique landing page designs that reflected the extension's utility in some way. These custom pages were designed to add personality, relevance, and improve user engagement.<br><br>This is a sample of the landing page designs I created for various browser extensions.",
 ];
 // Acorn
 export const acornSlides = [
@@ -299,7 +303,7 @@ export const acornDescriptions = [
   "Logo for Health and Wellness Company<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Logo, Merch Design</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Illustrator, Adobe Photoshop, vinyl cutter</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Graphic Design, User Research, Product Design</div></div><br>\
-  <div class='projectSubtitles'>The Problem</div>\"acorn\" is a fictional health and wellness company that is dedicated to helping people live healthier and more eco-friendly lifestlyes. It needs a logo and branded merchandise that reflect its values and brand.<br><br><div class='projectSubtitles'>The Solution</div>For the logo, I chose a simplistic and geometric design \
+  <div class='projectSubtitles'>The Problem</div>\"acorn\" is a fictional health and wellness company that is dedicated to helping people live healthier and more eco-friendly lifestlyes. It needed a logo and branded merchandise that reflect its values and brand.<br><br><div class='projectSubtitles'>The Solution</div>For the logo, I crafted a simplistic and geometric design \
   to emphasize the company's clean and environmental conscious mission. Squirrel-like shapes and \
   custom lettering were created from transformations on circles.",
 
@@ -335,7 +339,7 @@ export const outcastDescriptions = [
   "Narrative RPG Adventure Game<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Digital Game</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>GameMaker Studio 2, Medibang Paint, Adobe Photoshop</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Game UI, Narrative Design, Game Design</div></div><br>\
-  <div class='projectSubtitles'>The Problem</div>\"Outcast\" is a narrative RPG adventure game developed by a team of 3. My role was the game's lead artist and map designer. I was to bring the game to life with an immersive and fantastical world.<br><br><div class='projectSubtitles'>The Solution</div>I created all the sprites and graphical components (other than the main character), drawn in a relatively clean and simple 2D art style. Strategic asset layering and placement, along with small animations and effects sprinkled throughout, work together to create a cohesive and enjoyable gaming experience.<br><br><div class='projectSubtitles'>The Plot</div>A young boy who once weilded the most powerful sword known to man loses everything and everyone he knows and loves when his village is attacked by strange hostile creatures. The hostile race steals the legendary sword and banishes the main character into an unfamiliar world.",
+  <div class='projectSubtitles'>The Project</div>\"Outcast\" is a narrative RPG adventure game developed by a team of 3. <br><br>Plot: A young boy who once weilded the most powerful sword known to man loses everything and everyone he knows and loves when his village is attacked by strange hostile creatures. The hostile race steals the legendary sword and banishes the main character into an unfamiliar world.<br><br><div class='projectSubtitles'>My Role</div>I was the game's lead artist and map designer, bringing the game to life with an immersive and fantastical world. I created all the sprites and graphical components (other than the main character), drawn in a relatively clean and simple 2D art style. Strategic asset layering and placement, along with small animations and effects sprinkled throughout, work together to create a cohesive and enjoyable gaming experience.",
 
   "Snapshot #1.",
 
@@ -358,7 +362,7 @@ export const missileCommandCloneDescriptions = [
   "Clone of A Classic Arcade Game<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Digital Game</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>GameMaker Studio 2</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Game Development, Game UI</div></div><br>\
-  <div class='projectSubtitles'>The Problem</div>I challenge myself to recreate the game Missile Command by Atari that is as close to the original as possible, gameplay-wise and visually.<br><br><div class='projectSubtitles'>The Solution</div> My version of Missile Command is complete with a menu page, scaling level difficulty, various enemies, true-to-original sprites, a point system, and a game-over screen.",
+  <div class='projectSubtitles'>The Project</div>I challenged myself to recreate the game Missile Command by Atari that is as close to the original as possible, gameplay-wise and visually.<br><br>My version of Missile Command is complete with a menu page, scaling level difficulty, various enemies, true-to-original sprites, a point system, and a game-over screen.",
 
   "Snapshot #1.",
 
@@ -381,7 +385,7 @@ export const wizardsJourneyDescriptions = [
   "Multiplayer Race Game<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Digital Game</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>GameMaker Studio 2, Adobe Photoshop</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Game Development, Game UI, Game Design</div></div><br>\
-  <div class='projectSubtitles'>The Problem</div>Make original multiplayer game.<br><br><div class='projectSubtitles'>The Solution</div>I designed and developed a multiplayer vertical obstacle race game.<br><br>Rules:<br><div class='descriptionsIndent'>○ 3 playable characters each with different spells that can be used to hinder other players or to destroy incoming map projectiles<br>○ Mana bars at the top indicate the respective color's ability to use spells and teleport back into view if they fall behind<br>○ Characters that run out of mana are removed from the race<br>○ First to the top wins!</div><div class='funFact'>✿ Fun fact: This video showcasing the gameplay took multiple takes because my sister/opponent was not the best gamer and unfortunately kept dying before we could reach the top.",
+  <div class='projectSubtitles'>The Project</div>I designed and developed an original, multiplayer vertical obstacle race game.<br><br>Rules:<br><div class='descriptionsIndent'>○ 3 playable characters each with different spells that can be used to hinder other players or to destroy incoming map projectiles<br>○ Mana bars at the top indicate the respective color's ability to use spells and teleport back into view if they fall behind<br>○ Characters that run out of mana are removed from the race<br>○ First to the top wins!</div><div class='funFact'>✿ Fun fact: This video showcasing the gameplay took multiple takes because my sister/opponent was not the best gamer and unfortunately kept dying before we could reach the top.",
 
   "Snapshot #1 of starting match countdown.",
 
@@ -401,7 +405,7 @@ export const tantrumDescriptions = [
   "Short 3D Animation<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>3D Animated Video</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Autodesk Maya, Adobe Photoshop, Adobe Premiere Pro</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>3D Animation, Video Editing</div></div>\
-  <br><div class='projectSubtitles'>The Problem</div>Make animated short that tells a story.<br><br><div class='projectSubtitles'>The Solution</div>I created a 1 minute animation of a child going through the stages of grief over a box of KitKat.",
+  <br><div class='projectSubtitles'>The Project</div>I conceived and animated a humorous 1-minute animation illustrating a child's emotional journey through grief, all revolving around a humble box of KitKats.",
 
   "Snapshot #1 of bargaining stage.",
 
@@ -420,9 +424,9 @@ export const deskRoomDescriptions = [
   "3D Environment Model<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>3D Environment</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Autodesk Maya</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>3D Modeling</div></div>\
-  <br><div class='projectSubtitles'>The Problem</div>3D model a room from a reference photo.<br><br><div class='projectSubtitles'>The Solution</div>I created a 3d model of a study room complete with textures and lighting.",
+  <br><div class='projectSubtitles'>The Project</div>I created a 3d model of a study room complete with textures and lighting.",
 
-  "Reference photo used for room model. Thanks Pinterest!",
+  "Reference photo used for room model. Thanks, Pinterest!",
 
   "Work in progress screenshot of room.",
 ];
@@ -436,7 +440,7 @@ export const raygunDescriptions = [
   "3D Raygun Model<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>3D Model</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Autodesk Maya</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>3D Modeling</div></div>\
-  <br><div class='projectSubtitles'>The Problem</div>3D model a raygun from a reference photo.<br><br><div class='projectSubtitles'>The Solution</div>I created a 3d model of a raygun.",
+  <br><div class='projectSubtitles'>The Project</div>I created a 3D model a raygun from a reference photo.",
 
   "Reference used for raygun model.",
 ];

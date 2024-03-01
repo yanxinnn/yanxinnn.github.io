@@ -9,7 +9,6 @@ var userMouse;
 
 //** Preload *************
 function preload() {
-
   //Bubbles
   bubbleIdle = loadAnimation(bubbleSprite);
   bubblePop = loadAnimation(bubblePop2, bubblePop3);
@@ -18,12 +17,12 @@ function preload() {
 //** Setup *************
 function setup() {
   var canvas = createCanvas(window.innerWidth, window.innerHeight);
-  canvas.parent("mainMenu-div");
+  canvas.parent("mainMenuDiv");
   canvas.position(0, 0);
   canvas.style("z-index", "-1");
 
   //Bubbles
-  var numOfBubbles = window.innerWidth/80;
+  var numOfBubbles = window.innerWidth / 80;
   bubbleGroup = new Group();
   bubblePop.frameDelay = 5;
   for (i = 0; i < numOfBubbles; ++i) {
@@ -42,18 +41,17 @@ function setup() {
     bubbleGroup.add(bubble);
   }
   userMouse = createSprite(0, 0, 0, 0);
-
 } // function setup
 
 //** Draw ****************
 function draw() {
-  background(color(144,199,247));
+  background(color(144, 199, 247));
 
   userMouse.position.x = mouseX;
   userMouse.position.y = mouseY;
 
   // Bubbles
-  var numOfBubbles = window.innerWidth/80;
+  var numOfBubbles = window.innerWidth / 80;
   for (i = 0; i < numOfBubbles; ++i) {
     if (bubbleGroup[i].timerOn) {
       bubbleGroup[i].timer += 1;
@@ -65,7 +63,7 @@ function draw() {
     if (bubbleGroup[i].timerOn && bubbleGroup[i].timer > 8) {
       bubbleGroup[i].remove();
       let randomX = random(0, window.innerWidth * 1.2);
-      let randomY = random(window.innerHeight*1.3, window.innerHeight);
+      let randomY = random(window.innerHeight * 1.3, window.innerHeight);
       let bubbleY = random(-1, -3);
       let scaleX = random(0.3, 1.5);
       bubble = createSprite(randomX, randomY, 70, 70);
@@ -80,7 +78,6 @@ function draw() {
   }
 
   drawSprites();
-  
 } // function draw
 
 function windowResized() {

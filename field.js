@@ -8,22 +8,27 @@ var gradientRange = 80;
 var player;
 var playerIdle;
 var playerRun;
-var lastKey = "";
+var lastKeyMovement = "";
 var defaultMoveSpeed = 6.5;
 var moveSpeed = defaultMoveSpeed;
 var jump = false;
 var moved = false;
+var keyPressDetected = false;
+var lastKeyPress = "";
+var mobileLeftDown = false;
+var mobileRightDown = false;
 
 // Characters
 var yanxin;
 var yanxinIdle;
 
 // Text
-var firstGreeting = false;
-var firstGreetingFinished = false;
+var yanxinInteract = false;
+var typeWriterComplete = false;
+var yanxinScript = "";
+var firstGreeting = true;
 var greetingUsed = true;
-var randomText = "";
-var chatCounter = 0;
+var cursorIndex = 0;
 var chatTimer = 0;
 var teleporterHoverTimer = 0;
 var hoverAmnt = 0;
@@ -31,6 +36,10 @@ var hoverAmnt = 0;
 // Sounds
 var snd_windyPetals;
 var continueSound = false;
+var soundInitialCheck = false;
+var maxVolume = 0.6;
+var currentVolume = 0;
+var volumeIncrement = 0.1;
 
 // Environment
 var numOfPlatforms = 80;
@@ -49,6 +58,7 @@ var pinkPetalFrames;
 var grassblade;
 var grassBladeFrames;
 // Teleporters
+var teleporters = [];
 var whiteTpFrames;
 var beginningTp;
 var beginningSection;
@@ -63,14 +73,12 @@ var gameSection;
 var purpleTpFrames;
 var tpLabelTextHeight = 80;
 var tpLabelChatboxHover = tpLabelTextHeight + 8;
-var tpInstructionChatboxHover = 142;
-var tpInteractTextHover = -121;
+var tpInteractTextHover = 115;
 
 // Slides
 var currentSlideNum = 0;
 var dotCount = 0;
 var currentSlides = [];
-var currentSlidesName = "";
 var dotUpdated = false;
 var newSlides = true;
 var newSlide = true;
@@ -126,7 +134,7 @@ function preload() {
   );
 
   // Sounds
-  snd_windyPetals = new sound(variables.snd_windyPetals);
+  snd_windyPetals = loadSound(variables.snd_windyPetals);
 
   // Environment
   grassBlockFrames = loadImage(variables.grassBlock1);
@@ -221,11 +229,10 @@ function setup() {
   document.getElementById("onIcon").setAttribute("draggable", false);
   document.getElementById("offIcon").setAttribute("draggable", false);
   document.getElementById("slides").setAttribute("draggable", false);
-  document.getElementById("backToStartLink").style.backgroundColor =
+  document.getElementById("backToTeleportersLink").style.backgroundColor =
     "#0000004D";
   document.getElementById("widgets").style.backgroundColor = "#0000004D";
-  document.getElementById("movementDesktopMessage").style.backgroundColor =
-    "#0000004D";
+  document.getElementById("welcomeMessage").style.backgroundColor = "#0000004D";
 
   // Platforms
   platformsGroup = new Group();
@@ -275,22 +282,32 @@ function setup() {
   gameSection = platformsGroup[39].position.x + 100;
   threeDSection = platformsGroup[49].position.x + 150;
 
-  beginningTp = createTp({ frames: whiteTpFrames, positionIndex: 63 });
-  uiUxTp = createTp({ frames: greenTpFrames, positionIndex: 15 });
+  beginningTp = createTp({
+    frames: whiteTpFrames,
+    positionIndex: 63,
+    destination: beginningSection,
+  });
+  uiUxTp = createTp({
+    frames: greenTpFrames,
+    positionIndex: 15,
+    destination: uiUxSection,
+  });
   gameTp = createTp({
     frames: redTpFrames,
     positionIndex: 17,
     additionalOffsetX: 10,
+    destination: gameSection,
   });
   threeDTp = createTp({
     frames: purpleTpFrames,
     positionIndex: 19,
     additionalOffsetX: 30,
+    destination: threeDSection,
   });
 
   // Projects
   // UI/UX Design
-  const inertiaProject = createProject({
+  createProject({
     name: "Inertia",
     groupSection: uiUxSection,
     groupOffsetX: 250,
@@ -302,7 +319,7 @@ function setup() {
     width: 176,
     height: 118,
   });
-  const floatItProject = createProject({
+  createProject({
     name: "Float-it Notes",
     groupSection: uiUxSection,
     groupOffsetX: 540,
@@ -314,7 +331,7 @@ function setup() {
     width: 199,
     height: 136,
   });
-  const roomProject = createProject({
+  createProject({
     name: "Room",
     groupSection: uiUxSection,
     groupOffsetX: 830,
@@ -326,7 +343,7 @@ function setup() {
     width: 161,
     height: 141,
   });
-  const askAppsProject = createProject({
+  createProject({
     name: "Ask Applications Internship",
     groupSection: uiUxSection,
     groupOffsetX: 1120,
@@ -338,7 +355,7 @@ function setup() {
     width: 154,
     height: 140,
   });
-  const acornStationProject = createProject({
+  createProject({
     name: "Acorn",
     groupSection: uiUxSection,
     groupOffsetX: 1420,
@@ -351,7 +368,7 @@ function setup() {
     height: 142,
   });
   // Game
-  const outcastProject = createProject({
+  createProject({
     name: "Outcast",
     groupSection: gameSection,
     groupOffsetX: 250,
@@ -363,7 +380,7 @@ function setup() {
     width: 99,
     height: 134,
   });
-  const missileCommandProject = createProject({
+  createProject({
     name: "Missile Command Clone",
     groupSection: gameSection,
     groupOffsetX: 520,
@@ -375,7 +392,7 @@ function setup() {
     width: 72,
     height: 113,
   });
-  const wizardsJourneyProject = createProject({
+  createProject({
     name: "Wizard's Journey",
     groupSection: gameSection,
     groupOffsetX: 790,
@@ -388,7 +405,7 @@ function setup() {
     height: 113,
   });
   // 3D Animation + Modeling
-  const tantrumProject = createProject({
+  createProject({
     name: "Tantrum",
     groupSection: threeDSection,
     groupOffsetX: 250,
@@ -400,7 +417,7 @@ function setup() {
     width: 83,
     height: 150,
   });
-  const deskRoomProject = createProject({
+  createProject({
     name: "Home Office",
     groupSection: threeDSection,
     groupOffsetX: 520,
@@ -412,7 +429,7 @@ function setup() {
     width: 133,
     height: 212,
   });
-  const raygunProject = createProject({
+  createProject({
     name: "Raygun",
     groupSection: threeDSection,
     groupOffsetX: 790,
@@ -473,39 +490,51 @@ function draw() {
   background(color(134, 193, 239));
   teleporterHoverTimer++;
 
-  if (deviceType() != "desktop") {
-    alert(
-      "Uh oh! The mobile version of this page is in the works. Please view using a laptop or desktop!"
-    );
+  if (deviceType() == "desktop") {
+    // Desktop
+    // Welcome/movement for desktop
+    document.getElementById("welcomeMessageMobile").style.display = "none";
+  } else {
+    // Mobile
+    // Welcome/movement for mobile
+    document.getElementById("welcomeMessageDesktop").style.display = "none";
+  }
+  // Positioning of ground for different heights
+  if (window.innerHeight < 300) {
+    camera.position.y = 25;
+  } else if (window.innerHeight < 400) {
+    camera.position.y = 90;
+  } else if (window.innerHeight < 450) {
+    camera.position.y = 150;
   }
 
   // Player Movements
   player.velocity.x = 0;
   player.velocity.y += 0.85;
   player.changeAnimation("idle");
-  if (lastKey == "right") {
+  if (lastKeyMovement == "right") {
     if (moved == false) {
       moved = true;
     }
     player.mirrorX(1);
-  } else if (lastKey == "left") {
+  } else if (lastKeyMovement == "left") {
     if (moved == false) {
       moved = true;
     }
     player.mirrorX(-1);
   }
-  if (keyIsDown(RIGHT_ARROW) || keyIsDown(68)) {
+  if (keyIsDown(RIGHT_ARROW) || keyIsDown(68) || mobileRightDown) {
     if (moved == false) {
       moved = true;
     }
-    lastKey = "right";
+    lastKeyMovement = "right";
     player.changeAnimation("run");
     player.velocity.x = moveSpeed;
-  } else if (keyIsDown(LEFT_ARROW) || keyIsDown(65)) {
+  } else if (keyIsDown(LEFT_ARROW) || keyIsDown(65) || mobileLeftDown) {
     if (moved == false) {
       moved = true;
     }
-    lastKey = "left";
+    lastKeyMovement = "left";
     player.changeAnimation("run");
     player.velocity.x = -moveSpeed;
   }
@@ -518,17 +547,32 @@ function draw() {
       player.velocity.y = -16;
       jump = true;
     }
+    lastKeyMovement = "up";
   }
   if (moved == true) {
-    movementDesktopMessageFade();
+    welcomeMessageFade();
   }
+
+  // Mobile Keys
+  // Movement
+  document.getElementById("mobileLeft").addEventListener("touchstart", () => {
+    mobileLeftDown = true;
+  });
+  document.getElementById("mobileLeft").addEventListener("touchend", () => {
+    mobileLeftDown = false;
+  });
+  document.getElementById("mobileRight").addEventListener("touchstart", () => {
+    mobileRightDown = true;
+  });
+  document.getElementById("mobileRight").addEventListener("touchend", () => {
+    mobileRightDown = false;
+  });
 
   // Camera
   if (player.position.x >= platformsGroup[middlePlatform].position.x) {
     // snaps camera onto player
     camera.position.x = player.position.x;
   }
-
   if (player.position.x >= platformsGroup[endPlatform].position.x) {
     // camera stops moving player at end
     camera.position.x = platformsGroup[endPlatform].position.x;
@@ -543,114 +587,38 @@ function draw() {
     yanxin.mirrorX(1);
   }
   if (abs(yanxin.position.x - player.position.x) <= 130) {
-    if (keyPressed() == "E" && !firstGreeting) {
-      chatBox({
-        target: yanxin,
-        hover: 200,
-        length: 450,
-        height: 135,
-        alpha: 80,
-      });
-      displayText({
-        textContent: "Yanxin",
-        target: yanxin,
-        hover: 170,
-        length: 400,
-        custom: 10,
-        color: color("#FFBEBE"),
-        align: LEFT,
-        fontSize: 18,
-      });
-      typeWriter({
-        textContent: variables.yanxinTexts[0],
-        target: yanxin,
-        hover: 140,
-        length: 400,
-        counter: chatCounter,
-        timer: chatTimer,
-        customX: 10,
-      });
-      firstGreetingFinished = true;
-    } else if (keyPressed() == "E") {
-      if (greetingUsed) {
-        randomText = random(variables.yanxinTexts);
-        greetingUsed = false;
-      }
-      chatBox({
-        target: yanxin,
-        hover: 200,
-        length: 450,
-        height: 135,
-        alpha: 80,
-      });
-      displayText({
-        textContent: "Yanxin",
-        target: yanxin,
-        hover: 170,
-        length: 400,
-        custom: 10,
-        color: color("#FFBEBE"),
-        align: LEFT,
-        fontSize: 18,
-      });
-      typeWriter({
-        textContent: randomText,
-        target: yanxin,
-        hover: 140,
-        length: 400,
-        counter: chatCounter,
-        timer: chatTimer,
-        customX: 10,
-      });
-    } else {
-      chatBox({
-        target: yanxin,
-        hover: 80,
-        length: 270,
-        height: 32,
-      });
-      interactText({
-        textContent: 'Press "E" to interact',
-        target: yanxin,
-        hover: -59,
-      });
-      chatCounter = 0;
-      chatTimer = 0;
-      if (firstGreetingFinished == true) {
-        firstGreeting = true;
-      }
-      greetingUsed = true;
-    }
-  }
-
-  if (slideShowing) {
-    // turn off widgets in slideshow mode
-    document.getElementById("widgets").style.visibility = "hidden";
-    document.getElementById("widgets").style.opacity = "0";
-  } else {
-    document.getElementById("widgets").style.visibility = "visible";
-    document.getElementById("widgets").style.opacity = "1";
+    handleYanxinInteraction();
   }
 
   if (player.position.x < platformsGroup[15].position.x || slideShowing) {
-    // turns off "Back to Teleporters" button when user hasn't passed it yet or in slideshow mode
-    document.getElementById("backToStartLink").style.visibility = "hidden";
-    document.getElementById("backToStartLink").style.opacity = "0";
+    // Hide "Back to Teleporters" button when user hasn't passed it yet or in slideshow mode
+    document.getElementById("backToTeleportersLink").style.visibility =
+      "hidden";
+    document.getElementById("backToTeleportersLink").style.opacity = "0";
   } else {
-    document.getElementById("backToStartLink").style.visibility = "visible";
-    document.getElementById("backToStartLink").style.opacity = "1";
+    document.getElementById("backToTeleportersLink").style.visibility =
+      "visible";
+    document.getElementById("backToTeleportersLink").style.opacity = "1";
   }
 
-  // Location Labels + Back to Start Link
   if (slideShowing) {
+    // Hide widgets + location labels in slideshow mode
+    document.getElementById("widgets").style.visibility = "hidden";
+    document.getElementById("widgets").style.opacity = "0";
     document.getElementById("locationMessage").style.visibility = "hidden";
     document.getElementById("locationMessage").style.opacity = "0";
-  } else if (player.position.x >= uiUxSection) {
-    document.getElementById("locationMessage").style.visibility = "visible";
-    document.getElementById("locationMessage").style.opacity = "1";
-    document.getElementById("locationMessage").style.backgroundColor =
-      "#5A89AD";
+  } else {
+    // Else, show widgets and location messages
+    document.getElementById("widgets").style.visibility = "visible";
+    document.getElementById("widgets").style.opacity = "1";
+    if (player.position.x >= uiUxSection) {
+      document.getElementById("locationMessage").style.visibility = "visible";
+      document.getElementById("locationMessage").style.opacity = "1";
+      document.getElementById("locationMessage").style.backgroundColor =
+        "#5A89AD";
+    }
   }
+
   if (player.position.x >= threeDSection - 100) {
     document.getElementById("locationMessage").innerHTML =
       "3D Modeling + Animation";
@@ -714,9 +682,6 @@ function draw() {
     document.getElementById("locationMessage").style.opacity = "0";
   }
 
-  // Sound
-  var sound = document.getElementById("sound");
-
   // Teleporters
   if (teleporterHoverTimer >= 20) {
     // hover effect for teleporter text
@@ -727,10 +692,10 @@ function draw() {
     }
   }
   // Teleporter Interactions
-  handleTpInteraction({ targetTp: beginningTp, destination: beginningSection });
-  handleTpInteraction({ targetTp: uiUxTp, destination: uiUxSection });
-  handleTpInteraction({ targetTp: gameTp, destination: gameSection });
-  handleTpInteraction({ targetTp: threeDTp, destination: threeDSection });
+  handleTpInteraction({ targetTp: beginningTp });
+  handleTpInteraction({ targetTp: uiUxTp });
+  handleTpInteraction({ targetTp: gameTp });
+  handleTpInteraction({ targetTp: threeDTp });
 
   // Back to Teleporters top button
   chatBox({
@@ -817,7 +782,7 @@ function draw() {
 
   // Project Interactions
   for (let i = 0; i < projects.length; i++) {
-    handleProjectInteraction({ project: projects[i], sound: sound });
+    handleProjectInteraction({ project: projects[i] });
   }
 
   // Platforms
@@ -867,10 +832,6 @@ function draw() {
   drawSprites();
 } // function draw
 
-function windowResized() {
-  resizeCanvas(window.innerWidth, window.innerHeight);
-}
-
 window.preload = preload;
 window.setup = setup;
 window.draw = draw;
@@ -893,31 +854,89 @@ function toggleSound() {
   if (sound.checked) {
     snd_windyPetals.play();
     snd_windyPetals.loop = true;
+    fadeInSound();
   } else {
     snd_windyPetals.stop();
+    currentVolume = 0;
   }
 }
 
-function movementDesktopMessageFade() {
-  document.getElementById("movementDesktopMessage").style.opacity = "0";
+function fadeInSound() {
+  if (currentVolume < maxVolume) {
+    currentVolume += volumeIncrement;
+    snd_windyPetals.setVolume(currentVolume);
+    setTimeout(fadeInSound, 200); // Adjust the time interval as needed
+  }
+}
+
+function welcomeMessageFade() {
+  document.getElementById("welcomeMessage").style.opacity = "0";
 }
 
 // Text
 function interactText({ textContent, target, hover }) {
-  fill(255, 255, 255);
-  textSize(18);
-  textAlign(CENTER);
-  text(textContent, target.position.x, target.position.y + hover);
-}
+  let TEXT_HEIGHT = 12;
+  let PADDING = 12;
+  let TEXT_SPACING = textWidth(" ");
+  let KEY_SPACING_X = 8;
+  let KEY_SPACING_Y = 6;
 
-function keyPressed() {
-  if (keyCode == 69) {
-    return "E";
-  }
-  if (keyIsDown(ESCAPE) || keyCode == 81) {
-    return "ESCAPE";
-  }
-  return true;
+  // text height is wonky, we want it to be 18px
+  textSize(TEXT_HEIGHT * 1.5);
+  textAlign(LEFT);
+  noStroke();
+
+  let before = "Press";
+  let key = "E";
+  let after = textContent;
+
+  let beforeWidth = textWidth(before);
+  let keyWidth = textWidth(key);
+  let afterWidth = textWidth(after);
+
+  let totalWidth =
+    PADDING +
+    beforeWidth +
+    TEXT_SPACING +
+    KEY_SPACING_X +
+    keyWidth +
+    KEY_SPACING_X +
+    TEXT_SPACING +
+    afterWidth +
+    PADDING;
+
+  let totalHeight = PADDING + TEXT_HEIGHT + PADDING;
+
+  let rectX = target.position.x - totalWidth / 2;
+  let rectY = target.position.y - hover - totalHeight;
+
+  // speech bubble
+  fill(0, 0, 0, 50);
+  rect(rectX, rectY, totalWidth, totalHeight, 4);
+
+  let cursorX = rectX + PADDING;
+  let textY = target.position.y - hover - PADDING;
+
+  // "Press" text
+  fill(255, 255, 255);
+  text(before, cursorX, textY);
+  cursorX += beforeWidth + TEXT_SPACING;
+
+  // E Key
+  fill(0, 0, 0, 96);
+  rect(
+    cursorX,
+    rectY + PADDING - KEY_SPACING_Y,
+    KEY_SPACING_X + keyWidth + KEY_SPACING_X,
+    TEXT_HEIGHT + KEY_SPACING_Y * 2,
+    4
+  );
+  fill(255, 255, 255);
+  text(key, cursorX + KEY_SPACING_X, textY);
+  cursorX += KEY_SPACING_X + keyWidth + KEY_SPACING_X + TEXT_SPACING;
+
+  // "to interact" text
+  text(after, cursorX, textY);
 }
 
 function displayText({
@@ -947,7 +966,6 @@ function typeWriter({
   target,
   hover,
   length,
-  counter,
   timer,
   customX = 0,
   color = 255,
@@ -955,16 +973,16 @@ function typeWriter({
   textSize(18);
   fill(color);
   textAlign(LEFT);
-  if (counter < textContent.length) {
+  if (cursorIndex < textContent.length) {
     chatTimer++;
     text(
-      textContent.substring(0, counter),
+      textContent.substring(0, cursorIndex),
       target.position.x - length / 2 + customX,
       target.position.y - hover,
       length
     );
     if (timer % 2 == 0) {
-      chatCounter++;
+      cursorIndex++;
     }
   } else {
     text(
@@ -973,6 +991,7 @@ function typeWriter({
       target.position.y - hover,
       length
     );
+    typeWriterComplete = true;
   }
 }
 
@@ -998,67 +1017,125 @@ function chatBox({
   );
 }
 
-function handleTpInteraction({ targetTp, destination }) {
-  if (abs(targetTp.position.x - player.position.x) <= 100) {
-    if (keyPressed() == "E") {
-      fadeInEffect();
-      player.position.x = destination;
-    } else {
-      chatBox({
-        target: targetTp,
-        hover: tpInstructionChatboxHover,
-        length: 270,
-        height: 32,
-      });
-      interactText({
-        textContent: 'Press "E" to teleport',
-        target: targetTp,
-        hover: tpInteractTextHover,
-      });
+function handleYanxinInteraction() {
+  // Show interaction script
+  if (yanxinInteract) {
+    if (greetingUsed) {
+      greetingUsed = false;
+      if (firstGreeting) {
+        // First time interaction welcome
+        yanxinScript = variables.yanxinTexts[0];
+        firstGreeting = false;
+      } else {
+        // Random blurbs after welcome
+        yanxinScript = random(variables.yanxinTexts);
+      }
     }
+    chatBox({
+      target: yanxin,
+      hover: 180,
+      length: 430,
+      height: 125,
+      alpha: 80,
+    });
+    displayText({
+      textContent: "Yanxin",
+      target: yanxin,
+      hover: 155,
+      length: 400,
+      custom: 10,
+      color: color("#FFBEBE"),
+      align: LEFT,
+      fontSize: 18,
+    });
+    typeWriter({
+      textContent: yanxinScript,
+      target: yanxin,
+      hover: 125,
+      length: 400,
+      timer: chatTimer,
+      customX: 10,
+    });
+  } else {
+    // Show interact instructions
+    interactText({
+      textContent: "to talk",
+      target: yanxin,
+      hover: 55,
+    });
+    cursorIndex = 0;
+    chatTimer = 0;
+    typeWriterComplete = false;
+    greetingUsed = true;
   }
 }
 
-function handleProjectInteraction({ project, sound }) {
+function handleTpInteraction({ targetTp }) {
+  if (abs(targetTp.position.x - player.position.x) <= 100) {
+    interactText({
+      textContent: "to teleport",
+      target: targetTp,
+      hover: tpInteractTextHover,
+    });
+  }
+}
+
+function handleProjectInteraction({ project }) {
+  var sound = document.getElementById("sound");
   if (abs(project.sprite.position.x - player.position.x) <= 130) {
-    if (keyPressed() == "E") {
+    if (slideShowing) {
       slideShow(project);
-      continueSound = sound.checked;
-      slideShowing = true;
-    } else if (slideShowing) {
-      leaveSlidesCheck();
+      noMoving();
+      // When first opening up project, save state of sound playing
+      if (!soundInitialCheck) {
+        if (sound.checked) {
+          toggleSound();
+          continueSound = sound.checked;
+        } else {
+          continueSound = false;
+        }
+        soundInitialCheck = true;
+      }
     } else {
-      chatBox({
-        target: project.sprite,
-        hover: project.height / 2 + 55,
-        length: 230,
-        height: 32,
-      });
       interactText({
-        textContent: 'Press "E" to view',
+        textContent: "to view",
         target: project.sprite,
-        hover: -project.height / 2 - 34,
-        horizontal: 0,
+        hover: project.height / 2 + 30,
       });
       noSlideShow();
+      // Continue playing sound if it was playing before opening project
       if (sound.checked && continueSound) {
+        currentVolume = 0;
         toggleSound();
         continueSound = false;
       }
+      soundInitialCheck = false;
     }
   }
 }
 
-function createTp({ frames, positionIndex, additionalOffsetX = 0 }) {
+function createTp({
+  frames,
+  positionIndex,
+  additionalOffsetX = 0,
+  destination,
+}) {
   frames.frameDelay = 12;
-  let tp = createSprite(
+  let tpSprite = createSprite(
     platformsGroup[positionIndex].position.x + additionalOffsetX,
     window.innerHeight - 190,
     86,
     80
   );
-  tp.addAnimation("static", frames);
-  return tp;
+  tpSprite.addAnimation("static", frames);
+
+  // Adds to teleporters array
+  const teleporter = {
+    position: platformsGroup[positionIndex].position.x + additionalOffsetX,
+    destination: destination,
+  };
+  teleporters.push(teleporter);
+  return tpSprite;
 }
 
 function createProject({
@@ -1085,7 +1162,7 @@ function createProject({
   projectSprite.animation.frameDelay = frameDelay;
 
   // Adds to projects array
-  let project = {
+  const project = {
     name: name,
     groupSection: groupSection,
     groupOffsetX: groupOffsetX,
@@ -1103,17 +1180,14 @@ function createProject({
 }
 
 function slideShow(project) {
-  snd_windyPetals.stop();
+  snd_windyPetals.pause();
   moveSpeed = 0;
   player.changeAnimation("idle");
 
-  document.getElementById("widgets").style.gridTemplateRows = "15px 30px 15px";
-  document.getElementById("soundIcon").style.display = "none";
-  document.getElementById("slideshow").style.visibility = "visible";
-  document.getElementById("slideshow").style.opacity = "1";
-  document.getElementById("title").innerHTML = project.name;
+  document.getElementById("slideshowContainer").style.visibility = "visible";
+  document.getElementById("slideshowContainer").style.opacity = "1";
+  document.getElementById("slidesTitle").innerHTML = project.name;
   currentSlides = project.slides;
-  currentSlidesName = project.name;
 
   if (newSlides == true) {
     // new set of slides
@@ -1257,6 +1331,13 @@ function compressCurrentImage() {
   expandedImageShowing = false;
 }
 
+document
+  .getElementById("closeSlidesButton")
+  .addEventListener("click", function () {
+    // Trigger the action associated with the "escape" key press
+    slideShowing = false;
+  });
+
 function noSlideShow() {
   if (document.getElementById("slides").firstChild) {
     // refreshes showing slide
@@ -1272,11 +1353,8 @@ function noSlideShow() {
   }
   compressCurrentImage();
 
-  document.getElementById("widgets").style.gridTemplateRows =
-    "15px 30px 30px 30px 15px";
-  document.getElementById("soundIcon").style.display = "initial";
-  document.getElementById("slideshow").style.visibility = "hidden";
-  document.getElementById("slideshow").style.opacity = "0";
+  document.getElementById("slideshowContainer").style.visibility = "hidden";
+  document.getElementById("slideshowContainer").style.opacity = "0";
   moveSpeed = defaultMoveSpeed;
   currentSlideNum = 0;
   dotCount = 0;
@@ -1296,41 +1374,18 @@ function noMoving() {
   player.velocity.y = 0;
 }
 
-function leaveSlidesCheck() {
-  if (keyPressed() == "ESCAPE") {
-    slideShowing = false;
-  }
-  noMoving();
-}
-
 function fadeInEffect() {
   $(".bouncingDaisies").remove();
-  $(".loader-wrapper").fadeIn(0);
-  $(".loader-wrapper").delay(200).fadeOut(800, "linear");
-}
-
-function sound(src) {
-  // reference: https://www.w3schools.com/graphics/game_sound.asp
-  this.sound = document.createElement("audio");
-  this.sound.src = src;
-  this.sound.setAttribute("preload", "auto");
-  this.sound.setAttribute("controls", "none");
-  this.sound.style.display = "none";
-  document.body.appendChild(this.sound);
-  this.play = function () {
-    this.sound.play();
-  };
-  this.stop = function () {
-    this.sound.pause();
-  };
+  $(".loaderWrapper").fadeIn(0);
+  $(".loaderWrapper").delay(200).fadeOut(800, "linear");
 }
 
 // Back to Teleporters top button
 document
-  .getElementById("backToStartLink")
-  .addEventListener("click", () => backToStart());
+  .getElementById("backToTeleportersLink")
+  .addEventListener("click", () => backToTeleporters());
 
-function backToStart() {
+function backToTeleporters() {
   player.position.x = beginningSection;
   fadeInEffect();
   noSlideShow();
@@ -1339,20 +1394,138 @@ function backToStart() {
 //  Reference: https://attacomsian.com/blog/javascript-detect-mobile-device
 const deviceType = () => {
   const ua = navigator.userAgent;
-  if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-    return "tablet";
-  } else if (
-    /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
-      ua
-    )
-  ) {
+  if (/iPad|iPod|iPhone/.test(ua)) {
     return "mobile";
+  } else if (/Windows NT|Macintosh|Linux x86_64|Linux i686/.test(ua)) {
+    return "desktop";
   }
-  return "desktop";
+  return "mobile";
 };
 
-function joystickUserInput() {
-  console.log("");
-  document.getElementById("joystick-innerCircle").style.top = "20%";
-  document.getElementById("joystick-innerCircle").style.left = "20%";
-}
+document.addEventListener("DOMContentLoaded", function () {
+  // Sound control via tabbing
+  document
+    .getElementById("soundIcon")
+    .addEventListener("keydown", function (event) {
+      if (event.key === "Enter" && document.activeElement === this) {
+        document.getElementById("sound").checked =
+          !document.getElementById("sound").checked; // Toggle checkbox state
+        toggleSound();
+      }
+    });
+
+  // Desktop
+  if (deviceType() == "desktop") {
+    // Hide mobile movement keys for desktop
+    let mobileKeys = document.getElementsByClassName("mobileKey");
+    for (let i = 0; i < mobileKeys.length; i++) {
+      mobileKeys[i].style.display = "none";
+    }
+    // Location message for desktop
+    if (window.innerWidth < 700) {
+      document.getElementById("locationMessage").style.top = "4.5rem";
+      document.getElementById("locationMessage").style.padding =
+        "0.5rem 1.5rem";
+    }
+  }
+
+  // Mobile
+  if (deviceType() != "desktop") {
+    // Hide back to teleporters "B" icon for mobile
+    let backKeyIcon = document.getElementById("backKeyIcon");
+    backKeyIcon.style.display = "none";
+
+    // Slideshow for mobile
+    document.getElementById("exitSlideshowMessage").style.display = "none";
+    document.getElementById("slideshowContainer").style.backgroundColor =
+      "#1c1c1c";
+  }
+
+  // Detect single key presses
+  document.addEventListener("keydown", function (event) {
+    if (!keyPressDetected) {
+      keyPressDetected = true;
+      lastKeyPress = event.key.toUpperCase();
+      if (lastKeyPress == "ARROWRIGHT" || lastKeyPress == "D") {
+        if (slideShowing) {
+          nextSlide(1);
+        } else {
+          // Close chat if player moves away
+          if (abs(yanxin.position.x - player.position.x) <= 130) {
+            yanxinInteract = false;
+          }
+        }
+      }
+
+      if (lastKeyPress == "ARROWLEFT" || lastKeyPress == "A") {
+        if (slideShowing) {
+          nextSlide(-1);
+        } else {
+          // Close chat if player moves away
+          if (abs(yanxin.position.x - player.position.x) <= 130) {
+            yanxinInteract = false;
+          }
+        }
+      }
+
+      if (lastKeyPress == "ESCAPE" || lastKeyPress == "Q") {
+        if (slideShowing) {
+          slideShowing = false;
+        }
+      }
+
+      if (lastKeyPress == "E") {
+        // Talk to Yanxin
+        if (abs(yanxin.position.x - player.position.x) <= 130) {
+          if (typeWriterComplete) {
+            yanxinInteract = false;
+          } else {
+            yanxinInteract = true;
+          }
+        }
+        // Interact with project
+        for (let i = 0; i < projects.length; i++) {
+          if (abs(projects[i].sprite.position.x - player.position.x) <= 130) {
+            slideShowing = true;
+          }
+        }
+        // Interact with teleporter
+        for (let i = 0; i < teleporters.length; i++) {
+          if (abs(teleporters[i].position - player.position.x) <= 100) {
+            fadeInEffect();
+            player.position.x = teleporters[i].destination;
+          }
+        }
+      }
+
+      if (lastKeyPress == "B") {
+        // Back to Teleporters Hotkey
+        if (
+          player.position.x > platformsGroup[15].position.x &&
+          !slideShowing
+        ) {
+          backToTeleporters();
+        }
+      }
+    }
+  });
+
+  // Reset keyPressDetected after key release
+  document.addEventListener("keyup", function (event) {
+    if (keyPressDetected) {
+      lastKeyPress = "";
+      keyPressDetected = false;
+    }
+  });
+});
+
+// Action
+// Simulate key press event for "E" key
+document.getElementById("mobileInteract").addEventListener("touchstart", () => {
+  let event = new KeyboardEvent("keydown", { key: "E" });
+  document.dispatchEvent(event);
+});
+document.getElementById("mobileInteract").addEventListener("touchend", () => {
+  let event = new KeyboardEvent("keyup", { key: "E" });
+  document.dispatchEvent(event);
+});

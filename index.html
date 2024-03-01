@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Yanxin Jiang</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+    <script src="lib/p5.play.js"></script>
+    <script src="mainMenu.js"></script>
+    <link rel="icon" type="image/png" href="images/icon-daisy.png" />
+  </head>
 
-<head>
+  <body>
+    <div id="fadeIn">
+      <div class="mainMenuContainer">
+        <div class="websiteBanner">
+          <div class="logo">Yanxin Jiang</div>
+          <div id="slogan">The Pixelated Edition</div>
+        </div>
+        <div class="menuButtons">
+          <button id="playButton" onClick="play()">Play</button>
+          <button id="creditsButton" onClick="credits()">Credits</button>
+        </div>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <title>Yanxin Jiang</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
-  <script src="lib/p5.play.js"></script>
-  <script src="mainMenu.js"></script>
-  <link rel="icon" type="image/png" href="images/icon-daisy.png">
-
-</head>
-
-<body>
-
-  <div id="fadeIn">
-    <div class="logo">Yanxin Jiang</div>
-    <div id="slogan">The Pixelated Edition</div>
-    <div class="menu-buttons">
-      <button id="playButton" onClick="play()">Play</button>
-      <button id="creditsButton" onClick="credits()">Credits</button>
+        <!-- Javascript Sketch -->
+        <div id="mainMenuDiv"></div>
+      </div>
     </div>
-
-    <!-- Javascript Sketch -->
-    <div id="mainMenu-div"></div>
-  </div>
-
-</body>
-
+  </body>
 </html>
