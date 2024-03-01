@@ -557,12 +557,18 @@ function draw() {
   // Movement
   document.getElementById("mobileLeft").addEventListener("touchstart", () => {
     mobileLeftDown = true;
+    if (yanxinInteract) {
+      yanxinInteract = false;
+    }
   });
   document.getElementById("mobileLeft").addEventListener("touchend", () => {
     mobileLeftDown = false;
   });
   document.getElementById("mobileRight").addEventListener("touchstart", () => {
     mobileRightDown = true;
+    if (yanxinInteract) {
+      yanxinInteract = false;
+    }
   });
   document.getElementById("mobileRight").addEventListener("touchend", () => {
     mobileRightDown = false;
