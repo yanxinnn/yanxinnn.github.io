@@ -85,6 +85,7 @@ var newSlide = true;
 
 // Projects
 var projects = [];
+var pypelineFrames;
 var inertiaFrames;
 var floatItFrames;
 var roomFrames;
@@ -168,6 +169,7 @@ function preload() {
   );
 
   // UI/UX
+  pypelineFrames = loadImage(variables.pypeline1);
   inertiaFrames = loadAnimation(
     variables.inertia1,
     variables.inertia2,
@@ -307,6 +309,18 @@ function setup() {
 
   // Projects
   // UI/UX Design
+  // createProject({
+  //   name: "Pypeline",
+  //   groupSection: uiUxSection,
+  //   groupOffsetX: 0,
+  //   slides: variables.pypelineSlides,
+  //   aboutTitles: variables.pypelineTitles,
+  //   aboutDescriptions: variables.pypelineDescriptions,
+  //   frames: pypelineFrames,
+  //   frameDelay: 0,
+  //   width: 237,
+  //   height: 108,
+  // });
   createProject({
     name: "Inertia",
     groupSection: uiUxSection,

@@ -52,6 +52,7 @@ export var purpleTp3 = "images/environment/purpleTp3.png";
 
 //** Project Variables **********
 // UI/UX Design
+export var pypeline1 = "images/environment/pypeline1.png";
 export var inertia1 = "images/environment/inertia1.png";
 export var inertia2 = "images/environment/inertia2.png";
 export var inertia3 = "images/environment/inertia3.png";
@@ -86,6 +87,12 @@ export var raygun1 = "images/environment/raygun.png";
 
 //** Project Slide Variables **********
 // UI/UX Design
+// Pypeline
+export const pypelineSlides = ["images/slides/inertiaResearch.png"];
+export const pypelineTitles = ["About"];
+export const pypelineDescriptions = [
+  "Pypeline - SaaS Data Aquisition and Processing Tool",
+];
 // Inertia
 export const inertiaSlides = [
   "images/slides/inertiaTrailer.mov",
@@ -169,7 +176,6 @@ export const floatItDescriptions = [
   <div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Chrome Extension, Productivity</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>HTML/CSS, Javascript, Adobe Photoshop, Medibang Paint</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Front-End Development, UI Design, UX Research, Graphic Design</div></div><br>\
-  <button class='slidesLink' onclick=\"window.open('https://github.com/yanxinnn/float-it-notes','_blank')\">View Github Repository</button><br> \
   <div class='projectSubtitles'>The Problem</div>Staying on track with classes, work, meetings, assignments, and deadlines is hard. It's stressful enough when life seems to have it out for you and throws all the lemons it's got at you. But on top of that, you have to deal with schoolwork, work-work, life-work, all the things you need to work on, but for some reason, it's just not working out. <br><br><div class='projectSubtitles'>The Solution</div>I decided to tackle this great woe of our generation by building a chrome extension that helps users stay afloat in the hecticity of their everyday by providing them with a sanctuary in their New Tab page where they can stay organized, motivated, and sane, with light-hearted aesthetics, daily inspirational quotes, and built-in task management tools. <br><br>Users store their tasks as bottles that get added onto their New Tab page's waterscape and can view/update their tasks throughout the day. <br><br>Features include a time/date display, planner functionalities (create/edit/delete tasks, create/edit/delete subjects, progress tracker for tasks, and customizable color coded subjects), hand-drawn images and animations, and daily inspirational quotes.<br><br>This was my undergrad Senior Capstone Project that I plan to release onto the Chrome Web Store and is for those who need a planner and appreciate a bit of playfulness throughout their daily chrome browsing experience!<br><br><div class='projectSubtitles'>The Process</div>To create Float-it Notes, I: <br><div class='descriptionsIndent'>○ Conducted user research amongst 14-25 year olds to learn their planner usage and habits<br>○ Analyzed competitor tools and their funcitonalities<br>○ Conceptualized an alternative planner design that was whimsical and unique<br>○ Created and drew graphical assets for user interface<br>○ Designed and developed working prototype of chrome extension</div>",
 
   "My target audience is Chrome users on laptops/desktops ages 14-25. My initial user research goal was to find out my target audience's general online habits, their usage of planners, if any (physical and/or digital), their favorite aspects of their current solution, and parts of their current solution that don’t work for them. <br><br>These are the user research questions that I asked participants (ages 16-23) during one-on-one interviews.",
