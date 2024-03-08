@@ -32,6 +32,11 @@ var cursorIndex = 0;
 var chatTimer = 0;
 var teleporterHoverTimer = 0;
 var hoverAmnt = 0;
+var yanxinChatBoxLength;
+var yanxinChatBoxHeight;
+var yanxinChatBoxHover;
+var yanxinTextLength;
+var yanxinCustomX;
 
 // Sounds
 var snd_windyPetals;
@@ -45,7 +50,8 @@ var volumeIncrement = 0.1;
 var numOfPlatforms = 80;
 var platformsGroup;
 var middlePlatform; // where camera snaps to following player
-var endPlatform = 65; // where world stops
+var firstInteractionPlatform; // first interaction with yanxin
+var endPlatform; // where world stops
 var groundTopLeft;
 var groundBottomLeft;
 var groundTop;
@@ -265,7 +271,7 @@ function setup() {
   yanxinIdle.frameDelay = 18;
 
   yanxin = createSprite(
-    platformsGroup[12].position.x,
+    platformsGroup[firstInteractionPlatform].position.x,
     window.innerHeight - 200,
     100,
     100
@@ -279,30 +285,31 @@ function setup() {
   textFont("silkscreennormal");
 
   // Teleporters
-  beginningSection = platformsGroup[13].position.x;
-  uiUxSection = platformsGroup[22].position.x + 50;
-  gameSection = platformsGroup[39].position.x + 100;
-  threeDSection = platformsGroup[49].position.x + 150;
+  beginningSection = platformsGroup[firstInteractionPlatform + 1].position.x;
+  uiUxSection = platformsGroup[firstInteractionPlatform + 10].position.x + 50;
+  gameSection = platformsGroup[firstInteractionPlatform + 27].position.x + 100;
+  threeDSection =
+    platformsGroup[firstInteractionPlatform + 37].position.x + 150;
 
   beginningTp = createTp({
     frames: whiteTpFrames,
-    positionIndex: 63,
+    positionIndex: firstInteractionPlatform + 51,
     destination: beginningSection,
   });
   uiUxTp = createTp({
     frames: greenTpFrames,
-    positionIndex: 15,
+    positionIndex: firstInteractionPlatform + 3,
     destination: uiUxSection,
   });
   gameTp = createTp({
     frames: redTpFrames,
-    positionIndex: 17,
+    positionIndex: firstInteractionPlatform + 5,
     additionalOffsetX: 10,
     destination: gameSection,
   });
   threeDTp = createTp({
     frames: purpleTpFrames,
-    positionIndex: 19,
+    positionIndex: firstInteractionPlatform + 7,
     additionalOffsetX: 30,
     destination: threeDSection,
   });
@@ -610,7 +617,11 @@ function draw() {
     handleYanxinInteraction();
   }
 
-  if (player.position.x < platformsGroup[15].position.x || slideShowing) {
+  if (
+    player.position.x <
+      platformsGroup[firstInteractionPlatform + 3].position.x ||
+    slideShowing
+  ) {
     // Hide "Back to Teleporters" button when user hasn't passed it yet or in slideshow mode
     document.getElementById("backToTeleportersLink").style.visibility =
       "hidden";
@@ -1053,17 +1064,17 @@ function handleYanxinInteraction() {
     }
     chatBox({
       target: yanxin,
-      hover: 180,
-      length: 430,
-      height: 125,
+      hover: yanxinChatBoxHover,
+      length: yanxinChatBoxLength,
+      height: yanxinChatBoxHeight,
       alpha: 80,
     });
     displayText({
       textContent: "Yanxin",
       target: yanxin,
-      hover: 155,
-      length: 400,
-      custom: 10,
+      hover: yanxinChatBoxHeight + 40,
+      length: yanxinTextLength,
+      custom: yanxinCustomX,
       color: color("#FFBEBE"),
       align: LEFT,
       fontSize: 18,
@@ -1071,10 +1082,10 @@ function handleYanxinInteraction() {
     typeWriter({
       textContent: yanxinScript,
       target: yanxin,
-      hover: 125,
-      length: 400,
+      hover: yanxinChatBoxHover - 45,
+      length: yanxinTextLength,
       timer: chatTimer,
-      customX: 10,
+      customX: yanxinCustomX,
     });
   } else {
     // Show interact instructions
@@ -1423,6 +1434,28 @@ const deviceType = () => {
 };
 
 document.addEventListener("DOMContentLoaded", function () {
+  // World size based on screen size
+  if (window.innerWidth < 500) {
+    firstInteractionPlatform = 6;
+    endPlatform = 59;
+    yanxinChatBoxLength = 230;
+    yanxinChatBoxHeight = 170;
+    yanxinChatBoxHover = yanxinChatBoxHeight + 55;
+    yanxinTextLength = 210;
+    yanxinCustomX = 5;
+  } else if (window.innerWidth < 1200) {
+    firstInteractionPlatform = 8;
+    endPlatform = 61;
+  } else {
+    firstInteractionPlatform = 12;
+    endPlatform = 65;
+    yanxinChatBoxLength = 430;
+    yanxinChatBoxHeight = 125;
+    yanxinChatBoxHover = yanxinChatBoxHeight + 55;
+    yanxinTextLength = 400;
+    yanxinCustomX = 10;
+  }
+
   // Sound control via tabbing
   document
     .getElementById("soundIcon")
@@ -1521,7 +1554,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (lastKeyPress == "B") {
         // Back to Teleporters Hotkey
         if (
-          player.position.x > platformsGroup[15].position.x &&
+          player.position.x >
+            platformsGroup[firstInteractionPlatform + 3].position.x &&
           !slideShowing
         ) {
           backToTeleporters();
