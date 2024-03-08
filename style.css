@@ -605,6 +605,7 @@ input#sound:checked ~ .off img {
   gap: 1rem;
   flex: 1;
   overflow: hidden;
+  width: 100%;
 }
 
 #pictureSection {

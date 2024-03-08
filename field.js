@@ -86,9 +86,9 @@ var newSlide = true;
 // Projects
 var projects = [];
 var pypelineFrames;
-var inertiaFrames;
 var floatItFrames;
 var roomFrames;
+var inertiaFrames;
 var askAppsFrames;
 var acornStationFrames;
 var outcastFrames;
@@ -170,12 +170,6 @@ function preload() {
 
   // UI/UX
   pypelineFrames = loadImage(variables.pypeline1);
-  inertiaFrames = loadAnimation(
-    variables.inertia1,
-    variables.inertia2,
-    variables.inertia3,
-    variables.inertia4
-  );
   floatItFrames = loadAnimation(
     variables.floatIt1,
     variables.floatIt2,
@@ -187,6 +181,12 @@ function preload() {
     variables.room2,
     variables.room3,
     variables.room2
+  );
+  inertiaFrames = loadAnimation(
+    variables.inertia1,
+    variables.inertia2,
+    variables.inertia3,
+    variables.inertia4
   );
   askAppsFrames = loadAnimation(
     variables.askApps1,
@@ -322,21 +322,9 @@ function setup() {
   //   height: 108,
   // });
   createProject({
-    name: "Inertia",
-    groupSection: uiUxSection,
-    groupOffsetX: 250,
-    slides: variables.inertiaSlides,
-    aboutTitles: variables.inertiaTitles,
-    aboutDescriptions: variables.inertiaDescriptions,
-    frames: inertiaFrames,
-    frameDelay: 25,
-    width: 176,
-    height: 118,
-  });
-  createProject({
     name: "Float-it Notes",
     groupSection: uiUxSection,
-    groupOffsetX: 540,
+    groupOffsetX: 250,
     slides: variables.floatItSlides,
     aboutTitles: variables.floatItTitles,
     aboutDescriptions: variables.floatItDescriptions,
@@ -348,7 +336,7 @@ function setup() {
   createProject({
     name: "Room",
     groupSection: uiUxSection,
-    groupOffsetX: 830,
+    groupOffsetX: 540,
     slides: variables.roomSlides,
     aboutTitles: variables.roomTitles,
     aboutDescriptions: variables.roomDescriptions,
@@ -356,6 +344,18 @@ function setup() {
     frameDelay: 20,
     width: 161,
     height: 141,
+  });
+  createProject({
+    name: "Inertia",
+    groupSection: uiUxSection,
+    groupOffsetX: 830,
+    slides: variables.inertiaSlides,
+    aboutTitles: variables.inertiaTitles,
+    aboutDescriptions: variables.inertiaDescriptions,
+    frames: inertiaFrames,
+    frameDelay: 25,
+    width: 176,
+    height: 118,
   });
   createProject({
     name: "Ask Applications Internship",

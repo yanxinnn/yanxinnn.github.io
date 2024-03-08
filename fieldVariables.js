@@ -53,10 +53,6 @@ export var purpleTp3 = "images/environment/purpleTp3.png";
 //** Project Variables **********
 // UI/UX Design
 export var pypeline1 = "images/environment/pypeline1.png";
-export var inertia1 = "images/environment/inertia1.png";
-export var inertia2 = "images/environment/inertia2.png";
-export var inertia3 = "images/environment/inertia3.png";
-export var inertia4 = "images/environment/inertia4.png";
 export var floatIt1 = "images/environment/floatItFountain1.png";
 export var floatIt2 = "images/environment/floatItFountain2.png";
 export var floatIt3 = "images/environment/floatItFountain3.png";
@@ -64,6 +60,10 @@ export var floatIt4 = "images/environment/floatItFountain4.png";
 export var room1 = "images/environment/room-1.png";
 export var room2 = "images/environment/room-2.png";
 export var room3 = "images/environment/room-3.png";
+export var inertia1 = "images/environment/inertia1.png";
+export var inertia2 = "images/environment/inertia2.png";
+export var inertia3 = "images/environment/inertia3.png";
+export var inertia4 = "images/environment/inertia4.png";
 export var askApps1 = "images/environment/askApps-1.png";
 export var askApps2 = "images/environment/askApps-2.png";
 export var askApps3 = "images/environment/askApps-3.png";
@@ -92,59 +92,6 @@ export const pypelineSlides = ["images/slides/inertiaResearch.png"];
 export const pypelineTitles = ["About"];
 export const pypelineDescriptions = [
   "Pypeline - SaaS Data Aquisition and Processing Tool",
-];
-// Inertia
-export const inertiaSlides = [
-  "images/slides/inertiaTrailer.mov",
-  "images/slides/inertiaResearch.png",
-  "images/slides/inertiaQuestions1.png",
-  "images/slides/inertiaFindings1.png",
-  "images/slides/inertiaFlow.png",
-  "images/slides/inertiaQuestions2.png",
-  "images/slides/inertiaFindings2.png",
-  "images/slides/inertiaGame.png",
-  "images/slides/inertiaWorkout.png",
-  "images/slides/inertiaStyleGuide.png",
-];
-export const inertiaTitles = [
-  "About",
-  "Background and Competitive Research",
-  "User Research #1",
-  "User Research #1 Findings",
-  "User Flows",
-  "User Research #2",
-  "User Research #2 Findings",
-  "The Game",
-  "The Fitness App",
-  "Style Guide",
-];
-export const inertiaDescriptions = [
-  "Inertia - The Mobile Game That Mobilizes Gamers <br><br> \
-    <div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Mobile App, Fitness, Gaming</div>\
-    <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Figma, Adobe Photoshop</div>\
-    <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>UX Design, UX Research, UI Design, Wireframing</div></div><br>\
-    <div class='slidesLinkSection'><button class='slidesLink' onclick=\"window.open('https://www.figma.com/file/4GKpbsBQxAKKfarmcLW0tp/Inertia','_blank')\">View Figma Designs</button></div><br>\
-    <div class='projectSubtitles'>The Problem</div>Studies in 2021 have shown that more than 82 million US residents aged 6 and above don't exercise at all, making it more likely for them to develop a host of health problems like high blood pressure, high cholesterol, and heart disease. On the other hand, the mobile gaming market is booming, with global mobile games revenue on track to surpass the $100 billion mark by 2023. <br><br>So here are our two facts: <div class='descriptionsIndent'>1. A lot of people don't exercise enough. <br> 2. A lot of people love their mobile games.</div><div class='projectSubtitles'>The Solution</div>This brought me to ask:  What if we encouraged doing something we usually avoid by combining it with something that's nearly irresistible? What if working out was as addicting as a game? What if... it was a game? <br><br> \
-    I designed Inertia, a mobile fitness game that helps members of the gaming community and RPG fans transform their gaming passions into a healthier lifestyle. <br><br>Inertia gives users a setting they are familiar and drawn to, RPG games, and motivates users to workout by recognizing their efforts with in-game rewards and progression. While the rewards of physical body changes from working out might take at least a few months to show, Inertia helps keep users excited for their next session by providing more immediate feedback every time they complete a run or workout.\
-    <br><br><div class='projectSubtitles'>The Process</div>For this project, I: <div class='descriptionsIndent'>○ Researched exercise and mobile gaming statistics in the US <br>○ Analyzed competitor fitness apps and their features<br>○ Conducted two rounds of user research amongst gamers to learn my target audience's core needs and workout habits (1st round) and to receive insight for how users interact with the mobile prototype (2nd round) <br>○ Generated user flows for different user experiences <br>○ Created a style guide for the app's colors, typography, buttons, and branding <br>○ Designed low and high-fidelity wireframes prototyping the sign-in/sign-up process for mobile and desktop, character creation, various game features (inventory, shop, skills, and Battle Tower system) and the workout experience for users.",
-
-  "I started this project with background research on exercise and mobile gaming, primarily in the US, to gain an understanding of how my hybrid app can potentially bridge the gap between these two industries. <br><br>Further competitive analysis of various fitness apps showed how current solutions were addressing the problem of inactivity among US residents and the various features that made them successful/stand out, giving me ideas for features to incorporate into Inertia.",
-
-  "My first round of user research's goal was to learn my target audience's core needs and workout habits. <br><br>I surveyed 16 participants, ages 15-21, that played at least 3 hours of games a week, and asked them questions concerning their gaming and exercise habits and preferences. These surveys were done through Google Forms for anonymity as some people may not be comfortable disclosing sensitive information such as how much they exercise, how long they spend playing games, etc.",
-
-  "Main findings from the first round of user research included: <div class='descriptionsIndent'>1. Participants’ reasons for playing games were for entertainment, escape, or socialization. <br>2. What participants found most appealing about RPGs were the storylines, the game completion/achievements, ability to play with friends, the sense of progression, and character creation and customization. <br>3. Most of participants that did work out either did light workouts a few times a week just to keep active and did not have workout equipment. <br>4. Participants' motivations for working out were for physical changes, more energy, self-esteem, sports-related, and mental health reasons. </div>This research was crucial in understanding the target audience and their needs and served as a guide for the brainstorming and subsequent designs of Inertia.",
-
-  "I created multiple user-flows for different user motives, such as a user-flow for returning users logging on to complete a workout (using Workout) and a user-flow for returning users preparing character for the Battle Tower (using Shop, Skills, Inventory, Battle Tower).",
-
-  "The second round of user research was live 1-on-1 recorded interviews with participants on either Zoom or Discord testing for app navigation and usability. <br><br>In these 10-15 minute interviews, participants were given a link to a mobile prototype of Inertia and asked to share their screen while I asked them a series of questions and gave them tasks to complete within the app.",
-
-  "From the second round of user research, I got a lot of valuable feedback that I incorporated into the final design of Inertia. As my users were all gamers interacting with Inertia for the first time, they were able to bring in their own knowledge and understanding of games they are used to playing, helping me improve the user experience of Inertia as not only a fitness app, but also as a functional and enjoyable game. <br><br>Highlighted bullet points in the image indicate popular/repeated feeback from participants.",
-
-  "The app's game portion is an RPG. Users play as a character of a class of their choosing (warrior, mage, priest, archer, or assassin) as they battle their way through floors of the virtual world’s dungeon, called the Battle Tower, either solo or with friends. The battle system is turn based, with each player/enemy character using their mana to cast an ability on their turn. The battle ends when all the characters of a side has no health left. <br><br>Players can make their characters stronger with equipment and skill points they gain from working out. They can sell/buy/customize their equipment in the Shop, level up their unique class skills/abilities in Skills, and change their equipment and character appearance in Inventory.",
-
-  "The fitness portion of the app consists players completing runs or workouts for the chance to obtain better equipment and to gain skill points to aid them in their Battle Tower climb. <br><br>The first few floors of the Battle Tower can be defeated without grinding out runs and workouts to give users a taste of what the gameplay is like and hopefully, make them excited to exercise to continue advancing. The rewards from these workouts scales with the user's in-game progression. <br><br>To ensure that users are honestly working out, the app will require users to verify their exercises by scanning QR codes on workout machines, using their phone's camera to track their movements, or linking to a heart rate monitor.",
-
-  "Inertia's designs adhere to a style guide to make sure that the app's colors, typography, buttons, and branding are consistent throughout all the pages for a holistic user experience.",
 ];
 // Float-it Notes
 export const floatItSlides = [
@@ -175,7 +122,7 @@ export const floatItDescriptions = [
   "Float-it Notes - Float Your Stress Away <br><br> \
   <div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Chrome Extension, Productivity</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>HTML/CSS, Javascript, Adobe Photoshop, Medibang Paint</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Front-End Development, UI Design, UX Research, Graphic Design</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Front-End Development, UI Design, UX Research, Graphic Design</div></div><br>\
   <div class='projectSubtitles'>The Problem</div>Staying on track with classes, work, meetings, assignments, and deadlines is hard. It's stressful enough when life seems to have it out for you and throws all the lemons it's got at you. But on top of that, you have to deal with schoolwork, work-work, life-work, all the things you need to work on, but for some reason, it's just not working out. <br><br><div class='projectSubtitles'>The Solution</div>I decided to tackle this great woe of our generation by building a chrome extension that helps users stay afloat in the hecticity of their everyday by providing them with a sanctuary in their New Tab page where they can stay organized, motivated, and sane, with light-hearted aesthetics, daily inspirational quotes, and built-in task management tools. <br><br>Users store their tasks as bottles that get added onto their New Tab page's waterscape and can view/update their tasks throughout the day. <br><br>Features include a time/date display, planner functionalities (create/edit/delete tasks, create/edit/delete subjects, progress tracker for tasks, and customizable color coded subjects), hand-drawn images and animations, and daily inspirational quotes.<br><br>This was my undergrad Senior Capstone Project that I plan to release onto the Chrome Web Store and is for those who need a planner and appreciate a bit of playfulness throughout their daily chrome browsing experience!<br><br><div class='projectSubtitles'>The Process</div>To create Float-it Notes, I: <br><div class='descriptionsIndent'>○ Conducted user research amongst 14-25 year olds to learn their planner usage and habits<br>○ Analyzed competitor tools and their funcitonalities<br>○ Conceptualized an alternative planner design that was whimsical and unique<br>○ Created and drew graphical assets for user interface<br>○ Designed and developed working prototype of chrome extension</div>",
 
   "My target audience is Chrome users on laptops/desktops ages 14-25. My initial user research goal was to find out my target audience's general online habits, their usage of planners, if any (physical and/or digital), their favorite aspects of their current solution, and parts of their current solution that don’t work for them. <br><br>These are the user research questions that I asked participants (ages 16-23) during one-on-one interviews.",
@@ -221,7 +168,7 @@ export const roomDescriptions = [
   "Room and Roommate Finder App<br><br> \
   <div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Mobile App, Social Networking</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Figma</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>UX Design, UX Research, UI Design, Wireframing</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>UX Design, UX Research, UI Design, Wireframing</div></div><br>\
   <button class='slidesLink' onclick=\"window.open('https://www.figma.com/file/oEjvYKDuItXKElZCPmSFCE/Room?node-id=0%3A1')\">View Figma Designs</button><br>\
   <div class='projectSubtitles'>The Problem</div>54% of the world’s population live in urban communities. The average age for men is 29 (up from 26 two decades ago) and for women is 27 (up from 23 in the same time period). Given these trends, city dwellers tend to spend most of their twenties living with roommates. Finding and keeping a good roommate, however, gets harder as more people swarm into cities. <br><br>Propose a mobile product experience that appeals to millenials that makes it easy and safe to find the ideal roommate in New York City.<br><br><div class='projectSubtitles'>The Solution</div>Room is an app designed by a team of 3 that helps users with finding the perfect roommate match, finding a place to live, and navigating their new independent life with their new roommates in a peaceful and harmonious fashion.\
   <br><br><div class='projectSubtitles'>The Process</div>For Room, my teammates and I: <div class='descriptionsIndent'>○ Analyzed competitors in the current roommate matching market<br>○ Conducted surveys amongst our targeted demographic to learn the objectives and pain points of their roommate/room experiences<br>○ Generated personas and journey maps from the collected user research data<br>○ Constructed user flows for both new and returning users with different objectives<br>○ Created a strategy document outlining product objectives, market opportunities, and product visions<br>○ Designed high fidelity wireframes prototyping the sign-in/sign-up process, user profile customizations, roommate matching system and apartment listings search system</div>",
@@ -241,6 +188,59 @@ export const roomDescriptions = [
   "Our 2 user flows for new and returning users show the different screens they visit and decisions they make as they complete their goals within the app. This ensures that each step of their in-app experience is efficient and makes sense.",
 
   "Lastly, here is a strategy document that compiles Room's product objectives, market opportunities, and product vision.",
+];
+// Inertia
+export const inertiaSlides = [
+  "images/slides/inertiaTrailer.mov",
+  "images/slides/inertiaResearch.png",
+  "images/slides/inertiaQuestions1.png",
+  "images/slides/inertiaFindings1.png",
+  "images/slides/inertiaFlow.png",
+  "images/slides/inertiaQuestions2.png",
+  "images/slides/inertiaFindings2.png",
+  "images/slides/inertiaGame.png",
+  "images/slides/inertiaWorkout.png",
+  "images/slides/inertiaStyleGuide.png",
+];
+export const inertiaTitles = [
+  "About",
+  "Background and Competitive Research",
+  "User Research #1",
+  "User Research #1 Findings",
+  "User Flows",
+  "User Research #2",
+  "User Research #2 Findings",
+  "The Game",
+  "The Fitness App",
+  "Style Guide",
+];
+export const inertiaDescriptions = [
+  "Inertia - The Mobile Game That Mobilizes Gamers <br><br> \
+    <div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Mobile App, Fitness, Gaming</div>\
+    <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Figma, Adobe Photoshop</div>\
+    <div class='projectCards'><div class='projectCardsTitle'>My Role</div>UX Design, UX Research, UI Design, Wireframing</div></div><br>\
+    <div class='slidesLinkSection'><button class='slidesLink' onclick=\"window.open('https://www.figma.com/file/4GKpbsBQxAKKfarmcLW0tp/Inertia','_blank')\">View Figma Designs</button></div><br>\
+    <div class='projectSubtitles'>The Problem</div>Studies in 2021 have shown that more than 82 million US residents aged 6 and above don't exercise at all, making it more likely for them to develop a host of health problems like high blood pressure, high cholesterol, and heart disease. On the other hand, the mobile gaming market is booming, with global mobile games revenue on track to surpass the $100 billion mark by 2023. <br><br>So here are our two facts: <div class='descriptionsIndent'>1. A lot of people don't exercise enough. <br> 2. A lot of people love their mobile games.</div><div class='projectSubtitles'>The Solution</div>This brought me to ask:  What if we encouraged doing something we usually avoid by combining it with something that's nearly irresistible? What if working out was as addicting as a game? What if... it was a game? <br><br> \
+    I designed Inertia, a mobile fitness game that helps members of the gaming community and RPG fans transform their gaming passions into a healthier lifestyle. <br><br>Inertia gives users a setting they are familiar and drawn to, RPG games, and motivates users to workout by recognizing their efforts with in-game rewards and progression. While the rewards of physical body changes from working out might take at least a few months to show, Inertia helps keep users excited for their next session by providing more immediate feedback every time they complete a run or workout.\
+    <br><br><div class='projectSubtitles'>The Process</div>For this project, I: <div class='descriptionsIndent'>○ Researched exercise and mobile gaming statistics in the US <br>○ Analyzed competitor fitness apps and their features<br>○ Conducted two rounds of user research amongst gamers to learn my target audience's core needs and workout habits (1st round) and to receive insight for how users interact with the mobile prototype (2nd round) <br>○ Generated user flows for different user experiences <br>○ Created a style guide for the app's colors, typography, buttons, and branding <br>○ Designed low and high-fidelity wireframes prototyping the sign-in/sign-up process for mobile and desktop, character creation, various game features (inventory, shop, skills, and Battle Tower system) and the workout experience for users.",
+
+  "I started this project with background research on exercise and mobile gaming, primarily in the US, to gain an understanding of how my hybrid app can potentially bridge the gap between these two industries. <br><br>Further competitive analysis of various fitness apps showed how current solutions were addressing the problem of inactivity among US residents and the various features that made them successful/stand out, giving me ideas for features to incorporate into Inertia.",
+
+  "My first round of user research's goal was to learn my target audience's core needs and workout habits. <br><br>I surveyed 16 participants, ages 15-21, that played at least 3 hours of games a week, and asked them questions concerning their gaming and exercise habits and preferences. These surveys were done through Google Forms for anonymity as some people may not be comfortable disclosing sensitive information such as how much they exercise, how long they spend playing games, etc.",
+
+  "Main findings from the first round of user research included: <div class='descriptionsIndent'>1. Participants’ reasons for playing games were for entertainment, escape, or socialization. <br>2. What participants found most appealing about RPGs were the storylines, the game completion/achievements, ability to play with friends, the sense of progression, and character creation and customization. <br>3. Most of participants that did work out either did light workouts a few times a week just to keep active and did not have workout equipment. <br>4. Participants' motivations for working out were for physical changes, more energy, self-esteem, sports-related, and mental health reasons. </div>This research was crucial in understanding the target audience and their needs and served as a guide for the brainstorming and subsequent designs of Inertia.",
+
+  "I created multiple user-flows for different user motives, such as a user-flow for returning users logging on to complete a workout (using Workout) and a user-flow for returning users preparing character for the Battle Tower (using Shop, Skills, Inventory, Battle Tower).",
+
+  "The second round of user research was live 1-on-1 recorded interviews with participants on either Zoom or Discord testing for app navigation and usability. <br><br>In these 10-15 minute interviews, participants were given a link to a mobile prototype of Inertia and asked to share their screen while I asked them a series of questions and gave them tasks to complete within the app.",
+
+  "From the second round of user research, I got a lot of valuable feedback that I incorporated into the final design of Inertia. As my users were all gamers interacting with Inertia for the first time, they were able to bring in their own knowledge and understanding of games they are used to playing, helping me improve the user experience of Inertia as not only a fitness app, but also as a functional and enjoyable game. <br><br>Highlighted bullet points in the image indicate popular/repeated feeback from participants.",
+
+  "The app's game portion is an RPG. Users play as a character of a class of their choosing (warrior, mage, priest, archer, or assassin) as they battle their way through floors of the virtual world’s dungeon, called the Battle Tower, either solo or with friends. The battle system is turn based, with each player/enemy character using their mana to cast an ability on their turn. The battle ends when all the characters of a side has no health left. <br><br>Players can make their characters stronger with equipment and skill points they gain from working out. They can sell/buy/customize their equipment in the Shop, level up their unique class skills/abilities in Skills, and change their equipment and character appearance in Inventory.",
+
+  "The fitness portion of the app consists players completing runs or workouts for the chance to obtain better equipment and to gain skill points to aid them in their Battle Tower climb. <br><br>The first few floors of the Battle Tower can be defeated without grinding out runs and workouts to give users a taste of what the gameplay is like and hopefully, make them excited to exercise to continue advancing. The rewards from these workouts scales with the user's in-game progression. <br><br>To ensure that users are honestly working out, the app will require users to verify their exercises by scanning QR codes on workout machines, using their phone's camera to track their movements, or linking to a heart rate monitor.",
+
+  "Inertia's designs adhere to a style guide to make sure that the app's colors, typography, buttons, and branding are consistent throughout all the pages for a holistic user experience.",
 ];
 // Ask Apps
 export const askAppsSlides = [
@@ -262,32 +262,32 @@ export const askAppsTitles = [
 export const askAppsDescriptions = [
   "Uninstall Pages for Ask Apps Browser Extensions<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Web Design</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design</div></div><br>\
   <div class='projectSubtitles'>The Problem</div>Ask Applications' usual uninstall pages are unstyled feedback forms returning data that often go unread, unorganized, and unused due to the large quantity of them. This inefficiency is a miseed opportunity, as any valuable user insights are buried amidst the overwhelming quantity of feedback, undermining the intended purpose of these pages.<br><br><div class='projectSubtitles'>The Solution</div>This project was a collaborative effort with the product management intern to use the available space on the uninstall pages more effectively and productively. Instead of presenting the usual feedback forms, I redesigned the uninstall pages to now showcase and highlight Ask Applications' other products, maximizing the potential of this valuable real estate by boosting awareness and visibility for other company products, and potentially leading to an increase in install rates and customer retention.",
 
   "Ad Designs for Slimware Product<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Web Ad, E-Commerce</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Web Design</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design</div></div><br>\
   <div class='projectSubtitles'>The Problem</div>Ask Applications needed ads for their Slimware brand to advertise one of their PC products.<br><br><div class='projectSubtitles'>The Solution</div>I created various ad designs for Slimware in accordance to Google compliant ad specifications.<br><br>Here is a sample of a set that I made.",
 
   "Landing Pages for Ask Apps Browser Extensions Sample #1<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop, proprietary CMS, HTML/CSS</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Web Design</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design</div></div><br>\
   <div class='projectSubtitles'>The Problem</div>Ask Applications needed landing pages for a multitude of their browser-based tools. The existing ones were plain, generic templates that had little to no correlation to the product being advertised, resulting in a loss of opportunity to attract and engage new users effectively.<br><br><div class='projectSubtitles'>The Solution</div>As Ask Applications has over a hundred browser extensions, many with the same generic/brandless landing page design, I aimed to differentiate and liven them up by giving them their own unique landing page designs that reflected the extension's utility in some way. These custom pages were designed to add personality, relevance, and improve user engagement.<br><br>This is a sample of the landing page designs I created for various browser extensions.",
 
   "Landing Pages for Ask Apps Browser Extensions Sample #2<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop, proprietary CMS, HTML/CSS</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Web Design</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design</div></div><br>\
   <div class='projectSubtitles'>The Problem</div>Ask Applications needed landing pages for a multitude of their browser-based tools. The existing ones were plain, generic templates that had little to no correlation to the product being advertised, resulting in a loss of opportunity to attract and engage new users effectively.<br><br><div class='projectSubtitles'>The Solution</div>As Ask Applications has over a hundred browser extensions, many with the same generic/brandless landing page design, I aimed to differentiate and liven them up by giving them their own unique landing page designs that reflected the extension's utility in some way. These custom pages were designed to add personality, relevance, and improve user engagement.<br><br>This is a sample of the landing page designs I created for various browser extensions.",
 
   "Landing Pages for Ask Apps Browser Extensions Sample #3<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop, proprietary CMS, HTML/CSS</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Web Design</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design</div></div><br>\
   <div class='projectSubtitles'>The Problem</div>Ask Applications needed landing pages for a multitude of their browser-based tools. The existing ones were plain, generic templates that had little to no correlation to the product being advertised, resulting in a loss of opportunity to attract and engage new users effectively.<br><br><div class='projectSubtitles'>The Solution</div>As Ask Applications has over a hundred browser extensions, many with the same generic/brandless landing page design, I aimed to differentiate and liven them up by giving them their own unique landing page designs that reflected the extension's utility in some way. These custom pages were designed to add personality, relevance, and improve user engagement.<br><br>This is a sample of the landing page designs I created for various browser extensions.",
 
   "Landing Pages for Ask Apps Browser Extensions Sample #4<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop, proprietary CMS, HTML/CSS</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Web Design</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design</div></div><br>\
   <div class='projectSubtitles'>The Problem</div>Ask Applications needed landing pages for a multitude of their browser-based tools. The existing ones were plain, generic templates that had little to no correlation to the product being advertised, resulting in a loss of opportunity to attract and engage new users effectively.<br><br><div class='projectSubtitles'>The Solution</div>As Ask Applications has over a hundred browser extensions, many with the same generic/brandless landing page design, I aimed to differentiate and liven them up by giving them their own unique landing page designs that reflected the extension's utility in some way. These custom pages were designed to add personality, relevance, and improve user engagement.<br><br>This is a sample of the landing page designs I created for various browser extensions.",
 ];
 // Acorn
@@ -306,9 +306,9 @@ export const acornTitles = [
   "Final Product Design",
 ];
 export const acornDescriptions = [
-  "Logo for Health and Wellness Company<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Logo, Merch Design</div>\
+  "Logo for Health and Wellness Company<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Logo, Product Merchandise</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Illustrator, Adobe Photoshop, vinyl cutter</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Graphic Design, User Research, Product Design</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Graphic Design, User Research, Product Design</div></div><br>\
   <div class='projectSubtitles'>The Problem</div>\"acorn\" is a fictional health and wellness company that is dedicated to helping people live healthier and more eco-friendly lifestlyes. It needed a logo and branded merchandise that reflect its values and brand.<br><br><div class='projectSubtitles'>The Solution</div>For the logo, I crafted a simplistic and geometric design \
   to emphasize the company's clean and environmental conscious mission. Squirrel-like shapes and \
   custom lettering were created from transformations on circles.",
@@ -344,7 +344,7 @@ export const outcastTitles = [
 export const outcastDescriptions = [
   "Narrative RPG Adventure Game<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Digital Game</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>GameMaker Studio 2, Medibang Paint, Adobe Photoshop</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Game UI, Narrative Design, Game Design</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Game UI, Narrative Design, Game Design</div></div><br>\
   <div class='projectSubtitles'>The Project</div>\"Outcast\" is a narrative RPG adventure game developed by a team of 3. <br><br>Plot: A young boy who once weilded the most powerful sword known to man loses everything and everyone he knows and loves when his village is attacked by strange hostile creatures. The hostile race steals the legendary sword and banishes the main character into an unfamiliar world.<br><br><div class='projectSubtitles'>My Role</div>I was the game's lead artist and map designer, bringing the game to life with an immersive and fantastical world. I created all the sprites and graphical components (other than the main character), drawn in a relatively clean and simple 2D art style. Strategic asset layering and placement, along with small animations and effects sprinkled throughout, work together to create a cohesive and enjoyable gaming experience.",
 
   "Snapshot #1.",
@@ -367,7 +367,7 @@ export const missileCommandTitles = ["About", "Snapshots", "Snapshots"];
 export const missileCommandCloneDescriptions = [
   "Clone of A Classic Arcade Game<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Digital Game</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>GameMaker Studio 2</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Game Development, Game UI</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Game Development, Game UI</div></div><br>\
   <div class='projectSubtitles'>The Project</div>I challenged myself to recreate the game Missile Command by Atari that is as close to the original as possible, gameplay-wise and visually.<br><br>My version of Missile Command is complete with a menu page, scaling level difficulty, various enemies, true-to-original sprites, a point system, and a game-over screen.",
 
   "Snapshot #1.",
@@ -390,7 +390,7 @@ export const wizardsJourneyTitles = [
 export const wizardsJourneyDescriptions = [
   "Multiplayer Race Game<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Digital Game</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>GameMaker Studio 2, Adobe Photoshop</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>Game Development, Game UI, Game Design</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Game Development, Game UI, Game Design</div></div><br>\
   <div class='projectSubtitles'>The Project</div>I designed and developed an original, multiplayer vertical obstacle race game.<br><br>Rules:<br><div class='descriptionsIndent'>○ 3 playable characters each with different spells that can be used to hinder other players or to destroy incoming map projectiles<br>○ Mana bars at the top indicate the respective color's ability to use spells and teleport back into view if they fall behind<br>○ Characters that run out of mana are removed from the race<br>○ First to the top wins!</div><div class='funFact'>✿ Fun fact: This video showcasing the gameplay took multiple takes because my sister/opponent was not the best gamer and unfortunately kept dying before we could reach the top.",
 
   "Snapshot #1 of starting match countdown.",
@@ -410,7 +410,7 @@ export const tantrumTitles = ["About", "Snapshots", "Snapshots", "Snapshots"];
 export const tantrumDescriptions = [
   "Short 3D Animation<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>3D Animated Video</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Autodesk Maya, Adobe Photoshop, Adobe Premiere Pro</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>3D Animation, Video Editing</div></div>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>3D Animation, Video Editing</div></div>\
   <br><div class='projectSubtitles'>The Project</div>I conceived and animated a humorous 1-minute animation illustrating a child's emotional journey through grief, all revolving around a humble box of KitKats.",
 
   "Snapshot #1 of bargaining stage.",
@@ -429,7 +429,7 @@ export const deskRoomTitles = ["About", "Reference", "WIP"];
 export const deskRoomDescriptions = [
   "3D Environment Model<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>3D Environment</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Autodesk Maya</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>3D Modeling</div></div>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>3D Modeling</div></div>\
   <br><div class='projectSubtitles'>The Project</div>I created a 3d model of a study room complete with textures and lighting.",
 
   "Reference photo used for room model. Thanks, Pinterest!",
@@ -445,7 +445,7 @@ export const raygunTitles = ["About", "Reference"];
 export const raygunDescriptions = [
   "3D Raygun Model<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>3D Model</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Autodesk Maya</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Key Skills</div>3D Modeling</div></div>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>3D Modeling</div></div>\
   <br><div class='projectSubtitles'>The Project</div>I created a 3D model a raygun from a reference photo.",
 
   "Reference used for raygun model.",
