@@ -36,6 +36,8 @@ var yanxinChatBoxLength;
 var yanxinChatBoxHeight;
 var yanxinChatBoxHover;
 var yanxinTextLength;
+var yanxinTextHover;
+var yanxinTypeWriterHover;
 var yanxinCustomX;
 
 // Sounds
@@ -1072,7 +1074,7 @@ function handleYanxinInteraction() {
     displayText({
       textContent: "Yanxin",
       target: yanxin,
-      hover: yanxinChatBoxHeight + 40,
+      hover: yanxinChatBoxHeight + yanxinTextHover,
       length: yanxinTextLength,
       custom: yanxinCustomX,
       color: color("#FFBEBE"),
@@ -1082,7 +1084,7 @@ function handleYanxinInteraction() {
     typeWriter({
       textContent: yanxinScript,
       target: yanxin,
-      hover: yanxinChatBoxHover - 45,
+      hover: yanxinChatBoxHover - yanxinTypeWriterHover,
       length: yanxinTextLength,
       timer: chatTimer,
       customX: yanxinCustomX,
@@ -1438,21 +1440,29 @@ document.addEventListener("DOMContentLoaded", function () {
   if (window.innerWidth < 500) {
     firstInteractionPlatform = 6;
     endPlatform = 59;
-    yanxinChatBoxLength = 230;
-    yanxinChatBoxHeight = 170;
-    yanxinChatBoxHover = yanxinChatBoxHeight + 55;
-    yanxinTextLength = 210;
-    yanxinCustomX = 5;
   } else if (window.innerWidth < 1200) {
     firstInteractionPlatform = 8;
     endPlatform = 61;
   } else {
     firstInteractionPlatform = 12;
     endPlatform = 65;
+  }
+  // Yanxin chatbox based on screen size
+  if (window.innerWidth < 500) {
+    yanxinChatBoxLength = 230;
+    yanxinChatBoxHeight = 170;
+    yanxinChatBoxHover = yanxinChatBoxHeight + 55;
+    yanxinTextLength = 210;
+    yanxinTextHover = 40;
+    yanxinTypeWriterHover = 45;
+    yanxinCustomX = 5;
+  } else {
     yanxinChatBoxLength = 430;
     yanxinChatBoxHeight = 125;
     yanxinChatBoxHover = yanxinChatBoxHeight + 55;
     yanxinTextLength = 400;
+    yanxinTextHover = 30;
+    yanxinTypeWriterHover = 58;
     yanxinCustomX = 10;
   }
 
