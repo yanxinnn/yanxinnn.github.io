@@ -308,7 +308,7 @@ export const acornTitles = [
 export const acornDescriptions = [
   "Logo for Health and Wellness Company<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Logo, Product Merchandise</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Illustrator, Adobe Photoshop, vinyl cutter</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Graphic Design, UX Research, Product Design</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Brand Design, Graphic Design, UX Research, Product Design</div></div><br>\
   <div class='projectSubtitles'>The Problem</div>\"acorn\" is a fictional health and wellness company that is dedicated to helping people live healthier and more eco-friendly lifestlyes. It needed a logo and branded merchandise that reflect its values and brand.<br><br><div class='projectSubtitles'>The Solution</div>For the logo, I crafted a simplistic and geometric design \
   to emphasize the company's clean and environmental conscious mission. Squirrel-like shapes and \
   custom lettering were created from transformations on circles.",
