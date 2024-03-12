@@ -103,7 +103,7 @@ var outcastFrames;
 var missileCommandFrames;
 var wizardsJourneyFrames;
 var tantrumFrames;
-var deskRoomFrames;
+var studyRoomFrames;
 var raygunFrames;
 
 // Slideshow
@@ -225,7 +225,7 @@ function preload() {
 
   // 3D Modeling + Animation
   tantrumFrames = loadImage(variables.tantrum1);
-  deskRoomFrames = loadAnimation(variables.deskRoom1, variables.deskRoom2);
+  studyRoomFrames = loadAnimation(variables.studyRoom1, variables.studyRoom2);
   raygunFrames = loadImage(variables.raygun1);
 } // function preload
 
@@ -444,10 +444,10 @@ function setup() {
     name: "Home Office",
     groupSection: threeDSection,
     groupOffsetX: 520,
-    slides: variables.deskRoomSlides,
-    aboutTitles: variables.deskRoomTitles,
-    aboutDescriptions: variables.deskRoomDescriptions,
-    frames: deskRoomFrames,
+    slides: variables.studyRoomSlides,
+    aboutTitles: variables.studyRoomTitles,
+    aboutDescriptions: variables.studyRoomDescriptions,
+    frames: studyRoomFrames,
     frameDelay: 25,
     width: 133,
     height: 212,
