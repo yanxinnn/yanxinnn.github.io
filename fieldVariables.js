@@ -443,7 +443,7 @@ export const raygunSlides = [
 ];
 export const raygunTitles = ["About", "Reference"];
 export const raygunDescriptions = [
-  "3D Raygun Model<br><br><br>This is a solo project in which I 3D modeled an object based on an image reference.<br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>3D Model</div>\
+  "3D Raygun Model<br><br>This is a solo project in which I 3D modeled an object based on an image reference.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>3D Model</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Autodesk Maya</div>\
   <div class='projectCards'><div class='projectCardsTitle'>My Role</div>3D Modeling</div></div>\
   <br><div class='projectSubtitles'>The Project</div>I created a 3D model a raygun from a reference photo.",
