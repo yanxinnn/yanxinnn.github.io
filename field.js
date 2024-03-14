@@ -176,7 +176,7 @@ function preload() {
     variables.purpleTp3
   );
 
-  // UI/UX
+  // UX/UI
   pypelineFrames = loadImage(variables.pypeline1);
   floatItFrames = loadAnimation(
     variables.floatIt1,
@@ -317,7 +317,7 @@ function setup() {
   });
 
   // Projects
-  // UI/UX Design
+  // UX/UI Design
   // createProject({
   //   name: "Pypeline",
   //   groupSection: uiUxSection,
@@ -692,7 +692,7 @@ function draw() {
       )
     );
   } else if (player.position.x >= uiUxSection - 100) {
-    document.getElementById("locationMessage").innerHTML = "UI/UX Design";
+    document.getElementById("locationMessage").innerHTML = "UX/UI Design";
     document.getElementById("locationMessage").style.backgroundColor =
       "#BEE8CC";
     let startColor = color(134, 193, 239);
@@ -752,7 +752,7 @@ function draw() {
   });
 
   // Top banners for sections
-  // UI/UX Design
+  // UX/UI Design
   chatBox({
     target: uiUxTp,
     hover: tpLabelChatboxHover,
@@ -763,7 +763,7 @@ function draw() {
     hoveramnt: hoverAmnt,
   });
   displayText({
-    textContent: "UI/UX Design",
+    textContent: "UX/UI Design",
     target: uiUxTp,
     hover: tpLabelTextHeight,
     length: 160,

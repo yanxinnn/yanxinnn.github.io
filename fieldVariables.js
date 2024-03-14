@@ -51,7 +51,7 @@ export var purpleTp2 = "images/environment/purpleTp2.png";
 export var purpleTp3 = "images/environment/purpleTp3.png";
 
 //** Project Variables **********
-// UI/UX Design
+// UX/UI Design
 export var pypeline1 = "images/environment/pypeline1.png";
 export var floatIt1 = "images/environment/floatItFountain1.png";
 export var floatIt2 = "images/environment/floatItFountain2.png";
@@ -86,7 +86,7 @@ export var studyRoom2 = "images/environment/studyRoom2.png";
 export var raygun1 = "images/environment/raygun.png";
 
 //** Project Slide Variables **********
-// UI/UX Design
+// UX/UI Design
 // Pypeline
 export const pypelineSlides = ["images/slides/inertiaResearch.png"];
 export const pypelineTitles = ["About"];
