@@ -167,7 +167,7 @@ export const roomTitles = [
 export const roomDescriptions = [
   "Room - The Room and Roommate Finder App<br><br>I worked in a team of 3 to research and design a mobile app.<br><br>\
   <div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Mobile App, Social Networking</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>UX Design, UX Research, UI Design, Product Design, Wireframing</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>UX Design, UX Research, UI Design, Product Design</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Figma, Google Forms</div></div><br>\
   <button class='slidesLink' onclick=\"window.open('https://www.figma.com/file/oEjvYKDuItXKElZCPmSFCE/Room?node-id=0%3A1')\">View Figma Designs</button><br>\
   <div class='projectSubtitles'>The Problem</div>54% of the world’s population live in urban communities. The average age for men is 29 (up from 26 two decades ago) and for women is 27 (up from 23 in the same time period). Given these trends, city dwellers tend to spend most of their twenties living with roommates. Finding and keeping a good roommate, however, gets harder as more people swarm into cities. <br><br>Propose a mobile product experience that appeals to millenials that makes it easy and safe to find the ideal roommate in New York City.<br><br><div class='projectSubtitles'>The Solution</div>Room is an app designed by a team of 3 that helps users with finding the perfect roommate match, finding a place to live, and navigating their new independent life with their new roommates in a peaceful and harmonious fashion.\
@@ -217,7 +217,7 @@ export const inertiaTitles = [
 export const inertiaDescriptions = [
   "Inertia - The Mobile Game That Mobilizes Gamers<br><br>This is a solo project in which I researched and designed a mobile app.<br><br>\
     <div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Mobile App, Fitness, Gaming</div>\
-    <div class='projectCards'><div class='projectCardsTitle'>My Role</div>UX Design, UX Research, UI Design, Product Design, Wireframing</div>\
+    <div class='projectCards'><div class='projectCardsTitle'>My Role</div>UX Design, UX Research, UI Design, Product Design</div>\
     <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Figma, Adobe Photoshop, Google Forms, Zoom, Discord</div></div><br>\
     <div class='slidesLinkSection'><button class='slidesLink' onclick=\"window.open('https://www.figma.com/file/4GKpbsBQxAKKfarmcLW0tp/Inertia','_blank')\">View Figma Designs</button></div><br>\
     <div class='projectSubtitles'>The Problem</div>Studies in 2021 have shown that more than 82 million US residents aged 6 and above don't exercise at all, making it more likely for them to develop a host of health problems like high blood pressure, high cholesterol, and heart disease. On the other hand, the mobile gaming market is booming, with global mobile games revenue on track to surpass the $100 billion mark by 2023. <br><br>So here are our two facts: <div class='descriptionsIndent'>1. A lot of people don't exercise enough. <br> 2. A lot of people love their mobile games.</div><div class='projectSubtitles'>The Solution</div>This brought me to ask:  What if we encouraged doing something we usually avoid by combining it with something that's nearly irresistible? What if working out was as addicting as a game? What if... it was a game? <br><br> \
