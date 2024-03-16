@@ -121,11 +121,11 @@ export const floatItTitles = [
 export const floatItDescriptions = [
   "Float-it Notes - Float Your Stress Away<br><br>This is a solo project in which I researched, designed, and developed a chrome extension.<br><br>\
   <div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Chrome Extension, Productivity</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>HTML/CSS, Javascript, Adobe Photoshop, Medibang Paint</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>UX Design, UX Research, UI Design, Front-end Development, Product Design</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>UX Design, UX Research, UI Design, Front-end Development, Product Design</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>HTML/CSS, Javascript, Adobe Photoshop, Medibang Paint, Zoom, Discord</div></div><br>\
   <div class='projectSubtitles'>The Problem</div>Staying on track with classes, work, meetings, assignments, and deadlines is hard. It's stressful enough when life seems to have it out for you and throws all the lemons it's got at you. But on top of that, you have to deal with schoolwork, work-work, life-work, all the things you need to work on, but for some reason, it's just not working out. <br><br><div class='projectSubtitles'>The Solution</div>I decided to tackle this great woe of our generation by building a chrome extension that helps users stay afloat in the hecticity of their everyday by providing them with a sanctuary in their New Tab page where they can stay organized, motivated, and sane, with light-hearted aesthetics, daily inspirational quotes, and built-in task management tools. <br><br>Users store their tasks as bottles that get added onto their New Tab page's waterscape and can view/update their tasks throughout the day. <br><br>Features include a time/date display, planner functionalities (create/edit/delete tasks, create/edit/delete subjects, progress tracker for tasks, and customizable color coded subjects), hand-drawn images and animations, and daily inspirational quotes.<br><br>This is a passion project that I plan to release onto the Chrome Web Store and is for those who need a planner and appreciate a bit of playfulness throughout their daily chrome browsing experience!<br><br><div class='projectSubtitles'>The Process</div>To create Float-it Notes, I: <br><div class='descriptionsIndent'>○ Conducted user research amongst 14-25 year olds to learn their planner usage and habits<br>○ Analyzed competitor tools and their funcitonalities<br>○ Conceptualized an alternative planner design that was whimsical and unique<br>○ Created and drew graphical assets for user interface<br>○ Designed and developed working prototype of chrome extension</div>",
 
-  "My target audience is Chrome users on laptops/desktops ages 14-25. My initial user research goal was to find out my target audience's general online habits, their usage of planners, if any (physical and/or digital), their favorite aspects of their current solution, and parts of their current solution that don’t work for them. <br><br>These are the user research questions that I asked participants (ages 16-23) during one-on-one interviews.",
+  "My target audience is Chrome users on laptops/desktops ages 14-25. My initial user research goal was to find out my target audience's general online habits, their usage of planners, if any (physical and/or digital), their favorite aspects of their current solution, and parts of their current solution that don’t work for them. <br><br>These are the user research questions that I asked participants (ages 16-23) during one-on-one interviews conducted on Zoom and Discord.",
 
   "From my user research, I was able to understand who popular competitors are for futher competitive analysis, important planner functionalities that users preferred, and what tools are considered “fluff” and/or unnecessary by a majority of them. <br><br>Here are some of the big takeaways from the interviews: <br><div class='descriptionsIndent'>1. Most of the participants use a digital planner with a few using a mix of both/only physical planners. Most of the digital planner users used Google Calenders, Notes app, or Trello to keep track of their schedules and to-do lists. <br><br>2. Benefits of using digital planners for participants include ease of organization (pre-formatted unlike physical planners), easy access on the phone/computer, being able to see a daily/weekly view of their schedule, a place to have important links, and reminders. Pain points of using digital planners include the lack of customization outside of text boxes, an overwhelming amount of tools that go unused, and the lack of sorting by subject/groups. <br><br>3. Benefits of physical planners include the freedom of formatting (not prestructured like digital planners), ability to add creative non-text additions, and a space for brain dump. Pain points include not being able to edit tasks like digital planners, it being harder to find what you’re looking for in all the pages, and needing to carry it around everywhere.",
 
@@ -167,8 +167,8 @@ export const roomTitles = [
 export const roomDescriptions = [
   "Room - The Room and Roommate Finder App<br><br>I worked in a team of 3 to research and design a mobile app.<br><br>\
   <div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Mobile App, Social Networking</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Figma</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>UX Design, UX Research, UI Design, Product Design, Wireframing</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>UX Design, UX Research, UI Design, Product Design, Wireframing</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Figma, Google Forms</div></div><br>\
   <button class='slidesLink' onclick=\"window.open('https://www.figma.com/file/oEjvYKDuItXKElZCPmSFCE/Room?node-id=0%3A1')\">View Figma Designs</button><br>\
   <div class='projectSubtitles'>The Problem</div>54% of the world’s population live in urban communities. The average age for men is 29 (up from 26 two decades ago) and for women is 27 (up from 23 in the same time period). Given these trends, city dwellers tend to spend most of their twenties living with roommates. Finding and keeping a good roommate, however, gets harder as more people swarm into cities. <br><br>Propose a mobile product experience that appeals to millenials that makes it easy and safe to find the ideal roommate in New York City.<br><br><div class='projectSubtitles'>The Solution</div>Room is an app designed by a team of 3 that helps users with finding the perfect roommate match, finding a place to live, and navigating their new independent life with their new roommates in a peaceful and harmonious fashion.\
   <br><br><div class='projectSubtitles'>The Process</div>For Room, my teammates and I: <div class='descriptionsIndent'>○ Analyzed competitors in the current roommate matching market<br>○ Conducted surveys amongst our targeted demographic to learn the objectives and pain points of their roommate/room experiences<br>○ Generated personas and journey maps from the collected user research data<br>○ Constructed user flows for both new and returning users with different objectives<br>○ Created a strategy document outlining product objectives, market opportunities, and product visions<br>○ Designed high fidelity wireframes prototyping the sign-in/sign-up process, user profile customizations, roommate matching system and apartment listings search system</div>",
@@ -217,8 +217,8 @@ export const inertiaTitles = [
 export const inertiaDescriptions = [
   "Inertia - The Mobile Game That Mobilizes Gamers<br><br>This is a solo project in which I researched and designed a mobile app.<br><br>\
     <div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Mobile App, Fitness, Gaming</div>\
-    <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Figma, Adobe Photoshop</div>\
-    <div class='projectCards'><div class='projectCardsTitle'>My Role</div>UX Design, UX Research, UI Design, Product Design, Wireframing</div></div><br>\
+    <div class='projectCards'><div class='projectCardsTitle'>My Role</div>UX Design, UX Research, UI Design, Product Design, Wireframing</div>\
+    <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Figma, Adobe Photoshop, Google Forms, Zoom, Discord</div></div><br>\
     <div class='slidesLinkSection'><button class='slidesLink' onclick=\"window.open('https://www.figma.com/file/4GKpbsBQxAKKfarmcLW0tp/Inertia','_blank')\">View Figma Designs</button></div><br>\
     <div class='projectSubtitles'>The Problem</div>Studies in 2021 have shown that more than 82 million US residents aged 6 and above don't exercise at all, making it more likely for them to develop a host of health problems like high blood pressure, high cholesterol, and heart disease. On the other hand, the mobile gaming market is booming, with global mobile games revenue on track to surpass the $100 billion mark by 2023. <br><br>So here are our two facts: <div class='descriptionsIndent'>1. A lot of people don't exercise enough. <br> 2. A lot of people love their mobile games.</div><div class='projectSubtitles'>The Solution</div>This brought me to ask:  What if we encouraged doing something we usually avoid by combining it with something that's nearly irresistible? What if working out was as addicting as a game? What if... it was a game? <br><br> \
     I designed Inertia, a mobile fitness game that helps members of the gaming community and RPG fans transform their gaming passions into a healthier lifestyle. <br><br>Inertia gives users a setting they are familiar and drawn to, RPG games, and motivates users to workout by recognizing their efforts with in-game rewards and progression. While the rewards of physical body changes from working out might take at least a few months to show, Inertia helps keep users excited for their next session by providing more immediate feedback every time they complete a run or workout.\
@@ -261,33 +261,33 @@ export const askAppsTitles = [
 ];
 export const askAppsDescriptions = [
   "Uninstall Pages for Ask Apps Browser Extensions<br><br>These are a sample of the web design work that I did for Ask Applications.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>UI Design, Front-end Development</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design, Product Design</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop</div></div><br>\
   <div class='projectSubtitles'>The Problem</div>Ask Applications' usual uninstall pages are unstyled feedback forms returning data that often go unread, unorganized, and unused due to the large quantity of them. This inefficiency is a miseed opportunity, as any valuable user insights are buried amidst the overwhelming quantity of feedback, undermining the intended purpose of these pages.<br><br><div class='projectSubtitles'>The Solution</div>This project was a collaborative effort with the product management intern to use the available space on the uninstall pages more effectively and productively. Instead of presenting the usual feedback forms, I redesigned the uninstall pages to now showcase and highlight Ask Applications' other products, maximizing the potential of this valuable real estate by boosting awareness and visibility for other company products, and potentially leading to an increase in install rates and customer retention.",
 
   "Ad Designs for Slimware Product<br><br>These are a sample of the web design work that I did for Ask Applications.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Web Ad, E-Commerce</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop</div></div><br>\
   <div class='projectSubtitles'>The Problem</div>Ask Applications needed ads for their Slimware brand to advertise one of their PC products.<br><br><div class='projectSubtitles'>The Solution</div>I created various ad designs for Slimware in accordance to Google compliant ad specifications.<br><br>Here is a sample of a set that I made.",
 
   "Landing Pages for Ask Apps Browser Extensions Sample #1<br><br>These are a sample of the web design work that I did for Ask Applications.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop, proprietary CMS, HTML/CSS</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop, proprietary CMS, HTML/CSS</div></div><br>\
   <div class='projectSubtitles'>The Problem</div>Ask Applications needed landing pages for a multitude of their browser-based tools. The existing ones were plain, generic templates that had little to no correlation to the product being advertised, resulting in a loss of opportunity to attract and engage new users effectively.<br><br><div class='projectSubtitles'>The Solution</div>As Ask Applications has over a hundred browser extensions, many with the same generic/brandless landing page design, I aimed to differentiate and liven them up by giving them their own unique landing page designs that reflected the extension's utility in some way. These custom pages were designed to add personality, relevance, and improve user engagement.<br><br>This is a sample of the landing page designs I created for various browser extensions.",
 
   "Landing Pages for Ask Apps Browser Extensions Sample #2<br><br>These are a sample of the web design work that I did for Ask Applications.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop, proprietary CMS, HTML/CSS</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop, proprietary CMS, HTML/CSS</div></div><br>\
   <div class='projectSubtitles'>The Problem</div>Ask Applications needed landing pages for a multitude of their browser-based tools. The existing ones were plain, generic templates that had little to no correlation to the product being advertised, resulting in a loss of opportunity to attract and engage new users effectively.<br><br><div class='projectSubtitles'>The Solution</div>As Ask Applications has over a hundred browser extensions, many with the same generic/brandless landing page design, I aimed to differentiate and liven them up by giving them their own unique landing page designs that reflected the extension's utility in some way. These custom pages were designed to add personality, relevance, and improve user engagement.<br><br>This is a sample of the landing page designs I created for various browser extensions.",
 
   "Landing Pages for Ask Apps Browser Extensions Sample #3<br><br>These are a sample of the web design work that I did for Ask Applications.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop, proprietary CMS, HTML/CSS</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop, proprietary CMS, HTML/CSS</div></div><br>\
   <div class='projectSubtitles'>The Problem</div>Ask Applications needed landing pages for a multitude of their browser-based tools. The existing ones were plain, generic templates that had little to no correlation to the product being advertised, resulting in a loss of opportunity to attract and engage new users effectively.<br><br><div class='projectSubtitles'>The Solution</div>As Ask Applications has over a hundred browser extensions, many with the same generic/brandless landing page design, I aimed to differentiate and liven them up by giving them their own unique landing page designs that reflected the extension's utility in some way. These custom pages were designed to add personality, relevance, and improve user engagement.<br><br>This is a sample of the landing page designs I created for various browser extensions.",
 
   "Landing Pages for Ask Apps Browser Extensions Sample #4<br><br>These are a sample of the web design work that I did for Ask Applications.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop, proprietary CMS, HTML/CSS</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop, proprietary CMS, HTML/CSS</div></div><br>\
   <div class='projectSubtitles'>The Problem</div>Ask Applications needed landing pages for a multitude of their browser-based tools. The existing ones were plain, generic templates that had little to no correlation to the product being advertised, resulting in a loss of opportunity to attract and engage new users effectively.<br><br><div class='projectSubtitles'>The Solution</div>As Ask Applications has over a hundred browser extensions, many with the same generic/brandless landing page design, I aimed to differentiate and liven them up by giving them their own unique landing page designs that reflected the extension's utility in some way. These custom pages were designed to add personality, relevance, and improve user engagement.<br><br>This is a sample of the landing page designs I created for various browser extensions.",
 ];
 // Acorn
@@ -307,8 +307,8 @@ export const acornTitles = [
 ];
 export const acornDescriptions = [
   "Acorn -  From Small Acorns, Might Oaks Grow<br><br>This is a solo project in which I designed graphics and merchandise for a conceptualized company.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Logo, Product Merchandise</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Illustrator, Adobe Photoshop, vinyl cutter</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Brand Design, Graphic Design, UX Research, Product Design</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Brand Design, Graphic Design, UX Research, Product Design</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Illustrator, Adobe Photoshop, vinyl cutter</div></div><br>\
   <div class='projectSubtitles'>The Problem</div>\"acorn\" is a fictional health and wellness company that is dedicated to helping people live healthier and more eco-friendly lifestlyes. It needed a logo and branded merchandise that reflect its values and brand.<br><br><div class='projectSubtitles'>The Solution</div>For the logo, I crafted a simplistic and geometric design \
   to emphasize the company's clean and environmental conscious mission. Squirrel-like shapes and \
   custom lettering were created from transformations on circles.",
@@ -343,8 +343,8 @@ export const outcastTitles = [
 ];
 export const outcastDescriptions = [
   "Outcast - Narrative RPG Adventure Game<br><br>I was the UI Design Lead and Narrative Designer within a group of 3 for a desktop game.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Digital Game</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>GameMaker Studio 2, Medibang Paint, Adobe Photoshop</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Game UI, Narrative Design, Game Design</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Game UI, Game Design, Narrative Design</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>GameMaker Studio 2, Medibang Paint, Adobe Photoshop</div></div><br>\
   <div class='projectSubtitles'>The Project</div>\"Outcast\" is a narrative RPG adventure game developed by a team of 3. <br><br>Plot: A young boy who once weilded the most powerful sword known to man loses everything and everyone he knows and loves when his village is attacked by strange hostile creatures. The hostile race steals the legendary sword and banishes the main character into an unfamiliar world.<br><br><div class='projectSubtitles'>My Role</div>I was the game's lead artist and map designer, bringing the game to life with an immersive and fantastical world. I created all the sprites and graphical components (other than the main character), drawn in a relatively clean and simple 2D art style. Strategic asset layering and placement, along with small animations and effects sprinkled throughout, work together to create a cohesive and enjoyable gaming experience.",
 
   "Snapshot #1.",
@@ -366,8 +366,8 @@ export const missileCommandSlides = [
 export const missileCommandTitles = ["About", "Snapshots", "Snapshots"];
 export const missileCommandCloneDescriptions = [
   "Clone of Atari's Missile Command<br><br>This is a solo project in which I recreated a classic arcade game.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Digital Game</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>GameMaker Studio 2</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Game Development, Game UI</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Game Development, Game UI</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>GameMaker Studio 2</div></div><br>\
   <div class='projectSubtitles'>The Project</div>I challenged myself to recreate the game Missile Command by Atari that is as close to the original as possible, gameplay-wise and visually.<br><br>My version of Missile Command is complete with a menu page, scaling level difficulty, various enemies, true-to-original sprites, a point system, and a game-over screen.",
 
   "Snapshot #1.",
@@ -389,8 +389,8 @@ export const wizardsJourneyTitles = [
 ];
 export const wizardsJourneyDescriptions = [
   "Wizard's Journey - Multiplayer Race Game<br><br>I designed and developed an original multiplayer game.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Digital Game</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>GameMaker Studio 2, Adobe Photoshop</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Game Development, Game UI, Game Design</div></div><br>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Game Development, Game UI, Game Design, Game Audio Design</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>GameMaker Studio 2, Adobe Photoshop</div></div><br>\
   <div class='projectSubtitles'>The Project</div>I designed and developed an original competitive multiplayer vertical obstacle race game.<br><br>Rules:<br><div class='descriptionsIndent'>○ 3 playable characters each with different spells that can be used to hinder other players or to destroy incoming map projectiles<br>○ Mana bars at the top indicate the respective color's ability to use spells and teleport back into view if they fall behind<br>○ Characters that run out of mana are removed from the race<br>○ First to the top wins!</div><div class='funFact'>✿ Fun fact: This video showcasing the gameplay took multiple takes because my sister/opponent was not the best gamer and unfortunately kept dying before we could reach the top.",
 
   "Snapshot #1 of starting match countdown.",
@@ -409,8 +409,8 @@ export const tantrumSlides = [
 export const tantrumTitles = ["About", "Snapshots", "Snapshots", "Snapshots"];
 export const tantrumDescriptions = [
   "Tantrum - 3D Animation Short<br><br>This is a solo project in which I produced an original 3D animation short.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>3D Animated Video</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Autodesk Maya, Adobe Photoshop, Adobe Premiere Pro</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>3D Animation, Video Direction, Video Editing, Storyboarding</div></div>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>3D Animation, Video Direction, Video Editing, Storyboarding</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Autodesk Maya, Adobe Premiere Pro, Adobe Photoshop</div></div>\
   <br><div class='projectSubtitles'>The Project</div>I conceived and animated a humorous 1-minute animation illustrating a child's emotional journey through grief, all revolving around a humble box of KitKats.",
 
   "Snapshot #1 of bargaining stage.",
@@ -428,8 +428,8 @@ export const studyRoomSlides = [
 export const studyRoomTitles = ["About", "Reference", "WIP"];
 export const studyRoomDescriptions = [
   "3D Environment Model<br><br>This is a solo project in which I 3D modeled and textured an indoor environment.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>3D Environment</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Autodesk Maya</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>3D Modeling</div></div>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>3D Modeling</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Autodesk Maya</div></div>\
   <br><div class='projectSubtitles'>The Project</div>I created a 3d model of a study room complete with textures and lighting.",
 
   "Reference photo used for room model. Thanks, Pinterest!",
@@ -444,8 +444,8 @@ export const raygunSlides = [
 export const raygunTitles = ["About", "Reference"];
 export const raygunDescriptions = [
   "3D Raygun Model<br><br>This is a solo project in which I 3D modeled an object based on an image reference.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>3D Model</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Autodesk Maya</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>3D Modeling</div></div>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>3D Modeling</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Autodesk Maya</div></div>\
   <br><div class='projectSubtitles'>The Project</div>I created a 3D model a raygun from a reference photo.",
 
   "Reference used for raygun model.",
