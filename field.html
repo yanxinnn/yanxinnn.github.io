@@ -9,6 +9,13 @@
     <script src="lib/p5.sound.min.js"></script>
     <script src="field.js" type="module"></script>
     <link rel="icon" type="image/png" href="images/icon-daisy.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -76,7 +83,13 @@
     <div id="slideshowContainer">
       <div id="slidesHeader">
         <div id="slidesTitle"></div>
-        <div id="exitSlideshowMessage">Press "Q" or "ESCAPE" to Exit</div>
+        <div id="exitSlideshowMessage">
+          Press
+          <span class="keyboardKey keyboardKeySlides">Q</span>
+          or
+          <span class="keyboardKey keyboardKeySlides">ESCAPE</span>
+          to Exit
+        </div>
         <div id="closeSlidesButton">&times;</div>
       </div>
       <div id="slidesBody">

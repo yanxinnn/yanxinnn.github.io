@@ -1298,9 +1298,10 @@ function updateSlideAbout(project) {
   currentAboutTitle.innerHTML = project.aboutTitles[currentSlideNum];
 
   let currentAboutDescription = document.getElementById("descriptions");
-  currentAboutDescription.scrollTop = 0;
   currentAboutDescription.innerHTML =
     project.aboutDescriptions[currentSlideNum];
+
+  document.getElementById("aboutSection").scrollTop = 0;
 }
 
 function showSlide(n) {
@@ -1510,7 +1511,7 @@ document.addEventListener("DOMContentLoaded", function () {
       keyPressDetected = true;
       lastKeyPress = event.key.toUpperCase();
       if (lastKeyPress == "ARROWRIGHT" || lastKeyPress == "D") {
-        if (slideShowing) {
+        if (slideShowing && !expandedImageShowing) {
           nextSlide(1);
         } else {
           // Close chat if player moves away
@@ -1521,7 +1522,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       if (lastKeyPress == "ARROWLEFT" || lastKeyPress == "A") {
-        if (slideShowing) {
+        if (slideShowing && !expandedImageShowing) {
           nextSlide(-1);
         } else {
           // Close chat if player moves away
@@ -1532,7 +1533,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       if (lastKeyPress == "ESCAPE" || lastKeyPress == "Q") {
-        if (slideShowing) {
+        if (slideShowing && expandedImageShowing) {
+          compressCurrentImage();
+        } else if (slideShowing) {
           slideShowing = false;
         }
       }

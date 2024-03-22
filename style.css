@@ -1,3 +1,9 @@
+:root {
+  --color-lightpink: #ffb2c2;
+  --color-lightyellow: #fff89b;
+  --color-lightblue: #658aa9;
+}
+
 html,
 body {
   margin: 0;
@@ -38,7 +44,8 @@ body {
   position: relative;
   text-align: center;
   user-select: none;
-  text-shadow: 0.25rem 0.1875rem 0.0625rem #eea9bb, 0 0 0.3125rem #ffffff;
+  text-shadow: 0.25rem 0.1875rem 0.0625rem var(--color-lightpink),
+    0 0 0.3125rem #ffffff;
 }
 
 .logo {
@@ -60,7 +67,7 @@ body {
 }
 
 .menuButtons button {
-  background-color: #658aa9;
+  background-color: var(--color-lightblue);
   border-radius: 6px;
   border: none;
   color: #ffffff;
@@ -76,7 +83,7 @@ body {
 
 .menuButtons button:hover {
   cursor: url(images/icon-daisy3.png), pointer;
-  background-color: #ffb2c2;
+  background-color: var(--color-lightpink);
 }
 
 .backgroundImage {
@@ -101,15 +108,15 @@ body {
 }
 
 .creditsTitles {
-  margin-top: 3vh;
+  margin-top: 2vh;
   display: flex;
   flex-direction: column;
 }
 
 .creditsTitles h1 {
   font-size: 2.5rem;
-  text-shadow: 0.25rem 0.1875rem 0.0625rem #eea9bb, 0 0 0.3125rem #ffffff,
-    0 0 0.3125rem #ffffff;
+  text-shadow: 0.25rem 0.1875rem 0.0625rem var(--color-lightpink),
+    0 0 0.3125rem #ffffff, 0 0 0.3125rem #ffffff;
   user-select: none;
   margin-bottom: -0.2rem;
 }
@@ -122,7 +129,7 @@ body {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  max-width: 1025px;
+  max-width: 1100px;
   margin: auto;
   margin-top: 2rem;
 }
@@ -135,10 +142,12 @@ body {
 }
 
 .letter {
-  font-family: "droidsansmono";
+  font-family: "JetBrains Mono", sans-serif;
+  font-style: light;
+  font-weight: 200;
   text-align: left;
   font-size: 0.875rem;
-  line-height: 1.5em;
+  line-height: 1.875em;
   background: rgba(0, 0, 0, 0.8);
   padding: 0.5rem 1.375rem 0.5rem 1.375rem;
   border-radius: 6px;
@@ -164,7 +173,7 @@ body {
 
 #resume {
   font-family: "silkscreennormal";
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   background-color: #787878;
   color: #ffffff;
   border-radius: 5px;
@@ -173,19 +182,18 @@ body {
 }
 
 #resume:hover {
-  background-color: #ffb2c2;
+  background-color: var(--color-lightpink);
 }
 
 .alert {
   position: fixed;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: "silkscreennormal";
-  font-weight: normal;
+  bottom: 1.5rem;
+  right: 1rem;
+  font-family: "JetBrains Mono";
+  font-weight: 400;
   font-style: normal;
   margin: auto;
-  font-size: 1.25rem;
+  font-size: 0.875rem;
   padding: 1.25rem;
   background-color: #e36b89;
   color: #ffffff;
@@ -195,10 +203,10 @@ body {
 }
 
 .selectEmail {
-  font-family: "droidsansmono";
-  font-size: 1rem;
+  font-family: "JetBrains Mono", sans-serif;
+  font-size: 0.875rem;
   user-select: text;
-  background-color: #ffd8db;
+  background-color: rgb(250, 194, 199);
   color: black;
   border-radius: 5px;
   padding: 0.25rem;
@@ -208,7 +216,8 @@ body {
 
 /* The close button */
 .closeCopiedEmailButton {
-  margin-left: 0.9375rem;
+  font-family: "silkscreennormal";
+  margin-left: 2rem;
   color: #ffffff;
   font-weight: bold;
   float: right;
@@ -348,7 +357,7 @@ input#sound:checked ~ .off img {
 }
 
 #backToTeleportersLink:hover {
-  color: #eea9bb;
+  color: var(--color-lightpink);
   cursor: url(images/icon-daisy3.png), pointer;
   border: none;
 }
@@ -366,6 +375,12 @@ input#sound:checked ~ .off img {
   margin-top: -0.125rem;
   margin-bottom: -0.125rem;
   margin-left: 0.75rem;
+}
+
+.keyboardKeySlides {
+  margin-left: 0.125rem;
+  margin-right: 0.125rem;
+  padding: 0.375rem 0.625rem;
 }
 
 .keyboardKeysContainer .keyboardKey {
@@ -426,7 +441,7 @@ input#sound:checked ~ .off img {
 
 .mobileKey:active {
   background-color: #0000007c;
-  color: #eea9bb;
+  color: var(--color-lightpink);
 }
 
 #mobileSpacer {
@@ -573,6 +588,7 @@ input#sound:checked ~ .off img {
 }
 
 #slidesTitle {
+  font-weight: 400;
   color: #ffffff;
   font-family: "silkscreennormal";
   font-size: 2.5rem;
@@ -600,7 +616,7 @@ input#sound:checked ~ .off img {
   user-select: none;
 }
 #closeSlidesButton:hover {
-  color: #eea9bb;
+  color: var(--color-lightpink);
   cursor: url(images/icon-daisy3.png), pointer;
 }
 
@@ -617,7 +633,7 @@ input#sound:checked ~ .off img {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 6.5;
+  flex: 6;
   background-color: rgba(28, 28, 28, 1);
   border-radius: 5px;
 }
@@ -657,7 +673,7 @@ input#sound:checked ~ .off img {
 .active,
 .dots:hover {
   cursor: url(images/icon-daisy3.png), pointer;
-  background-color: #eea9bb;
+  background-color: var(--color-lightpink);
 }
 
 #prevSlideButton,
@@ -769,19 +785,20 @@ input#sound:checked ~ .off img {
 #aboutSection {
   display: flex;
   flex-direction: column;
-  flex: 3.5;
+  flex: 4;
   gap: 1.5rem;
   padding: 1.5rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
   background: #1c1c1c;
   border-radius: 5px;
+  overflow-y: auto;
 }
 
 #aboutSectionHeader {
-  color: #ffffff;
-  font-family: "silkscreennormal";
-  font-weight: normal;
+  color: var(--color-lightyellow);
+  font-family: "JetBrains Mono", sans-serif;
+  font-weight: 400;
   font-style: normal;
   font-size: 1.75rem;
   text-align: center;
@@ -793,21 +810,31 @@ input#sound:checked ~ .off img {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  font-family: "droidsansmono";
+  font-family: "JetBrains Mono", sans-serif;
+  font-weight: 200;
   color: #ffffff;
-  font-weight: normal;
   font-style: normal;
   font-size: 0.875rem;
-  line-height: 1.8;
-  overflow-y: auto;
+  line-height: 1.875em;
   padding-right: 1rem;
+}
+
+.descriptionsHighlight {
+  color: var(--color-lightyellow);
+  font-style: italic;
+  font-weight: 300;
 }
 
 .descriptionsIndent {
   padding-left: 1.25rem;
   padding-right: 0.625rem;
-  padding-top: 0.5rem;
   padding-bottom: 1.25rem;
+}
+
+.descriptionsIndentNoBottomPadding {
+  padding-left: 1.25rem;
+  padding-right: 0.625rem;
+  padding-bottom: 0;
 }
 
 .projectCardsSection {
@@ -827,7 +854,8 @@ input#sound:checked ~ .off img {
 }
 
 .projectCardsTitle {
-  color: rgb(255, 248, 155);
+  font-weight: 400;
+  color: var(--color-lightyellow);
   border-bottom: 0.125rem solid rgb(27, 27, 27);
   padding-bottom: 0.1875rem;
   width: calc(100% - 0.25rem);
@@ -836,9 +864,10 @@ input#sound:checked ~ .off img {
 
 .projectSubtitles {
   font-size: 1.25rem;
-  color: rgb(255, 248, 155);
+  font-weight: 400;
+  color: var(--color-lightyellow);
   border-bottom: 0.125rem solid rgb(58, 58, 58);
-  padding-bottom: 0.125rem;
+  padding-bottom: 0.5rem;
   margin-bottom: 0.25rem;
 }
 
@@ -871,13 +900,13 @@ input#sound:checked ~ .off img {
   font-style: normal;
   padding: 0.75rem 1.125rem;
   font-size: 1.125rem;
-  background-color: #658aa9;
+  background-color: var(--color-lightblue);
   border-radius: 5px;
   border: none;
 }
 
 .slidesLink:hover {
-  background-color: #ffb2c2;
+  background-color: var(--color-lightpink);
   cursor: url(images/icon-daisy3.png), pointer;
 }
 

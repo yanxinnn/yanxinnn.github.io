@@ -14,6 +14,7 @@ var waterGradient = "images/environment/water.png";
 var lilypad;
 var lilypad1 = "images/environment/lilypad1.png";
 var lilypad2 = "images/environment/lilypad2.png";
+var emailMessageTimeout;
 
 //** Preload *************
 function preload() {
@@ -143,15 +144,26 @@ function windowResized() {
   resizeCanvas(window.innerWidth, window.innerHeight);
 }
 
-// reference: https://codepen.io/shaikmaqsood/pen/XmydxJ
 function copyToClipboard(element) {
-  var $temp = $("<input>");
-  var message = document.getElementById("emailCopiedMessage");
-  message.style.display = "block";
-  $("body").append($temp);
-  $temp.val($(element).text()).select();
-  document.execCommand("copy");
-  $temp.remove();
+  const textToCopy = $(element).text();
+  navigator.clipboard
+    .writeText(textToCopy)
+    .then(() => {
+      showEmailMessage();
+    })
+    .catch((err) => {
+      console.error("Error copying text to clipboard:", err);
+    });
+}
+
+function showEmailMessage() {
+  document.getElementById("emailCopiedMessage").style.display = "block";
+  clearTimeout(emailMessageTimeout);
+  emailMessageTimeout = setTimeout(hideEmailMessage, 6000);
+}
+
+function hideEmailMessage() {
+  document.getElementById("emailCopiedMessage").style.display = "none";
 }
 
 // reference: https://stackoverflow.com/questions/18032220/css-change-image-src-on-imghover
