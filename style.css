@@ -20,6 +20,10 @@ body {
   box-sizing: inherit;
 }
 
+button {
+  font-family: "JetBrains Mono", sans-serif;
+}
+
 /* ********** Main Menu ********** */
 .mainMenuContainer {
   display: flex;
@@ -572,9 +576,8 @@ input#sound:checked ~ .off img {
   visibility: hidden;
   transition: visibility 0.5s, opacity 0.5s;
   background-color: #000000cc;
-  padding: 1rem;
   padding-top: 1.5rem;
-  padding-bottom: 2rem;
+  padding-bottom: 0;
 }
 
 #slidesHeader {
@@ -622,7 +625,6 @@ input#sound:checked ~ .off img {
 
 #slidesBody {
   display: flex;
-  gap: 0.75rem;
   flex: 1;
   overflow: hidden;
   width: 100%;
@@ -634,8 +636,7 @@ input#sound:checked ~ .off img {
   justify-content: center;
   align-items: center;
   flex: 6;
-  background-color: rgba(28, 28, 28, 1);
-  border-radius: 5px;
+  background-color: #0f0f0f;
 }
 
 #slides img,
@@ -787,12 +788,13 @@ input#sound:checked ~ .off img {
   flex-direction: column;
   flex: 4;
   gap: 1.5rem;
-  padding: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 1.5rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
   background: #1c1c1c;
-  border-radius: 5px;
   overflow-y: auto;
+  position: relative;
 }
 
 #aboutSectionHeader {
@@ -902,6 +904,27 @@ input#sound:checked ~ .off img {
   background-color: var(--color-lightpink);
   cursor: url(images/icon-daisy3.png), pointer;
 }
+
+/* #aboutSectionButtons {
+  position: relative;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#aboutSectionButtons button {
+  color: white;
+  background-color: #00000065;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+}
+
+#aboutSectionButtons button:hover {
+  background-color: #0000007c;
+  cursor: url(images/icon-daisy3.png), default;
+} */
 
 /* width */
 ::-webkit-scrollbar {
@@ -1028,7 +1051,6 @@ a:active {
   }
   #pictureSection {
     max-height: 35vh;
-    background-color: rgb(15, 15, 15);
   }
   #pictureSection img,
   #pictureSection video {

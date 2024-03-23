@@ -132,7 +132,7 @@ export const floatItDescriptions = [
   <ul class='descriptionsNoPadding'><li>Planner functionalities:\
   <ul class='descriptionsNoPadding'><li>Create/edit/delete tasks</li><li>Create/edit/delete subjects</li><li>Progress tracker for tasks</li><li>Customizable color coded subjects</li></ul>\
   <li>A time/date display</li><li>Hand-drawn images and animations</li><li>Daily inspirational quotes</li></ul><br>\
-  This is a passion project that I plan to release onto the Chrome Web Store and is for those who need a planner and appreciate a bit of playfulness throughout their daily Chrome browsing experience!<br><br>",
+  This is a passion project that I plan to release onto the Chrome Web Store and is for those who need a planner and appreciate a bit of playfulness throughout their daily Chrome browsing experience!",
 
   "My target audience consists of high school and college students, ages 14-24, who use Chrome on laptops or desktops.\
   <br><br>My initial user research goals were to understand my target audience and find out their:\
