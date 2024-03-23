@@ -825,16 +825,9 @@ input#sound:checked ~ .off img {
   font-weight: 300;
 }
 
-.descriptionsIndent {
-  padding-left: 1.25rem;
-  padding-right: 0.625rem;
-  padding-bottom: 1.25rem;
-}
-
-.descriptionsIndentNoBottomPadding {
-  padding-left: 1.25rem;
-  padding-right: 0.625rem;
-  padding-bottom: 0;
+.descriptionsNoPadding {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .projectCardsSection {
