@@ -72,8 +72,8 @@ button {
 
 .menuButtons button {
   background-color: var(--color-lightblue);
-  border-radius: 6px;
-  border: none;
+  border-radius: 10px;
+  border: 4px rgb(84, 116, 146) solid;
   color: #ffffff;
   width: 18.75rem;
   height: 3.4375rem;
@@ -88,6 +88,7 @@ button {
 .menuButtons button:hover {
   cursor: url(images/icon-daisy3.png), pointer;
   background-color: var(--color-lightpink);
+  border: 4px rgb(204, 144, 154) solid;
 }
 
 .backgroundImage {
