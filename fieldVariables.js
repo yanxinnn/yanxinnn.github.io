@@ -299,15 +299,16 @@ export const askAppsSlides = [
   "images/slides/askApps7.png",
 ];
 export const askAppsTitles = [
-  "Uninstall Pages",
+  "Uninstall Page Designs",
   "Ad Designs",
-  "Landing Pages",
-  "Landing Pages",
-  "Landing Pages",
-  "Landing Pages",
+  "Landing Page Designs",
+  "Landing Page Designs",
+  "Landing Page Designs",
+  "Landing Page Designs",
 ];
 export const askAppsDescriptions = [
-  "As a Web Design intern on the Ask Applications team, I was responsible for designing legally compliant landing pages, advertisements, mockups, and digital assets, as well as developing and maintaining web pages for a diverse product portfolio.<br><br>This project was a collaborative effort with the Product Management intern to repurpose the uninstall pages for Ask Apps' browser extensions, where I led the design process in the creation of the new screens.<br><br>\
+  "Ask Applications is one of the world’s largest distributors of desktop applications, browser extensions, and PC optimization software, with over 120 million monthly active users.<br><br>\
+  As a Web Design intern on the Ask Apps team, I was responsible for designing legally compliant landing pages, advertisements, mockups, and digital assets, as well as developing and maintaining web pages for their diverse product portfolio.<br><br>This project was a collaborative effort with the Product Management intern to repurpose the uninstall pages for Ask Apps' browser extensions, where I led the design process in the creation of the new screens.<br><br>\
   <div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
   <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design, Product Design</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop</div></div><br>\
@@ -315,31 +316,31 @@ export const askAppsDescriptions = [
   <div class='projectSubtitles'>Goal</div><ul class='descriptionsNoPadding'><li>Utilize the space on the uninstall pages in a more effective and productive way.</li></ul><br>\
   <div class='projectSubtitles'>Result</div>I redesigned the uninstall pages to replace the previous feedback forms with a page showcasing Ask Applications' other products. This redesign aims to maximize the potential of the valuable real estate by boosting awareness and visibility for other company offerings, potentially resulting in increased installation rates and improved customer retention.",
 
-  "As a Web Design intern on the Ask Applications team, I was responsible for designing legally compliant landing pages, advertisements, mockups, and digital assets, as well as developing and maintaining web pages for a diverse product portfolio.<br><br>This is a sample of ad designs I created for their Slimware products.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Web Ad, E-Commerce</div>\
+  "This is a sample of ad designs I created for Ask Apps' Slimware products.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Web Ad, E-Commerce</div>\
   <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop</div></div><br>\
   <div class='projectSubtitles'>Background</div>Ask Applications needed ads for their Slimware brand to advertise one of their PC products.<br><br>\
   <div class='projectSubtitles'>Result</div>I created various ad designs for Slimware in accordance to Google compliant ad specifications.<br><br>Pictured is a sample of a set that I created.",
 
-  "As a Web Design intern on the Ask Applications team, I was responsible for designing legally compliant landing pages, advertisements, mockups, and digital assets, as well as developing and maintaining web pages for a diverse product portfolio.<br><br>This is a sample of landing pages I designed and built for their browser extensions.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop, proprietary CMS, HTML/CSS</div></div><br>\
-  <div class='projectSubtitles'>Background</div>Ask Applications needed new landing pages for a multitude of their 100+ browser-based tools. The existing ones were plain, generic templates that had little to no correlation to the product being advertised, resulting in a loss of opportunity to attract and engage new users effectively.<br><br>\
-  <div class='projectSubtitles'>Result</div>I designed a variety of landing pages that reflected the corresponding extension's utility in some way. These custom pages were designed to add personality, relevance, and improve user engagement.<br><br>Pictured is a sample of landing pages I created.",
-
-  "As a Web Design intern on the Ask Applications team, I was responsible for designing legally compliant landing pages, advertisements, mockups, and digital assets, as well as developing and maintaining web pages for a diverse product portfolio.<br><br>This is a sample of landing pages I designed and built for their browser extensions.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
+  "This is a sample of landing pages I designed and built for Ask Apps' browser extensions.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
   <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop, proprietary CMS, HTML/CSS</div></div><br>\
   <div class='projectSubtitles'>Background</div>Ask Applications needed new landing pages for a multitude of their 100+ browser-based tools. The existing ones were plain, generic templates that had little to no correlation to the product being advertised, resulting in a loss of opportunity to attract and engage new users effectively.<br><br>\
   <div class='projectSubtitles'>Result</div>I designed a variety of landing pages that reflected the corresponding extension's utility in some way. These custom pages were designed to add personality, relevance, and improve user engagement.<br><br>Pictured is a sample of landing page designs I created.",
 
-  "As a Web Design intern on the Ask Applications team, I was responsible for designing legally compliant landing pages, advertisements, mockups, and digital assets, as well as developing and maintaining web pages for a diverse product portfolio.<br><br>This is a sample of landing pages I designed and built for their browser extensions.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
+  "This is a sample of landing pages I designed and built for Ask Apps' browser extensions.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
   <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop, proprietary CMS, HTML/CSS</div></div><br>\
   <div class='projectSubtitles'>Background</div>Ask Applications needed new landing pages for a multitude of their 100+ browser-based tools. The existing ones were plain, generic templates that had little to no correlation to the product being advertised, resulting in a loss of opportunity to attract and engage new users effectively.<br><br>\
   <div class='projectSubtitles'>Result</div>I designed a variety of landing pages that reflected the corresponding extension's utility in some way. These custom pages were designed to add personality, relevance, and improve user engagement.<br><br>Pictured is a sample of landing page designs I created.",
 
-  "As a Web Design intern on the Ask Applications team, I was responsible for designing legally compliant landing pages, advertisements, mockups, and digital assets, as well as developing and maintaining web pages for a diverse product portfolio.<br><br>This is a sample of landing pages I designed and built for their browser extensions.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
+  "This is a sample of landing pages I designed and built for Ask Apps' browser extensions.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design</div>\
+  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop, proprietary CMS, HTML/CSS</div></div><br>\
+  <div class='projectSubtitles'>Background</div>Ask Applications needed new landing pages for a multitude of their 100+ browser-based tools. The existing ones were plain, generic templates that had little to no correlation to the product being advertised, resulting in a loss of opportunity to attract and engage new users effectively.<br><br>\
+  <div class='projectSubtitles'>Result</div>I designed a variety of landing pages that reflected the corresponding extension's utility in some way. These custom pages were designed to add personality, relevance, and improve user engagement.<br><br>Pictured is a sample of landing page designs I created.",
+
+  "This is a sample of landing pages I designed and built for Ask Apps' browser extensions.<br><br><div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Website, E-Commerce</div>\
   <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Web Design</div>\
   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Photoshop, proprietary CMS, HTML/CSS</div></div><br>\
   <div class='projectSubtitles'>Background</div>Ask Applications needed new landing pages for a multitude of their 100+ browser-based tools. The existing ones were plain, generic templates that had little to no correlation to the product being advertised, resulting in a loss of opportunity to attract and engage new users effectively.<br><br>\

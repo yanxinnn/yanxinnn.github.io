@@ -367,7 +367,7 @@ function setup() {
     height: 118,
   });
   createProject({
-    name: "Ask Applications Web Designs",
+    name: "Ask Applications Web Design Internship",
     groupSection: uiUxSection,
     groupOffsetX: 1120,
     slides: variables.askAppsSlides,
