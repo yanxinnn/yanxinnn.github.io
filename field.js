@@ -1301,7 +1301,14 @@ function updateSlideAbout(project) {
   currentAboutDescription.innerHTML =
     project.aboutDescriptions[currentSlideNum];
 
-  document.getElementById("aboutSection").scrollTop = 0;
+  // Scroll back of descriptions on new slide
+  if (
+    project.aboutDescriptions[currentSlideNum].split(" ")[0] != "Pypeline" && // Pypeline - slide 1+2
+    project.aboutDescriptions[currentSlideNum].split(" ")[5] != "landing" // Ask Apps - slides 3+4+5+6
+  ) {
+    console.log(project.aboutDescriptions[currentSlideNum].split(" ")[5]);
+    document.getElementById("aboutSection").scrollTop = 0;
+  }
 }
 
 function showSlide(n) {
