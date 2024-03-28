@@ -98,7 +98,7 @@ var floatItFrames;
 var roomFrames;
 var inertiaFrames;
 var askAppsFrames;
-var acornStationFrames;
+// var acornStationFrames;
 var outcastFrames;
 var missileCommandFrames;
 var wizardsJourneyFrames;
@@ -202,7 +202,7 @@ function preload() {
     variables.askApps3,
     variables.askApps4
   );
-  acornStationFrames = loadImage(variables.acorn1);
+  // acornStationFrames = loadImage(variables.acorn1);
 
   // Game
   outcastFrames = loadAnimation(
@@ -288,52 +288,51 @@ function setup() {
 
   // Teleporters
   beginningSection = platformsGroup[firstInteractionPlatform + 1].position.x;
-  uiUxSection = platformsGroup[firstInteractionPlatform + 10].position.x + 50;
-  gameSection = platformsGroup[firstInteractionPlatform + 27].position.x + 100;
-  threeDSection =
-    platformsGroup[firstInteractionPlatform + 37].position.x + 150;
+  uiUxSection = platformsGroup[firstInteractionPlatform + 10].position.x;
+  gameSection = platformsGroup[firstInteractionPlatform + 27].position.x;
+  threeDSection = platformsGroup[firstInteractionPlatform + 37].position.x;
 
   beginningTp = createTp({
     frames: whiteTpFrames,
-    positionIndex: firstInteractionPlatform + 51,
-    destination: beginningSection,
+    positionIndex: firstInteractionPlatform + 49,
+    destination: beginningSection + 40,
   });
   uiUxTp = createTp({
     frames: greenTpFrames,
     positionIndex: firstInteractionPlatform + 3,
-    destination: uiUxSection,
+    destination: uiUxSection + 80,
   });
   gameTp = createTp({
     frames: redTpFrames,
     positionIndex: firstInteractionPlatform + 5,
     additionalOffsetX: 10,
-    destination: gameSection,
+    destination: gameSection + 80,
   });
   threeDTp = createTp({
     frames: purpleTpFrames,
     positionIndex: firstInteractionPlatform + 7,
     additionalOffsetX: 30,
-    destination: threeDSection,
+    destination: threeDSection + 80,
   });
 
   // Projects
   // UX/UI Design
-  // createProject({
-  //   name: "Pypeline",
-  //   groupSection: uiUxSection,
-  //   groupOffsetX: 0,
-  //   slides: variables.pypelineSlides,
-  //   aboutTitles: variables.pypelineTitles,
-  //   aboutDescriptions: variables.pypelineDescriptions,
-  //   frames: pypelineFrames,
-  //   frameDelay: 0,
-  //   width: 237,
-  //   height: 108,
-  // });
+  createProject({
+    name: "Pypeline",
+    groupSection: uiUxSection,
+    groupOffsetX: 250,
+    slides: variables.pypelineSlides,
+    aboutTitles: variables.pypelineTitles,
+    aboutDescriptions: variables.pypelineDescriptions,
+    frames: pypelineFrames,
+    frameDelay: 0,
+    width: 183,
+    height: 168,
+  });
   createProject({
     name: "Float-it Notes",
     groupSection: uiUxSection,
-    groupOffsetX: 250,
+    groupOffsetX: 560,
     slides: variables.floatItSlides,
     aboutTitles: variables.floatItTitles,
     aboutDescriptions: variables.floatItDescriptions,
@@ -345,7 +344,7 @@ function setup() {
   createProject({
     name: "Room",
     groupSection: uiUxSection,
-    groupOffsetX: 540,
+    groupOffsetX: 850,
     slides: variables.roomSlides,
     aboutTitles: variables.roomTitles,
     aboutDescriptions: variables.roomDescriptions,
@@ -357,7 +356,7 @@ function setup() {
   createProject({
     name: "Inertia",
     groupSection: uiUxSection,
-    groupOffsetX: 830,
+    groupOffsetX: 1140,
     slides: variables.inertiaSlides,
     aboutTitles: variables.inertiaTitles,
     aboutDescriptions: variables.inertiaDescriptions,
@@ -369,7 +368,7 @@ function setup() {
   createProject({
     name: "Ask Applications Web Design Internship",
     groupSection: uiUxSection,
-    groupOffsetX: 1120,
+    groupOffsetX: 1440,
     slides: variables.askAppsSlides,
     aboutTitles: variables.askAppsTitles,
     aboutDescriptions: variables.askAppsDescriptions,
@@ -378,18 +377,18 @@ function setup() {
     width: 154,
     height: 140,
   });
-  createProject({
-    name: "Acorn",
-    groupSection: uiUxSection,
-    groupOffsetX: 1420,
-    slides: variables.acornSlides,
-    aboutTitles: variables.acornTitles,
-    aboutDescriptions: variables.acornDescriptions,
-    frames: acornStationFrames,
-    frameDelay: 0,
-    width: 267,
-    height: 142,
-  });
+  // createProject({
+  //   name: "Acorn",
+  //   groupSection: uiUxSection,
+  //   groupOffsetX: 1420,
+  //   slides: variables.acornSlides,
+  //   aboutTitles: variables.acornTitles,
+  //   aboutDescriptions: variables.acornDescriptions,
+  //   frames: acornStationFrames,
+  //   frameDelay: 0,
+  //   width: 267,
+  //   height: 142,
+  // });
   // Game
   createProject({
     name: "Outcast",
@@ -652,7 +651,7 @@ function draw() {
     }
   }
 
-  if (player.position.x >= threeDSection - 100) {
+  if (player.position.x >= threeDSection) {
     document.getElementById("locationMessage").innerHTML =
       "3D Modeling + Animation";
     document.getElementById("locationMessage").style.backgroundColor =
@@ -672,7 +671,7 @@ function draw() {
         )
       )
     );
-  } else if (player.position.x >= gameSection - 100) {
+  } else if (player.position.x >= gameSection) {
     document.getElementById("locationMessage").innerHTML = "Game Design";
     document.getElementById("locationMessage").style.backgroundColor =
       "#FFD0CC";
@@ -691,7 +690,7 @@ function draw() {
         )
       )
     );
-  } else if (player.position.x >= uiUxSection - 100) {
+  } else if (player.position.x >= uiUxSection) {
     document.getElementById("locationMessage").innerHTML = "UX/UI Design";
     document.getElementById("locationMessage").style.backgroundColor =
       "#BEE8CC";
@@ -1427,7 +1426,7 @@ document
   .addEventListener("click", () => backToTeleporters());
 
 function backToTeleporters() {
-  player.position.x = beginningSection;
+  player.position.x = beginningSection + 40;
   fadeInEffect();
   noSlideShow();
 }
@@ -1447,13 +1446,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // World size based on screen size
   if (window.innerWidth < 500) {
     firstInteractionPlatform = 6;
-    endPlatform = 59;
+    endPlatform = 57;
   } else if (window.innerWidth < 1200) {
     firstInteractionPlatform = 8;
-    endPlatform = 61;
+    endPlatform = 59;
   } else {
     firstInteractionPlatform = 12;
-    endPlatform = 65;
+    endPlatform = 63;
   }
   // Yanxin chatbox based on screen size
   if (window.innerWidth < 500) {

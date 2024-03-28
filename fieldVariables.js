@@ -68,7 +68,7 @@ export var askApps1 = "images/environment/askApps-1.png";
 export var askApps2 = "images/environment/askApps-2.png";
 export var askApps3 = "images/environment/askApps-3.png";
 export var askApps4 = "images/environment/askApps-4.png";
-export var acorn1 = "images/environment/acornStation.png";
+// export var acorn1 = "images/environment/acornStation.png";
 // Game
 export var outcast1 = "images/environment/outcast1.png";
 export var outcast2 = "images/environment/outcast2.png";
@@ -376,37 +376,37 @@ export const askAppsDescriptions = [
   <div class='projectSubtitles'>Result</div>I designed a variety of landing pages that reflected the corresponding extension's utility in some way. These custom pages were designed to add personality, relevance, and improve user engagement.<br><br>Pictured is a sample of landing page designs I created.",
 ];
 // Acorn
-export const acornSlides = [
-  "images/slides/acornLogo.png",
-  "images/slides/acornDrafts02.png",
-  "images/slides/acornApplications01.png",
-  "images/slides/acornApplications02.png",
-  "images/slides/acornBottles.png",
-];
-export const acornTitles = [
-  "About",
-  "Logo Drafts and User Research",
-  "Product Design Drafts",
-  "Product Design Drafts",
-  "Final Product Design",
-];
-export const acornDescriptions = [
-  "Acorn is a fictional health and wellness company that is dedicated to helping people live healthier and more eco-friendly lifestlyes.<br><br>This is a solo project in which I designed graphics and merchandise for a conceptualized company.<br><br>\
-  <div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Logo, Product Merchandise</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Brand Design, Graphic Design, UX Research, Product Design</div>\
-  <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Illustrator, Adobe Photoshop, vinyl cutter</div></div><br>\
-  <div class='projectSubtitles'>Background</div>Acorn required a logo and branded merchandise that reflected its core values of wellness, growth, and sustainability.<br><br>\
-  <div class='projectSubtitles'>Result</div>For the logo, I crafted a simplistic and geometric design to emphasize the company's commitment to cleanliness and environmental consciousness. I incorporated squirrel-like shapes and a custom rounded typeface to achieve a friendly and inviting feel.",
+// export const acornSlides = [
+//   "images/slides/acornLogo.png",
+//   "images/slides/acornDrafts02.png",
+//   "images/slides/acornApplications01.png",
+//   "images/slides/acornApplications02.png",
+//   "images/slides/acornBottles.png",
+// ];
+// export const acornTitles = [
+//   "About",
+//   "Logo Drafts and User Research",
+//   "Product Design Drafts",
+//   "Product Design Drafts",
+//   "Final Product Design",
+// ];
+// export const acornDescriptions = [
+//   "Acorn is a fictional health and wellness company that is dedicated to helping people live healthier and more eco-friendly lifestlyes.<br><br>This is a solo project in which I designed graphics and merchandise for a conceptualized company.<br><br>\
+//   <div class='projectCardsSection'><div class='projectCards'><div class='projectCardsTitle'>Product</div>Logo, Product Merchandise</div>\
+//   <div class='projectCards'><div class='projectCardsTitle'>My Role</div>Brand Design, Graphic Design, UX Research, Product Design</div>\
+//   <div class='projectCards'><div class='projectCardsTitle'>Technologies</div>Adobe Illustrator, Adobe Photoshop, vinyl cutter</div></div><br>\
+//   <div class='projectSubtitles'>Background</div>Acorn required a logo and branded merchandise that reflected its core values of wellness, growth, and sustainability.<br><br>\
+//   <div class='projectSubtitles'>Result</div>For the logo, I crafted a simplistic and geometric design to emphasize the company's commitment to cleanliness and environmental consciousness. I incorporated squirrel-like shapes and a custom rounded typeface to achieve a friendly and inviting feel.",
 
-  "In the brainstorming stage, I came up with 10 unique designs for Acorn's logo.<br><br>\
-  I conducted a survey with 25 participants to determine which of these 10 designs were the most appealing. Each participant was allowed to vote for 2 favorites. Based on these votes, I narrowed down the potential logo designs to 3.<br><br>I then created sevaral iterations of each of the 3 designs, experimenting with fonts, colors, spacing, and other UI elements. Participants were asked to vote again on the second set, this time choosing 1 as their favorite. The squirrel design won majority vote!<br><br>Pictured are some of the iterations of the 3 final contestant designs.",
+//   "In the brainstorming stage, I came up with 10 unique designs for Acorn's logo.<br><br>\
+//   I conducted a survey with 25 participants to determine which of these 10 designs were the most appealing. Each participant was allowed to vote for 2 favorites. Based on these votes, I narrowed down the potential logo designs to 3.<br><br>I then created sevaral iterations of each of the 3 designs, experimenting with fonts, colors, spacing, and other UI elements. Participants were asked to vote again on the second set, this time choosing 1 as their favorite. The squirrel design won majority vote!<br><br>Pictured are some of the iterations of the 3 final contestant designs.",
 
-  "With the final logo for Acorn selected, I created prototypes of possible company merchandise featuring variations of the logo.",
+//   "With the final logo for Acorn selected, I created prototypes of possible company merchandise featuring variations of the logo.",
 
-  "I selected the water bottle as the physical application and created three iterations of bottle designs.",
+//   "I selected the water bottle as the physical application and created three iterations of bottle designs.",
 
-  "Pictured are the final water bottles with labels created using a vinyl cutter!",
-];
+//   "Pictured are the final water bottles with labels created using a vinyl cutter!",
+// ];
 
 // Game
 // Outcast
